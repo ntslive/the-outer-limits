@@ -7,18 +7,16 @@ import Footer from '../components/footer';
 import '../../sass/style.scss';
 
 const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Gatsby React Boilerplate"
-    />
-    <Header />
-    {children()}
-    <Footer />
-  </div>
+    <div>
+        <Helmet title="Gatsby React Boilerplate" />
+        <Header />
+        {children()}
+        <Footer />
+    </div>
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+    children: PropTypes.func,
 };
 
 export default TemplateWrapper;

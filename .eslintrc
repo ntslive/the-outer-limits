@@ -11,6 +11,10 @@
         "jsx-a11y/anchor-is-valid": ["warn",
         {
             "aspects": ["invalidHref"]
-        }]
+        }],
+        "react/no-array-index-key": "off",
+        "react/jsx-indent": ["error", 4],
+        "indent": ["error", 4],
+        "quotes": "off"
     }
 }

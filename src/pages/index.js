@@ -5,10 +5,10 @@ import Features from '../components/features';
 import HowTo from '../components/how-to';
 
 const IndexPage = props =>
-  (<main>
-    <Features data={props.data.allDataJson.edges[0].node.features} />
-    <HowTo data={props.data.allDataJson.edges[0].node.howTo} />
-  </main>);
+    (<main>
+        <Features data={props.data.allDataJson.edges[0].node.features} />
+        <HowTo data={props.data.allDataJson.edges[0].node.howTo} />
+    </main>);
 
 export default IndexPage;
 
