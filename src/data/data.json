@@ -7,12 +7,6 @@
             "title": "Uses postcss and sass with autoprefixer"
         },
         {
-            "title": "Uses Bootstrap 4"
-        },
-        {
-            "title": "Leaves the styling to you"
-        },
-        {
             "title": "Uses data from local json files"
         },
         {

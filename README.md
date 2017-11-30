@@ -9,7 +9,6 @@
 
 * Basic configuration and folder structure
 * Uses postcss and sass (with autoprefixer and pixrem)
-* Uses [Bootstrap 4](http://getbootstrap.com/) grid
 * Leaves the styling to you
 * Uses data from local json files
 * [SVG sprites](https://css-tricks.com/svg-sprites-use-better-icon-fonts/): Add your icons in `components/icon` as .icon files and use them.
