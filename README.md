@@ -12,7 +12,6 @@
 * Uses [Bootstrap 4](http://getbootstrap.com/) grid
 * Leaves the styling to you
 * Uses data from local json files
-* Contains Node.js server code for easy, secure, and fast hosting
 * [SVG sprites](https://css-tricks.com/svg-sprites-use-better-icon-fonts/): Add your icons in `components/icon` as .icon files and use them.
 
 ### How to proceed
