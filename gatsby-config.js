@@ -2,6 +2,7 @@ const pixrem = require('pixrem');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+    pathPrefix: `/the-outer-limits`,
     siteMetadata: {
         title: `Gatsby Default Starter`,
     },

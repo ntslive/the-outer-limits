@@ -19,7 +19,7 @@
 
 ### Development
 1.  Run: `npm run develop` to run Gatsby
-1.  You should see shortly some text that says The development server is listening at: `http://0.0.0.0:8000`. Open that address in your browser and…
+1.  You should see shortly some text that says The development server is listening at: `http://localhost:8000`. Open that address in your browser and…
 1.  Start coding!
 
 #### How to build and review
