@@ -13,17 +13,23 @@
 * Uses data from local json files
 * [SVG sprites](https://css-tricks.com/svg-sprites-use-better-icon-fonts/): Add your icons in `components/icon` as .icon files and use them.
 
-### How to proceed
+### Setup
 
-1.  Prepare a coffee
-1.  Run: `npm i` to install the dependencies
-1.  Run: `npm run dev` to run Gatsby
-1.  You should see shortly some text that says `The development server is listening at: http://localhost:8000`. Open that address in your browser and…
+1.  Run: `npm install` to install the dependencies
+
+### Development
+1.  Run: `npm run develop` to run Gatsby
+1.  You should see shortly some text that says The development server is listening at: `http://0.0.0.0:8000`. Open that address in your browser and…
 1.  Start coding!
 
-### How to build
+#### How to build and review
 
 1.  Run: `npm run build` to build website into `/public` folder
+1.  To review run `npm run serve`.
+
+### Deployment
+
+Run: `npm run deploy` - this builds the project and then pushes a commit to `gh-pages` branch of the same directory.
 
 ### Considerations
 

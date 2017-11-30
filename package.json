@@ -4,14 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "start": "node server.js",
-    "gh-pages": "gatsby build --prefix-paths && gh-pages --dist public -b gh-pages",
+    "build": "(shx --silent rm -rf public || shx true) && gatsby build",
+    "deploy": "(shx --silent rm -rf public || shx true) && gatsby build --prefix-paths && gh-pages --dist public -b gh-pages",
+    "develop": "(shx --silent rm -rf public || shx true) && gatsby develop",
     "lint": "node_modules/.bin/eslint src --fix",
-    "dev": "(shx --silent rm -rf public || shx true) && gatsby develop",
-    "server": "cross-env NODE_ENV=development DEBUG=api nodemon server.js"
+    "serve": "gatsby serve"
   },
   "author": "Prototype Interactive",
   "license": "MIT",
