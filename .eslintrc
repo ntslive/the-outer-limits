@@ -15,6 +15,9 @@
         "react/no-array-index-key": "off",
         "react/jsx-indent": ["error", 4],
         "indent": ["error", 4],
-        "quotes": "off"
+        "quotes": "off",
+        "prefer-const": 1,
+        "no-unused-vars": 0, /* Allow unused variables. Good for leaving unused function parameters visible */
+        "arrow-body-style": "off"
     }
 }
