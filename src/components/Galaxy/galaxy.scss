@@ -1,0 +1,12 @@
+@import '../../../sass/_settings.scss';
+
+#galaxy-container {
+    background-color: transparent;
+}
+
+#galaxy {
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: $galaxy-info-width;
+    right: 0;
+}

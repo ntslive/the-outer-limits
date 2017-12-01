@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path,Line} from 'react-raphael';
+import {Raphael} from 'react-raphael';
 
+import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
 import './galaxy.scss';
@@ -11,10 +12,12 @@ class GalaxyMapping {
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight - 180;
         let canvasWidth = windowWidth * 3;
+        this.height = windowHeight;
+        this.width = canvasWidth;
 
-        let data = [
+        let circles = [
             {
-                x: windowWidth / 3.9,
+                x: windowWidth / 20,
                 y: windowHeight / 3,
                 attr: {"fill":"#7f7d7e"},
                 animate: Raphael.animation({r: 7}, 2305),
@@ -31,18 +34,20 @@ class GalaxyMapping {
                 attr: {"fill":"#7f7d7e"},
                 animate: Raphael.animation({r: 7}, 2305),
             },
-        ];
-
-        data = data.concat( [
             {
-                d: `M${data[0].x},${data[0].y} L${data[1].x},${data[1].y} L${data[2].x},${data[2].y}`,
-                attr: {"stroke": "#7f7d7e", "stroke-width": 0.5},
-            }
-        ]);
+                x: windowWidth + (windowWidth / 1.2),
+                y: (windowHeight / 2) - (windowHeight / 4),
+                attr: {"fill":"#7f7d7e"},
+                animate: Raphael.animation({r: 7}, 2305),
+            },
 
-        this.height = windowHeight;
-        this.width = canvasWidth;
-        this.items = data;
+        ];
+        this.circles = circles;
+
+        this.paths = [{
+            d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y}`,
+            attr: {"stroke": "#7f7d7e", "stroke-width": 0.5},
+        }]
     }
 }
 
@@ -51,13 +56,20 @@ class Galaxy extends React.Component {
         super(props);
 
         this.galaxyMapping = new GalaxyMapping(this.props.chapters);
+
+        this.state = {
+            selectedChapterId: 0,
+        }
     }
 
     render() {
         return (
-            <section id="galaxy">
-                <GalaxyChapters chapters={this.props.chapters} drawing={this.galaxyMapping} />
-                <GalaxySvg drawing={this.galaxyMapping} />
+            <section id="galaxy-container">
+                <GalaxyInfo />
+                <div id="galaxy">
+                    <GalaxyChapters chapters={this.props.chapters} drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                    <GalaxySvg drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                </div>
             </section>
         );
     }

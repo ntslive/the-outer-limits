@@ -1,0 +1,13 @@
+@import '../../../sass/_settings.scss';
+
+#galaxy-info {
+    width: 70%;
+    max-width: $galaxy-info-width;
+
+    border: 1px solid white;
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: 0;
+
+    z-index: 1;
+}

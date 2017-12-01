@@ -27,8 +27,10 @@ export const pageQuery = graphql`
             title
           }
           chapters {
+            id
             name
             excerpt
+            status
           }
         }
       }
