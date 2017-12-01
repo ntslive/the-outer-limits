@@ -1,15 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path,Line} from 'react-raphael';
 
-import GalaxyChapter from '../GalaxyChapter/GalaxyChapter';
-
+import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
+import GalaxySvg from '../GalaxySvg/GalaxySvg';
 import './galaxy.scss';
 
-class Galaxy extends React.Component {
-    componentDidMount() {
-    }
-
-    renderGalaxy() {
+class GalaxyMapping {
+    constructor(chapters) {
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight - 180;
         let canvasWidth = windowWidth * 3;
@@ -34,56 +32,39 @@ class Galaxy extends React.Component {
                 animate: Raphael.animation({r: 7}, 2305),
             },
         ];
+
         data = data.concat( [
             {
                 d: `M${data[0].x},${data[0].y} L${data[1].x},${data[1].y} L${data[2].x},${data[2].y}`,
                 attr: {"stroke": "#7f7d7e", "stroke-width": 0.5},
-            },
-            {
-                x: 250,
-                y: 50,
-                r: 40,
-                attr: {"stroke": "#e11032", "stroke-width": 5},
-                animate: Raphael.animation({cx: 240}, 500, "<>"),
             }
         ]);
 
-        return (
-            <Paper width={canvasWidth} height={windowHeight}>
-                <Set>
-                    <Circle {...data[0]} ></Circle>
-                    <Circle {...data[1]} ></Circle>
-                    <Circle {...data[2]} ></Circle>
-                    <Path {...data[3]} />
-                </Set>
-            </Paper>
-        );
+        this.height = windowHeight;
+        this.width = canvasWidth;
+        this.items = data;
+    }
+}
+
+class Galaxy extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.galaxyMapping = new GalaxyMapping(this.props.chapters);
     }
 
     render() {
         return (
             <section id="galaxy">
-                <div className="galaxy-chapters">
-                    <h4 className="">CHAPTERS</h4>
-
-                    {this.props.chapters.map((chapter, i) => {
-                        return (
-                            <div key={i}>
-                                <p>
-                                    {chapter.name}
-                                </p>
-                                <p>
-                                    {chapter.excerpt}
-                                </p>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {this.renderGalaxy()}
+                <GalaxyChapters chapters={this.props.chapters} drawing={this.galaxyMapping} />
+                <GalaxySvg drawing={this.galaxyMapping} />
             </section>
-        )
+        );
     }
+}
+
+Galaxy.propTypes = {
+    chapters: PropTypes.array.isRequired,
 };
 
 export default Galaxy;
