@@ -11,6 +11,7 @@ const IndexPage = props =>
         {/*<Features data={props.data.allDataJson.edges[0].node.features} />*/}
         {/*<HowTo data={props.data.allDataJson.edges[0].node.howTo} />*/}
         <Galaxy chapters={props.data.allDataJson.edges[0].node.chapters} />
+        <div className="background-image" />
     </main>);
 
 export default IndexPage;
