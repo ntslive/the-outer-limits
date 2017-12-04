@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Raphael} from 'react-raphael';
+import $ from 'jquery';
 
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
@@ -55,11 +56,59 @@ class Galaxy extends React.Component {
     constructor(props) {
         super(props);
 
+        this.prevChapter = this.prevChapter.bind(this);
+        this.nextChapter = this.nextChapter.bind(this);
         this.galaxyMapping = new GalaxyMapping(this.props.chapters);
 
         this.state = {
             selectedChapterId: 0,
         }
+    }
+
+    componentDidMount() {
+        let that = this;
+        $("html").keydown(function(e) {
+            if (e.which == 37) { // left key
+                that.prevChapter();
+                e.preventDefault();
+            } else if (e.which == 39) { // right key
+                that.nextChapter();
+                e.preventDefault();
+            }
+        });
+    }
+
+    _scrollToChapter(chapterIndex) {
+        let animateProps;
+        if (chapterIndex > 0) {
+            let $nextChapter = $($(`.galaxy-chapter:eq(${chapterIndex})`));
+
+            animateProps = {scrollLeft: $nextChapter.offset().left - $nextChapter.width()};
+        } else {
+            animateProps = {scrollLeft: 0}
+        }
+
+        $("html, body").animate(animateProps, 800);
+    }
+
+    nextChapter() {
+        let newSelectedChapterId = this.state.selectedChapterId+1;
+        if (newSelectedChapterId >= this.props.chapters.length) return;
+
+        this.setState({
+            selectedChapterId: newSelectedChapterId,
+        });
+        this._scrollToChapter(newSelectedChapterId)
+    }
+
+    prevChapter() {
+        let newSelectedChapterId = this.state.selectedChapterId-1;
+        if (newSelectedChapterId < 0) return;
+
+        this.setState({
+            selectedChapterId: newSelectedChapterId,
+        });
+        this._scrollToChapter(newSelectedChapterId)
     }
 
     render() {
@@ -69,6 +118,10 @@ class Galaxy extends React.Component {
                 <div id="galaxy">
                     <GalaxyChapters chapters={this.props.chapters} drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
                     <GalaxySvg drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                    <div className="chapter-controls">
+                        <button onClick={this.prevChapter}>left</button>
+                        <button onClick={this.nextChapter}>right</button>
+                    </div>
                 </div>
             </section>
         );
