@@ -1,7 +1,10 @@
-import React from 'react';
+import debounce from 'throttle-debounce/debounce';
 import PropTypes from 'prop-types';
 import {Raphael} from 'react-raphael';
+import React from 'react';
+import throttle from 'throttle-debounce/throttle';
 import $ from 'jquery';
+import 'jquery-mousewheel';
 
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
@@ -52,6 +55,25 @@ class GalaxyMapping {
     }
 }
 
+function disableAllScrolling() {
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    function disableScroll() {
+        if (window.addEventListener) // older FF
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+        window.ontouchmove  = preventDefault; // mobile
+    }
+
+    disableScroll();
+}
+
 class Galaxy extends React.Component {
     constructor(props) {
         super(props);
@@ -67,15 +89,33 @@ class Galaxy extends React.Component {
 
     componentDidMount() {
         let that = this;
+        // TODO: Remove these event handlers on unmount
+
         $("html").keydown(function(e) {
-            if (e.which == 37) { // left key
+            if (e.keyCode == 37) { // left key
                 that.prevChapter();
                 e.preventDefault();
-            } else if (e.which == 39) { // right key
+            } else if (e.keyCode == 39) { // right key
                 that.nextChapter();
                 e.preventDefault();
             }
         });
+
+        // Throttling of scroll behaviour
+        disableAllScrolling();
+
+        $("html, body").mousewheel(throttle(200, function(event, delta) { // #element - your element id which has horizontal overflow
+            event.preventDefault();
+            // this.scrollLeft -= (delta * 10);
+            let deltaLimit = 30;
+
+            console.log(delta);
+            if (delta > deltaLimit) {
+                that.nextChapter();
+            } else if (delta < 0-deltaLimit) {
+                that.prevChapter();
+            }
+        }));
     }
 
     _scrollToChapter(chapterIndex) {

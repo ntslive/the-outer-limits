@@ -17,9 +17,11 @@
     "compression": "^1.7.1",
     "helmet": "^3.8.2",
     "jquery": "^3.2.1",
+    "jquery-mousewheel": "^3.1.13",
     "raphael": "^2.2.7",
     "react-raphael": "^0.9.0",
-    "serve-static": "^1.13.1"
+    "serve-static": "^1.13.1",
+    "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
