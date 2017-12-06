@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import throttle from 'throttle-debounce/throttle';
 import $ from 'jquery';
-import 'jquery-mousewheel';
 
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
@@ -103,20 +102,7 @@ class Galaxy extends React.Component {
         });
 
         // Throttling of scroll behaviour
-        disableAllScrolling();
-
-        $("html, body").mousewheel(throttle(200, function(event, delta) { // #element - your element id which has horizontal overflow
-            event.preventDefault();
-            // this.scrollLeft -= (delta * 10);
-            let deltaLimit = 30;
-
-            console.log(delta);
-            if (delta > deltaLimit) {
-                that._nextChapter();
-            } else if (delta < 0-deltaLimit) {
-                that._prevChapter();
-            }
-        }));
+        // disableAllScrolling();
 
         function checkIfRaphaelGlobal() {
             console.log("Galaxy :: Checking if Raphael is accessible");
