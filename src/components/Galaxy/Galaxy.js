@@ -1,6 +1,5 @@
 import debounce from 'throttle-debounce/debounce';
 import PropTypes from 'prop-types';
-import {Raphael} from 'react-raphael';
 import React from 'react';
 import throttle from 'throttle-debounce/throttle';
 import $ from 'jquery';
@@ -13,6 +12,8 @@ import './galaxy.scss';
 
 class GalaxyMapping {
     constructor(chapters) {
+        if (typeof Raphael === "undefined") return;
+
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight - 180;
         let canvasWidth = windowWidth * 3;
@@ -24,25 +25,21 @@ class GalaxyMapping {
                 x: windowWidth / 20,
                 y: windowHeight / 3,
                 attr: {"fill":"#7f7d7e"},
-                animate: Raphael.animation({r: 7}, 2305),
             },
             {
                 x: (windowWidth / 2) + (windowWidth / 4),
                 y: (windowHeight / 2) + (windowHeight / 5),
                 attr: {"fill":"#7f7d7e"},
-                animate: Raphael.animation({r: 7}, 2305),
             },
             {
                 x: windowWidth + (windowWidth / 3),
                 y: (windowHeight / 2) + (windowHeight / 8),
                 attr: {"fill":"#7f7d7e"},
-                animate: Raphael.animation({r: 7}, 2305),
             },
             {
                 x: windowWidth + (windowWidth / 1.2),
                 y: (windowHeight / 2) - (windowHeight / 4),
                 attr: {"fill":"#7f7d7e"},
-                animate: Raphael.animation({r: 7}, 2305),
             },
 
         ];
@@ -52,6 +49,10 @@ class GalaxyMapping {
             d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y}`,
             attr: {"stroke": "#7f7d7e", "stroke-width": 0.5},
         }]
+    }
+
+    addPaper(paper) {
+        this.paper = paper;
     }
 }
 
@@ -78,12 +79,12 @@ class Galaxy extends React.Component {
     constructor(props) {
         super(props);
 
-        this.prevChapter = this.prevChapter.bind(this);
-        this.nextChapter = this.nextChapter.bind(this);
-        this.galaxyMapping = new GalaxyMapping(this.props.chapters);
+        this._prevChapter = this._prevChapter.bind(this);
+        this._nextChapter = this._nextChapter.bind(this);
 
         this.state = {
             selectedChapterId: 0,
+            galaxyMapping: false,
         }
     }
 
@@ -93,10 +94,10 @@ class Galaxy extends React.Component {
 
         $("html").keydown(function(e) {
             if (e.keyCode == 37) { // left key
-                that.prevChapter();
+                that._prevChapter();
                 e.preventDefault();
             } else if (e.keyCode == 39) { // right key
-                that.nextChapter();
+                that._nextChapter();
                 e.preventDefault();
             }
         });
@@ -111,11 +112,24 @@ class Galaxy extends React.Component {
 
             console.log(delta);
             if (delta > deltaLimit) {
-                that.nextChapter();
+                that._nextChapter();
             } else if (delta < 0-deltaLimit) {
-                that.prevChapter();
+                that._prevChapter();
             }
         }));
+
+        function checkIfRaphaelGlobal() {
+            console.log("Galaxy :: Checking if Raphael is accessible");
+            if (typeof Raphael !== 'undefined') {
+                that.setState({
+                    galaxyMapping: new GalaxyMapping(that.props.chapters),
+                });
+            } else {
+                setTimeout(checkIfRaphaelGlobal, 1000);
+            }
+        }
+
+        setTimeout(checkIfRaphaelGlobal, 1000);
     }
 
     _scrollToChapter(chapterIndex) {
@@ -131,7 +145,7 @@ class Galaxy extends React.Component {
         $("html, body").animate(animateProps, 800);
     }
 
-    nextChapter() {
+    _nextChapter() {
         let newSelectedChapterId = this.state.selectedChapterId+1;
         if (newSelectedChapterId >= this.props.chapters.length) return;
 
@@ -141,7 +155,7 @@ class Galaxy extends React.Component {
         this._scrollToChapter(newSelectedChapterId)
     }
 
-    prevChapter() {
+    _prevChapter() {
         let newSelectedChapterId = this.state.selectedChapterId-1;
         if (newSelectedChapterId < 0) return;
 
@@ -151,18 +165,26 @@ class Galaxy extends React.Component {
         this._scrollToChapter(newSelectedChapterId)
     }
 
+    renderGalaxyMap() {
+        return (
+            <div id="galaxy">
+                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+            </div>
+        );
+    }
+
     render() {
         return (
             <section id="galaxy-container">
-                <GalaxyInfo />
-                <div id="galaxy">
-                    <GalaxyChapters chapters={this.props.chapters} drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
-                    <GalaxySvg drawing={this.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
-                    <div className="chapter-controls">
-                        <button onClick={this.prevChapter}>left</button>
-                        <button onClick={this.nextChapter}>right</button>
-                    </div>
+                <div id="chapter-controls">
+                    <button onClick={this._prevChapter}>left</button>
+                    <button onClick={this._nextChapter}>right</button>
                 </div>
+
+                <GalaxyInfo />
+
+                {this.state.galaxyMapping ? this.renderGalaxyMap() : ''}
             </section>
         );
     }

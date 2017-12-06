@@ -1,63 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GalaxyChapter from '../GalaxyChapter/GalaxyChapter';
 
 import './galaxy-chapters.scss';
-
-const STATUSES = ['coming', 'teaser', 'live', 'podcast'];
 
 class GalaxyChapters extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    renderStatusBasedContent(chapter) {
-        let status = STATUSES.includes(chapter.status) && chapter.status;
-
-        let content;
-        if (status === STATUSES[0]) {
-            // coming
-            content = (
-                <div>
-                    <span>Coming Soon</span>
-                    <br />
-                    <span>01.01.18</span>
-                    <br />
-                    <span>Live on NTS</span>
-                </div>
-            )
-        } else if (status === STATUSES[1]) {
-            // teaser
-            content = (
-                <div>
-                    <span>PLAY TEASER</span>
-                    <br />
-                    <span>Coming Soon</span>
-                    <br />
-                    <span>01.01.18</span>
-                    <br />
-                    <span>Live on NTS</span>
-                </div>
-            );
-        } else if (status === STATUSES[2]) {
-            // live
-            content = (
-                <div>
-                    <span>LISTEN LIVE</span>
-                </div>
-            );
-        } else if (status === STATUSES[3]) {
-            // podcast
-            content = (
-                <div>
-                    <span>LISTEN BACK</span>
-                </div>
-            );
-        }
-
-        return content;
+    shouldComponentUpdate(nextProps) {
+        return nextProps.selectedChapterId !== this.props.selectedChapterId
+            || nextProps.chapters !== this.props.chapters;
     }
 
     render() {
+        console.log("GalaxyChapters :: rendering");
 
         return (
             <div className={'galaxy-chapters'}>
@@ -80,7 +38,7 @@ class GalaxyChapters extends React.Component {
                                 {chapter.excerpt}
                             </p>
 
-                            {this.renderStatusBasedContent(chapter)}
+                            <GalaxyChapter status={chapter.status}/>
                         </div>
                     )
                 })}

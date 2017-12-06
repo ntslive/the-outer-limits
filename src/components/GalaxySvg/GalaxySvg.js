@@ -1,33 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Raphael,Paper,Set,Circle,Ellipse,Image,Rect,Text,Path,Line} from 'react-raphael';
+import {Circle, Path} from '../RaphaelComponents/RaphaelComponents';
 
 import './galaxy-svg.scss';
 
 class GalaxySvg extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.props.drawing.addPaper(Raphael(0, 0, this.props.drawing.width, this.props.drawing.height));
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.selectedChapterId !== nextProps.selectedChapterId;
+    }
+
     renderCircle(circle, index) {
-        let circleProps = circle;
+        let circleProps = {...circle};
+        const isSelected = index === this.props.selectedChapterId;
 
         if (index === this.props.selectedChapterId) {
             circleProps.attr.fill = "#ff0000";
+        } else {
+            circleProps.attr.fill = "#7f7d7e";
         }
 
         return (
-            <Circle key={index} {...circle} />
+            <Circle key={index} paper={this.props.drawing.paper} {...circleProps} isSelected={isSelected}/>
         )
     }
 
     render() {
-        return (
-            <Paper id="galaxy-svg" width={this.props.drawing.width} height={this.props.drawing.height}>
-                <Set>
-                    {this.props.drawing.circles.map(this.renderCircle.bind(this))}
+        console.log("GalaxySvg :: rendering");
 
-                    {this.props.drawing.paths.map( (path, index) => (
-                        <Path {...path} key={index}/>
-                    ))}
-                </Set>
-            </Paper>
+        return (
+            <div id="galaxy-svg">
+                {this.props.drawing.circles.map(this.renderCircle.bind(this))}
+
+                {this.props.drawing.paths.map( (path, index) => (
+                    <Path key={index} paper={this.props.drawing.paper} {...path} />
+                ))}
+            </div>
         )
     }
 };
