@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     pathPrefix: `/the-outer-limits`,
     siteMetadata: {
-        title: `Gatsby Default Starter`,
+        title: `Jenny Maya The Outer Limits | NTS`,
     },
     plugins: [
         `gatsby-plugin-react-next`,

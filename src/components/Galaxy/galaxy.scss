@@ -1,0 +1,25 @@
+@import '../../../sass/_settings.scss';
+
+#galaxy-container {
+    background-color: transparent;
+}
+
+#galaxy {
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: $galaxy-info-width;
+    right: 0;
+    z-index: 1;
+}
+svg {
+    position: absolute;
+    top: 0;  bottom: 0;
+    left: $galaxy-info-width !important;
+}
+
+#chapter-controls {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 20;
+}

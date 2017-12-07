@@ -20,6 +20,9 @@
         "no-unused-vars": 0, /* Allow unused variables. Good for leaving unused function parameters visible */
         "arrow-body-style": "off",
         "spaced-comment": "off",
-        "no-trailing-spaces": "off"
+        "no-trailing-spaces": "off",
+        "object-curly-spacing": "off",
+        "react/forbid-prop-types": "off",
+        "react/prefer-stateless-function": "off"
     }
 }
