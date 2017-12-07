@@ -1,3 +1,5 @@
+$galaxy-chapter-left-padding: 37px;
+
 .galaxy-chapters {
     position: absolute;
     top: 0; bottom: 0;
@@ -5,13 +7,40 @@
     z-index: 10;
 }
 
+.galaxy-chapter-container {
+    position: absolute;
+    width: calc(#{$galaxy-chapter-left-padding} + 350px);
+}
+.galaxy-chapter-container.selected {
+    color: white;
+
+    .galaxy-chapter__index__label {
+        display: inline;
+    }
+    .galaxy-chapter__name, .galaxy-chapter__action {
+        display: block;
+    }
+}
 .galaxy-chapter {
     position: absolute;
-    width: 350px;
+    top: 60px;
+    left: $galaxy-chapter-left-padding;
 }
-
-.galaxy-chapter.selected {
-    color: white;
+.galaxy-chapter__index {
+    font-size: 14px;
 }
-
-
+.galaxy-chapter__index__label {
+    display: none;
+}
+.galaxy-chapter__name {
+    display: none;
+    font-size: 32px;
+}
+.galaxy-chapter__action {
+    display: none;
+    margin-top: 13px;
+    font-size: 18px;
+}
+.galaxy-chapter__action__button {
+    font-size: 16px;
+}

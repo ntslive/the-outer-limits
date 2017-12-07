@@ -2,13 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Galaxy from "../Galaxy/Galaxy"
 
+import './galaxy-chapter-action.scss';
+
 const STATUSES = ['coming', 'teaser', 'live', 'podcast'];
 
-class GalaxyChapter extends React.PureComponent {
+class GalaxyChapterAction extends React.PureComponent {
+    renderPlayButton(text) {
+        return (
+            <div className="galaxy-chapter__action__button text-uppercase">{text}</div>
+        )
+    }
+
     renderPodcast() {
         return (
             <div>
-                <span>LISTEN BACK</span>
+                {this.renderPlayButton("LISTEN BACK")}
             </div>
         );
     }
@@ -16,7 +24,7 @@ class GalaxyChapter extends React.PureComponent {
     renderLive() {
         return (
             <div>
-                <span>LISTEN LIVE</span>
+                {this.renderPlayButton("LISTEN LIVE")}
             </div>
         )
     }
@@ -24,11 +32,10 @@ class GalaxyChapter extends React.PureComponent {
     renderTeaser() {
         return (
             <div>
-                <span>PLAY TEASER</span>
-                <br/>
+                {this.renderPlayButton("PLAY TEASER")}
                 <span>Coming Soon</span>
                 <br/>
-                <span>01.01.18</span>
+                <span>{this.props.chapter.broadcastDate}</span>
                 <br/>
                 <span>Live on NTS</span>
             </div>
@@ -37,10 +44,10 @@ class GalaxyChapter extends React.PureComponent {
 
     renderComing() {
         return (
-            <div>
+            <div >
                 <span>Coming Soon</span>
                 <br/>
-                <span>01.01.18</span>
+                <span>{this.props.chapter.broadcastDate}</span>
                 <br/>
                 <span>Live on NTS</span>
             </div>
@@ -48,14 +55,16 @@ class GalaxyChapter extends React.PureComponent {
     }
 
     render() {
+        const status = this.props.chapter.status;
         console.log("GalaxyChapter :: rendering");
-        if (this.props.status === STATUSES[0]) {
+
+        if (status === STATUSES[0]) {
             return this.renderComing();
-        } else if (this.props.status === STATUSES[1]) {
+        } else if (status === STATUSES[1]) {
             return this.renderTeaser();
-        } else if (this.props.status === STATUSES[2]) {
+        } else if (status === STATUSES[2]) {
             return this.renderLive();
-        } else if (this.props.status === STATUSES[3]) {
+        } else if (status === STATUSES[3]) {
             return this.renderPodcast();
         } else {
             return null;
@@ -63,8 +72,8 @@ class GalaxyChapter extends React.PureComponent {
     }
 }
 
-GalaxyChapter.propTypes = {
-    status: PropTypes.string.isRequired,
+GalaxyChapterAction.propTypes = {
+    chapter: PropTypes.object.isRequired,
 };
 
-export default GalaxyChapter;
+export default GalaxyChapterAction;

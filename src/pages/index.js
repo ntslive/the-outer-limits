@@ -32,6 +32,7 @@ export const pageQuery = graphql`
             name
             excerpt
             status
+            broadcastDate
           }
         }
       }
