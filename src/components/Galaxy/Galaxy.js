@@ -1,7 +1,5 @@
-import debounce from 'throttle-debounce/debounce';
 import PropTypes from 'prop-types';
 import React from 'react';
-import throttle from 'throttle-debounce/throttle';
 import $ from 'jquery';
 
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';

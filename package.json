@@ -17,9 +17,7 @@
     "compression": "^1.7.1",
     "helmet": "^3.8.2",
     "jquery": "^3.2.1",
-    "raphael": "^2.2.7",
-    "serve-static": "^1.13.1",
-    "throttle-debounce": "^1.0.1"
+    "serve-static": "^1.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

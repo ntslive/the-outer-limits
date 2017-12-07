@@ -15,7 +15,7 @@ const GalaxyInfo = () => (
         </div>
 
         <div className="galaxy-info__content">
-            <h1><span>Jeff Mills:</span> The Outer Limits</h1>
+            <h1><span>Jenny Maya:</span> The Outer Limits</h1>
             <h3>5 part radio series with original music production</h3>
         </div>
 

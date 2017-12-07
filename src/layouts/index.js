@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children, location }) => {
 
     return (
         <div>
-            <Helmet title="Jeff Mills The Outer Limits | NTS" >
+            <Helmet title="Jenny Maya The Outer Limits | NTS" >
                 <script type="text/javascript" src={raphaelPath} />
             </Helmet>
             {children()}
