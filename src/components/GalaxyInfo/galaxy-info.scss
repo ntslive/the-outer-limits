@@ -1,13 +1,58 @@
 @import '../../../sass/_settings.scss';
 
 #galaxy-info {
+    position: absolute;
+    top: 50%;  bottom: 0;
+    left: 0;
+    transform: translateY(-50%);
+
+    max-height: 600px;
+    height: 90%;
     width: 70%;
     max-width: $galaxy-info-width;
+    padding-left: 100px;
 
-    border: 1px solid white;
-    position: absolute;
-    top: 0;  bottom: 0;
-    left: 0;
-
+    //border: 1px solid white;
     z-index: 10;
+}
+
+.galaxy-info__header {
+
+}
+.galaxy-info__header__link {
+    display: block;
+
+    img {
+        height: 37px;
+        width: 37px;
+    }
+}
+.galaxy-info__header__text {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.galaxy-info__content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .title {
+        font-size: 48px;
+    }
+    .title__name {
+        display: block;
+        font-size: 32px;
+    }
+    .subtitle {
+        margin-top: 11px;
+        font-size: 16px;
+    }
+}
+
+.galaxy-info__footer {
+    position: absolute;
+    bottom: 0;
+
+    font-size: 16px;
 }
