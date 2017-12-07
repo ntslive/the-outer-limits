@@ -34,10 +34,13 @@ class GalaxyChapters extends React.Component {
                                     <span className="galaxy-chapter__index__label">Chapter </span>
                                     {chapterIndexText}
                                 </div>
-                                <div className="galaxy-chapter__name text-uppercase">{chapter.name}</div>
 
-                                <div className="galaxy-chapter__action">
-                                    <GalaxyChapterAction chapter={chapter}/>
+                                <div className="galaxy-chapter__content">
+                                    <div className="galaxy-chapter__content__name text-uppercase">{chapter.name}</div>
+
+                                    <div className="galaxy-chapter__content__action">
+                                        <GalaxyChapterAction chapter={chapter}/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

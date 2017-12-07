@@ -1,4 +1,7 @@
+@import '../../../sass/mixins/_mixins.scss';
+
 $galaxy-chapter-left-padding: 37px;
+$chapter-transition-speed: 0.4s;
 
 .galaxy-chapters {
     position: absolute;
@@ -17,30 +20,59 @@ $galaxy-chapter-left-padding: 37px;
     .galaxy-chapter__index__label {
         display: inline;
     }
-    .galaxy-chapter__name, .galaxy-chapter__action {
-        display: block;
+    .galaxy-chapter__content--alt {
+        visibility: visible;
+        padding-top: 0;
+        opacity: 1;
+        letter-spacing: normal;
+    }
+    .galaxy-chapter__content {
+        opacity: 1;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .galaxy-chapter__index__label {
+        margin-left: 0;
+        opacity: 1;
     }
 }
 .galaxy-chapter {
     position: absolute;
     top: 60px;
     left: $galaxy-chapter-left-padding;
+    overflow: hidden;
 }
 .galaxy-chapter__index {
     font-size: 14px;
+    overflow: hidden;
 }
 .galaxy-chapter__index__label {
-    display: none;
+    opacity: 0;
+    margin-left: -5em;
+    @include transition($chapter-transition-speed all ease-in-out);
 }
-.galaxy-chapter__name {
-    display: none;
+.galaxy-chapter__content--alt {
+    visibility: hidden;
+    padding-top: 30px;
+    opacity: 0;
+    letter-spacing: 2px;
+    @include transition($chapter-transition-speed all ease-in-out);
+}
+.galaxy-chapter__content {
+    //overflow: hidden;
+    opacity: 0;
+    margin-left: calc(0px - (37px + 350px));
+    margin-right: calc(37px + 350px);
+    @include transition($chapter-transition-speed all ease-in-out);
+}
+
+.galaxy-chapter__content__name {
     font-size: 32px;
 }
-.galaxy-chapter__action {
-    display: none;
+.galaxy-chapter__content__action {
     margin-top: 13px;
     font-size: 18px;
 }
-.galaxy-chapter__action__button {
+.galaxy-chapter__content__action__button {
     font-size: 16px;
 }

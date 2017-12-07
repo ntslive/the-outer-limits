@@ -9,7 +9,7 @@ const STATUSES = ['coming', 'teaser', 'live', 'podcast'];
 class GalaxyChapterAction extends React.PureComponent {
     renderPlayButton(text) {
         return (
-            <div className="galaxy-chapter__action__button text-uppercase">{text}</div>
+            <div className="galaxy-chapter__content__action__button text-uppercase">{text}</div>
         )
     }
 
