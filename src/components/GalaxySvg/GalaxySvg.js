@@ -17,16 +17,9 @@ class GalaxySvg extends React.Component {
 
     renderCircle(circle, index) {
         let circleProps = {...circle};
-        const isSelected = index === this.props.selectedChapterId;
-
-        if (index === this.props.selectedChapterId) {
-            circleProps.attr.fill = "#ff0000";
-        } else {
-            circleProps.attr.fill = "#7f7d7e";
-        }
 
         return (
-            <Circle key={index} paper={this.props.drawing.paper} {...circleProps} isSelected={isSelected}/>
+            <Circle key={index} paper={this.props.drawing.paper} isSelected={index === this.props.selectedChapterId} {...circleProps} />
         )
     }
 
