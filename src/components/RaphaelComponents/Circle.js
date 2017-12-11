@@ -16,6 +16,7 @@ class Circle extends React.Component {
             !!this.circleRingTwo && this.circleRingTwo.remove();
             !!this.circleRingThree && this.circleRingThree.remove();
             !!this.circleRingFour && this.circleRingFour.remove();
+            !!this.glow && this.glow.remove();
         }
 
         let customAttrs = this.props.attr;
@@ -24,6 +25,9 @@ class Circle extends React.Component {
         this.circle = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs);
 
         if (this.props.isSelected) {
+            this.glow = this.circle.glow({width: 100,color: '#ff0000'})
+            // this.circle.node.setAttribute("class", 'glow-circle');
+
             this.circleRingOne = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs)
                 .attr({
                     "fill": "none",

@@ -17,6 +17,10 @@
     opacity: 1;
 }
 
+.glow-circle {
+    animation: glowSelected 1.2s infinite;
+}
+
 @-webkit-keyframes pulsate {
     0% {
         opacity: 1;
@@ -30,4 +34,18 @@
         transform: scale(9);
         //transform: scale(6, 9) rotate(572deg);
     }
+}
+
+@keyframes glowSelected {
+    0% { box-shadow: 0 0 -10px #ff0000; }
+    40% { box-shadow: 0 0 20px #ff0000; }
+    60% { box-shadow: 0 0 20px #ff0000; }
+    100% { box-shadow: 0 0 -10px #ff0000; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 -10px #7f7d7e; }
+    40% { box-shadow: 0 0 20px #7f7d7e; }
+    60% { box-shadow: 0 0 20px #7f7d7e; }
+    100% { box-shadow: 0 0 -10px #7f7d7e; }
 }
