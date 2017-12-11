@@ -19,7 +19,7 @@ const GalaxyInfo = () => (
         </div>
 
         <div className="galaxy-info__content">
-            <h1 className="title text-uppercase"><span className="title__name">Jenny Maya:</span>The Outer Limits</h1>
+            <h1 className="title text-uppercase leading-font"><span className="title__name">Jenny Maya:</span>The Outer Limits</h1>
             <h3 className="subtitle">5 part radio series with original music production</h3>
         </div>
 

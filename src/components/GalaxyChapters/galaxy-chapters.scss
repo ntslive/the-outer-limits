@@ -30,6 +30,7 @@ $chapter-transition-speed: 0.4s;
         opacity: 1;
         margin-left: 0;
         margin-right: 0;
+        transform: translateX(0);
     }
     .galaxy-chapter__index__label {
         margin-left: 0;
@@ -59,10 +60,8 @@ $chapter-transition-speed: 0.4s;
     @include transition($chapter-transition-speed all ease-in-out);
 }
 .galaxy-chapter__content {
-    //overflow: hidden;
     opacity: 0;
-    margin-left: calc(0px - (37px + 350px));
-    margin-right: calc(37px + 350px);
+    transform: translateX(-100%);
     @include transition($chapter-transition-speed all ease-in-out);
 }
 
