@@ -1,65 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Galaxy from "../Galaxy/Galaxy"
+import Button from "../Button/index.js";
 
 import './galaxy-chapter-action.scss';
 
 const STATUSES = ['coming', 'teaser', 'live', 'podcastComing', 'podcast'];
 
 class GalaxyChapterAction extends React.PureComponent {
-    renderPlayButton(text) {
-        return (
-            <div className="galaxy-chapter__content__action__button text-uppercase">{text}</div>
-        )
-    }
-
     renderPodcast() {
         return (
-            <div>
-                {this.renderPlayButton("LISTEN BACK")}
+            <div className={this.props.className}>
+                <Button text={"listen back"}></Button>
             </div>
         );
     }
 
     renderPodcastComing() {
         return (
-            <div>
-                {this.renderPlayButton("PLAY TEASER")}
-                <span>Podcast Coming Tomorrow</span>
+            <div className={this.props.className}>
+                <Button text={"Play Teaser"}></Button>
+
+                <div className="galaxy-chapter__content__action_subtext">
+                    <span>Available Tomorrow</span>
+                </div>
             </div>
         );
     }
 
     renderLive() {
         return (
-            <div>
-                {this.renderPlayButton("LISTEN LIVE")}
+            <div className={this.props.className}>
+                <Button text={"live now"}></Button>
             </div>
         )
     }
 
     renderTeaser() {
         return (
-            <div>
-                {this.renderPlayButton("PLAY TEASER")}
+            <div className={this.props.className}>
+                <Button text={"Play Teaser"}></Button>
 
-                <span>{this.props.chapter.broadcastDate}</span>
-                <br/>
-                <span>Broadcasting Live</span>
-                <br/>
-                <span>{this.props.chapter.broadcastTime + ' GMT'}</span>
+                <div className="galaxy-chapter__content__action_subtext">
+                    <span>{this.props.chapter.broadcastDate}</span>
+                    <br/>
+                    <span>Broadcasting Live</span>
+                    <br/>
+                    <span>{this.props.chapter.broadcastTime + ' GMT'}</span>
+                </div>
             </div>
         );
     }
 
     renderComing() {
         return (
-            <div >
-                <span>Coming Soon</span>
-                <br/>
-                <span>{this.props.chapter.broadcastDate}</span>
-                <br/>
-                <span>Live on NTS</span>
+            <div className={this.props.className}>
+                <Button text={"Play Teaser"}></Button>
+
+                <div className="galaxy-chapter__content__action_subtext">
+                    <span>Coming Soon</span>
+                    <br/>
+                    <span>{this.props.chapter.broadcastDate}</span>
+                </div>
             </div>
         )
     }

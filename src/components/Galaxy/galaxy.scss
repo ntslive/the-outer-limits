@@ -17,9 +17,14 @@ svg {
     left: $galaxy-info-width !important;
 }
 
-#chapter-controls {
+#galaxy-footer-scroll {
+    position: absolute;
+    bottom: 43px;
+    left: 100px;
+}
+#galaxy-footer-chapter-controls {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
+    right: 50px;
+    bottom: 43px;
     z-index: 20;
 }

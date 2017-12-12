@@ -41,6 +41,8 @@ $chapter-transition-speed: 0.4s;
     position: absolute;
     top: 60px;
     left: $galaxy-chapter-left-padding;
+    width: 100%;
+
     overflow: hidden;
 }
 .galaxy-chapter__index {
@@ -72,6 +74,9 @@ $chapter-transition-speed: 0.4s;
     margin-top: 13px;
     font-size: 18px;
 }
-.galaxy-chapter__content__action__button {
-    font-size: 16px;
+.galaxy-chapter__content__action_subtext {
+    margin-top: 14px;
+    opacity: 0.8;
+    line-height: 1.3em;
 }
+

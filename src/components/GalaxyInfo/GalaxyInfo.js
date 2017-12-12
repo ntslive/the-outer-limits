@@ -23,11 +23,10 @@ const GalaxyInfo = () => (
             <h3 className="subtitle">5 part radio series with original music production</h3>
         </div>
 
-        <div className="galaxy-info__footer">
+        <div className="galaxy-info__footer text-justify text-uppercase">
+            <div className="leading-font" style={{fontSize: '28px', marginTop: '13px', 'letter-spacing': '4px'}}>01.01.18</div>
             <div>Next broadcast</div>
-            <div>on NTS</div>
-            <div style={{fontSize: '28px', marginTop: '13px'}}>01.01.18</div>
-            <div style={{fontSize: '12px'}}>TIME 13:00</div>
+            <div>on NTS / 13:00</div>
         </div>
     </div>
 );

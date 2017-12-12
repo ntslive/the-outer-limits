@@ -167,7 +167,12 @@ class Galaxy extends React.Component {
     render() {
         return (
             <section id="galaxy-container">
-                <div id="chapter-controls">
+                <div id="galaxy-footer-scroll" style={{fontSize: '16px'}}>
+                    <span>SCROLL</span>
+                    <span>--></span>
+                </div>
+
+                <div id="galaxy-footer-chapter-controls">
                     <button onClick={this._prevChapter}>left</button>
                     <button onClick={this._nextChapter}>right</button>
                 </div>
