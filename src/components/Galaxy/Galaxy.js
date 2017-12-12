@@ -21,31 +21,29 @@ class GalaxyMapping {
             {
                 x: windowWidth / 20,
                 y: windowHeight / 3,
-                attr: {"fill":"#7f7d7e"},
             },
             {
                 x: (windowWidth / 2) + (windowWidth / 4),
                 y: (windowHeight / 2) + (windowHeight / 5),
-                attr: {"fill":"#7f7d7e"},
             },
             {
                 x: windowWidth + (windowWidth / 3),
                 y: (windowHeight / 2) + (windowHeight / 8),
-                attr: {"fill":"#7f7d7e"},
             },
             {
-                x: windowWidth + (windowWidth / 1.2),
+                x: windowWidth + (windowWidth / 1.5),
                 y: (windowHeight / 2) - (windowHeight / 4),
-                attr: {"fill":"#7f7d7e"},
             },
-
+            {
+                x: windowWidth + windowWidth + 100,
+                y: (windowHeight / 2) - (windowHeight / 3),
+            },
         ];
         this.circles = circles;
 
         this.paths = [{
-            d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y}`,
-            attr: {"stroke": "#7f7d7e", "stroke-width": 0.5},
-        }]
+            d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y} L${circles[4].x},${circles[4].y}`,
+        }];
     }
 
     addPaper(paper) {
@@ -150,10 +148,18 @@ class Galaxy extends React.Component {
     }
 
     renderGalaxyMap() {
+        let liveChapterIndex = -1;
+        for (let i=0; i<this.props.chapters.length; i++) {
+            if (this.props.chapters[i].status === "live") {
+                liveChapterIndex = i;
+                break;
+            }
+        }
+
         return (
             <div id="galaxy">
                 <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
-                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} liveChapterId={liveChapterIndex}/>
             </div>
         );
     }

@@ -12,14 +12,16 @@ class GalaxySvg extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return this.props.selectedChapterId !== nextProps.selectedChapterId;
+        return this.props.selectedChapterId !== nextProps.selectedChapterId
+            || this.props.liveChapterId !== nextProps.liveChapterId;
     }
 
     renderCircle(circle, index) {
-        let circleProps = {...circle};
-
         return (
-            <Circle key={index} paper={this.props.drawing.paper} isSelected={index === this.props.selectedChapterId} {...circleProps} />
+            <Circle key={index} paper={this.props.drawing.paper}
+                    x={circle.x} y={circle.y}
+                    isSelected={index === this.props.selectedChapterId}
+                    isLive={index === this.props.liveChapterId} />
         )
     }
 
@@ -28,11 +30,11 @@ class GalaxySvg extends React.Component {
 
         return (
             <div id="galaxy-svg">
-                {this.props.drawing.circles.map(this.renderCircle.bind(this))}
-
                 {this.props.drawing.paths.map( (path, index) => (
-                    <Path key={index} paper={this.props.drawing.paper} {...path} />
+                    <Path key={index} paper={this.props.drawing.paper} d={path.d} />
                 ))}
+
+                {this.props.drawing.circles.map(this.renderCircle.bind(this))}
             </div>
         )
     }
@@ -41,6 +43,7 @@ class GalaxySvg extends React.Component {
 GalaxySvg.propTypes = {
     drawing: PropTypes.object.isRequired,
     selectedChapterId: PropTypes.number.isRequired,
+    liveChapterId: PropTypes.number.isRequired,
 };
 
 export default GalaxySvg;

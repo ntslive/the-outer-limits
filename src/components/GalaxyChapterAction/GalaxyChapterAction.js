@@ -4,7 +4,7 @@ import Galaxy from "../Galaxy/Galaxy"
 
 import './galaxy-chapter-action.scss';
 
-const STATUSES = ['coming', 'teaser', 'live', 'podcast'];
+const STATUSES = ['coming', 'teaser', 'live', 'podcastComing', 'podcast'];
 
 class GalaxyChapterAction extends React.PureComponent {
     renderPlayButton(text) {
@@ -21,6 +21,15 @@ class GalaxyChapterAction extends React.PureComponent {
         );
     }
 
+    renderPodcastComing() {
+        return (
+            <div>
+                {this.renderPlayButton("PLAY TEASER")}
+                <span>Podcast Coming Tomorrow</span>
+            </div>
+        );
+    }
+
     renderLive() {
         return (
             <div>
@@ -33,11 +42,12 @@ class GalaxyChapterAction extends React.PureComponent {
         return (
             <div>
                 {this.renderPlayButton("PLAY TEASER")}
-                <span>Coming Soon</span>
-                <br/>
+
                 <span>{this.props.chapter.broadcastDate}</span>
                 <br/>
-                <span>Live on NTS</span>
+                <span>Broadcasting Live</span>
+                <br/>
+                <span>{this.props.chapter.broadcastTime + ' GMT'}</span>
             </div>
         );
     }
@@ -65,6 +75,8 @@ class GalaxyChapterAction extends React.PureComponent {
         } else if (status === STATUSES[2]) {
             return this.renderLive();
         } else if (status === STATUSES[3]) {
+            return this.renderPodcastComing();
+        } else if (status === STATUSES[4]) {
             return this.renderPodcast();
         } else {
             return null;

@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Circle extends React.Component {
     shouldComponentUpdate(nextProps) {
-        return nextProps.isSelected !== this.props.isSelected;
+        return nextProps.isSelected !== this.props.isSelected
+            || nextProps.isLive !== this.props.isLive;
     }
 
     _renderCircle() {
@@ -12,11 +13,7 @@ class Circle extends React.Component {
         const colourGrey = "#7f7d7e";
         const x = this.props.x;
         const y = this.props.y;
-        const radius = this.props.r;
-        let customAttributes = {
-            ...this.props.attr,
-            fill: this.props.isSelected ? colourRed : colourGrey,
-        };
+        const radius = 7;
 
         if (!!this.circle) {
             this.circle.remove();
@@ -27,27 +24,36 @@ class Circle extends React.Component {
             !!this.glow && this.glow.remove();
         }
 
-        this.circle = this.props.paper.circle(x, y, radius).attr(customAttributes);
+        let circleColour = colourGrey;
+        if (this.props.isLive) {
+            circleColour = colourRed;
+        }
+
+        let circleAttributes = {
+            fill: circleColour,
+        };
+
+        this.circle = this.props.paper.circle(x, y, radius).attr(circleAttributes);
 
         if (this.props.isSelected) {
             this.glow = this.circle.glow({
                 width: 100,
-                color: colourRed,
+                color: circleColour,
             });
 
             // Draw animated circles around dot.
             for(let i=0; i<4; i++) {
                 let circlePropName = `circleRing${i + 1}`;
-                this[circlePropName] = this.props.paper.circle(this.props.x, this.props.y, this.props.r)
-                    .attr(customAttributes)
+                this[circlePropName] = this.props.paper.circle(x, y, radius)
+                    .attr(circleAttributes)
                     .attr({
                         "fill": "none",
-                        "stroke": colourRed,
+                        "stroke": circleColour,
                         "stroke-width": lineWidth,
                     });
                 this[circlePropName].node.setAttribute("class", 'pulse-circle');
                 this[circlePropName].node.setAttribute("style", `
-                    transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};
+                    transform-origin: ${x}px ${y}px;
                     animation-delay: ${i}s;
                 ;`);
             }
@@ -66,19 +72,8 @@ Circle.propTypes = {
     paper: PropTypes.object.isRequired,
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
-    r: PropTypes.number,
-    attr: PropTypes.object,
-    animate: PropTypes.object,
     isSelected: PropTypes.bool.isRequired,
-};
-
-Circle.defaultProps = {
-    attr: {
-        "stroke": "#7f7d7e",
-        "stroke-width": 0.5,
-        "fill": "#7f7d7e",
-    },
-    r: 7,
+    isLive: PropTypes.bool.isRequired,
 };
 
 export default Circle;

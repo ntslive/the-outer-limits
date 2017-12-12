@@ -2,34 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Path extends React.Component {
-    constructor(props) {
-        super(props);
-        this.path = props.paper.path(props.d).attr(props.attr);
+    shouldComponentUpdate(nextProps) {
+        return nextProps.d !== this.props.d;
     }
 
-    shouldComponentUpdate(nextProps) {
-        return nextProps.d !== this.props.d
-            || nextProps.attr !== this.props.attr;
+    _renderPath() {
+        const pathAttributes = {
+            "stroke": "#7f7d7e",
+            "stroke-width": 0.5,
+        }
+
+        this.path = this.props.paper
+            .path(this.props.d)
+            .attr(pathAttributes);
+
+        return null;
     }
 
     render() {
         console.log("Path :: rendering");
-        return null;
+        return this._renderPath();
     }
 }
 
 Path.propTypes = {
     paper: PropTypes.object.isRequired,
     d: PropTypes.string.isRequired,
-    attr: PropTypes.object,
-    animate: PropTypes.object,
-};
-
-Path.defaultProps = {
-    attr: {
-        "stroke": "#7f7d7e",
-        "stroke-width": 0.5,
-    },
 };
 
 export default Path;
