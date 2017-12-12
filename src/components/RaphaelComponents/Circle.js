@@ -8,70 +8,49 @@ class Circle extends React.Component {
 
     _renderCircle() {
         const lineWidth = 0.4;
-        const colourRed = "#ff0000"
+        const colourRed = "#ff0000";
+        const colourGrey = "#7f7d7e";
+        const x = this.props.x;
+        const y = this.props.y;
+        const radius = this.props.r;
+        let customAttributes = {
+            ...this.props.attr,
+            fill: this.props.isSelected ? colourRed : colourGrey,
+        };
 
         if (!!this.circle) {
             this.circle.remove();
-            !!this.circleRingOne && this.circleRingOne.remove();
-            !!this.circleRingTwo && this.circleRingTwo.remove();
-            !!this.circleRingThree && this.circleRingThree.remove();
-            !!this.circleRingFour && this.circleRingFour.remove();
+            !!this.circleRing1 && this.circleRing1.remove();
+            !!this.circleRing2 && this.circleRing2.remove();
+            !!this.circleRing3 && this.circleRing3.remove();
+            !!this.circleRing4 && this.circleRing4.remove();
             !!this.glow && this.glow.remove();
         }
 
-        let customAttrs = this.props.attr;
-        customAttrs.fill = this.props.isSelected ? colourRed : "#7f7d7e";
-
-        this.circle = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs);
+        this.circle = this.props.paper.circle(x, y, radius).attr(customAttributes);
 
         if (this.props.isSelected) {
-            this.glow = this.circle.glow({width: 100,color: '#ff0000'})
-            // this.circle.node.setAttribute("class", 'glow-circle');
+            this.glow = this.circle.glow({
+                width: 100,
+                color: colourRed,
+            });
 
-            this.circleRingOne = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs)
-                .attr({
-                    "fill": "none",
-                    "stroke": colourRed,
-                    "stroke-width": lineWidth,
-                });
-            this.circleRingOne.node.setAttribute("class", 'pulse-circle');
-            this.circleRingOne.node.setAttribute("style", `transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};`); // force CSS to recognise center point of SVG.
-
-            this.circleRingTwo = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs)
-                .attr({
-                    "fill": "none",
-                    "stroke": colourRed,
-                    "stroke-width": lineWidth,
-                });
-            this.circleRingTwo.node.setAttribute("class", 'pulse-circle');
-            this.circleRingTwo.node.setAttribute("style", `
-                transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};
-                animation-delay: 1s;
-            ;`); // force CSS to recognise center point of SVG.
-
-            this.circleRingThree = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs)
-                .attr({
-                    "fill": "none",
-                    "stroke": colourRed,
-                    "stroke-width": lineWidth,
-                });
-            this.circleRingThree.node.setAttribute("class", 'pulse-circle');
-            this.circleRingThree.node.setAttribute("style", `
-                transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};
-                animation-delay: 2s;
-            ;`); // force CSS to recognise center point of SVG.
-
-            this.circleRingFour = this.props.paper.circle(this.props.x, this.props.y, this.props.r).attr(customAttrs)
-                .attr({
-                    "fill": "none",
-                    "stroke": colourRed,
-                    "stroke-width": lineWidth,
-                });
-            this.circleRingFour.node.setAttribute("class", 'pulse-circle');
-            this.circleRingFour.node.setAttribute("style", `
-                transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};
-                animation-delay: 3s;
-            ;`); // force CSS to recognise center point of SVG.
+            // Draw animated circles around dot.
+            for(let i=0; i<4; i++) {
+                let circlePropName = `circleRing${i + 1}`;
+                this[circlePropName] = this.props.paper.circle(this.props.x, this.props.y, this.props.r)
+                    .attr(customAttributes)
+                    .attr({
+                        "fill": "none",
+                        "stroke": colourRed,
+                        "stroke-width": lineWidth,
+                    });
+                this[circlePropName].node.setAttribute("class", 'pulse-circle');
+                this[circlePropName].node.setAttribute("style", `
+                    transform-origin: ${this.props.x + 'px'} ${this.props.y + 'px'};
+                    animation-delay: ${i}s;
+                ;`);
+            }
         }
 
         return null;
@@ -95,9 +74,9 @@ Circle.propTypes = {
 
 Circle.defaultProps = {
     attr: {
-        stroke: "#7f7d7e",
+        "stroke": "#7f7d7e",
         "stroke-width": 0.5,
-        fill: "#7f7d7e",
+        "fill": "#7f7d7e",
     },
     r: 7,
 };
