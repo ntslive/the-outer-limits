@@ -9,8 +9,8 @@ class Circle extends React.Component {
 
     _renderCircle() {
         const lineWidth = 0.4;
-        const colourRed = "#ff0000";
-        const colourGrey = "#7f7d7e";
+        const colourLive = "#ff0000";
+        const colourDefault = "#FFFFFF";
         const x = this.props.x;
         const y = this.props.y;
         const radius = 7;
@@ -24,9 +24,9 @@ class Circle extends React.Component {
             !!this.glow && this.glow.remove();
         }
 
-        let circleColour = colourGrey;
+        let circleColour = colourDefault;
         if (this.props.isLive) {
-            circleColour = colourRed;
+            circleColour = colourLive;
         }
 
         let circleAttributes = {
@@ -50,6 +50,8 @@ class Circle extends React.Component {
                         "fill": "none",
                         "stroke": circleColour,
                         "stroke-width": lineWidth,
+                        'fill-opacity': 0.9,
+                        'stroke-opacity': 0.9,
                     });
                 this[circlePropName].node.setAttribute("class", 'pulse-circle');
                 this[circlePropName].node.setAttribute("style", `

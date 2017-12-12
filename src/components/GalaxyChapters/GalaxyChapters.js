@@ -4,6 +4,19 @@ import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
 
 import './galaxy-chapters.scss';
 
+function convertToRomanNumeral(number) {
+    let roman =  {"M" :1000, "CM":900, "D":500, "CD":400, "C":100, "XC":90, "L":50, "XL":40, "X":10, "IX":9, "V":5, "IV":4, "I":1};
+    let str = "";
+
+    for (let i of Object.keys(roman) ) {
+        let q = Math.floor(number / roman[i]);
+        number -= q * roman[i];
+        str += i.repeat(q);
+    }
+
+    return str;
+}
+
 class GalaxyChapters extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +37,7 @@ class GalaxyChapters extends React.Component {
                     if (!mapping) return;
 
                     const classIfSelected = this.props.selectedChapterId === chapter.id ? 'selected' : '';
-                    const chapterIndexText = Array(i+2).join('I');
+                    const chapterIndexText = convertToRomanNumeral(i+1);
 
                     return (
                         <div key={i} className={`galaxy-chapter-container ${classIfSelected}`}
