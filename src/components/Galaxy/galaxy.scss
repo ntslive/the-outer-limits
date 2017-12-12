@@ -11,7 +11,7 @@
     right: 0;
     z-index: 1;
 }
-svg {
+#galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
     left: $galaxy-info-width !important;
@@ -21,10 +21,20 @@ svg {
     position: absolute;
     bottom: 43px;
     left: 100px;
+    z-index: 10;
 }
 #galaxy-footer-chapter-controls {
     position: fixed;
     right: 50px;
-    bottom: 43px;
+    bottom: 19px;
     z-index: 20;
+}
+
+.chapter-control-button {
+    display: inline-block;
+    margin: 0 6px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
 }

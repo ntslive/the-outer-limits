@@ -9,6 +9,7 @@ class GalaxySvg extends React.Component {
         super(props);
 
         this.props.drawing.addPaper(Raphael(0, 0, this.props.drawing.width, this.props.drawing.height));
+        this.props.drawing.paper.canvas.setAttribute("id", "galaxy-svg");
     }
 
     shouldComponentUpdate(nextProps, nextState) {

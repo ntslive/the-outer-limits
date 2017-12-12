@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './button.scss';
+import './_button.scss';
 
 const Button = props => (
-    <div className={`button text-uppercase ${props.className}`}>
+    <div className={`button ${props.alternate ? 'button--alt' : ''} text-uppercase ${props.className} `} onClick={props.onClick}>
         <div className="button__circle">
             <span className="button__circle__icon">+</span>
         </div>
@@ -17,5 +17,10 @@ const Button = props => (
         )}
     </div>
 );
+
+Button.defaultProps = {
+    className: "",
+    alternate: false,
+};
 
 export default Button;

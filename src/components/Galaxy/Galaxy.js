@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import $ from 'jquery';
 
+import Icon from '../icon';
+
+import LongArrow from '../icon/long-arrow.icon';
+import Button from '../Button/index';
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
@@ -168,13 +172,13 @@ class Galaxy extends React.Component {
         return (
             <section id="galaxy-container">
                 <div id="galaxy-footer-scroll" style={{fontSize: '16px'}}>
-                    <span>SCROLL</span>
-                    <span>--></span>
+                    <span style={{marginRight: '31px'}}>SCROLL</span>
+                    <Icon icon={LongArrow} className="icon-long-arrow" fill={'white'} />
                 </div>
 
                 <div id="galaxy-footer-chapter-controls">
-                    <button onClick={this._prevChapter}>left</button>
-                    <button onClick={this._nextChapter}>right</button>
+                    <Button className="chapter-control-button" onClick={this._prevChapter} alternate/>
+                    <Button className="chapter-control-button" onClick={this._nextChapter} alternate/>
                 </div>
 
                 <GalaxyInfo />
