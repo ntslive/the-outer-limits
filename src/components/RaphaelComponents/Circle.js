@@ -17,18 +17,17 @@ class Circle extends React.Component {
 
         if (!!this.circle) {
             this.circle.remove();
-            !!this.circleRing1 && this.circleRing1.remove();
-            !!this.circleRing2 && this.circleRing2.remove();
-            !!this.circleRing3 && this.circleRing3.remove();
-            !!this.circleRing4 && this.circleRing4.remove();
-            !!this.glow && this.glow.remove();
+
+            if (this.circleRings) {
+                for (let i=0; i < this.circleRings.length; i++) {
+                    this.circleRings[i].remove();
+                };
+
+                !!this.glow && this.glow.remove();
+            }
         }
 
-        let circleColour = colourDefault;
-        if (this.props.isLive) {
-            circleColour = colourLive;
-        }
-
+        let circleColour = this.props.isLive ? colourLive : colourDefault;
         let circleAttributes = {
             fill: circleColour,
         };
@@ -41,10 +40,12 @@ class Circle extends React.Component {
                 color: circleColour,
             });
 
+            this.circleRings = [];
+            let numberOfRings = this.props.isLive ? 7 : 3;
+
             // Draw animated circles around dot.
-            for(let i=0; i<4; i++) {
-                let circlePropName = `circleRing${i + 1}`;
-                this[circlePropName] = this.props.paper.circle(x, y, radius)
+            for(let i=0; i<numberOfRings; i++) {
+                let circleRing = this.props.paper.circle(x, y, radius)
                     .attr(circleAttributes)
                     .attr({
                         "fill": "none",
@@ -53,11 +54,16 @@ class Circle extends React.Component {
                         'fill-opacity': 0.9,
                         'stroke-opacity': 0.9,
                     });
-                this[circlePropName].node.setAttribute("class", 'pulse-circle');
-                this[circlePropName].node.setAttribute("style", `
+                circleRing.node.setAttribute("class", 'pulse-circle');
+
+                const animationDelay = 4 / numberOfRings;
+                circleRing.node.setAttribute("style", `
                     transform-origin: ${x}px ${y}px;
-                    animation-delay: ${i}s;
+                    animation: pulsate ${4}s infinite ease-out;
+                    animation-delay: ${animationDelay*i}s;
                 ;`);
+
+                this.circleRings.push(circleRing);
             }
         }
 

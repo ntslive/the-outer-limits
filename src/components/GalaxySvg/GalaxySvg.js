@@ -22,7 +22,7 @@ class GalaxySvg extends React.Component {
             <Circle key={index} paper={this.props.drawing.paper}
                     x={circle.x} y={circle.y}
                     isSelected={index === this.props.selectedChapterId}
-                    isLive={index === this.props.liveChapterId} />
+                    isLive={index === this.props.liveChapterId}/>
         )
     }
 
