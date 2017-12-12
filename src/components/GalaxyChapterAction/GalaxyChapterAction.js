@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Galaxy from "../Galaxy/Galaxy"
 import Button from "../Button/index.js";
+import PlayIcon from "../icon/play.icon";
 
 import './galaxy-chapter-action.scss';
 
@@ -11,7 +12,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderPodcast() {
         return (
             <div className={this.props.className}>
-                <Button text={"listen back"}></Button>
+                <Button text={"listen back"} icon={PlayIcon}></Button>
             </div>
         );
     }
@@ -19,7 +20,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderPodcastComing() {
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"}></Button>
+                <Button text={"Play Teaser"} icon={PlayIcon}></Button>
 
                 <div className="galaxy-chapter__content__action_subtext">
                     <span>Available Tomorrow</span>
@@ -31,7 +32,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderLive() {
         return (
             <div className={this.props.className}>
-                <Button text={"live now"}></Button>
+                <Button text={"live now"} icon={PlayIcon}></Button>
             </div>
         )
     }
@@ -39,7 +40,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderTeaser() {
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"}></Button>
+                <Button text={"Play Teaser"} icon={PlayIcon}></Button>
 
                 <div className="galaxy-chapter__content__action_subtext">
                     <span>{this.props.chapter.broadcastDate}</span>
@@ -55,7 +56,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderComing() {
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"}></Button>
+                <Button text={"Play Teaser"} icon={PlayIcon}></Button>
 
                 <div className="galaxy-chapter__content__action_subtext">
                     <span>Coming Soon</span>

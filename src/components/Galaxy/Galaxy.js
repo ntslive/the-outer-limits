@@ -3,8 +3,10 @@ import React from 'react';
 import $ from 'jquery';
 
 import Icon from '../icon';
-
 import LongArrow from '../icon/long-arrow.icon';
+import ShortLeftArrow from '../icon/short-left-arrow.icon';
+import ShortRightArrow from '../icon/short-right-arrow.icon';
+
 import Button from '../Button/index';
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
@@ -177,8 +179,8 @@ class Galaxy extends React.Component {
                 </div>
 
                 <div id="galaxy-footer-chapter-controls">
-                    <Button className="chapter-control-button" onClick={this._prevChapter} alternate/>
-                    <Button className="chapter-control-button" onClick={this._nextChapter} alternate/>
+                    <Button className="chapter-control-button" icon={ShortLeftArrow} onClick={this._prevChapter} alternate/>
+                    <Button className="chapter-control-button" icon={ShortRightArrow} onClick={this._nextChapter} alternate/>
                 </div>
 
                 <GalaxyInfo />
