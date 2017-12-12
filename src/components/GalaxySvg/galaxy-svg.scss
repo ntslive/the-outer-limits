@@ -35,3 +35,13 @@
         //transform: scale(6, 9) rotate(572deg);
     }
 }
+
+.draw-path {
+    animation: remove-offset 3.5s ease-in forwards;
+}
+
+@keyframes remove-offset {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

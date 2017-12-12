@@ -7,6 +7,8 @@ class Path extends React.Component {
     }
 
     _renderPath() {
+        !!this.path && this.path.remove();
+
         const pathAttributes = {
             "stroke": "#7f7d7e",
             "stroke-width": 0.5,
@@ -15,6 +17,15 @@ class Path extends React.Component {
         this.path = this.props.paper
             .path(this.props.d)
             .attr(pathAttributes);
+
+        const pathLength = this.path.getTotalLength();
+
+        this.path.node.setAttribute("style", `
+            stroke-dasharray: ${pathLength};
+            stroke-dashoffset: ${pathLength};
+            animation-delay: 0s;
+        ;`);
+        this.path.node.setAttribute("class", 'draw-path');
 
         return null;
     }
