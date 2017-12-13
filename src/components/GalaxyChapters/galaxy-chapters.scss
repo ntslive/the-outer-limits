@@ -39,7 +39,7 @@ $chapter-transition-speed: 0.4s;
 }
 .galaxy-chapter {
     position: absolute;
-    top: 60px;
+    top: 11px;
     left: $galaxy-chapter-left-padding;
     width: 100%;
 
@@ -72,11 +72,9 @@ $chapter-transition-speed: 0.4s;
 }
 .galaxy-chapter__content__action {
     margin-top: 13px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .galaxy-chapter__content__action_subtext {
     margin-top: 14px;
     opacity: 0.8;
-    line-height: 1.3em;
 }
-

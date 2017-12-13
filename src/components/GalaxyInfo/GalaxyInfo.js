@@ -10,7 +10,7 @@ const GalaxyInfo = () => (
         <div className="galaxy-info__header">
             <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
 
-            <div className="galaxy-info__header__text">
+            <div className="galaxy-info__header__text subtitle-line-spacing">
                 <span>NTS Radio</span>
                 <br/>
                 <span>in collaboration with NASA</span>
@@ -26,8 +26,10 @@ const GalaxyInfo = () => (
 
         <div className="galaxy-info__footer text-justify text-uppercase">
             <div className="leading-font" style={{fontSize: '28px', marginTop: '13px', letterSpacing: '4px'}}>01.01.18</div>
-            <div>Next broadcast</div>
-            <div>on NTS / 13:00</div>
+            <div className="subtitle-line-spacing">
+                <div>Next broadcast</div>
+                <div>on NTS / 13:00</div>
+            </div>
         </div>
     </div>
 );

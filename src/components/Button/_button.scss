@@ -1,9 +1,22 @@
+@import '../../../sass/mixins/_mixins';
+@import '../../../sass/_settings';
+
 $button-size: 38px;
 
 .button {
     position: relative;
     display: block;
     cursor: pointer;
+
+    &:hover {
+        .button__circle {
+            background-color: white;
+            border: 1px solid rgba(255,255,255,0);
+        }
+        .button__circle__icon {
+            fill: black;
+        }
+    }
 }
 .button__circle {
     position: relative;
@@ -15,6 +28,8 @@ $button-size: 38px;
     -webkit-border-radius: $button-size / 2;
     -moz-border-radius: $button-size / 2;
     border-radius: $button-size / 2;
+
+    @include transition($transition-speed background-color linear, $transition-speed border linear);
 }
 .button__circle__icon {
     position: absolute;
@@ -26,6 +41,9 @@ $button-size: 38px;
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
+
+    fill: white;
+    @include transition($transition-speed fill linear);
 }
 
 .button--alt .button__circle {

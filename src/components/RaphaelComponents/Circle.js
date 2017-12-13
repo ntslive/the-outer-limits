@@ -8,12 +8,12 @@ class Circle extends React.Component {
     }
 
     _renderCircle() {
-        const lineWidth = 0.4;
+        const lineWidth = 0.2;
         const colourLive = "#ff0000";
         const colourDefault = "#FFFFFF";
         const x = this.props.x;
         const y = this.props.y;
-        const radius = 7;
+        const radius = 6;
 
         if (!!this.circle) {
             this.circle.remove();
@@ -23,13 +23,15 @@ class Circle extends React.Component {
                     this.circleRings[i].remove();
                 };
 
-                !!this.glow && this.glow.remove();
+                !!this.outerGlow && this.outerGlow.remove();
+                !!this.innerGlow && this.innerGlow.remove();
             }
         }
 
         let circleColour = this.props.isLive ? colourLive : colourDefault;
         let circleAttributes = {
             fill: circleColour,
+            "stroke-opacity": 0,
         };
 
         this.circle = this.props.paper.circle(x, y, radius).attr(circleAttributes);
@@ -38,7 +40,13 @@ class Circle extends React.Component {
             this.circle.node.setAttribute("class", 'swell-circle');
             this.circle.node.setAttribute("style", `transform-origin: ${x}px ${y}px;`);
 
-            this.glow = this.circle.glow({
+            this.innerGlow = this.circle.glow({
+                width: 30,
+                color: circleColour,
+                opacity: 0.4
+            });
+
+            this.outerGlow = this.circle.glow({
                 width: 100,
                 color: circleColour,
             });

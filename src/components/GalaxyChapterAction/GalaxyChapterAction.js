@@ -22,7 +22,7 @@ class GalaxyChapterAction extends React.PureComponent {
             <div className={this.props.className}>
                 <Button text={"Play Teaser"} icon={PlayIcon}></Button>
 
-                <div className="galaxy-chapter__content__action_subtext">
+                <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>Available Tomorrow</span>
                 </div>
             </div>
@@ -42,7 +42,7 @@ class GalaxyChapterAction extends React.PureComponent {
             <div className={this.props.className}>
                 <Button text={"Play Teaser"} icon={PlayIcon}></Button>
 
-                <div className="galaxy-chapter__content__action_subtext">
+                <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>{this.props.chapter.broadcastDate}</span>
                     <br/>
                     <span>Broadcasting Live</span>
@@ -56,7 +56,9 @@ class GalaxyChapterAction extends React.PureComponent {
     renderComing() {
         return (
             <div className={this.props.className}>
-                <div className="galaxy-chapter__content__action_subtext">
+                <Button text={"Test Teaser"} icon={PlayIcon}></Button>
+                <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
+
                     <span>Coming Soon</span>
                     <br/>
                     <span>{this.props.chapter.broadcastDate}</span>
