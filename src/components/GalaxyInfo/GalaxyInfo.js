@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 
 import './galaxy-info.scss';
 import '../../../sass/_settings.scss';
+import NtsLogo from './nts-logo-white.png';
 
 const GalaxyInfo = () => (
     <div id="galaxy-info">
         <div className="galaxy-info__header">
-            <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"><img src="/nts-logo-white.png"/></a>
+            <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
 
             <div className="galaxy-info__header__text">
                 <span>NTS Radio</span>
