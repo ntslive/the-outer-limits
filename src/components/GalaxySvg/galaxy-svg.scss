@@ -17,8 +17,24 @@
     opacity: 1;
 }
 
+.swell-circle {
+    animation: swellSelected 1.7s infinite;
+}
+
 .glow-circle {
     animation: glowSelected 1.2s infinite;
+}
+
+@-webkit-keyframes swellSelected {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @-webkit-keyframes pulsate {

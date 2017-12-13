@@ -35,6 +35,9 @@ class Circle extends React.Component {
         this.circle = this.props.paper.circle(x, y, radius).attr(circleAttributes);
 
         if (this.props.isSelected) {
+            this.circle.node.setAttribute("class", 'swell-circle');
+            this.circle.node.setAttribute("style", `transform-origin: ${x}px ${y}px;`);
+
             this.glow = this.circle.glow({
                 width: 100,
                 color: circleColour,
@@ -42,7 +45,6 @@ class Circle extends React.Component {
 
             this.circleRings = [];
             let numberOfRings = this.props.isLive ? 7 : 3;
-
             // Draw animated circles around dot.
             for(let i=0; i<numberOfRings; i++) {
                 let circleRing = this.props.paper.circle(x, y, radius)
