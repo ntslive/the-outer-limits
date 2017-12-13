@@ -24,7 +24,7 @@ const GalaxyInfo = () => (
         </div>
 
         <div className="galaxy-info__footer text-justify text-uppercase">
-            <div className="leading-font" style={{fontSize: '28px', marginTop: '13px', 'letter-spacing': '4px'}}>01.01.18</div>
+            <div className="leading-font" style={{fontSize: '28px', marginTop: '13px', letterSpacing: '4px'}}>01.01.18</div>
             <div>Next broadcast</div>
             <div>on NTS / 13:00</div>
         </div>

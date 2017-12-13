@@ -56,8 +56,6 @@ class GalaxyChapterAction extends React.PureComponent {
     renderComing() {
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"} icon={PlayIcon}></Button>
-
                 <div className="galaxy-chapter__content__action_subtext">
                     <span>Coming Soon</span>
                     <br/>
