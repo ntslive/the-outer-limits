@@ -21,13 +21,22 @@
     position: absolute;
     bottom: 43px;
     left: 100px;
-    z-index: 10;
+    z-index: 11;
+    opacity: 0;
+
+    cursor: pointer;
+    animation: fadeInScroll 1.2s forwards;
+    animation-delay: 0.6s;
 }
 #galaxy-footer-chapter-controls {
     position: fixed;
     right: 50px;
     bottom: 19px;
     z-index: 20;
+    opacity: 0;
+
+    animation: fadeInNavigation 1.2s forwards;
+    animation-delay: 0.8s;
 }
 
 .chapter-control-button {
@@ -36,5 +45,25 @@
 
     &:last-of-type {
         margin-right: 0;
+    }
+}
+
+@-webkit-keyframes fadeInScroll {
+    from {
+        opacity: 0;
+        transform: translate(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@-webkit-keyframes fadeInNavigation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

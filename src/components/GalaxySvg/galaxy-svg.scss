@@ -3,6 +3,10 @@
     top: 0; bottom: 0;
     left: 0; right: 0;
     z-index: 0;
+    opacity: 0;
+
+    animation: fadeInGalaxy 1.2s forwards;
+    animation-delay: 0s;
 }
 
 .pulse-circle {
@@ -49,11 +53,20 @@
 }
 
 .draw-path {
-    animation: remove-offset 3.5s ease-in forwards;
+    animation: remove-offset 5s ease-in forwards;
 }
 
 @keyframes remove-offset {
     to {
         stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes fadeInGalaxy {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

@@ -23,7 +23,7 @@ class Path extends React.Component {
         this.path.node.setAttribute("style", `
             stroke-dasharray: ${pathLength};
             stroke-dashoffset: ${pathLength};
-            animation-delay: 0s;
+            animation-delay: 0.5s;
         ;`);
         this.path.node.setAttribute("class", 'draw-path');
 

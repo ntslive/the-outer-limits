@@ -8,6 +8,10 @@ $chapter-transition-speed: 0.4s;
     top: 0; bottom: 0;
     left: 0; right: 0;
     z-index: 10;
+    opacity: 0;
+
+    animation: fadeInGalaxy 1.2s forwards;
+    animation-delay: 0s;
 }
 
 .galaxy-chapter-container {
@@ -77,4 +81,13 @@ $chapter-transition-speed: 0.4s;
 .galaxy-chapter__content__action_subtext {
     margin-top: 14px;
     opacity: 0.8;
+}
+
+@-webkit-keyframes fadeInGalaxy {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

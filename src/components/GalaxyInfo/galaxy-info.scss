@@ -12,8 +12,11 @@
     max-width: $galaxy-info-width;
     padding-left: 100px;
 
-    //border: 1px solid white;
     z-index: 10;
+    opacity: 0;
+
+    animation: fadeInBio 1.2s forwards;
+    animation-delay: 0.2s;
 }
 
 .galaxy-info__header {
@@ -53,4 +56,15 @@
     position: absolute;
     bottom: 52px;
     font-size: 16px;
+}
+
+@-webkit-keyframes fadeInBio {
+    from {
+        opacity: 0;
+        transform: translate(-20px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
 }
