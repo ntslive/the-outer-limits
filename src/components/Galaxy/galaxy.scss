@@ -7,21 +7,30 @@
 #galaxy {
     position: absolute;
     top: 0;  bottom: 0;
-    left: $galaxy-info-width;
+    left: $galaxy-info-width + 100;
     right: 0;
-    z-index: 1;
 }
 #galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
-    left: $galaxy-info-width !important;
+    left: $galaxy-info-width + 100 !important;
+}
+
+#galaxy-objects {
+    position: absolute;
+    opacity: 0;
+
+    animation: fadeInScroll 3s forwards;
+    animation-delay: 0.3s;
+}
+.galaxy-objects__objects {
+    position: absolute;
 }
 
 #galaxy-footer-scroll {
     position: absolute;
     bottom: 43px;
     left: 100px;
-    z-index: 11;
     opacity: 0;
 
     cursor: pointer;
@@ -32,7 +41,6 @@
     position: fixed;
     right: 50px;
     bottom: 19px;
-    z-index: 20;
     opacity: 0;
 
     animation: fadeInNavigation 1.2s forwards;

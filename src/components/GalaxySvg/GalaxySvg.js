@@ -30,7 +30,7 @@ class GalaxySvg extends React.Component {
         console.log("GalaxySvg :: rendering");
 
         return (
-            <div id="galaxy-svg">
+            <div>
                 {this.props.drawing.paths.map( (path, index) => (
                     <Path key={index} paper={this.props.drawing.paper} d={path.d} />
                 ))}

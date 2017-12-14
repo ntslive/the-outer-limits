@@ -7,6 +7,10 @@ import LongArrow from '../icon/long-arrow.icon';
 import ShortLeftArrow from '../icon/short-left-arrow.icon';
 import ShortRightArrow from '../icon/short-right-arrow.icon';
 
+import PlanetImg from './images/Planet.png';
+import EarthImg from './images/Earth.png';
+import GalaxyImg from './images/Galaxy.png';
+
 import Button from '../Button/index';
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
@@ -23,26 +27,28 @@ class GalaxyMapping {
         this.height = windowHeight;
         this.width = canvasWidth;
 
+        const minDistanceBetweenChapters = windowWidth / 1.9;
+
         let circles = [
             {
-                x: windowWidth / 20,
-                y: windowHeight / 3,
+                x: 60,
+                y: windowHeight / 2.5,
             },
             {
-                x: (windowWidth / 2) + (windowWidth / 4),
-                y: (windowHeight / 2) + (windowHeight / 5),
-            },
-            {
-                x: windowWidth + (windowWidth / 3),
+                x: minDistanceBetweenChapters + 240,
                 y: (windowHeight / 2) + (windowHeight / 8),
             },
             {
-                x: windowWidth + (windowWidth / 1.5),
-                y: (windowHeight / 2) - (windowHeight / 4),
+                x: (minDistanceBetweenChapters * 2) + 30,
+                y: windowHeight / 3,
             },
             {
-                x: windowWidth + windowWidth + 100,
-                y: (windowHeight / 2) - (windowHeight / 3),
+                x: (minDistanceBetweenChapters * 3) + 150,
+                y: (windowHeight / 2) + (windowHeight / 4),
+            },
+            {
+                x: (minDistanceBetweenChapters * 4) + 50,
+                y: (windowHeight / 2) + (windowHeight / 9),
             },
         ];
         this.circles = circles;
@@ -55,6 +61,42 @@ class GalaxyMapping {
     addPaper(paper) {
         this.paper = paper;
     }
+
+    get objectMapping() {
+        return [
+            {
+                src: PlanetImg,
+                x: 350,
+                y: this.height - (this.height / 1.5),
+            },
+            {
+                src: EarthImg,
+                x: this.circles[2].x - (this.width / 20),
+                y: this.height - 60,
+                style: {'max-width': '350px;'}
+            },
+            {
+                src: GalaxyImg,
+                x: this.circles[4].x,
+                y: -30,
+                style: {'opacity': '0.8'}
+            },
+        ]
+    }
+}
+
+const GalaxyObjects = props => {
+    return (
+        <div id="galaxy-objects">
+            {props.objects.map((object, i) => {
+                return (
+                    <div key={i} className="galaxy-objects__objects" style={{left: object.x, top: object.y}}>
+                        <img src={object.src} style={object.style}/>
+                    </div>
+                )
+            })}
+        </div>
+    )
 }
 
 function disableAllScrolling() {
@@ -152,6 +194,16 @@ class Galaxy extends React.Component {
         this.scrollToChapter(newSelectedChapterId);
     }
 
+    renderObjectMap() {
+        return (
+            <div id="galaxy-objects">
+                <div className="galaxy-object">
+                    <img src={PlanetImg} />
+                </div>
+            </div>
+        );
+    }
+
     renderGalaxyMap() {
         let liveChapterIndex = -1;
         for (let i=0; i<this.props.chapters.length; i++) {
@@ -165,6 +217,7 @@ class Galaxy extends React.Component {
             <div id="galaxy">
                 <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} scrollHandler={this.scrollToChapter}/>
                 <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} liveChapterId={liveChapterIndex}/>
+                <GalaxyObjects objects={this.state.galaxyMapping.objectMapping} />
             </div>
         );
     }
