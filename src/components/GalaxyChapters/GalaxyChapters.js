@@ -42,6 +42,7 @@ class GalaxyChapters extends React.Component {
                     return (
                         <div key={i} className={`galaxy-chapter-container ${classIfSelected}`}
                              style={{left: mapping.x, top: mapping.y}}>
+                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(chapter.id)}></div>
                             <div className="galaxy-chapter">
                                 <div className="galaxy-chapter__index text-uppercase leading-font">
                                     <span className="galaxy-chapter__index__label ">Chapter </span>
@@ -68,6 +69,7 @@ GalaxyChapters.propTypes = {
     chapters: PropTypes.array.isRequired,
     drawing: PropTypes.object.isRequired,
     selectedChapterId: PropTypes.number.isRequired,
+    scrollHandler: PropTypes.func.isRequired,
 };
 
 export default GalaxyChapters;

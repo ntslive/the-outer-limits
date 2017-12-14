@@ -40,6 +40,19 @@ $chapter-transition-speed: 0.4s;
         margin-left: 0;
         opacity: 1;
     }
+    .galaxy-chapter-click-handler {
+        display: none;
+    }
+}
+.galaxy-chapter-click-handler {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 70px;
+    height: 40px;
+
+    cursor: pointer;
+    z-index: 100;
 }
 .galaxy-chapter {
     position: absolute;

@@ -82,6 +82,7 @@ class Galaxy extends React.Component {
 
         this._prevChapter = this._prevChapter.bind(this);
         this._nextChapter = this._nextChapter.bind(this);
+        this.scrollToChapter = this.scrollToChapter.bind(this);
 
         this.state = {
             selectedChapterId: 0,
@@ -120,7 +121,11 @@ class Galaxy extends React.Component {
         setTimeout(checkIfRaphaelGlobal, 1000);
     }
 
-    _scrollToChapter(chapterIndex) {
+    scrollToChapter(chapterIndex) {
+        this.setState({
+            selectedChapterId: chapterIndex,
+        });
+
         let animateProps;
         if (chapterIndex > 0) {
             let $nextChapter = $($(`.galaxy-chapter:eq(${chapterIndex})`));
@@ -137,20 +142,14 @@ class Galaxy extends React.Component {
         let newSelectedChapterId = this.state.selectedChapterId+1;
         if (newSelectedChapterId >= this.props.chapters.length) return;
 
-        this.setState({
-            selectedChapterId: newSelectedChapterId,
-        });
-        this._scrollToChapter(newSelectedChapterId)
+        this.scrollToChapter(newSelectedChapterId);
     }
 
     _prevChapter() {
         let newSelectedChapterId = this.state.selectedChapterId-1;
         if (newSelectedChapterId < 0) return;
 
-        this.setState({
-            selectedChapterId: newSelectedChapterId,
-        });
-        this._scrollToChapter(newSelectedChapterId)
+        this.scrollToChapter(newSelectedChapterId);
     }
 
     renderGalaxyMap() {
@@ -164,7 +163,7 @@ class Galaxy extends React.Component {
 
         return (
             <div id="galaxy">
-                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId}/>
+                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} scrollHandler={this.scrollToChapter}/>
                 <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} liveChapterId={liveChapterIndex}/>
             </div>
         );
