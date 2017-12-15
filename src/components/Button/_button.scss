@@ -8,6 +8,8 @@ $button-size: 38px;
     display: block;
     cursor: pointer;
 
+    @include unselectable();
+
     &:not(.button--alt):hover {
         .button__circle {
             background-color: white;
@@ -23,14 +25,12 @@ $button-size: 38px;
 
     &.button--alt:hover {
         &.button__circle--left .button__circle__icon{
-            animation: moveArrowLeft 0.8s infinite;
+            @include animation(moveArrowLeft 1s infinite);
         }
         &.button__circle--right .button__circle__icon{
-            animation: moveArrowRight 0.8s infinite;
+            @include animation(moveArrowRight 1s infinite);
         }
     }
-
-
 }
 .button__circle {
     position: relative;
@@ -39,9 +39,7 @@ $button-size: 38px;
     height: $button-size;
 
     border: 1px solid rgba(255,255,255,0.6);
-    -webkit-border-radius: $button-size / 2;
-    -moz-border-radius: $button-size / 2;
-    border-radius: $button-size / 2;
+    @include border-radius($button-size / 2);
 
     @include transition($transition-speed background-color linear, $transition-speed border linear, $transition-speed transform linear);
     overflow: hidden;
@@ -49,11 +47,8 @@ $button-size: 38px;
 .button__circle__icon {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
+
     text-align: center;
     width: 100%;
 
@@ -73,39 +68,35 @@ $button-size: 38px;
     position: absolute;
     left: $button-size + 12px;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
 
     font-size: 16px;
-
     @include transition($transition-speed margin linear);
 }
 .button__label__text {
     text-align: center;
 }
 
-@-webkit-keyframes moveArrowLeft {
+@include keyframes (moveArrowLeft) {
     0% {
-        transform: translate(0, -50%);
+        @include transform(translate(0, -50%));
+
     }
     66% {
-        transform: translate(-4px, -50%);
+        @include transform(translate(-4px, -50%));
     }
     100% {
-        transform: translate(0, -50%);
+        @include transform(translate(0, -50%));
     }
 }
-@-webkit-keyframes moveArrowRight {
+@include keyframes (moveArrowRight) {
     0% {
-        transform: translate(0, -50%);
+        @include transform(translate(0, -50%));
     }
     66% {
-        transform: translate(4px, -50%);
+        @include transform(translate(4px, -50%));
     }
     100% {
-        transform: translate(0, -50%);
+        @include transform(translate(0, -50%));
     }
 }

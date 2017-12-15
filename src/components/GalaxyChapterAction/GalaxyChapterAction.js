@@ -4,8 +4,6 @@ import Galaxy from "../Galaxy/Galaxy"
 import Button from "../Button/index.js";
 import PlayIcon from "../icon/play.icon";
 
-import './galaxy-chapter-action.scss';
-
 const STATUSES = ['coming', 'teaser', 'live', 'podcastComing', 'podcast'];
 
 class GalaxyChapterAction extends React.PureComponent {
@@ -56,9 +54,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderComing() {
         return (
             <div className={this.props.className}>
-                <Button text={"Test Teaser"} icon={PlayIcon}></Button>
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
-
                     <span>Coming Soon</span>
                     <br/>
                     <span>{this.props.chapter.broadcastDate}</span>

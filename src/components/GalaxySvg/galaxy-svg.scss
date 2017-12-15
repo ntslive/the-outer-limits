@@ -1,11 +1,13 @@
+@import '../../../sass/mixins/_mixins';
+
 #galaxy-svg {
     position: absolute;
     top: 0; bottom: 0;
     left: 0; right: 0;
     opacity: 0;
 
-    animation: fadeInGalaxy 1.2s forwards;
-    animation-delay: 0s;
+    @include animation(fadeInGalaxy 1.2s forwards);
+    @include animation-delay(0s);
 }
 
 .pulse-circle {
@@ -13,55 +15,54 @@
     width: 7px;
 
     border: 3px solid #999;
-    border-radius: 100px;
-    animation: pulsate 4s ease-out;
-    animation-iteration-count: infinite;
+    @include border-radius(100px);
 
     opacity: 1;
+    @include animation(pulsate 4s ease-out infinite);
 }
 
 .swell-circle {
-    animation: swellSelected 1.7s infinite;
+    @include animation(swellSelected 1.7s infinite);
 }
 
 .glow-circle {
-    animation: glowSelected 1.2s infinite;
+    @include animation(glowSelected 1.2s infinite);
 }
 
-@-webkit-keyframes swellSelected {
+@include keyframes(swellSelected) {
     0% {
-        transform: scale(1);
+        @include transform(scale(1));
     }
     50% {
-        transform: scale(0.7);
+        @include transform(scale(0.7));
     }
     100% {
-        transform: scale(1);
+        @include transform(scale(1));
     }
 }
 
-@-webkit-keyframes pulsate {
+@include keyframes(pulsate) {
     0% {
         opacity: 1;
-        transform: scale(1);
+        @include transform(scale(1));
     }
     100% {
         opacity: 0;
-        transform: scale(9);
+        @include transform(scale(9));
     }
 }
 
 .draw-path {
-    animation: remove-offset 5s ease-in forwards;
+    @include animation(remove-offset 5s ease-in forwards);
 }
 
-@keyframes remove-offset {
+@include keyframes(remove-offset) {
     to {
         stroke-dashoffset: 0;
     }
 }
 
-@-webkit-keyframes fadeInGalaxy {
+@include keyframes(fadeInGalaxy) {
     from {
         opacity: 0;
     }

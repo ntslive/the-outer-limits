@@ -1,10 +1,11 @@
 @import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/mixins.scss';
 
 #galaxy-info {
     position: absolute;
     top: 50%;  bottom: 0;
     left: 0;
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
 
     max-height: 600px;
     height: 90%;
@@ -14,13 +15,10 @@
 
     opacity: 0;
 
-    animation: fadeInBio 1.2s forwards;
-    animation-delay: 0.2s;
+    @include animation(fadeInBio 1.2s forwards);
+    @include animation-delay(0.2s);
 }
 
-.galaxy-info__header {
-
-}
 .galaxy-info__header__link {
     display: inline-block;
 
@@ -37,7 +35,7 @@
 .galaxy-info__content {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
 
     .title {
         font-size: 48px;
@@ -57,13 +55,14 @@
     font-size: 16px;
 }
 
-@-webkit-keyframes fadeInBio {
+@include keyframes(fadeInBio) {
     from {
         opacity: 0;
-        transform: translate(-20px, -50%);
+        @include transform(translate(-20px, -50%));
+
     }
     to {
         opacity: 1;
-        transform: translate(0, -50%);
+        @include transform(translate(0, -50%));
     }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styleCreator from '../utils/styleCreator';
+
 class Circle extends React.Component {
     shouldComponentUpdate(nextProps) {
         return nextProps.isSelected !== this.props.isSelected
@@ -38,7 +40,7 @@ class Circle extends React.Component {
 
         if (this.props.isSelected) {
             this.circle.node.setAttribute("class", 'swell-circle');
-            this.circle.node.setAttribute("style", `transform-origin: ${x}px ${y}px;`);
+            this.circle.node.setAttribute("style", ` ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}; `);
 
             this.innerGlow = this.circle.glow({
                 width: 30,
@@ -68,9 +70,9 @@ class Circle extends React.Component {
 
                 const animationDelay = 4 / numberOfRings;
                 circleRing.node.setAttribute("style", `
-                    transform-origin: ${x}px ${y}px;
-                    animation: pulsate ${4}s infinite ease-out;
-                    animation-delay: ${animationDelay*i}s;
+                    ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}
+                    ${styleCreator.createAnimationStyle(`pulsate ${4}s infinite ease-out`)}
+                    ${styleCreator.createAnimationDelayStyle(animationDelay*i + 's')}
                 ;`);
 
                 this.circleRings.push(circleRing);

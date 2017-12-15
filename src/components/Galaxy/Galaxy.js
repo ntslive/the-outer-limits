@@ -177,7 +177,7 @@ class Galaxy extends React.Component {
             animateProps = {scrollLeft: 0}
         }
 
-        $("html, body").animate(animateProps, 800);
+        $("html, body").animate(animateProps, 1000);
     }
 
     _nextChapter() {

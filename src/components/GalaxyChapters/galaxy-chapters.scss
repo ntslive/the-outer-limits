@@ -1,7 +1,7 @@
 @import '../../../sass/mixins/_mixins.scss';
 
 $galaxy-chapter-left-padding: 37px;
-$chapter-transition-speed: 0.4s;
+$chapter-transition-speed: 0.8s;
 
 .galaxy-chapters {
     position: absolute;
@@ -9,8 +9,8 @@ $chapter-transition-speed: 0.4s;
     left: 0; right: 0;
     opacity: 0;
 
-    animation: fadeInGalaxy 1.2s forwards;
-    animation-delay: 0s;
+    @include animation(fadeInGalaxy 1.2s forwards);
+    @include animation-delay(0s);
 }
 
 .galaxy-chapter-container {
@@ -20,27 +20,16 @@ $chapter-transition-speed: 0.4s;
 .galaxy-chapter-container.selected {
     color: white;
 
-    .galaxy-chapter__index__label {
-        display: inline;
+    .galaxy-chapter-click-handler {
+        display: none;
     }
-    .galaxy-chapter__content--alt {
-        visibility: visible;
-        padding-top: 0;
+    .galaxy-chapter__index__label {
+        margin-left: 0;
         opacity: 1;
-        letter-spacing: normal;
     }
     .galaxy-chapter__content {
         opacity: 1;
-        margin-left: 0;
-        margin-right: 0;
-        transform: translateX(0);
-    }
-    .galaxy-chapter__index__label {
-        margin-left: 0;
-        opacity: 1;
-    }
-    .galaxy-chapter-click-handler {
-        display: none;
+        @include transform(translateX(0));
     }
 }
 .galaxy-chapter-click-handler {
@@ -53,33 +42,24 @@ $chapter-transition-speed: 0.4s;
     cursor: pointer;
     z-index: 100;
 }
+
 .galaxy-chapter {
     position: absolute;
     top: 11px;
     left: $galaxy-chapter-left-padding;
     width: 100%;
-
-    overflow: hidden;
 }
 .galaxy-chapter__index {
     font-size: 14px;
-    overflow: hidden;
 }
 .galaxy-chapter__index__label {
     opacity: 0;
     margin-left: -5em;
     @include transition($chapter-transition-speed all ease-in-out);
 }
-.galaxy-chapter__content--alt {
-    visibility: hidden;
-    padding-top: 30px;
-    opacity: 0;
-    letter-spacing: 2px;
-    @include transition($chapter-transition-speed all ease-in-out);
-}
 .galaxy-chapter__content {
     opacity: 0;
-    transform: translateX(-100%);
+    @include transform(translateX(-80px));
     @include transition($chapter-transition-speed all ease-in-out);
 }
 
@@ -95,7 +75,7 @@ $chapter-transition-speed: 0.4s;
     opacity: 0.8;
 }
 
-@-webkit-keyframes fadeInGalaxy {
+@include keyframes(fadeInGalaxy) {
     from {
         opacity: 0;
     }

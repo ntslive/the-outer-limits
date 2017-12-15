@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styleCreator from '../utils/styleCreator';
 
 class Path extends React.Component {
     shouldComponentUpdate(nextProps) {
@@ -23,7 +24,7 @@ class Path extends React.Component {
         this.path.node.setAttribute("style", `
             stroke-dasharray: ${pathLength};
             stroke-dashoffset: ${pathLength};
-            animation-delay: 0.5s;
+            ${styleCreator.createAnimationDelayStyle('0.5s')}
         ;`);
         this.path.node.setAttribute("class", 'draw-path');
 
