@@ -6,6 +6,7 @@ import Icon from '../icon';
 import Button from '../Button/index';
 import NtsLogo from '../../../static/nts-logo-white.png';
 import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
+import PlayIcon from "../icon/play.icon";
 
 import './chapter-teaser.scss';
 
@@ -16,8 +17,8 @@ const ChapterDescription = (props) => {
     return (
         <div id="teaser-container" >
             <div id="teaser-nav">
-                <div id="teaser-nav__center">menu</div>
-                <div id="teaser-nav__right">cross</div>
+                <Button id="teaser-nav__center" icon={PlayIcon} alternate></Button>
+                <Button id="teaser-nav__right" icon={PlayIcon} alternate></Button>
             </div>
 
             <div id="teaser-content">
