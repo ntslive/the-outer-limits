@@ -1,44 +1,28 @@
 {
   "assetsByChunkName": {
-    "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-5a99d8860ed2d39973c3.js",
-      "path---chapters-apollo-18-5a99d8860ed2d39973c3.js.map"
-    ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-18a026da461f576b49d7.js",
-      "component---src-pages-index-js-18a026da461f576b49d7.js.map"
+      "component---src-pages-index-js-d94befc377a3966f5cbc.js",
+      "component---src-pages-index-js-d94befc377a3966f5cbc.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
-    "component---src-pages-chapters-alpha-centauri-js": [
-      "component---src-pages-chapters-alpha-centauri-js-c1a4561fec99ffe6cc8d.js",
-      "component---src-pages-chapters-alpha-centauri-js-c1a4561fec99ffe6cc8d.js.map"
-    ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-a72b3977dac5e28a828f.js",
-      "component---src-layouts-index-js-a72b3977dac5e28a828f.js.map"
+      "component---src-layouts-index-js-9af06d76c63091cdf79b.js",
+      "component---src-layouts-index-js-9af06d76c63091cdf79b.js.map"
     ],
     "path---index": [
       "path---index-5a99d8860ed2d39973c3.js",
       "path---index-5a99d8860ed2d39973c3.js.map"
     ],
-    "component---src-pages-chapters-apollo-18-js": [
-      "component---src-pages-chapters-apollo-18-js-f3c73a4b22129020e59f.js",
-      "component---src-pages-chapters-apollo-18-js-f3c73a4b22129020e59f.js.map"
-    ],
     "commons": [
-      "commons-b652c0b63f7e4128d732.js",
-      "commons-b652c0b63f7e4128d732.js.map"
+      "commons-9aec681c888f11b5908e.js",
+      "commons-9aec681c888f11b5908e.js.map"
     ],
     "app": [
-      "app-0d42f59c4b80a42dc3f8.js",
-      "app-0d42f59c4b80a42dc3f8.js.map"
-    ],
-    "path---chapters-alpha-centauri": [
-      "path---chapters-alpha-centauri-5a99d8860ed2d39973c3.js",
-      "path---chapters-alpha-centauri-5a99d8860ed2d39973c3.js.map"
+      "app-ca8fe6af718545202758.js",
+      "app-ca8fe6af718545202758.js.map"
     ]
   }
 }
