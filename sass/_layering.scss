@@ -9,7 +9,6 @@
 #galaxy-svg {
     z-index: 4;
 }
-
 #galaxy-info {
     z-index: 10;
 }
@@ -22,4 +21,17 @@
 
 .background-image {
     z-index: 0;
+}
+
+#teaser-nav {
+    z-index: 4;
+}
+#teaser-content {
+    z-index: 2;
+}
+#teaser-footer {
+    z-index: 4;
+}
+#teaser-background-image {
+    z-index: 1;
 }

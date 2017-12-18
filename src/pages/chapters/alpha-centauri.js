@@ -27,6 +27,7 @@ export const pageQuery = graphql`
             content {
               excerpt
               teaserSoundcloudUrl
+              image_bg
               credits {
                 title
                 name

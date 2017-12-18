@@ -14,10 +14,10 @@ const ChapterDescription = (props) => {
     const chapter = props.chapter;
 
     return (
-        <div id="teaser-container">
+        <div id="teaser-container" >
             <div id="teaser-nav">
-                <div id="teaser-nav__center">f</div>
-                <div id="teaser-nav__right">sfeg</div>
+                <div id="teaser-nav__center">menu</div>
+                <div id="teaser-nav__right">cross</div>
             </div>
 
             <div id="teaser-content">
@@ -56,6 +56,7 @@ const ChapterDescription = (props) => {
                 </div>
             </div>
 
+            <div id="teaser-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}} />
         </div>
     );
 };
