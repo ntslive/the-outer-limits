@@ -2,7 +2,7 @@ import React from 'react';
 
 import Icon from '../icon';
 
-import './_button.scss';
+import './button.scss';
 
 const Button = props => (
     <div className={`button ${props.alternate ? 'button--alt' : ''} text-uppercase ${props.className} `} onClick={props.onClick}>

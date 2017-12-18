@@ -17,16 +17,9 @@ export const pageQuery = graphql`
     allDataJson {
       edges {
         node {
-          features {
-            title
-          }
-          howTo {
-            title
-          }
           chapters {
             id
             name
-            excerpt
             status
             broadcastDate
             broadcastTime

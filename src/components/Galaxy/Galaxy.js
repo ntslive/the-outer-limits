@@ -73,7 +73,6 @@ class GalaxyMapping {
                 src: EarthImg,
                 x: this.circles[2].x - (this.width / 20),
                 y: this.height - 60,
-                style: {'max-width': '350px;'}
             },
             {
                 src: GalaxyImg,
