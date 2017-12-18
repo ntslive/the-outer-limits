@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+
 import Galaxy from "../Galaxy/Galaxy"
 import Button from "../Button/index.js";
 import PlayIcon from "../icon/play.icon";
@@ -55,6 +57,8 @@ class GalaxyChapterAction extends React.PureComponent {
         return (
             <div className={this.props.className}>
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
+                    <Link to="/chapters/alpha-centauri">Link</Link>
+
                     <span>Coming Soon</span>
                     <br/>
                     <span>{this.props.chapter.broadcastDate}</span>

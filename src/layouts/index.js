@@ -8,7 +8,6 @@ import '../../sass/style.scss';
 const PATH_PREFIX = '/the-outer-limits';
 
 const TemplateWrapper = ({ children, location }) => {
-
     // Potentially useful for future code, leaving here for now, despite being currently unused.
     // let pathPrefix = '';
     // if (location.pathname !== withPrefix("/")) {
