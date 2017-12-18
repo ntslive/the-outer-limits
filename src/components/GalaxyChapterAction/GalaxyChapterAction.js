@@ -15,7 +15,7 @@ function getSlug(chapterName) {
 
 class GalaxyChapterAction extends React.PureComponent {
     _goToChapter(pathname) {
-        this.props.history.push('/chapters/' + pathname);
+        this.props.history.push('chapters/' + pathname + '/');
     }
 
     renderPodcast() {

@@ -19,7 +19,7 @@ class ChapterDescription extends React.Component {
     }
 
     _goToGalaxy() {
-        this.props.history.push('/');
+        this.props.history.push('../../');
     }
 
     render() {
