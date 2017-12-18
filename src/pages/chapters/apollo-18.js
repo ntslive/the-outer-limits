@@ -14,7 +14,7 @@ const Apollo18 = props => (
 export default Apollo18;
 
 export const pageQuery = graphql`
-  query ApolloQuery {
+  query Apollo18Query {
     allDataJson {
       edges {
         node {
@@ -24,6 +24,15 @@ export const pageQuery = graphql`
             status
             broadcastDate
             broadcastTime
+            content {
+              excerpt
+              teaserSoundcloudUrl
+              image_bg
+              credits {
+                title
+                name
+              }
+            }
           }
         }
       }
