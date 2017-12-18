@@ -1,5 +1,39 @@
+@font-face {
+    font-family: "FiraMono";
+    src: url("./fonts/Fira_Mono/FiraMono-Regular.ttf") format("truetype");
+    src: url("./fonts/Fira_Mono/FiraMono-Regular.woff") format("woff"),
+        url("./fonts/Fira_Mono/FiraMono-Regular.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url("./fonts/RobotoMono/RobotoMono-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: "SpaceAstronomy";
+    src: url("./fonts/SpaceAstronomy/space_and_astronomy.ttf") format("truetype");
+    src: url("./fonts/SpaceAstronomy/space_and_astronomy.woff") format("woff"),
+        url("./fonts/SpaceAstronomy/space_and_astronomy.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+
 body {
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "FiraMono", "Helvetica", "Arial", sans-serif;
+    font-weight: 100;
+    //letter-spacing: 1px;
     font-size: 20px;
     color: $color_text;
+}
+
+.leading-font {
+    font-family: "SpaceAstronomy", "Arial", sans-serif;
+    font-weight: 100;
 }

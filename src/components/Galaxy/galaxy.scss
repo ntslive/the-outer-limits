@@ -1,4 +1,8 @@
 @import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/_mixins.scss';
+
+$first-stage-animation-speed: 1.2s;
+$final-stage-animation-speed: 3s;
 
 #galaxy-container {
     background-color: transparent;
@@ -7,19 +11,73 @@
 #galaxy {
     position: absolute;
     top: 0;  bottom: 0;
-    left: $galaxy-info-width;
+    left: $galaxy-info-width + 100;
     right: 0;
-    z-index: 1;
 }
-svg {
+#galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
-    left: $galaxy-info-width !important;
+    left: $galaxy-info-width + 100 !important;
 }
 
-#chapter-controls {
+#galaxy-objects {
+    position: absolute;
+    opacity: 0;
+
+    @include animation(fadeInScroll $final-stage-animation-speed forwards);
+    @include animation-delay(0.3s);
+}
+.galaxy-objects__objects {
+    position: absolute;
+}
+
+#galaxy-footer-scroll {
+    position: absolute;
+    bottom: 43px;
+    left: 100px;
+    opacity: 0;
+    @include unselectable();
+
+    cursor: pointer;
+    @include animation(fadeInScroll $first-stage-animation-speed forwards);
+    @include animation-delay(0.6s);
+
+}
+#galaxy-footer-chapter-controls {
     position: fixed;
-    right: 10px;
-    bottom: 10px;
-    z-index: 20;
+    right: 50px;
+    bottom: 19px;
+    opacity: 0;
+
+    @include animation(fadeInNavigation $first-stage-animation-speed forwards);
+    @include animation-delay(0.8s);
+}
+
+.chapter-control-button {
+    display: inline-block;
+    margin: 0 6px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+@include keyframes(fadeInScroll){
+    from {
+        opacity: 0;
+        @include transform(translate(-20px));
+    }
+    to {
+        opacity: 1;
+        @include transform(translate(0));
+    }
+}
+
+@include keyframes(fadeInNavigation) {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

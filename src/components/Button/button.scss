@@ -1,0 +1,102 @@
+@import '../../../sass/mixins/_mixins';
+@import '../../../sass/_settings';
+
+$button-size: 38px;
+
+.button {
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    @include unselectable();
+
+    &:not(.button--alt):hover {
+        .button__circle {
+            background-color: white;
+            border: 1px solid rgba(255,255,255,0);
+        }
+        .button__circle__icon {
+            fill: black;
+        }
+        .button__label {
+            margin-left: 4px;
+        }
+    }
+
+    &.button--alt:hover {
+        &.button__circle--left .button__circle__icon{
+            @include animation(moveArrowLeft 1s infinite);
+        }
+        &.button__circle--right .button__circle__icon{
+            @include animation(moveArrowRight 1s infinite);
+        }
+    }
+}
+.button__circle {
+    position: relative;
+    display: inline-block;
+    width: $button-size;
+    height: $button-size;
+
+    border: 1px solid rgba(255,255,255,0.6);
+    @include border-radius($button-size / 2);
+
+    @include transition($transition-speed background-color linear, $transition-speed border linear, $transition-speed transform linear);
+    overflow: hidden;
+}
+.button__circle__icon {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+
+    text-align: center;
+    width: 100%;
+
+    fill: white;
+    @include transition($transition-speed fill linear);
+}
+
+.button--alt .button__circle {
+    background-color: rgba(155, 155, 155, 0.15);
+    border: none;
+}
+
+.button__label {
+    display: inline-block;
+    height: $button-size - 8px; // 8px is manually centering
+
+    position: absolute;
+    left: $button-size + 12px;
+    top: 50%;
+    @include transform(translateY(-50%));
+
+    font-size: 16px;
+    @include transition($transition-speed margin linear);
+}
+.button__label__text {
+    text-align: center;
+}
+
+@include keyframes (moveArrowLeft) {
+    0% {
+        @include transform(translate(0, -50%));
+
+    }
+    66% {
+        @include transform(translate(-4px, -50%));
+    }
+    100% {
+        @include transform(translate(0, -50%));
+    }
+}
+@include keyframes (moveArrowRight) {
+    0% {
+        @include transform(translate(0, -50%));
+    }
+    66% {
+        @include transform(translate(4px, -50%));
+    }
+    100% {
+        @include transform(translate(0, -50%));
+    }
+}

@@ -27,30 +27,47 @@
             "title": "Start coding!"
         }
     ],
+
     "chapters": [
         {
             "id": 0,
-            "name": "Apollo 18",
+            "name": "Alpha Centauri",
             "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
-            "status": "teaser"
+            "status": "coming",
+            "broadcastDate": "01.04.18",
+            "broadcastTime": "14:00"
         },
         {
             "id": 1,
-            "name": "Alpha Centauri",
+            "name": "Apollo 18",
             "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
-            "status": "coming"
+            "status": "teaser",
+            "broadcastDate": "01.01.18",
+            "broadcastTime": "14:00"
         },
         {
             "id": 2,
-            "name": "Apollo 18",
+            "name": "Lost In Space",
             "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
-            "status": "live"
+            "status": "live",
+            "broadcastDate": "01.08.18",
+            "broadcastTime": "14:00"
         },
         {
             "id": 3,
-            "name": "Alpha Centauri",
+            "name": "The Black Star",
             "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
-            "status": "podcast"
+            "status": "podcastComing",
+            "broadcastDate": "01.10.18",
+            "broadcastTime": "14:00"
+        },
+        {
+            "id": 4,
+            "name": "Different Theories Of Time",
+            "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
+            "status": "podcast",
+            "broadcastDate": "01.12.18",
+            "broadcastTime": "14:00"
         }
     ]
 }

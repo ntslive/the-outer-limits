@@ -1,8 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GalaxyChapter from '../GalaxyChapter/GalaxyChapter';
+import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
 
 import './galaxy-chapters.scss';
+
+function convertNumberToRomanNumeral(number) {
+    let roman =  {"M" :1000, "CM":900, "D":500, "CD":400, "C":100, "XC":90, "L":50, "XL":40, "X":10, "IX":9, "V":5, "IV":4, "I":1};
+    let str = "";
+
+    for (let i of Object.keys(roman) ) {
+        let q = Math.floor(number / roman[i]);
+        number -= q * roman[i];
+        str += i.repeat(q);
+    }
+
+    return str;
+}
 
 class GalaxyChapters extends React.Component {
     constructor(props) {
@@ -24,21 +37,26 @@ class GalaxyChapters extends React.Component {
                     if (!mapping) return;
 
                     const classIfSelected = this.props.selectedChapterId === chapter.id ? 'selected' : '';
-                    const chapterIndexText = `Chapter ${i+1}`;
+                    const chapterIndexText = convertNumberToRomanNumeral(i+1);
 
                     return (
-                        <div key={i} className={`galaxy-chapter ${classIfSelected}`}
+                        <div key={i} className={`galaxy-chapter-container ${classIfSelected}`}
                              style={{left: mapping.x, top: mapping.y}}>
-                            <span>{chapterIndexText}</span>
-                            <br />
-                            <p>
-                                {chapter.name}
-                            </p>
-                            <p>
-                                {chapter.excerpt}
-                            </p>
+                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(chapter.id)}></div>
+                            <div className="galaxy-chapter">
+                                <div className="galaxy-chapter__index text-uppercase leading-font">
+                                    <span className="galaxy-chapter__index__label ">Chapter </span>
+                                    {chapterIndexText}
+                                </div>
 
-                            <GalaxyChapter status={chapter.status}/>
+                                <div className="galaxy-chapter__content">
+                                    <div className="galaxy-chapter__content__name text-uppercase leading-font">{chapter.name}</div>
+
+                                    <div className="galaxy-chapter__content__action">
+                                        <GalaxyChapterAction chapter={chapter} className={"galaxy-chapter__content__action__button"}/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )
                 })}
@@ -51,6 +69,7 @@ GalaxyChapters.propTypes = {
     chapters: PropTypes.array.isRequired,
     drawing: PropTypes.object.isRequired,
     selectedChapterId: PropTypes.number.isRequired,
+    scrollHandler: PropTypes.func.isRequired,
 };
 
 export default GalaxyChapters;

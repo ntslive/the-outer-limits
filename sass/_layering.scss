@@ -1,0 +1,25 @@
+#galaxy {
+    #galaxy-objects {
+        z-index: 1;
+    }
+    .galaxy-chapters {
+        z-index: 10;
+    }
+}
+#galaxy-svg {
+    z-index: 4;
+}
+
+#galaxy-info {
+    z-index: 10;
+}
+#galaxy-footer-scroll {
+    z-index: 11;
+}
+#galaxy-footer-chapter-controls {
+    z-index: 20;
+}
+
+.background-image {
+    z-index: 0;
+}
