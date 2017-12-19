@@ -98,32 +98,41 @@ const GalaxyObjects = props => {
     )
 }
 
-function disableAllScrolling() {
-    function preventDefault(e) {
-        e = e || window.event;
-        if (e.preventDefault)
-            e.preventDefault();
-        e.returnValue = false;
-    }
 
-    function disableScroll() {
-        if (window.addEventListener) // older FF
-            window.addEventListener('DOMMouseScroll', preventDefault, false);
-        window.onwheel = preventDefault; // modern standard
-        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-        window.ontouchmove  = preventDefault; // mobile
-    }
-
-    disableScroll();
-}
 
 class Galaxy extends React.Component {
     constructor(props) {
         super(props);
+        let that = this;
 
         this._prevChapter = this._prevChapter.bind(this);
         this._nextChapter = this._nextChapter.bind(this);
         this.scrollToChapter = this.scrollToChapter.bind(this);
+
+        this.handlers = {};
+        this.handlers.createGalaxyMapping = function() {
+            console.log("Galaxy :: Checking if Raphael is accessible");
+
+            if (typeof Raphael !== 'undefined') {
+                that.setState({
+                    galaxyMapping: new GalaxyMapping(that.props.chapters),
+                });
+            } else {
+                setTimeout(this.handlers.createGalaxyMapping, 1000);
+            }
+        }
+
+        this.handlers.keydownHandler = function(e) {
+            if (!that.state.galaxyMapping) return;
+
+            if (e.keyCode == 37) { // left key
+                that._prevChapter();
+                e.preventDefault();
+            } else if (e.keyCode == 39) { // right key
+                that._nextChapter();
+                e.preventDefault();
+            }
+        }
 
         this.state = {
             selectedChapterId: 0,
@@ -132,34 +141,15 @@ class Galaxy extends React.Component {
     }
 
     componentDidMount() {
-        let that = this;
-        // TODO: Remove these event handlers on unmount
+        $("html").keydown(this.handlers.keydownHandler);
 
-        $("html").keydown(function(e) {
-            if (e.keyCode == 37) { // left key
-                that._prevChapter();
-                e.preventDefault();
-            } else if (e.keyCode == 39) { // right key
-                that._nextChapter();
-                e.preventDefault();
-            }
-        });
+        setTimeout(this.handlers.createGalaxyMapping, 1000);
+    }
 
-        // Throttling of scroll behaviour
-        // disableAllScrolling();
+    componentWillUnmount() {
+        $("html").unbind("keydown", this.handlers.keydownHandler);
 
-        function checkIfRaphaelGlobal() {
-            console.log("Galaxy :: Checking if Raphael is accessible");
-            if (typeof Raphael !== 'undefined') {
-                that.setState({
-                    galaxyMapping: new GalaxyMapping(that.props.chapters),
-                });
-            } else {
-                setTimeout(checkIfRaphaelGlobal, 1000);
-            }
-        }
-
-        setTimeout(checkIfRaphaelGlobal, 1000);
+        console.log("Galaxy :: Unmounting");
     }
 
     scrollToChapter(chapterIndex) {
@@ -222,6 +212,7 @@ class Galaxy extends React.Component {
     }
 
     render() {
+        console.log("Galaxy :: Rendering");
         return (
             <section id="galaxy-container">
                 <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={this._nextChapter}>

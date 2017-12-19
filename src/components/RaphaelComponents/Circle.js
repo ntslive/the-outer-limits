@@ -9,14 +9,12 @@ class Circle extends React.Component {
             || nextProps.isLive !== this.props.isLive;
     }
 
-    _renderCircle() {
-        const lineWidth = 0.2;
-        const colourLive = "#ff0000";
-        const colourDefault = "#FFFFFF";
-        const x = this.props.x;
-        const y = this.props.y;
-        const radius = 6;
+    componentWillUnmount() {
+        this._clearElements();
+        console.log("Circle :: Unmounting");
+    }
 
+    _clearElements() {
         if (!!this.circle) {
             this.circle.remove();
 
@@ -29,6 +27,17 @@ class Circle extends React.Component {
                 !!this.innerGlow && this.innerGlow.remove();
             }
         }
+    }
+
+    _renderCircle() {
+        const lineWidth = 0.2;
+        const colourLive = "#ff0000";
+        const colourDefault = "#FFFFFF";
+        const x = this.props.x;
+        const y = this.props.y;
+        const radius = 6;
+
+        this._clearElements();
 
         let circleColour = this.props.isLive ? colourLive : colourDefault;
         let circleAttributes = {
