@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { withPrefix } from "gatsby-link";
 
 import Galaxy from "../Galaxy/Galaxy"
 import Button from "../Button/index.js";
@@ -14,8 +14,8 @@ function getSlug(chapterName) {
 }
 
 class GalaxyChapterAction extends React.PureComponent {
-    _goToChapter(pathname) {
-        this.props.history.push('chapters/' + pathname + '/');
+    _goToChapter(chapterSlug) {
+        this.props.history.push(withPrefix('/chapters/' + chapterSlug + '/'));
     }
 
     renderPodcast() {

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import $ from 'jquery';
+import { withPrefix } from "gatsby-link";
 
 import Icon from '../icon';
 import Button from '../Button/index';
@@ -19,7 +20,7 @@ class ChapterDescription extends React.Component {
     }
 
     _goToGalaxy() {
-        this.props.history.push('../../');
+        this.props.history.push(withPrefix('/'));
     }
 
     render() {
