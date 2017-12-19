@@ -23,7 +23,7 @@ class GalaxyChapters extends React.Component {
     }
 
     shouldComponentUpdate(nextProps) {
-        return nextProps.selectedChapterId !== this.props.selectedChapterId
+        return nextProps.selectedChapterIndex !== this.props.selectedChapterIndex
             || nextProps.chapters !== this.props.chapters;
     }
 
@@ -36,7 +36,7 @@ class GalaxyChapters extends React.Component {
                     let chapter = this.props.chapters[i];
                     if (!mapping) return;
 
-                    const classIfSelected = this.props.selectedChapterId === chapter.id ? 'selected' : '';
+                    const classIfSelected = this.props.selectedChapterIndex === i ? 'selected' : '';
                     const chapterIndexText = convertNumberToRomanNumeral(i+1);
 
                     return (
@@ -68,7 +68,7 @@ class GalaxyChapters extends React.Component {
 GalaxyChapters.propTypes = {
     chapters: PropTypes.array.isRequired,
     drawing: PropTypes.object.isRequired,
-    selectedChapterId: PropTypes.number.isRequired,
+    selectedChapterIndex: PropTypes.number.isRequired,
     scrollHandler: PropTypes.func.isRequired,
 };
 
