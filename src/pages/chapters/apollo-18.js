@@ -26,7 +26,8 @@ export const pageQuery = graphql`
             broadcastTime
             content {
               excerpt
-              teaserSoundcloudUrl
+              teaserSoundcloudSecretToken
+              teaserSoundcloudTrackID
               image_bg
               credits {
                 title
