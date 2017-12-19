@@ -12,7 +12,7 @@ import PlayIcon from "../icon/play.icon";
 
 import './chapter-teaser.scss';
 
-class ChapterDescription extends React.Component {
+class ChapterTeaser extends React.Component {
     constructor(props) {
         super(props);
 
@@ -77,8 +77,8 @@ class ChapterDescription extends React.Component {
     }
 }
 
-ChapterDescription.propTypes = {
+ChapterTeaser.propTypes = {
     chapter: PropTypes.object.isRequired,
 };
 
-export default withRouter(ChapterDescription);
+export default withRouter(ChapterTeaser);
