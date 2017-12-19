@@ -1,18 +1,8 @@
 /* global graphql */
 
-import React from 'react';
-import ChapterRouter from "../../components/utils/ChapterRouter";
+import BaseChapter from "../../components/utils/BaseChapter";
 
-const AlphaCentauri = props => {
-    const chapterId = props.location.pathname.split('/')[2];
-    return (
-        <main>
-            <ChapterRouter chapters={props.data.allDataJson.edges[0].node.chapters} chapterId={chapterId} />
-        </main>
-    );
-};
-
-export default AlphaCentauri;
+export default BaseChapter;
 
 export const pageQuery = graphql`
   query AlphaQuery {
