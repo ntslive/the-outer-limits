@@ -135,7 +135,7 @@ class Galaxy extends React.Component {
         }
 
         this.state = {
-            selectedChapterId: 0,
+            selectedChapterIndex: 0,
             galaxyMapping: false,
         }
     }
@@ -154,7 +154,7 @@ class Galaxy extends React.Component {
 
     scrollToChapter(chapterIndex) {
         this.setState({
-            selectedChapterId: chapterIndex,
+            selectedChapterIndex: chapterIndex,
         });
 
         let animateProps;
@@ -170,17 +170,17 @@ class Galaxy extends React.Component {
     }
 
     _nextChapter() {
-        let newSelectedChapterId = this.state.selectedChapterId+1;
-        if (newSelectedChapterId >= this.props.chapters.length) return;
+        let newselectedChapterIndex = this.state.selectedChapterIndex+1;
+        if (newselectedChapterIndex >= this.props.chapters.length) return;
 
-        this.scrollToChapter(newSelectedChapterId);
+        this.scrollToChapter(newselectedChapterIndex);
     }
 
     _prevChapter() {
-        let newSelectedChapterId = this.state.selectedChapterId-1;
-        if (newSelectedChapterId < 0) return;
+        let newselectedChapterIndex = this.state.selectedChapterIndex-1;
+        if (newselectedChapterIndex < 0) return;
 
-        this.scrollToChapter(newSelectedChapterId);
+        this.scrollToChapter(newselectedChapterIndex);
     }
 
     renderObjectMap() {
@@ -204,8 +204,8 @@ class Galaxy extends React.Component {
 
         return (
             <div id="galaxy">
-                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} scrollHandler={this.scrollToChapter}/>
-                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterId={this.state.selectedChapterId} liveChapterId={liveChapterIndex}/>
+                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} scrollHandler={this.scrollToChapter}/>
+                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} liveChapterId={liveChapterIndex}/>
                 <GalaxyObjects objects={this.state.galaxyMapping.objectMapping} />
             </div>
         );
