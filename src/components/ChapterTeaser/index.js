@@ -1,16 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { withPrefix } from "gatsby-link";
 import {withRouter} from 'react-router-dom';
 import $ from 'jquery';
-import { withPrefix } from "gatsby-link";
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import Button from '../Button/index';
 import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
 import Icon from '../icon';
+import Player from '../Player/index';
 
-import NtsLogo from '../../../static/nts-logo-white.png';
-import HomeIcon from "../icon/home.icon";
 import CrossIcon from "../icon/cross.icon";
+import HomeIcon from "../icon/home.icon";
+import NtsLogo from '../../../static/nts-logo-white.png';
 
 import './chapter-teaser.scss';
 
@@ -69,7 +70,7 @@ class ChapterTeaser extends React.Component {
                     </div>
 
                     <div id="teaser-footer__player">
-                        play
+                        <Player secretToken={chapter.content.teaserSoundcloudSecretToken} trackID={chapter.content.teaserSoundcloudTrackID}/>
                     </div>
                 </div>
 
