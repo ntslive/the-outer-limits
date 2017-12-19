@@ -7,8 +7,17 @@ class Path extends React.Component {
         return nextProps.d !== this.props.d;
     }
 
-    _renderPath() {
+    componentWillUnmount() {
+        this._clearElements();
+        console.log("Path :: Unmounting");
+    }
+
+    _clearElements() {
         !!this.path && this.path.remove();
+    }
+
+    _renderPath() {
+        this._clearElements();
 
         const pathAttributes = {
             "stroke": "#7f7d7e",

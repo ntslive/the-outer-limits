@@ -14,6 +14,7 @@ class GalaxySvg extends React.Component {
 
     componentWillUnmount() {
         this.props.drawing.paper.remove();
+        console.log("GalaxySvg :: Unmounting");
     }
 
     shouldComponentUpdate(nextProps, nextState) {
