@@ -28,7 +28,7 @@ const ChapterRouter = (props) => {
 };
 
 ChapterRouter.propTypes = {
-    chapterId: PropTypes.number.isRequired,
+    chapterId: PropTypes.string.isRequired,
     chapters: PropTypes.array.isRequired,
 };
 

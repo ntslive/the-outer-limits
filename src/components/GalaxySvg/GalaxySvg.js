@@ -19,7 +19,7 @@ class GalaxySvg extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.selectedChapterIndex !== nextProps.selectedChapterIndex
-            || this.props.liveChapterId !== nextProps.liveChapterId;
+            || this.props.liveChapterIndex !== nextProps.liveChapterIndex;
     }
 
     renderCircle(circle, index) {
@@ -27,7 +27,7 @@ class GalaxySvg extends React.Component {
             <Circle key={index} paper={this.props.drawing.paper}
                     x={circle.x} y={circle.y}
                     isSelected={index === this.props.selectedChapterIndex}
-                    isLive={index === this.props.liveChapterId}/>
+                    isLive={index === this.props.liveChapterIndex}/>
         )
     }
 
@@ -49,7 +49,7 @@ class GalaxySvg extends React.Component {
 GalaxySvg.propTypes = {
     drawing: PropTypes.object.isRequired,
     selectedChapterIndex: PropTypes.number.isRequired,
-    liveChapterId: PropTypes.number.isRequired,
+    liveChapterIndex: PropTypes.number.isRequired,
 };
 
 export default GalaxySvg;
