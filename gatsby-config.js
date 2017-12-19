@@ -1,8 +1,10 @@
 const pixrem = require('pixrem');
 const autoprefixer = require('autoprefixer');
 
+const prefixPath = (process.env['DEPLOY_ENV'] == 'staging') ? '/the-outer-limits-staging' : '/the-outer-limits';
+
 module.exports = {
-    pathPrefix: `/the-outer-limits`,
+    pathPrefix: prefixPath,
     siteMetadata: {
         title: `Jenny Maya The Outer Limits | NTS`,
     },
