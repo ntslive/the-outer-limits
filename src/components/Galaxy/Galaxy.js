@@ -205,7 +205,7 @@ class Galaxy extends React.Component {
         return (
             <div id="galaxy">
                 <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} scrollHandler={this.scrollToChapter}/>
-                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} liveChapterId={liveChapterIndex}/>
+                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} liveChapterIndex={liveChapterIndex}/>
                 <GalaxyObjects objects={this.state.galaxyMapping.objectMapping} />
             </div>
         );
