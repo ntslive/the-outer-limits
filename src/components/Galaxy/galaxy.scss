@@ -5,11 +5,14 @@ $first-stage-animation-speed: 1.2s;
 $final-stage-animation-speed: 3s;
 
 #galaxy-container {
+    position: relative;
     background-color: transparent;
 }
 
 #galaxy {
+    //height: 500vh; // Need to set a height so child components can be displayed and sized automatically.
     right: 0;
+    border: 1px solid white;
 }
 #galaxy, #galaxy-svg {
     position: absolute;
@@ -80,6 +83,9 @@ $final-stage-animation-speed: 3s;
 }
 
 @media (max-width: $mobile-width) {
+    #galaxy {
+        //height: 500vh; // FIXME: Need to set a height so child components can be displayed and sized automatically.
+    }
     #galaxy, #galaxy-svg {
         left: 0 !important; // override paper
         top: 100vh !important; // override paper

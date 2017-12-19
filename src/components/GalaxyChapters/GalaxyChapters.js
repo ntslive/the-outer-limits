@@ -38,12 +38,11 @@ class GalaxyChapters extends React.Component {
                     if (!mapping) return;
 
                     const x = isMobile ? 0 : mapping.x;
-                    const classIfSelected = this.props.selectedChapterIndex === i ? 'selected' : '';
+                    const classIfSelected = (this.props.selectedChapterIndex === i) || isMobile ? 'selected' : '';
                     const chapterIndexText = convertNumberToRomanNumeral(i+1);
 
                     return (
-                        <div key={i} className={`galaxy-chapter-container ${classIfSelected}`}
-                             style={{left: x, top: mapping.y}}>
+                        <div key={i} className={`galaxy-chapter-container ${classIfSelected}`} style={{left: x, top: mapping.y}}>
                             <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(chapter.id)}></div>
                             <div className="galaxy-chapter">
                                 <div className="galaxy-chapter__index text-uppercase leading-font">

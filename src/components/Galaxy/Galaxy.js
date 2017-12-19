@@ -30,31 +30,31 @@ class GalaxyMapping {
 
         let circles;
         if (this.isMobile) {
-            this.height = windowHeight * 3;
+            this.height = windowHeight * 4;
             this.width = windowWidth;
 
-            const minDistanceBetweenChapters = windowHeight / 1.2;
+            const minDistanceBetweenChapters = windowHeight * 0.95;
 
             circles = [
                 {
+                    x: windowWidth * 0.56,
                     y: 60,
-                    x: windowHeight / 2.5,
                 },
                 {
-                    y: minDistanceBetweenChapters + 240,
-                    x: (windowHeight / 2) + (windowHeight / 8),
+                    x: windowWidth * 0.35,
+                    y: (minDistanceBetweenChapters + 60),
+        },
+                {
+                    x: windowWidth * 0.81,
+                    y: (minDistanceBetweenChapters * 2) + (minDistanceBetweenChapters * 0.03),
                 },
                 {
-                    y: (minDistanceBetweenChapters * 2) + 30,
-                    x: windowHeight / 3,
+                    x: windowWidth * 0.29,
+                    y: (minDistanceBetweenChapters * 3) + (minDistanceBetweenChapters * 0.015),
                 },
                 {
-                    y: (minDistanceBetweenChapters * 3) + 150,
-                    x: (windowHeight / 2) + (windowHeight / 4),
-                },
-                {
-                    y: (minDistanceBetweenChapters * 4) + 50,
-                    x: (windowHeight / 2) + (windowHeight / 9),
+                    x: windowWidth * 0.77,
+                    y: (minDistanceBetweenChapters * 4) + (minDistanceBetweenChapters * 0.04),
                 },
             ];
         } else {
