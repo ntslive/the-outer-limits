@@ -66,7 +66,7 @@ class ChapterTeaser extends React.Component {
 
                 <div id="teaser-footer">
                     <div id="teaser-footer_status">
-                        <GalaxyChapterAction chapter={chapter} hideButton={true} />
+                        <GalaxyChapterAction chapter={chapter} hideButton/>
                     </div>
 
                     <div id="teaser-footer__player">
