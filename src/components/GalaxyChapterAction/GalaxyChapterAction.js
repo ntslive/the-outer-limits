@@ -18,12 +18,19 @@ class GalaxyChapterAction extends React.PureComponent {
         this.props.history.push(withPrefix('/chapters/' + chapterSlug + '/'));
     }
 
-    renderPodcast() {
-        const slug = getSlug(this.props.chapter.name);
+    _renderButton(chapter, callForAction, hideButton) {
+        if (hideButton) return;
 
+        const slug = getSlug(this.props.chapter.name);
+        return (
+            <Button text={callForAction} icon={PlayIcon} onClick={() => this._goToChapter(slug)}></Button>
+        );
+    }
+
+    renderPodcast() {
         return (
             <div className={this.props.className}>
-                <Button text={"listen back"} icon={PlayIcon} onClick={() => this._goToChapter(slug)}></Button>
+                { this._renderButton(this.props.chapter, "listen back", this.props.hideButton) }
             </div>
         );
     }
@@ -31,7 +38,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderPodcastComing() {
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"} icon={PlayIcon}></Button>
+                { this._renderButton(this.props.chapter, "Play Teaser", this.props.hideButton) }
 
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>Available Tomorrow</span>
@@ -41,21 +48,17 @@ class GalaxyChapterAction extends React.PureComponent {
     }
 
     renderLive() {
-        const slug = getSlug(this.props.chapter.name);
-
         return (
             <div className={this.props.className}>
-                <Button text={"live now"} icon={PlayIcon} onClick={() => this._goToChapter(slug)}></Button>
+                { this._renderButton(this.props.chapter, "Live Now", this.props.hideButton) }
             </div>
         )
     }
 
     renderTeaser() {
-        const slug = getSlug(this.props.chapter.name);
-
         return (
             <div className={this.props.className}>
-                <Button text={"Play Teaser"} icon={PlayIcon} onClick={() => this._goToChapter(slug)}></Button>
+                { this._renderButton(this.props.chapter, "Play teaser", this.props.hideButton) }
 
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>{this.props.chapter.broadcastDate}</span>
