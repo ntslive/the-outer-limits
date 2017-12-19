@@ -18,6 +18,12 @@ const Icon = props => {
         case "long-arrow":
             iconClassName = "icon-long-arrow";
             break;
+        case "home":
+            iconClassName = "icon-home";
+            break;
+        case "cross":
+            iconClassName = "icon-cross";
+            break;
         default:
             console.error("Unknown icon id", props.icon.id);
             break;

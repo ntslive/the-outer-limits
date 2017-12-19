@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Cross</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="TEASER-CREDITS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1352.000000, -41.000000)">
+        <g id="NAV" transform="translate(1050.057702, 50.788582) rotate(45.000000) translate(-1050.057702, -50.788582) translate(797.557702, -201.211418)" fill="#FFFFFF">
+            <g id="CLOSE" transform="translate(471.477272, 32.652670) rotate(-45.000000) translate(-471.477272, -32.652670) translate(448.477272, 9.652670)">
+                <g id="Cross" transform="translate(15.000000, 14.000000)">
+                    <polygon id="Rectangle" points="15.7407407 2.64677169e-13 17 1.25925926 1.25925926 17 8.17124146e-14 15.7407407"></polygon>
+                    <polygon id="Rectangle" points="9.41469125e-14 1.25925926 1.25925926 2.62900812e-13 17 15.7407407 15.7407407 17"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

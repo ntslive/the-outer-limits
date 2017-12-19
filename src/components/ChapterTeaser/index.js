@@ -4,11 +4,13 @@ import {withRouter} from 'react-router-dom';
 import $ from 'jquery';
 import { withPrefix } from "gatsby-link";
 
-import Icon from '../icon';
 import Button from '../Button/index';
-import NtsLogo from '../../../static/nts-logo-white.png';
 import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
-import PlayIcon from "../icon/play.icon";
+import Icon from '../icon';
+
+import NtsLogo from '../../../static/nts-logo-white.png';
+import HomeIcon from "../icon/home.icon";
+import CrossIcon from "../icon/cross.icon";
 
 import './chapter-teaser.scss';
 
@@ -30,8 +32,8 @@ class ChapterTeaser extends React.Component {
         return (
             <div id="teaser-container">
                 <div id="teaser-nav">
-                    <Button id="teaser-nav__center" icon={PlayIcon} alternate onClick={this._goToGalaxy}></Button>
-                    <Button id="teaser-nav__right" icon={PlayIcon} alternate onClick={this._goToGalaxy}></Button>
+                    <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>
+                    <Button id="teaser-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy}></Button>
                 </div>
 
                 <div id="teaser-content">
