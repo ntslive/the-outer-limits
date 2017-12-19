@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './galaxy-info.scss';
 import '../../../sass/_settings.scss';
-import NtsLogo from './nts-logo-white.png';
+import NtsLogo from '../../../static/nts-logo-white.png';
 
 const GalaxyInfo = () => (
     <div id="galaxy-info">

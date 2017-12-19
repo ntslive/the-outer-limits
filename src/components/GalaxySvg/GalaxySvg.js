@@ -12,6 +12,10 @@ class GalaxySvg extends React.Component {
         this.props.drawing.paper.canvas.setAttribute("id", "galaxy-svg");
     }
 
+    componentWillUnmount() {
+        this.props.drawing.paper.remove();
+    }
+
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.selectedChapterId !== nextProps.selectedChapterId
             || this.props.liveChapterId !== nextProps.liveChapterId;

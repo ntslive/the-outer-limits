@@ -22,6 +22,8 @@
         "spaced-comment": "off",
         "no-trailing-spaces": "off",
         "object-curly-spacing": "off",
+        "no-plusplus": "off",
+        "max-len": "off",
         "react/forbid-prop-types": "off",
         "react/prefer-stateless-function": "off"
     }
