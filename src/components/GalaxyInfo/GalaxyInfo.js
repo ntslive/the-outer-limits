@@ -13,20 +13,25 @@ const GalaxyInfo = () => (
             <div className="galaxy-info__header__text subtitle-line-spacing">
                 <span>NTS Radio</span>
                 <br/>
-                <span>in collaboration with NASA</span>
+                <span>in collaboration <span className="hidden-mobile">with NASA</span></span>
                 <br/>
-                <span>presents</span>
+                <span><span className="hidden-desktop">with NASA</span> presents</span>
             </div>
         </div>
 
         <div className="galaxy-info__content">
-            <h1 className="title text-uppercase leading-font"><span className="title__name">Jenny Maya:</span>The Outer Limits</h1>
+            <h1 className="title text-uppercase leading-font">
+                <span className="title__name">Jenny Maya:</span>
+                The <br className="hidden-desktop" />
+                Outer <br className="hidden-desktop" />
+                Limits
+            </h1>
             <h3 className="subtitle">5 part radio series with original music production</h3>
         </div>
 
         <div className="galaxy-info__footer text-justify text-uppercase">
-            <div className="leading-font" style={{fontSize: '28px', marginTop: '13px', letterSpacing: '4px'}}>01.01.18</div>
-            <div className="subtitle-line-spacing">
+            <div className="galaxy-info__footer__title leading-font">01.01.18</div>
+            <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                 <div>Next broadcast</div>
                 <div>on NTS / 13:00</div>
             </div>

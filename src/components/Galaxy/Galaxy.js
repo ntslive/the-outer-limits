@@ -17,40 +17,76 @@ import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
 import './galaxy.scss';
 
+const mobileThreshold = 770
+
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
 
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight - 180;
-        let canvasWidth = windowWidth * 3;
-        this.height = windowHeight;
-        this.width = canvasWidth;
 
-        const minDistanceBetweenChapters = windowWidth / 1.9;
+        this.isMobile = windowWidth < mobileThreshold;
 
-        let circles = [
-            {
-                x: 60,
-                y: windowHeight / 2.5,
-            },
-            {
-                x: minDistanceBetweenChapters + 240,
-                y: (windowHeight / 2) + (windowHeight / 8),
-            },
-            {
-                x: (minDistanceBetweenChapters * 2) + 30,
-                y: windowHeight / 3,
-            },
-            {
-                x: (minDistanceBetweenChapters * 3) + 150,
-                y: (windowHeight / 2) + (windowHeight / 4),
-            },
-            {
-                x: (minDistanceBetweenChapters * 4) + 50,
-                y: (windowHeight / 2) + (windowHeight / 9),
-            },
-        ];
+        let circles;
+        if (this.isMobile) {
+            this.height = windowHeight * 3;
+            this.width = windowWidth;
+
+            const minDistanceBetweenChapters = windowHeight / 1.2;
+
+            circles = [
+                {
+                    y: 60,
+                    x: windowHeight / 2.5,
+                },
+                {
+                    y: minDistanceBetweenChapters + 240,
+                    x: (windowHeight / 2) + (windowHeight / 8),
+                },
+                {
+                    y: (minDistanceBetweenChapters * 2) + 30,
+                    x: windowHeight / 3,
+                },
+                {
+                    y: (minDistanceBetweenChapters * 3) + 150,
+                    x: (windowHeight / 2) + (windowHeight / 4),
+                },
+                {
+                    y: (minDistanceBetweenChapters * 4) + 50,
+                    x: (windowHeight / 2) + (windowHeight / 9),
+                },
+            ];
+        } else {
+            this.height = windowHeight;
+            this.width = windowWidth * 3;
+
+            const minDistanceBetweenChapters = windowWidth / 1.9;
+
+            circles = [
+                {
+                    x: 60,
+                    y: windowHeight / 2.5,
+                },
+                {
+                    x: minDistanceBetweenChapters + 240,
+                    y: (windowHeight / 2) + (windowHeight / 8),
+                },
+                {
+                    x: (minDistanceBetweenChapters * 2) + 30,
+                    y: windowHeight / 3,
+                },
+                {
+                    x: (minDistanceBetweenChapters * 3) + 150,
+                    y: (windowHeight / 2) + (windowHeight / 4),
+                },
+                {
+                    x: (minDistanceBetweenChapters * 4) + 50,
+                    y: (windowHeight / 2) + (windowHeight / 9),
+                },
+            ];
+        }
+
         this.circles = circles;
 
         this.paths = [{
@@ -63,6 +99,8 @@ class GalaxyMapping {
     }
 
     get objectMapping() {
+        // TODO: Load mobile images for mobile.
+
         return [
             {
                 src: PlanetImg,
@@ -97,8 +135,6 @@ const GalaxyObjects = props => {
         </div>
     )
 }
-
-
 
 class Galaxy extends React.Component {
     constructor(props) {
@@ -183,16 +219,6 @@ class Galaxy extends React.Component {
         this.scrollToChapter(newselectedChapterIndex);
     }
 
-    renderObjectMap() {
-        return (
-            <div id="galaxy-objects">
-                <div className="galaxy-object">
-                    <img src={PlanetImg} />
-                </div>
-            </div>
-        );
-    }
-
     renderGalaxyMap() {
         let liveChapterIndex = -1;
         for (let i=0; i<this.props.chapters.length; i++) {
@@ -216,11 +242,17 @@ class Galaxy extends React.Component {
         return (
             <section id="galaxy-container">
                 <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={this._nextChapter}>
-                    <span style={{marginRight: '31px'}}>SCROLL</span>
-                    <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    <div className="hidden-mobile">
+                        <span style={{marginRight: '31px'}}>SCROLL</span>
+                        <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    </div>
+                    <div className="hidden-desktop">
+                        <span style={{marginRight: '15px'}}>SCROLL</span>
+                        <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    </div>
                 </div>
 
-                <div id="galaxy-footer-chapter-controls">
+                <div id="galaxy-footer-chapter-controls" className="hidden-mobile">
                     <Button className="chapter-control-button button__circle--left" icon={ShortLeftArrow} onClick={this._prevChapter} alternate/>
                     <Button className="chapter-control-button button__circle--right" icon={ShortRightArrow} onClick={this._nextChapter} alternate/>
                 </div>

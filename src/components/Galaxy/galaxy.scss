@@ -9,12 +9,9 @@ $final-stage-animation-speed: 3s;
 }
 
 #galaxy {
-    position: absolute;
-    top: 0;  bottom: 0;
-    left: $galaxy-info-width + 100;
     right: 0;
 }
-#galaxy-svg {
+#galaxy, #galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
     left: $galaxy-info-width + 100 !important;
@@ -79,5 +76,20 @@ $final-stage-animation-speed: 3s;
     }
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    #galaxy, #galaxy-svg {
+        left: 0 !important; // override paper
+        top: 100vh !important; // override paper
+    }
+    #galaxy-footer-scroll {
+        opacity: 1;
+        right: 0;
+        bottom: 24px;
+        left: inherit;
+        @include animation(none !important);
+        @include transform(rotate(90deg) translate(-50%, -100%))
     }
 }
