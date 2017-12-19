@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "(shx --silent rm -rf public || shx true) && gatsby build",
-    "deploy": "(shx --silent rm -rf public || shx true) && gatsby build --prefix-paths && gh-pages --dist public -b gh-pages",
-    "develop": "(shx --silent rm -rf public || shx true) && gatsby develop",
+    "build": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby build",
+    "deploy": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby build --prefix-paths && gh-pages --dist public -b gh-pages",
+    "develop": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby develop",
     "lint": "node_modules/.bin/eslint src --fix",
     "serve": "gatsby serve"
   },
