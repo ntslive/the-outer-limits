@@ -88,10 +88,12 @@ $chapter-transition-speed: 0.8s;
 @media (max-width: $mobile-width) {
     .galaxy-chapter-container {
         position: absolute;
-        width: 100%;
+        width: auto;
         overflow: auto;
         height: auto;
         padding-bottom: 22px; // gives space for lines with odd line-height
+        left: 24px;
+        right: 24px;
     }
     .galaxy-chapter {
         position: relative;

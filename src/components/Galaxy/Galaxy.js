@@ -31,7 +31,7 @@ class GalaxyMapping {
         let circles;
         if (this.isMobile) {
             this.height = windowHeight * 4;
-            this.width = windowWidth;
+            this.width = windowWidth - 50;
 
             const minDistanceBetweenChapters = windowHeight * 0.95;
 
@@ -42,10 +42,10 @@ class GalaxyMapping {
                 },
                 {
                     x: windowWidth * 0.35,
-                    y: (minDistanceBetweenChapters + 60),
+                    y: (minDistanceBetweenChapters + 120),
         },
                 {
-                    x: windowWidth * 0.81,
+                    x: windowWidth * 0.61,
                     y: (minDistanceBetweenChapters * 2) + (minDistanceBetweenChapters * 0.03),
                 },
                 {
@@ -101,24 +101,54 @@ class GalaxyMapping {
     get objectMapping() {
         // TODO: Load mobile images for mobile.
 
-        return [
-            {
-                src: PlanetImg,
-                x: 350,
-                y: this.height - (this.height / 1.5),
-            },
-            {
-                src: EarthImg,
-                x: this.circles[2].x - (this.width / 20),
-                y: this.height - 60,
-            },
-            {
-                src: GalaxyImg,
-                x: this.circles[4].x,
-                y: -30,
-                style: {'opacity': '0.8'}
-            },
-        ]
+        if (this.isMobile) {
+            return [
+                {
+                    src: PlanetImg,
+                    x: this.width * 0.4,
+                    y: 150,
+                    style: {'opacity': '0.8'}
+                },
+                {
+                    src: EarthImg,
+                    x: this.width - 400,
+                    y: this.circles[3].y - ((this.circles[3].y - this.circles[2].y) / 2),
+                    style: {
+                        transform: 'rotate(-90deg) scaleX(-1)',
+                        width: '700px',
+                    }
+                },
+                {
+                    src: GalaxyImg,
+                    x: 2,
+                    y: this.circles[4].y,
+                    style: {
+                        'opacity': '0.8',
+                        'transform': 'rotate(180deg)',
+                    }
+                },
+            ];
+        } else {
+            return [
+                {
+                    src: PlanetImg,
+                    x: 350,
+                    y: this.height - (this.height / 1.5),
+                },
+                {
+                    src: EarthImg,
+                    x: this.circles[2].x - (this.width / 20),
+                    y: this.height - 60,
+                },
+                {
+                    src: GalaxyImg,
+                    x: this.circles[4].x,
+                    y: -30,
+                    style: {'opacity': '0.8'}
+                },
+            ];
+        }
+
     }
 }
 

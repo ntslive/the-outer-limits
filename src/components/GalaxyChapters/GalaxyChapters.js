@@ -37,7 +37,7 @@ class GalaxyChapters extends React.Component {
                     let chapter = this.props.chapters[i];
                     if (!mapping) return;
 
-                    const x = isMobile ? 0 : mapping.x;
+                    const x = isMobile ? 24 : mapping.x;
                     const classIfSelected = (this.props.selectedChapterIndex === i) || isMobile ? 'selected' : '';
                     const chapterIndexText = convertNumberToRomanNumeral(i+1);
 

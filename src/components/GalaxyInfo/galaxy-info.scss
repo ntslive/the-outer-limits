@@ -11,6 +11,7 @@
     height: 90%;
     width: 70%;
     max-width: $galaxy-info-width;
+    padding: 24px;
     padding-left: 100px;
 
     opacity: 0;
@@ -80,7 +81,7 @@
         width: 100%;
         height: calc(100vh - 24px);
         max-height: none;
-        padding: 0;
+        padding-left: 24px;
 
         opacity: 1;
 
