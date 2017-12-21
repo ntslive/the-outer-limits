@@ -9,7 +9,8 @@ html, body {
 }
 
 body {
-    //overflow-y: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 h1, h2, h3 ,h4 ,h5 {
@@ -53,13 +54,14 @@ a {
 }
 
 .chapter-page {
-
 }
 
 @media (max-width: $mobile-width) {
-    main {
-        //padding: 24px;
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
     }
+
     .hidden-mobile {
         display: none;
     }

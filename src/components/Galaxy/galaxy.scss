@@ -103,4 +103,7 @@ $final-stage-animation-speed: 3s;
         left: inherit;
         @include transform(rotate(90deg) translate(-50%, -100%))
     }
+    .galaxy-objects__objects img {
+        max-height: 50vh;
+    }
 }

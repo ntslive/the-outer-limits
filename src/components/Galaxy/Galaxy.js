@@ -17,14 +17,18 @@ import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
 import './galaxy.scss';
 
-const mobileThreshold = 770
+const mobileThreshold = 770;
+
+function getWindowHeight() {
+    return $(window).height();
+}
 
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
 
         let windowWidth = window.innerWidth;
-        let windowHeight = window.innerHeight - 180;
+        let windowHeight = getWindowHeight();
 
         this.isMobile = windowWidth < mobileThreshold;
 
