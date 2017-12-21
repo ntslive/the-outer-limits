@@ -15,6 +15,7 @@
     padding-left: 100px;
 
     opacity: 0;
+    box-sizing: border-box;
 
     @include animation(fadeInBio 1.2s forwards);
     @include animation-delay(0.2s);

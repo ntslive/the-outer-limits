@@ -86,7 +86,7 @@ $final-stage-animation-speed: 3s;
 @media (max-width: $mobile-width) {
     #galaxy {
         width: auto;
-        height: 400vh;
+        height: 450vh;
     }
     #galaxy, #galaxy-svg {
         left: 0 !important; // override paper

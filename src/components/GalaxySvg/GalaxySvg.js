@@ -8,10 +8,7 @@ class GalaxySvg extends React.Component {
     constructor(props) {
         super(props);
 
-        let paperWidth = this.props.drawing.width;
-        if (!this.props.drawing.isMobile) paperWidth -= 800; // manually cut width on desktop
-
-        this.props.drawing.addPaper(Raphael(0, 0, paperWidth, this.props.drawing.height));
+        this.props.drawing.addPaper(Raphael(0, 0, this.props.drawing.width, this.props.drawing.height));
         this.props.drawing.paper.canvas.setAttribute("id", "galaxy-svg");
     }
 
@@ -26,8 +23,8 @@ class GalaxySvg extends React.Component {
     }
 
     renderCircle(circle, index) {
-        const isSelected = this.props.drawing.isMobile ? true : index === this.props.selectedChapterId;
-        console.log(isSelected);
+        const isSelected = this.props.drawing.isMobile ? true : index === this.props.selectedChapterIndex;
+
         return (
             <Circle key={index} paper={this.props.drawing.paper}
                     isMobile={this.props.drawing.isMobile}
@@ -54,7 +51,7 @@ class GalaxySvg extends React.Component {
 
 GalaxySvg.propTypes = {
     drawing: PropTypes.object.isRequired,
-    selectedChapterIndex: PropTypes.string.isRequired,
+    selectedChapterIndex: PropTypes.number.isRequired,
     liveChapterIndex: PropTypes.number.isRequired,
 };
 

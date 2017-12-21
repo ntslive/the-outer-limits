@@ -19,23 +19,19 @@ import './galaxy.scss';
 
 const mobileThreshold = 770;
 
-function getWindowHeight() {
-    return $(window).height();
-}
-
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
 
-        let windowWidth = window.innerWidth;
-        let windowHeight = getWindowHeight();
+        let windowWidth = $(window).width();
+        let windowHeight = $(window).height();
 
         this.isMobile = windowWidth < mobileThreshold;
 
         let circles;
         if (this.isMobile) {
-            this.height = windowHeight * 4;
-            this.width = windowWidth - 50;
+            this.height = windowHeight * 4.5;
+            this.width = windowWidth;
 
             const minDistanceBetweenChapters = windowHeight * 0.95;
 
@@ -47,7 +43,7 @@ class GalaxyMapping {
                 {
                     x: windowWidth * 0.35,
                     y: (minDistanceBetweenChapters + 120),
-        },
+                },
                 {
                     x: windowWidth * 0.61,
                     y: (minDistanceBetweenChapters * 2) + (minDistanceBetweenChapters * 0.03),
@@ -70,23 +66,23 @@ class GalaxyMapping {
             circles = [
                 {
                     x: 60,
-                    y: windowHeight / 2.5,
+                    y: windowHeight * 0.37,
                 },
                 {
                     x: minDistanceBetweenChapters + 240,
-                    y: (windowHeight / 2) + (windowHeight / 8),
+                    y: windowHeight * 0.56,
                 },
                 {
                     x: (minDistanceBetweenChapters * 2) + 30,
-                    y: windowHeight / 3,
+                    y: windowHeight * 0.3,
                 },
                 {
                     x: (minDistanceBetweenChapters * 3) + 150,
-                    y: (windowHeight / 2) + (windowHeight / 4),
+                    y: windowHeight * 0.59,
                 },
                 {
                     x: (minDistanceBetweenChapters * 4) + 50,
-                    y: (windowHeight / 2) + (windowHeight / 9),
+                    y: windowHeight * 0.48,
                 },
             ];
         }
@@ -142,7 +138,7 @@ class GalaxyMapping {
                 {
                     src: EarthImg,
                     x: this.circles[2].x - (this.width / 20),
-                    y: this.height - 60,
+                    y: this.height * 0.68,
                 },
                 {
                     src: GalaxyImg,
@@ -179,6 +175,14 @@ class Galaxy extends React.Component {
         this._nextChapter = this._nextChapter.bind(this);
         this.scrollToChapter = this.scrollToChapter.bind(this);
 
+        this.state = {
+            selectedChapterIndex: 0,
+            galaxyMapping: false,
+        }
+    }
+
+    componentDidMount() {
+        let that = this;
         this.handlers = {};
         this.handlers.createGalaxyMapping = function() {
             console.log("Galaxy :: Checking if Raphael is accessible");
@@ -191,7 +195,6 @@ class Galaxy extends React.Component {
                 setTimeout(this.handlers.createGalaxyMapping, 1000);
             }
         }
-
         this.handlers.keydownHandler = function(e) {
             if (!that.state.galaxyMapping) return;
 
@@ -204,13 +207,6 @@ class Galaxy extends React.Component {
             }
         }
 
-        this.state = {
-            selectedChapterIndex: 0,
-            galaxyMapping: false,
-        }
-    }
-
-    componentDidMount() {
         $("html").keydown(this.handlers.keydownHandler);
 
         setTimeout(this.handlers.createGalaxyMapping, 1000);
