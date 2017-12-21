@@ -92,12 +92,15 @@ $final-stage-animation-speed: 3s;
         left: 0 !important; // override paper
         top: 100vh !important; // override paper
     }
+    #galaxy-objects, #galaxy-footer-scroll, #galaxy-footer-chapter-controls {
+        opacity: 1;
+        @include animation(none !important);
+    }
     #galaxy-footer-scroll {
         opacity: 1;
         right: 0;
         bottom: 24px;
         left: inherit;
-        @include animation(none !important);
         @include transform(rotate(90deg) translate(-50%, -100%))
     }
 }
