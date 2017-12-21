@@ -8,7 +8,10 @@ class GalaxySvg extends React.Component {
     constructor(props) {
         super(props);
 
-        this.props.drawing.addPaper(Raphael(0, 0, this.props.drawing.width, this.props.drawing.height));
+        let paperWidth = this.props.drawing.width;
+        if (!this.props.drawing.isMobile) paperWidth -= 800; // manually cut width on desktop
+
+        this.props.drawing.addPaper(Raphael(0, 0, paperWidth, this.props.drawing.height));
         this.props.drawing.paper.canvas.setAttribute("id", "galaxy-svg");
     }
 
@@ -50,7 +53,7 @@ class GalaxySvg extends React.Component {
 
 GalaxySvg.propTypes = {
     drawing: PropTypes.object.isRequired,
-    selectedChapterIndex: PropTypes.number.isRequired,
+    selectedChapterIndex: PropTypes.string.isRequired,
     liveChapterIndex: PropTypes.number.isRequired,
 };
 

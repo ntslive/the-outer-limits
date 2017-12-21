@@ -7,17 +7,18 @@ $final-stage-animation-speed: 3s;
 #galaxy-container {
     position: relative;
     background-color: transparent;
+    height: 100vh;
 }
 
-#galaxy {
-    //height: 500vh; // Need to set a height so child components can be displayed and sized automatically.
-    right: 0;
-    border: 1px solid white;
-}
 #galaxy, #galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
     left: $galaxy-info-width + 100 !important;
+}
+#galaxy {
+    width: 270vw; // must have SVG paper defintion
+    right: 0;
+    overflow: hidden;
 }
 
 #galaxy-objects {
@@ -84,8 +85,8 @@ $final-stage-animation-speed: 3s;
 
 @media (max-width: $mobile-width) {
     #galaxy {
+        width: auto;
         height: 400vh;
-        overflow: hidden;
     }
     #galaxy, #galaxy-svg {
         left: 0 !important; // override paper

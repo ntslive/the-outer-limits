@@ -69,7 +69,7 @@ class GalaxyChapters extends React.Component {
 GalaxyChapters.propTypes = {
     chapters: PropTypes.array.isRequired,
     drawing: PropTypes.object.isRequired,
-    selectedChapterIndex: PropTypes.number.isRequired,
+    selectedChapterIndex: PropTypes.string.isRequired,
     scrollHandler: PropTypes.func.isRequired,
 };
 

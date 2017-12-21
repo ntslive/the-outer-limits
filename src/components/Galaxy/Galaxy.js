@@ -142,7 +142,7 @@ class GalaxyMapping {
                 },
                 {
                     src: GalaxyImg,
-                    x: this.circles[4].x,
+                    x: this.circles[4].x - ((this.circles[4].x - this.circles[3].x) * 0.3),
                     y: -30,
                     style: {'opacity': '0.8'}
                 },
