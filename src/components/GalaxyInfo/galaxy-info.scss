@@ -11,9 +11,11 @@
     height: 90%;
     width: 70%;
     max-width: $galaxy-info-width;
+    padding: 24px;
     padding-left: 100px;
 
     opacity: 0;
+    box-sizing: border-box;
 
     @include animation(fadeInBio 1.2s forwards);
     @include animation-delay(0.2s);
@@ -54,15 +56,76 @@
     bottom: 52px;
     font-size: 16px;
 }
+.galaxy-info__footer__title {
+    font-size: 28px;
+    margin-top: 13px;
+    letter-spacing: 4px;
+}
+
 
 @include keyframes(fadeInBio) {
     from {
         opacity: 0;
         @include transform(translate(-20px, -50%));
-
     }
     to {
         opacity: 1;
         @include transform(translate(0, -50%));
+    }
+}
+
+@media (max-width: $mobile-width) {
+    #galaxy-info {
+        position: relative;
+        top: 0;
+
+        width: 100%;
+        height: calc(100vh - 24px);
+        max-height: none;
+        padding-left: 24px;
+
+        opacity: 1;
+
+        @include transform(none);
+        @include animation(none);
+    }
+    .galaxy-info__header__text {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1.1em;
+        margin-left: 10px;
+    }
+    .galaxy-info__content {
+        position: relative;
+        top: 0;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        @include transform(none);
+
+        .title {
+            font-size: 46px;
+            line-height: 1em;
+        }
+        .title__name {
+            display: block;
+            font-size: 26px;
+        }
+        .subtitle {
+            font-size: 12px;
+            margin-top: 8px;
+            padding-right: 27px;
+            line-height: 1.4em;
+        }
+    }
+    .galaxy-info__footer {
+        position: relative;
+        bottom: inherit;
+    }
+    .galaxy-info__footer__title {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+    }
+    .galaxy-info__footer__subtitle {
+        font-size: 12px;
     }
 }

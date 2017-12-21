@@ -17,40 +17,76 @@ import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
 import './galaxy.scss';
 
+const mobileThreshold = 770;
+
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
 
-        let windowWidth = window.innerWidth;
-        let windowHeight = window.innerHeight - 180;
-        let canvasWidth = windowWidth * 3;
-        this.height = windowHeight;
-        this.width = canvasWidth;
+        let windowWidth = $(window).width();
+        let windowHeight = $(window).height();
 
-        const minDistanceBetweenChapters = windowWidth / 1.9;
+        this.isMobile = windowWidth < mobileThreshold;
 
-        let circles = [
-            {
-                x: 60,
-                y: windowHeight / 2.5,
-            },
-            {
-                x: minDistanceBetweenChapters + 240,
-                y: (windowHeight / 2) + (windowHeight / 8),
-            },
-            {
-                x: (minDistanceBetweenChapters * 2) + 30,
-                y: windowHeight / 3,
-            },
-            {
-                x: (minDistanceBetweenChapters * 3) + 150,
-                y: (windowHeight / 2) + (windowHeight / 4),
-            },
-            {
-                x: (minDistanceBetweenChapters * 4) + 50,
-                y: (windowHeight / 2) + (windowHeight / 9),
-            },
-        ];
+        let circles;
+        if (this.isMobile) {
+            this.height = windowHeight * 4.5;
+            this.width = windowWidth;
+
+            const minDistanceBetweenChapters = windowHeight * 0.95;
+
+            circles = [
+                {
+                    x: windowWidth * 0.56,
+                    y: 60,
+                },
+                {
+                    x: windowWidth * 0.35,
+                    y: (minDistanceBetweenChapters + 120),
+                },
+                {
+                    x: windowWidth * 0.61,
+                    y: (minDistanceBetweenChapters * 2) + (minDistanceBetweenChapters * 0.03),
+                },
+                {
+                    x: windowWidth * 0.29,
+                    y: (minDistanceBetweenChapters * 3) + (minDistanceBetweenChapters * 0.015),
+                },
+                {
+                    x: windowWidth * 0.77,
+                    y: (minDistanceBetweenChapters * 4) + (minDistanceBetweenChapters * 0.04),
+                },
+            ];
+        } else {
+            this.height = windowHeight;
+            this.width = windowWidth * 3;
+
+            const minDistanceBetweenChapters = windowWidth / 1.9;
+
+            circles = [
+                {
+                    x: 60,
+                    y: windowHeight * 0.37,
+                },
+                {
+                    x: minDistanceBetweenChapters + 240,
+                    y: windowHeight * 0.56,
+                },
+                {
+                    x: (minDistanceBetweenChapters * 2) + 30,
+                    y: windowHeight * 0.3,
+                },
+                {
+                    x: (minDistanceBetweenChapters * 3) + 150,
+                    y: windowHeight * 0.59,
+                },
+                {
+                    x: (minDistanceBetweenChapters * 4) + 50,
+                    y: windowHeight * 0.48,
+                },
+            ];
+        }
+
         this.circles = circles;
 
         this.paths = [{
@@ -63,24 +99,56 @@ class GalaxyMapping {
     }
 
     get objectMapping() {
-        return [
-            {
-                src: PlanetImg,
-                x: 350,
-                y: this.height - (this.height / 1.5),
-            },
-            {
-                src: EarthImg,
-                x: this.circles[2].x - (this.width / 20),
-                y: this.height - 60,
-            },
-            {
-                src: GalaxyImg,
-                x: this.circles[4].x,
-                y: -30,
-                style: {'opacity': '0.8'}
-            },
-        ]
+        // TODO: Load mobile images for mobile.
+
+        if (this.isMobile) {
+            return [
+                {
+                    src: PlanetImg,
+                    x: this.width * 0.4,
+                    y: 150,
+                    style: {'opacity': '0.8'}
+                },
+                {
+                    src: EarthImg,
+                    x: this.width - 400,
+                    y: this.circles[3].y - ((this.circles[3].y - this.circles[2].y) / 2),
+                    style: {
+                        transform: 'rotate(-90deg) scaleX(-1)',
+                        width: '700px',
+                    }
+                },
+                {
+                    src: GalaxyImg,
+                    x: 2,
+                    y: this.circles[4].y,
+                    style: {
+                        'opacity': '0.8',
+                        'transform': 'rotate(180deg)',
+                    }
+                },
+            ];
+        } else {
+            return [
+                {
+                    src: PlanetImg,
+                    x: 350,
+                    y: this.height - (this.height / 1.5),
+                },
+                {
+                    src: EarthImg,
+                    x: this.circles[2].x - (this.width / 20),
+                    y: this.height * 0.68,
+                },
+                {
+                    src: GalaxyImg,
+                    x: this.circles[4].x - ((this.circles[4].x - this.circles[3].x) * 0.3),
+                    y: -30,
+                    style: {'opacity': '0.8'}
+                },
+            ];
+        }
+
     }
 }
 
@@ -98,8 +166,6 @@ const GalaxyObjects = props => {
     )
 }
 
-
-
 class Galaxy extends React.Component {
     constructor(props) {
         super(props);
@@ -109,6 +175,14 @@ class Galaxy extends React.Component {
         this._nextChapter = this._nextChapter.bind(this);
         this.scrollToChapter = this.scrollToChapter.bind(this);
 
+        this.state = {
+            selectedChapterIndex: 0,
+            galaxyMapping: false,
+        }
+    }
+
+    componentDidMount() {
+        let that = this;
         this.handlers = {};
         this.handlers.createGalaxyMapping = function() {
             console.log("Galaxy :: Checking if Raphael is accessible");
@@ -121,7 +195,6 @@ class Galaxy extends React.Component {
                 setTimeout(this.handlers.createGalaxyMapping, 1000);
             }
         }
-
         this.handlers.keydownHandler = function(e) {
             if (!that.state.galaxyMapping) return;
 
@@ -134,13 +207,6 @@ class Galaxy extends React.Component {
             }
         }
 
-        this.state = {
-            selectedChapterIndex: 0,
-            galaxyMapping: false,
-        }
-    }
-
-    componentDidMount() {
         $("html").keydown(this.handlers.keydownHandler);
 
         setTimeout(this.handlers.createGalaxyMapping, 1000);
@@ -183,16 +249,6 @@ class Galaxy extends React.Component {
         this.scrollToChapter(newselectedChapterIndex);
     }
 
-    renderObjectMap() {
-        return (
-            <div id="galaxy-objects">
-                <div className="galaxy-object">
-                    <img src={PlanetImg} />
-                </div>
-            </div>
-        );
-    }
-
     renderGalaxyMap() {
         let liveChapterIndex = -1;
         for (let i=0; i<this.props.chapters.length; i++) {
@@ -216,11 +272,17 @@ class Galaxy extends React.Component {
         return (
             <section id="galaxy-container">
                 <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={this._nextChapter}>
-                    <span style={{marginRight: '31px'}}>SCROLL</span>
-                    <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    <div className="hidden-mobile">
+                        <span style={{marginRight: '31px'}}>SCROLL</span>
+                        <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    </div>
+                    <div className="hidden-desktop">
+                        <span style={{marginRight: '15px'}}>SCROLL</span>
+                        <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />
+                    </div>
                 </div>
 
-                <div id="galaxy-footer-chapter-controls">
+                <div id="galaxy-footer-chapter-controls" className="hidden-mobile">
                     <Button className="chapter-control-button button__circle--left" icon={ShortLeftArrow} onClick={this._prevChapter} alternate/>
                     <Button className="chapter-control-button button__circle--right" icon={ShortRightArrow} onClick={this._nextChapter} alternate/>
                 </div>

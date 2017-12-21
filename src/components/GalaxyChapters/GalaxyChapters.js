@@ -29,6 +29,7 @@ class GalaxyChapters extends React.Component {
 
     render() {
         console.log("GalaxyChapters :: rendering");
+        const isMobile = this.props.drawing.isMobile;
 
         return (
             <div className={'galaxy-chapters'}>
@@ -36,13 +37,13 @@ class GalaxyChapters extends React.Component {
                     let chapter = this.props.chapters[i];
                     if (!mapping) return;
 
-                    const classIfSelected = this.props.selectedChapterIndex === i ? 'selected' : '';
+                    const x = isMobile ? 24 : mapping.x;
+                    const classIfSelected = (this.props.selectedChapterIndex === i) || isMobile ? 'selected' : '';
                     const chapterIndexText = convertNumberToRomanNumeral(i+1);
 
                     return (
-                        <div key={i} className={`galaxy-chapter-container ${classIfSelected}`}
-                             style={{left: mapping.x, top: mapping.y}}>
-                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(chapter.id)}></div>
+                        <div key={i} className={`galaxy-chapter-container ${classIfSelected}`} style={{left: x, top: mapping.y}}>
+                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(i)}></div>
                             <div className="galaxy-chapter">
                                 <div className="galaxy-chapter__index text-uppercase leading-font">
                                     <span className="galaxy-chapter__index__label ">Chapter </span>

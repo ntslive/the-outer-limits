@@ -23,10 +23,13 @@ class GalaxySvg extends React.Component {
     }
 
     renderCircle(circle, index) {
+        const isSelected = this.props.drawing.isMobile ? true : index === this.props.selectedChapterIndex;
+
         return (
             <Circle key={index} paper={this.props.drawing.paper}
+                    isMobile={this.props.drawing.isMobile}
+                    isSelected={isSelected}
                     x={circle.x} y={circle.y}
-                    isSelected={index === this.props.selectedChapterIndex}
                     isLive={index === this.props.liveChapterIndex}/>
         )
     }

@@ -48,9 +48,6 @@ class Circle extends React.Component {
         this.circle = this.props.paper.circle(x, y, radius).attr(circleAttributes);
 
         if (this.props.isSelected) {
-            this.circle.node.setAttribute("class", 'swell-circle');
-            this.circle.node.setAttribute("style", ` ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}; `);
-
             this.innerGlow = this.circle.glow({
                 width: 30,
                 color: circleColour,
@@ -61,6 +58,11 @@ class Circle extends React.Component {
                 width: 100,
                 color: circleColour,
             });
+
+            if (this.props.isMobile) return null;
+
+            this.circle.node.setAttribute("class", 'swell-circle');
+            this.circle.node.setAttribute("style", ` ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}; `);
 
             this.circleRings = [];
             let numberOfRings = this.props.isLive ? 7 : 3;
@@ -103,6 +105,7 @@ Circle.propTypes = {
     y: PropTypes.number.isRequired,
     isSelected: PropTypes.bool.isRequired,
     isLive: PropTypes.bool.isRequired,
+    isMobile: PropTypes.bool,
 };
 
 export default Circle;

@@ -5,19 +5,20 @@ $first-stage-animation-speed: 1.2s;
 $final-stage-animation-speed: 3s;
 
 #galaxy-container {
+    position: relative;
     background-color: transparent;
+    height: 100vh;
 }
 
-#galaxy {
-    position: absolute;
-    top: 0;  bottom: 0;
-    left: $galaxy-info-width + 100;
-    right: 0;
-}
-#galaxy-svg {
+#galaxy, #galaxy-svg {
     position: absolute;
     top: 0;  bottom: 0;
     left: $galaxy-info-width + 100 !important;
+}
+#galaxy {
+    width: 270vw; // must have SVG paper defintion
+    right: 0;
+    overflow: hidden;
 }
 
 #galaxy-objects {
@@ -79,5 +80,30 @@ $final-stage-animation-speed: 3s;
     }
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    #galaxy {
+        width: auto;
+        height: 450vh;
+    }
+    #galaxy, #galaxy-svg {
+        left: 0 !important; // override paper
+        top: 100vh !important; // override paper
+    }
+    #galaxy-objects, #galaxy-footer-scroll, #galaxy-footer-chapter-controls {
+        opacity: 1;
+        @include animation(none !important);
+    }
+    #galaxy-footer-scroll {
+        opacity: 1;
+        right: 0;
+        bottom: 24px;
+        left: inherit;
+        @include transform(rotate(90deg) translate(-50%, -100%))
+    }
+    .galaxy-objects__objects img {
+        max-height: 50vh;
     }
 }
