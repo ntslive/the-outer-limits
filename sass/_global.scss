@@ -50,7 +50,7 @@ a {
 }
 
 .hidden-desktop {
-    display: none;
+    display: none !important;
 }
 
 .chapter-page {
@@ -63,9 +63,9 @@ a {
     }
 
     .hidden-mobile {
-        display: none;
+        display: none !important;
     }
     .hidden-desktop {
-        display: inline-block;
+        display: inline-block !important;
     }
 }
