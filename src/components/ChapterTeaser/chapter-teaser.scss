@@ -1,3 +1,5 @@
+@import '../../../sass/_settings.scss';
+
 $content-width: 910px;
 
 #teaser-container {
@@ -6,9 +8,9 @@ $content-width: 910px;
 
     padding: 0 10px 100px;
     margin: 0 auto;
+    box-sizing: border-box;
 
     overflow: auto;
-
     color: white;
 }
 
@@ -32,14 +34,21 @@ $content-width: 910px;
     top: 24px;
     left: 56px; right: 56px;
 }
-#teaser-nav__center {
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateY(-50%);
+#teaser-nav__left {
     display: inline-block;
+    position: absolute;
+    left: 0;
+    img {
+        width: 36px;
+        height: 36px;
+    }
 }
-
+#teaser-nav__center {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #teaser-nav__right {
     float: right;
 }
@@ -79,6 +88,7 @@ $content-width: 910px;
     font-size: 16px;
     text-align: center;
     margin-top: 26px;
+    overflow: hidden;
 }
 .teaser-content__credits__col {
     float: left;
@@ -97,6 +107,64 @@ $content-width: 910px;
 }
 #teaser-footer__player {
     width: 200px;
+    max-width: 250px;
     margin: 0 auto;
     margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: $mobile-width) {
+    #teaser-nav {
+        left: 24px;
+        right: 24px;
+    }
+    #teaser-content {
+        max-height: calc(100vh - 21em);
+        margin-top: 30%;
+        overflow: scroll;
+
+        font-size: 13px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 10px;
+
+        .galaxy-chapter__content__action_subtext {
+            margin-top: 34px;
+            margin-bottom: 34px;
+        }
+    }
+    #teaser-content__title {
+        padding: 0 8px;
+    }
+    #teaser-content__title__logo {
+        display: none;
+    }
+    #teaser-content__title__text h1 {
+        font-size: 21px;
+        line-height: 1.2em;
+    }
+    #teaser-content__title__text h5 {
+        font-size: 13px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    #teaser-content__description, #teaser-content__credits {
+        font-size: inherit;
+        line-height: inherit;
+    }
+    #teaser-content__description {
+        margin-top: 0;
+        padding: 0 12px;
+    }
+
+    #teaser-content__credits__title {
+        margin-bottom: 6px;
+    }
+    .teaser-content__credits__col {
+        float: none;
+        width: 100%;
+    }
+    #teaser-footer {
+        bottom: 14vh;
+    }
 }

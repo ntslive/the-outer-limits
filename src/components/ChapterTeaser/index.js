@@ -33,6 +33,7 @@ class ChapterTeaser extends React.Component {
         return (
             <div id="teaser-container">
                 <div id="teaser-nav">
+                    <a id="teaser-nav__left" className="hidden-desktop" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
                     <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>
                     <Button id="teaser-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy}></Button>
                 </div>
@@ -48,12 +49,14 @@ class ChapterTeaser extends React.Component {
                         </div>
                     </div>
 
+                    <GalaxyChapterAction className="hidden-desktop" chapter={chapter} hideButton/>
+
                     <div id="teaser-content__description">
                         {chapter.content.excerpt}
                     </div>
 
                     <div id="teaser-content__credits">
-                        <div className="text-uppercase text-center">CREDITS</div>
+                        <div id="teaser-content__credits__title" className="text-uppercase text-center">CREDITS</div>
 
                         <div className="teaser-content__credits__col">
                             {chapter.content.credits[0].title} - {chapter.content.credits[0].name}
@@ -65,7 +68,7 @@ class ChapterTeaser extends React.Component {
                 </div>
 
                 <div id="teaser-footer">
-                    <div id="teaser-footer_status">
+                    <div id="teaser-footer_status" className="hidden-mobile">
                         <GalaxyChapterAction chapter={chapter} hideButton/>
                     </div>
 
