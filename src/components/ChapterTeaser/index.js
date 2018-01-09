@@ -68,7 +68,7 @@ class ChapterTeaser extends React.Component {
                 </div>
 
                 <div id="teaser-footer">
-                    <div id="teaser-footer_status" className="hidden-mobile">
+                    <div id="teaser-footer__status" className="hidden-mobile">
                         <GalaxyChapterAction chapter={chapter} hideButton/>
                     </div>
 

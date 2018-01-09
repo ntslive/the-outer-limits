@@ -4,7 +4,7 @@ $content-width: 910px;
 
 #teaser-container {
     width: 100%;
-    max-width: 910px;
+    max-width: $content-width;
 
     padding: 0 10px 100px;
     margin: 0 auto;
@@ -101,15 +101,19 @@ $content-width: 910px;
     bottom: 0;
     left: 0; right: 0;
     text-align: center;
+
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
 }
 #teaser-footer__status {
-
+    margin-bottom: 30px;
+    font-size: 18px;
 }
 #teaser-footer__player {
-    width: 200px;
-    max-width: 250px;
+    max-width: 500px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 33px;
     box-sizing: border-box;
 }
 
@@ -166,5 +170,9 @@ $content-width: 910px;
     }
     #teaser-footer {
         bottom: 14vh;
+    }
+    #teaser-footer__player {
+        width: 200px;
+        max-width: 250px;
     }
 }
