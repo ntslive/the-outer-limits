@@ -14,7 +14,7 @@ export const pageQuery = graphql`
             name
             status
             broadcastDate
-            broadcastTime
+            broadcastStartTime
             content {
               excerpt
               teaserSoundcloudSecretToken

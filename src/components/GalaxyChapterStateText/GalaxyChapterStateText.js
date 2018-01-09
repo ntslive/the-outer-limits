@@ -13,14 +13,12 @@ function getSlug(chapterName) {
     return chapterName.toLowerCase().split(' ').join('-');
 }
 
-class GalaxyChapterAction extends React.PureComponent {
+class GalaxyChapterStateText extends React.PureComponent {
     _goToChapter(chapterSlug) {
         this.props.history.push(withPrefix('/chapters/' + chapterSlug + '/'));
     }
 
-    _renderButton(chapter, callForAction, hideButton) {
-        if (hideButton) return;
-
+    _renderButton(chapter, callForAction) {
         const slug = getSlug(this.props.chapter.name);
         return (
             <Button text={callForAction} icon={PlayIcon} onClick={() => this._goToChapter(slug)}></Button>
@@ -30,7 +28,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderPodcast() {
         return (
             <div className={this.props.className}>
-                { this._renderButton(this.props.chapter, "listen back", this.props.hideButton) }
+                { this.props.showButton && this._renderButton(this.props.chapter, "Listen Back") }
             </div>
         );
     }
@@ -38,7 +36,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderPodcastComing() {
         return (
             <div className={this.props.className}>
-                { this._renderButton(this.props.chapter, "Play Teaser", this.props.hideButton) }
+                { this.props.showButton && this._renderButton(this.props.chapter, "Play Teaser") }
 
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>Available Tomorrow</span>
@@ -50,7 +48,7 @@ class GalaxyChapterAction extends React.PureComponent {
     renderLive() {
         return (
             <div className={this.props.className}>
-                { this._renderButton(this.props.chapter, "Live Now", this.props.hideButton) }
+                { this.props.showButton && this._renderButton(this.props.chapter, "Live Now") }
             </div>
         )
     }
@@ -58,14 +56,14 @@ class GalaxyChapterAction extends React.PureComponent {
     renderTeaser() {
         return (
             <div className={this.props.className}>
-                { this._renderButton(this.props.chapter, "Play teaser", this.props.hideButton) }
+                { this.props.showButton && this._renderButton(this.props.chapter, "Play teaser") }
 
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>{this.props.chapter.broadcastDate}</span>
                     <br/>
                     <span>Broadcasting Live</span>
                     <br/>
-                    <span>{this.props.chapter.broadcastTime + ' GMT'}</span>
+                    <span>{this.props.chapter.broadcastStartTime + ' GMT'}</span>
                 </div>
             </div>
         );
@@ -103,8 +101,9 @@ class GalaxyChapterAction extends React.PureComponent {
     }
 }
 
-GalaxyChapterAction.propTypes = {
+GalaxyChapterStateText.propTypes = {
     chapter: PropTypes.object.isRequired,
+    showButton: PropTypes.bool,
 };
 
-export default withRouter(GalaxyChapterAction);
+export default withRouter(GalaxyChapterStateText);

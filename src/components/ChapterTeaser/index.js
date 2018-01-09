@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '../Button/index';
-import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
+import GalaxyChapterStateText from '../GalaxyChapterStateText/GalaxyChapterStateText';
 import Icon from '../icon';
 import Player from '../Player/index';
+import chapterStateManager from '../utils/chapterStateManager';
 
 import CrossIcon from "../icon/cross.icon";
 import HomeIcon from "../icon/home.icon";
@@ -29,6 +30,7 @@ class ChapterTeaser extends React.Component {
     render() {
         console.log(this.props.chapter);
         const chapter = this.props.chapter;
+        const chapterState = chapterStateManager.getChapterState(chapter);
 
         return (
             <div id="teaser-container">
@@ -49,7 +51,7 @@ class ChapterTeaser extends React.Component {
                         </div>
                     </div>
 
-                    <GalaxyChapterAction className="hidden-desktop" chapter={chapter} hideButton/>
+                    <GalaxyChapterStateText className="hidden-desktop" chapter={chapter}/>
 
                     <div id="teaser-content__description">
                         {chapter.content.excerpt}
@@ -69,7 +71,7 @@ class ChapterTeaser extends React.Component {
 
                 <div id="teaser-footer">
                     <div id="teaser-footer__status" className="hidden-mobile">
-                        <GalaxyChapterAction chapter={chapter} hideButton/>
+                        <GalaxyChapterStateText chapter={chapter}/>
                     </div>
 
                     <div id="teaser-footer__player">
