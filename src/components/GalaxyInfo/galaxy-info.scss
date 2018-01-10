@@ -82,7 +82,7 @@
         width: 100%;
         height: calc(100vh - 24px);
         max-height: none;
-        padding-left: 24px;
+        padding: 20px 24px;
 
         opacity: 1;
 
@@ -98,17 +98,18 @@
     .galaxy-info__content {
         position: relative;
         top: 0;
-        margin-top: 5%;
+        margin-top: 10%;
         margin-bottom: 10%;
         @include transform(none);
 
         .title {
             font-size: 46px;
-            line-height: 1em;
+            line-height: 0.95em;
         }
         .title__name {
             display: block;
             font-size: 26px;
+            padding-bottom: 4px;
         }
         .subtitle {
             font-size: 12px;

@@ -33,7 +33,7 @@ class ChapterTeaser extends React.Component {
         return (
             <div id="teaser-container">
                 <div id="teaser-nav">
-                    <a id="teaser-nav__left" className="hidden-desktop" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
+                    <a id="teaser-nav__left" className="hidden" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
                     <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>
                     <Button id="teaser-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy}></Button>
                 </div>

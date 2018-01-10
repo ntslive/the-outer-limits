@@ -55,7 +55,7 @@ $content-width: 910px;
 
 #teaser-content {
     position: relative; // required for z-index to work
-    line-height: 1.3em;
+    line-height: 1.2em;
     max-height: 100vh;
     margin-top: 240px;
 }
@@ -75,14 +75,14 @@ $content-width: 910px;
 }
 #teaser-content__title__text h1 {
     font-size: 24px;
-    line-height: 0.6em;
+    line-height: 0.7em;
 }
 #teaser-content__title__text h5 {
     font-size: 14px;
 }
 #teaser-content__description {
-    font-size: 21px;
-    margin-top: 46px;
+    font-size: 17px;
+    margin-top: 40px;
 }
 #teaser-content__credits {
     font-size: 16px;
@@ -127,7 +127,7 @@ $content-width: 910px;
         margin-top: 30%;
         overflow: scroll;
 
-        font-size: 13px;
+        font-size: 15px;
         text-align: center;
         box-sizing: border-box;
         padding: 0 10px;
@@ -135,6 +135,7 @@ $content-width: 910px;
         .galaxy-chapter__content__action_subtext {
             margin-top: 34px;
             margin-bottom: 34px;
+            font-size: 18px;
         }
     }
     #teaser-content__title {
@@ -143,8 +144,11 @@ $content-width: 910px;
     #teaser-content__title__logo {
         display: none;
     }
+    #teaser-content__title__text {
+        margin-left: 0;
+    }
     #teaser-content__title__text h1 {
-        font-size: 21px;
+        font-size: 25px;
         line-height: 1.2em;
     }
     #teaser-content__title__text h5 {

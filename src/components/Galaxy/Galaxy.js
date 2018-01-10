@@ -105,9 +105,9 @@ class GalaxyMapping {
             return [
                 {
                     src: PlanetImg,
-                    x: this.width * 0.4,
+                    x: this.width * 0.23,
                     y: 150,
-                    style: {'opacity': '0.8'}
+                    style: {'opacity': '0.8', 'max-height': '85vh'}
                 },
                 {
                     src: EarthImg,
