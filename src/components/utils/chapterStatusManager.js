@@ -21,12 +21,13 @@ const chapterStatusManager = {
      * Returns state of given chapter
      *
      * @param chapter {} - chapter state to check
+     * @param times {ChapterTimes} optional - ChapterTimes object which to use for date comparisons.
      * @return {string|string}
      */
-    getChapterStatus: (chapter) => {
+    getChapterStatus: (chapter, times) => {
         if (!chapter || !chapter.broadcastDate || !chapter.broadcastStartTime || !chapter.broadcastEndTime) return STATUSES[0];
 
-        const chapterTime = new ChapterTimes(chapter);
+        const chapterTime = times || new ChapterTimes(chapter);
 
         const startTime = chapterTime.startMoment;
         const endTime = chapterTime.endMoment;
@@ -48,26 +49,25 @@ const chapterStatusManager = {
     },
 
     /**
-     * Returns interval checker which updates the state of chapters, executing the callback when there is a change.
+     * Creates an interval, checking for a change in chapter status. When a change is detected, the callback is called.
      *
-     * @param chapter {} - chapter state to observe
-     * @param cb function - callback called whenver a change in state is detected
+     * @param chapter {} - chapter to observe for status change
+     * @param cb function - callback called whenever a change in status is detected
      */
     createChapterStatusChecker: (chapter, cb) => {
-        console.log("initialising chapter state");
-        let startTime = '';
-        let endTime = '';
-        let currentState = '';
+        console.log("initialising chapter status interval");
+        const chapterTimes = new ChapterTimes(chapter);
+        let currentStatus = chapterStatusManager.getChapterStatus(chapter, chapterTimes);
 
         return setInterval(() => {
-            console.log("checking chapter state");
-            if (currentState !== 'chapterCurrentState') {
-                // if state has changed
-                let newState = '';
-                currentState = newState;
-                cb(newState);
+            console.log("checking chapter status");
+            const newStatus = chapterStatusManager.getChapterStatus(chapter, chapterTimes);
+
+            if (currentStatus !== newStatus) {
+                currentStatus = newStatus;
+                cb(newStatus);
             }
-        }, 2000);
+        }, 5000);
     },
 };
 

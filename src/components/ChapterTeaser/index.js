@@ -30,23 +30,34 @@ class ChapterTeaser extends React.Component {
         super(props);
 
         this._goToGalaxy = this._goToGalaxy.bind(this);
+        const chapterStatus = chapterStatusManager.getChapterStatus(props.chapter);
 
         this.state = {
             chapter: props.chapter,
+            chapterStatus: chapterStatus,
         }
     }
 
     componentDidMount() {
-        // create interval monitoring time and state of chapter.
-        // updated state when time changes, triggering re-render and display correct player.
+        // create interval throwing a change in chapter status.
+        this.statusInterval = chapterStatusManager.createChapterStatusChecker(this.state.chapter, (newStatus) => {
+            this.setState( {
+                chapterStatus: newStatus,
+            });
+        });
+    }
+
+    componentWillUnmount() {
+        window && window.clearInterval(this.statusInterval);
     }
 
     _goToGalaxy() {
         this.props.history.push(withPrefix('/'));
     }
 
-    _renderPlayer(chapterStatus) {
+    _renderPlayer() {
         const chapter = this.state.chapter;
+        const chapterStatus = this.state.chapterStatus;
 
         if (chapterStatus === chapterStatusManager.STATUSES[0]
          || chapterStatus === chapterStatusManager.STATUSES[3])
@@ -72,7 +83,6 @@ class ChapterTeaser extends React.Component {
 
     render() {
         const chapter = this.state.chapter;
-        const chapterStatus = chapterStatusManager.getChapterStatus(chapter);
 
         return (
             <div id="teaser-container">
@@ -93,7 +103,7 @@ class ChapterTeaser extends React.Component {
                         </div>
                     </div>
 
-                    <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={chapterStatus}/>
+                    <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>
 
                     <div id="teaser-content__description">
                         {chapter.content.excerpt}
@@ -113,10 +123,10 @@ class ChapterTeaser extends React.Component {
 
                 <div id="teaser-footer">
                     <div id="teaser-footer__status" className="hidden-mobile">
-                        <GalaxyChapterStatusText chapter={chapter} chapterStatus={chapterStatus}/>
+                        <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
                     </div>
 
-                    {this._renderPlayer(chapterStatus)}
+                    {this._renderPlayer()}
                 </div>
 
                 <div id="teaser-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}}/>
