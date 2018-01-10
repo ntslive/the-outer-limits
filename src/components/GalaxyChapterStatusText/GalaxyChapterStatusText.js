@@ -1,3 +1,4 @@
+import moment from 'moment-timezone';
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -7,6 +8,7 @@ import Galaxy from "../Galaxy/Galaxy"
 import Button from "../Button/index.js";
 import PlayIcon from "../icon/play.icon";
 import chapterStatusManager from "../utils/chapterStatusManager";
+import ChapterTimes from '../utils/ChapterTimes';
 
 const STATUSES = chapterStatusManager.STATUSES;
 
@@ -77,28 +79,32 @@ class GalaxyChapterStatusText extends React.PureComponent {
     }
 
     renderTeaser() {
+        const chapterTime = new ChapterTimes(this.state.chapter);
+
         return (
             <div className={this.props.className}>
                 { this.props.showButton && this._renderButton(this.state.chapter, "Play teaser") }
 
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
-                    <span>{this.state.chapter.broadcastDate}</span>
+                    <span>{chapterTime.broadcastStartDate}</span>
                     <br />
                     <span>Broadcasting Live</span>
                     <br />
-                    <span>{this.state.chapter.broadcastStartTime + ' GMT'}</span>
+                    <span>{chapterTime.broadcastStartTime}</span>
                 </div>
             </div>
         );
     }
 
     renderComing() {
+        const chapterTime = new ChapterTimes(this.state.chapter);
+
         return (
             <div className={this.props.className}>
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>Coming Soon</span>
                     <br />
-                    <span>{this.state.chapter.broadcastDate}</span>
+                    <span>{chapterTime.broadcastStartDate}</span>
                 </div>
             </div>
         );

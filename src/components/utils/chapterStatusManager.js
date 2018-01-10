@@ -1,7 +1,8 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
+
+import ChapterTimes from './ChapterTimes';
 
 const STATUSES = ['coming', 'teaser', 'live', 'podcastComing', 'podcast'];
-const INPUT_DATE_FORMAT = "DD.MM.YYYY HH:mm";
 
 function hasAudioType(chapter, type) {
     for (let i = 0; i < chapter.audio.length; i++) {
@@ -25,10 +26,10 @@ const chapterStatusManager = {
     getChapterStatus: (chapter) => {
         if (!chapter || !chapter.broadcastDate || !chapter.broadcastStartTime || !chapter.broadcastEndTime) return STATUSES[0];
 
-        // handle status of "coming" and "podcastComing"
+        const chapterTime = new ChapterTimes(chapter);
 
-        const startTime = moment(`${chapter.broadcastDate} ${chapter.broadcastStartTime}`, INPUT_DATE_FORMAT);
-        const endTime = moment(`${chapter.broadcastDate} ${chapter.broadcastEndTime}`, INPUT_DATE_FORMAT);
+        const startTime = chapterTime.startMoment;
+        const endTime = chapterTime.endMoment;
         const now = moment();
 
         if (now <= startTime) {
