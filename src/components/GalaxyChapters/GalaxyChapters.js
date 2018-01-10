@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GalaxyChapterStateText from '../GalaxyChapterStateText/GalaxyChapterStateText';
+import GalaxyChapterStatusText from '../GalaxyChapterStatusText/GalaxyChapterStatusText';
 
 import './galaxy-chapters.scss';
 
@@ -54,7 +54,7 @@ class GalaxyChapters extends React.Component {
                                     <div className="galaxy-chapter__content__name text-uppercase leading-font">{chapter.name}</div>
 
                                     <div className="galaxy-chapter__content__action">
-                                        <GalaxyChapterStateText chapter={chapter} className={"galaxy-chapter__content__action__button"} showButton/>
+                                        <GalaxyChapterStatusText chapter={chapter} className={"galaxy-chapter__content__action__button"} showButton/>
                                     </div>
                                 </div>
                             </div>

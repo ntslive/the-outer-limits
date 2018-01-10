@@ -15,9 +15,12 @@ import Button from '../Button/index';
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
+import chapterStatusManager from '../utils/chapterStatusManager';
+
 import './galaxy.scss';
 
 const mobileThreshold = 770;
+
 
 class GalaxyMapping {
     constructor(chapters) {
@@ -252,7 +255,7 @@ class Galaxy extends React.Component {
     renderGalaxyMap() {
         let liveChapterIndex = -1;
         for (let i=0; i<this.props.chapters.length; i++) {
-            if (this.props.chapters[i].status === "live") {
+            if (chapterStatusManager.getChapterStatus(this.props.chapters[i]) === "live") {
                 liveChapterIndex = i;
                 break;
             }
