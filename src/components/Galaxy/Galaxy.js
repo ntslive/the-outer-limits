@@ -21,7 +21,6 @@ import './galaxy.scss';
 
 const mobileThreshold = 770;
 
-
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;

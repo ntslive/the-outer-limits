@@ -33,19 +33,17 @@ const chapterStatusManager = {
 
         if (now <= startTime) {
             return hasAudioType(chapter, 'teaser')
-                ? STATUSES[1]
-                : STATUSES[0];
+                ? STATUSES[1] // teaser
+                : STATUSES[0]; // coming
         }
+
         if (now < endTime) {
             return STATUSES[2]; // live
         }
-        if (now > endTime) {
-            return hasAudioType(chapter, 'podcast')
-                ? STATUSES[4] // podcast
-                : STATUSES[3];
-        }
 
-        return STATUSES[0];
+        return hasAudioType(chapter, 'podcast')
+            ? STATUSES[4] // podcast
+            : STATUSES[3]; // podcastIncoming
     },
 
     /**

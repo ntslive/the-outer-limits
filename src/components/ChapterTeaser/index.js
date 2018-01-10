@@ -45,48 +45,34 @@ class ChapterTeaser extends React.Component {
         this.props.history.push(withPrefix('/'));
     }
 
-    _renderPlayer() {
+    _renderPlayer(chapterStatus) {
         const chapter = this.state.chapter;
-        const chapterStatus = chapterStatusManager.getChapterStatus(chapter);
 
         if (chapterStatus === chapterStatusManager.STATUSES[0]
          || chapterStatus === chapterStatusManager.STATUSES[3])
             return;
 
-        if (chapterStatus === chapterStatusManager.STATUSES[1]) { // teaser
-            // use teaser soundcloud details
-            let teaserAudio = getAudioInfo(chapter, 'teaser');
-
-            return (
-                <div id="teaser-footer__player">
-                    <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID}/>
-                </div>
-            );
-        }
-
         if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
-            // use live player
             return (
                 <div id="teaser-footer__player">
-                    <Player secretToken={chapter.content.teaserSoundcloudSecretToken} trackID={chapter.content.teaserSoundcloudTrackID}/>
+                    <h1>LIVE PLAYER</h1>
                 </div>
             );
         }
 
-        if (chapterStatus === chapterStatusManager.STATUSES[4]) { // podcast
-            // use podcast soundcloud details
-            let podcastAudio = getAudioInfo(chapter, 'podcast');
+        let audioType = chapterStatus === chapterStatusManager.STATUSES[4] ? "podcast" : "teaser";
+        let teaserAudio = getAudioInfo(chapter, audioType);
 
-            return (
-                <div id="teaser-footer__player">
-                    <Player secretToken={podcastAudio.soundcloudSecretToken} trackID={podcastAudio.soundcloudTrackID}/>
-                </div>
-            );
-        }
+        return (
+            <div id="teaser-footer__player">
+                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID}/>
+            </div>
+        );
     }
 
     render() {
         const chapter = this.state.chapter;
+        const chapterStatus = chapterStatusManager.getChapterStatus(chapter);
 
         return (
             <div id="teaser-container">
@@ -107,7 +93,7 @@ class ChapterTeaser extends React.Component {
                         </div>
                     </div>
 
-                    <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter}/>
+                    <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={chapterStatus}/>
 
                     <div id="teaser-content__description">
                         {chapter.content.excerpt}
@@ -127,10 +113,10 @@ class ChapterTeaser extends React.Component {
 
                 <div id="teaser-footer">
                     <div id="teaser-footer__status" className="hidden-mobile">
-                        <GalaxyChapterStatusText chapter={chapter}/>
+                        <GalaxyChapterStatusText chapter={chapter} chapterStatus={chapterStatus}/>
                     </div>
 
-                    {this._renderPlayer()}
+                    {this._renderPlayer(chapterStatus)}
                 </div>
 
                 <div id="teaser-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}}/>

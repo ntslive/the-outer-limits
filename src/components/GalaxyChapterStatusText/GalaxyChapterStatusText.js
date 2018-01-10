@@ -8,6 +8,8 @@ import Button from "../Button/index.js";
 import PlayIcon from "../icon/play.icon";
 import chapterStatusManager from "../utils/chapterStatusManager";
 
+const STATUSES = chapterStatusManager.STATUSES;
+
 function getSlug(chapterName) {
     return chapterName.toLowerCase().split(' ').join('-');
 }
@@ -103,8 +105,7 @@ class GalaxyChapterStatusText extends React.PureComponent {
     }
 
     render() {
-        const STATUSES = chapterStatusManager.STATUSES;
-        const chapterStatus = chapterStatusManager.getChapterStatus(this.state.chapter);
+        const chapterStatus = this.props.chapterStatus;
 
         console.log("GalaxyChapter :: rendering");
 
@@ -127,6 +128,7 @@ class GalaxyChapterStatusText extends React.PureComponent {
 GalaxyChapterStatusText.propTypes = {
     chapter: PropTypes.object.isRequired,
     showButton: PropTypes.bool,
+    chapterStatus: PropTypes.string.isRequired,
 };
 
 export default withRouter(GalaxyChapterStatusText);
