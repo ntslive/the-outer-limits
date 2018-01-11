@@ -81,6 +81,34 @@ class ChapterTeaser extends React.Component {
         );
     }
 
+    _renderCredits() {
+        const credits = this.state.chapter.content.credits;
+        const creditsHalfLength = Math.ceil(credits.length / 2);
+        const creditsLeftColumn = credits.slice(0, creditsHalfLength);
+        const creditsRightColumn = credits.slice(creditsHalfLength, credits.length);
+
+        function renderCreditsColumn(credits) {
+            return credits.map((credit, i) => (
+                <div>
+                    <span className="text-uppercase">{credit.name}</span> - <span className="text-lowercase">{credit.title}</span>
+                </div>
+            ));
+        }
+
+        return (
+            <div id="teaser-content__credits">
+                <div id="teaser-content__credits__title" className="text-uppercase text-center">CREDITS</div>
+
+                <div className="teaser-content__credits__col">
+                    {renderCreditsColumn(creditsLeftColumn)}
+                </div>
+                <div className="teaser-content__credits__col">
+                    {renderCreditsColumn(creditsRightColumn)}
+                </div>
+            </div>
+        );
+    }
+
     render() {
         const chapter = this.state.chapter;
 
@@ -109,16 +137,7 @@ class ChapterTeaser extends React.Component {
                         {chapter.content.excerpt}
                     </div>
 
-                    <div id="teaser-content__credits">
-                        <div id="teaser-content__credits__title" className="text-uppercase text-center">CREDITS</div>
-
-                        <div className="teaser-content__credits__col">
-                            {chapter.content.credits[0].title} - {chapter.content.credits[0].name}
-                        </div>
-                        <div className="teaser-content__credits__col">
-                            {chapter.content.credits[1].title} - {chapter.content.credits[1].name}
-                        </div>
-                    </div>
+                    {this._renderCredits()}
                 </div>
 
                 <div id="teaser-footer">
