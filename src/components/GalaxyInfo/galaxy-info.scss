@@ -29,6 +29,16 @@
         width: 37px;
     }
 }
+.galaxy-info__header__link--axis {
+    margin-left: 10px;
+    width: 37px;
+    height: 37px;
+
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
 .galaxy-info__header__text {
     margin-top: 10px;
     font-size: 16px;
@@ -94,6 +104,10 @@
         font-size: 12px;
         line-height: 1.1em;
         margin-left: 10px;
+    }
+    .galaxy-info__header__link--axis {
+        margin-left: 7px;
+        margin-right: 5px;
     }
     .galaxy-info__content {
         position: relative;

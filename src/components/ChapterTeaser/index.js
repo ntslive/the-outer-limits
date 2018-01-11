@@ -12,6 +12,7 @@ import chapterStatusManager from '../utils/chapterStatusManager';
 
 import CrossIcon from "../icon/cross.icon";
 import HomeIcon from "../icon/home.icon";
+import AxisIcon from "../icon/axis-logo.icon";
 import NtsLogo from '../../../static/nts-logo-white.png';
 
 import './chapter-teaser.scss';
@@ -123,8 +124,9 @@ class ChapterTeaser extends React.Component {
 
                     <div id="teaser-content">
                         <div id="teaser-content__title">
-                            <a id="teaser-content__title__logo" href="https://www.nts.live" target="_blank"><img
+                            <a className="teaser-content__title__logo" href="https://www.nts.live" target="_blank"><img
                                 src={NtsLogo} alt="NTS Logo"/></a>
+                            <a className="teaser-content__title__logo teaser-content__title__logo--axis" href="https://axisrecords.com/" target="_blank"><Icon icon={AxisIcon} /></a>
 
                             <div id="teaser-content__title__text">
                                 <h1 className="text-uppercase leading-font">{chapter.name}</h1>
