@@ -115,6 +115,12 @@ $content-width: 910px;
     margin: 0 auto;
     margin-bottom: 33px;
     box-sizing: border-box;
+
+    transform: translateX(-50px) scale(1.05);
+    overflow: hidden;
+    iframe {
+        margin-right: -200px;
+    }
 }
 
 @media (max-width: $mobile-width) {
@@ -178,5 +184,9 @@ $content-width: 910px;
     #teaser-footer__player {
         width: 200px;
         max-width: 250px;
+        transform: translateX(-15px) scale(1.05);
+        iframe {
+            margin-right: -50px;
+        }
     }
 }
