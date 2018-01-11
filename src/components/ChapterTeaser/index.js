@@ -113,43 +113,46 @@ class ChapterTeaser extends React.Component {
         const chapter = this.state.chapter;
 
         return (
-            <div id="teaser-container">
-                <div id="teaser-nav">
-                    <a id="teaser-nav__left" className="hidden" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
-                    <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>
-                    <Button id="teaser-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy}></Button>
-                </div>
+            <div>
+                <div id="teaser-container">
+                    <div id="teaser-nav">
+                        <a id="teaser-nav__left" className="hidden" href="https://www.nts.live" target="_blank"><img src={NtsLogo}/></a>
+                        <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>
+                        <Button id="teaser-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy}></Button>
+                    </div>
 
-                <div id="teaser-content">
-                    <div id="teaser-content__title">
-                        <a id="teaser-content__title__logo" href="https://www.nts.live" target="_blank"><img
-                            src={NtsLogo} alt="NTS Logo"/></a>
+                    <div id="teaser-content">
+                        <div id="teaser-content__title">
+                            <a id="teaser-content__title__logo" href="https://www.nts.live" target="_blank"><img
+                                src={NtsLogo} alt="NTS Logo"/></a>
 
-                        <div id="teaser-content__title__text">
-                            <h1 className="text-uppercase leading-font">{chapter.name}</h1>
-                            <h5>Jenny Maya: The Outer Limits</h5>
+                            <div id="teaser-content__title__text">
+                                <h1 className="text-uppercase leading-font">{chapter.name}</h1>
+                                <h5>Jenny Maya: The Outer Limits</h5>
+                            </div>
                         </div>
+
+                        <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>
+
+                        <div id="teaser-content__description">
+                            {chapter.content.excerpt}
+                        </div>
+
+                        {this._renderCredits()}
                     </div>
 
-                    <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>
+                    <div id="teaser-footer">
+                        <div id="teaser-footer__status" className="hidden-mobile">
+                            <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
+                        </div>
 
-                    <div id="teaser-content__description">
-                        {chapter.content.excerpt}
+                        {this._renderPlayer()}
                     </div>
-
-                    {this._renderCredits()}
-                </div>
-
-                <div id="teaser-footer">
-                    <div id="teaser-footer__status" className="hidden-mobile">
-                        <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
-                    </div>
-
-                    {this._renderPlayer()}
                 </div>
 
                 <div id="teaser-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}}/>
             </div>
+
         );
     }
 }
