@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GalaxyChapterAction from '../GalaxyChapterAction/GalaxyChapterAction';
 
 import './galaxy-chapters.scss';
+import GalaxyChapterStatusText from '../GalaxyChapterStatusText/GalaxyChapterStatusText';
+import chapterStatusManager from "../utils/chapterStatusManager";
 
 function convertNumberToRomanNumeral(number) {
     let roman =  {"M" :1000, "CM":900, "D":500, "CD":400, "C":100, "XC":90, "L":50, "XL":40, "X":10, "IX":9, "V":5, "IV":4, "I":1};
@@ -34,8 +35,10 @@ class GalaxyChapters extends React.Component {
         return (
             <div className={'galaxy-chapters'}>
                 {this.props.drawing.circles.map((mapping, i) => {
-                    let chapter = this.props.chapters[i];
                     if (!mapping) return;
+
+                    let chapter = this.props.chapters[i];
+                    let chapterStatus = chapterStatusManager.getChapterStatus(chapter);
 
                     const x = isMobile ? 24 : mapping.x;
                     const classIfSelected = (this.props.selectedChapterIndex === i) || isMobile ? 'selected' : '';
@@ -54,7 +57,7 @@ class GalaxyChapters extends React.Component {
                                     <div className="galaxy-chapter__content__name text-uppercase leading-font">{chapter.name}</div>
 
                                     <div className="galaxy-chapter__content__action">
-                                        <GalaxyChapterAction chapter={chapter} className={"galaxy-chapter__content__action__button"}/>
+                                        <GalaxyChapterStatusText chapter={chapter} className={"galaxy-chapter__content__action__button"} chapterStatus={chapterStatus} showButton/>
                                     </div>
                                 </div>
                             </div>

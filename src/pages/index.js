@@ -22,7 +22,13 @@ export const pageQuery = graphql`
             name
             status
             broadcastDate
-            broadcastTime
+            broadcastStartTime
+            broadcastEndTime
+            audio {
+              type
+              soundcloudSecretToken
+              soundcloudTrackID
+            }
           }
         }
       }
