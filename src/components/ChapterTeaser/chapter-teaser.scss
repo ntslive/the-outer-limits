@@ -21,7 +21,7 @@ $content-width: 910px;
     left:0; right: 0;
 
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.4;
 
     background-position: 50% 50%;
     background-size: cover;
@@ -92,6 +92,10 @@ $content-width: 910px;
 }
 #teaser-content__description {
     margin-top: 40px;
+
+    >div {
+        margin-bottom: 15px;
+    };
 }
 #teaser-content__tracks {
     margin-top: 20px;
