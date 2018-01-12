@@ -13,6 +13,13 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `svgo`,
         {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: "UA-6061419-3",
+                anonymize: true,
+            },
+        },
+        {
             resolve: `gatsby-plugin-postcss-sass`,
             options: {
                 postCssPlugins: [
