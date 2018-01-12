@@ -87,9 +87,14 @@ $content-width: 910px;
 #teaser-content__title__text h5 {
     font-size: 14px;
 }
-#teaser-content__description {
+#teaser-content__description, #teaser-content__tracks {
     font-size: 17px;
+}
+#teaser-content__description {
     margin-top: 40px;
+}
+#teaser-content__tracks {
+    margin-top: 20px;
 }
 #teaser-content__credits {
     font-size: 16px;
@@ -173,7 +178,7 @@ $content-width: 910px;
         font-size: inherit;
         line-height: inherit;
     }
-    #teaser-content__description {
+    #teaser-content__description, #teaser-content__tracks {
         margin-top: 0;
         padding: 0 12px;
     }

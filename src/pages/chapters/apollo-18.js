@@ -12,14 +12,12 @@ export const pageQuery = graphql`
           chapters {
             id
             name
-            status
             broadcastDate
             broadcastStartTime
             broadcastEndTime
             content {
-              excerpt
-              teaserSoundcloudSecretToken
-              teaserSoundcloudTrackID
+              description
+              tracks
               image_bg
               credits {
                 title

@@ -20,7 +20,6 @@ export const pageQuery = graphql`
           chapters {
             id
             name
-            status
             broadcastDate
             broadcastStartTime
             broadcastEndTime

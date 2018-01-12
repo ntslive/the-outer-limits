@@ -6,7 +6,7 @@ const prefixPath = (process.env['DEPLOY_ENV'] == 'staging') ? '/the-outer-limits
 module.exports = {
     pathPrefix: prefixPath,
     siteMetadata: {
-        title: `Jenny Maya The Outer Limits | NTS`,
+        title: `Jeff Mills The Outer Limits | NTS`,
     },
     plugins: [
         `gatsby-plugin-react-next`,

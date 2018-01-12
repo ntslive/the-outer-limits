@@ -83,6 +83,8 @@ class ChapterTeaser extends React.Component {
     }
 
     _renderCredits() {
+        if (!this.state.chapter.content.credits) return;
+
         const credits = this.state.chapter.content.credits;
 
         return (
@@ -120,14 +122,26 @@ class ChapterTeaser extends React.Component {
 
                             <div id="teaser-content__title__text">
                                 <h1 className="text-uppercase leading-font">{chapter.name}</h1>
-                                <h5>Jenny Maya: The Outer Limits</h5>
+                                <h5>Jeff Mills: The Outer Limits</h5>
                             </div>
                         </div>
 
                         <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>
 
                         <div id="teaser-content__description">
-                            {chapter.content.excerpt}
+                            {chapter.content.description && chapter.content.description.map((paragraph, i) => (
+                                <div key={i}>
+                                    {paragraph}
+                                </div>
+                            ))}
+                        </div>
+
+                        <div id="teaser-content__tracks">
+                            {chapter.content.tracks && chapter.content.tracks.map((track, i) => (
+                                <div key={i}>
+                                    {track}
+                                </div>
+                            ))}
                         </div>
 
                         {this._renderCredits()}

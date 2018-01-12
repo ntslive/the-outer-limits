@@ -16,7 +16,7 @@ const TemplateWrapper = ({ children, location }) => {
 
     return (
         <div>
-            <Helmet title="Jenny Maya The Outer Limits | NTS" >
+            <Helmet title="Jeff Mills The Outer Limits | NTS" >
                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" />
                 <meta name="viewport" content="width=device-width,height=device-height initial-scale=1" />
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nts.live/apple-touch-icon.png?v=47rE43RRzB" />

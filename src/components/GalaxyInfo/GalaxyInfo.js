@@ -24,7 +24,7 @@ const GalaxyInfo = () => (
 
         <div className="galaxy-info__content">
             <h1 className="title text-uppercase leading-font">
-                <span className="title__name">Jenny Maya:</span>
+                <span className="title__name">Jeff Mills:</span>
                 The <br className="hidden-desktop" />
                 Outer <br className="hidden-desktop" />
                 Limits
