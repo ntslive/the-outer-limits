@@ -16,7 +16,7 @@ $final-stage-animation-speed: 3s;
     left: $galaxy-info-width + 100 !important;
 }
 #galaxy {
-    width: 270vw; // must have SVG paper defintion
+    width: 350vw; // must have SVG paper defintion
     right: 0;
     overflow: hidden;
 }
@@ -86,7 +86,7 @@ $final-stage-animation-speed: 3s;
 @media (max-width: $mobile-width) {
     #galaxy {
         width: auto;
-        height: 450vh;
+        height: 510vh;
     }
     #galaxy, #galaxy-svg {
         left: 0 !important; // override paper

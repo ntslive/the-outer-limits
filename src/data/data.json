@@ -22,9 +22,10 @@
                     {"title": "Recorded/Edited at", "names": ["Spider Formation Miami/Paris"]},
                     {"title": "Guest Musicians",
                         "names": [
-                            "Kathleen Supové - Pianist, Recorded at Threshold Studio – New York",
-                            "Thomas Gould - Violinist, Recorded at Flesh And Bones Studio – London"
-                        ]},
+                            "Kathleen Supové - Pianist, Recorded at Threshold Studio, New York",
+                            "Thomas Gould - Violinist, Recorded at Flesh And Bones Studio, London"
+                        ]
+                    },
                     {"title": "Guest Interview and commentary", "names": ["Dr. Jameson Graef Rollins"]},
                     {"title": "Narration", "names": ["Vicente Solis – The Green Agency"]},
                     {"title": "Project Coordinator, Recording and Research Assistant", "names": ["Yoko Uozumi"]},
@@ -71,6 +72,15 @@
             "id": "tba",
             "name": "TBA",
             "broadcastDate": "26.09.2018",
+            "broadcastStartTime": "14:00",
+            "broadcastEndTime": "15:00",
+            "content": {},
+            "audio": []
+        },
+        {
+            "id": "tba",
+            "name": "TBA",
+            "broadcastDate": "28.11.2018",
             "broadcastStartTime": "14:00",
             "broadcastEndTime": "15:00",
             "content": {},

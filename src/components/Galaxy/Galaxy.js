@@ -32,7 +32,7 @@ class GalaxyMapping {
 
         let circles;
         if (this.isMobile) {
-            this.height = windowHeight * 4.5;
+            this.height = windowHeight * 5.2;
             this.width = windowWidth;
 
             const minDistanceBetweenChapters = windowHeight * 0.95;
@@ -57,6 +57,10 @@ class GalaxyMapping {
                 {
                     x: windowWidth * 0.77,
                     y: (minDistanceBetweenChapters * 4) + (minDistanceBetweenChapters * 0.04),
+                },
+                {
+                    x: windowWidth * 0.5,
+                    y: (minDistanceBetweenChapters * 5) + (minDistanceBetweenChapters * 0.025),
                 },
             ];
         } else {
@@ -86,13 +90,17 @@ class GalaxyMapping {
                     x: (minDistanceBetweenChapters * 4) + 50,
                     y: windowHeight * 0.48,
                 },
+                {
+                    x: (minDistanceBetweenChapters * 5) + 42,
+                    y: windowWidth * 0.3,
+                },
             ];
         }
 
         this.circles = circles;
 
         this.paths = [{
-            d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y} L${circles[4].x},${circles[4].y}`,
+            d: `M${circles[0].x},${circles[0].y} L${circles[1].x},${circles[1].y} L${circles[2].x},${circles[2].y} L${circles[3].x},${circles[3].y} L${circles[4].x},${circles[4].y} L${circles[5].x},${circles[5].y}`,
         }];
     }
 
@@ -109,7 +117,7 @@ class GalaxyMapping {
                     src: PlanetImg,
                     x: this.width * 0.23,
                     y: 150,
-                    style: {'opacity': '0.8', 'max-height': '85vh'}
+                    style: {'opacity': '0.8', 'maxHeight': '85vh'}
                 },
                 {
                     src: EarthImg,
