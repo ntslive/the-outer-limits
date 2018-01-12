@@ -23,14 +23,6 @@
 
 .galaxy-info__header__link {
     display: inline-block;
-
-    img {
-        height: 37px;
-        width: 37px;
-    }
-}
-.galaxy-info__header__link--axis {
-    margin-left: 10px;
     width: 37px;
     height: 37px;
 
@@ -38,6 +30,9 @@
         max-width: 100%;
         max-height: 100%;
     }
+}
+.galaxy-info__header__link--axis {
+    margin-left: 10px;
 }
 .galaxy-info__header__text {
     margin-top: 10px;

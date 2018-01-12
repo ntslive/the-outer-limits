@@ -61,16 +61,16 @@ $content-width: 910px;
 }
 .teaser-content__title__logo {
     display: inline-block;
-}
-.teaser-content__title__logo--axis {
     width: 36px;
     height: 36px;
-    margin-left: 10px;
 
     svg {
         max-width: 100%;
         max-height: 100%;
     }
+}
+.teaser-content__title__logo--axis {
+    margin-left: 10px;
 }
 .teaser-content__title__logo, .teaser-content__title__logo img {
     width: 36px;
