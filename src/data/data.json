@@ -35,13 +35,8 @@
             "audio": [
                 {
                     "type": "teaser",
-                    "soundcloudSecretToken": "s-DtjKY",
-                    "soundcloudTrackID": "334565201"
-                },
-                {
-                    "type": "podcast",
-                    "soundcloudSecretToken": "s-DtjKY",
-                    "soundcloudTrackID": "334565201"
+                    "soundcloudSecretToken": "s-rsVzS",
+                    "soundcloudTrackID": "382574456"
                 }
             ]
         },
