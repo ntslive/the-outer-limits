@@ -1,44 +1,44 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-91c498b3c9e9a5450391.js",
-      "path---chapters-apollo-18-91c498b3c9e9a5450391.js.map"
+      "path---chapters-apollo-18-295dc355f1d5234519f2.js",
+      "path---chapters-apollo-18-295dc355f1d5234519f2.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-6bd7ec5ed6672f91a372.js",
-      "component---src-pages-index-js-6bd7ec5ed6672f91a372.js.map"
+      "component---src-pages-index-js-25100f4cbb4eeba7c263.js",
+      "component---src-pages-index-js-25100f4cbb4eeba7c263.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
-    "component---src-pages-chapters-alpha-centauri-js": [
-      "component---src-pages-chapters-alpha-centauri-js-d0abc60f18922cdd8588.js",
-      "component---src-pages-chapters-alpha-centauri-js-d0abc60f18922cdd8588.js.map"
+    "path---chapters-black-hole": [
+      "path---chapters-black-hole-295dc355f1d5234519f2.js",
+      "path---chapters-black-hole-295dc355f1d5234519f2.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-a573dbaf9350c5121182.js",
-      "component---src-layouts-index-js-a573dbaf9350c5121182.js.map"
+      "component---src-layouts-index-js-f86860d7896b8f0a258b.js",
+      "component---src-layouts-index-js-f86860d7896b8f0a258b.js.map"
     ],
     "path---index": [
-      "path---index-d0e640a4229faa6486c3.js",
-      "path---index-d0e640a4229faa6486c3.js.map"
+      "path---index-536bcb9f42083ca92f04.js",
+      "path---index-536bcb9f42083ca92f04.js.map"
     ],
     "component---src-pages-chapters-apollo-18-js": [
-      "component---src-pages-chapters-apollo-18-js-d0abc60f18922cdd8588.js",
-      "component---src-pages-chapters-apollo-18-js-d0abc60f18922cdd8588.js.map"
+      "component---src-pages-chapters-apollo-18-js-cb14a03d39e227d77169.js",
+      "component---src-pages-chapters-apollo-18-js-cb14a03d39e227d77169.js.map"
+    ],
+    "component---src-pages-chapters-black-hole-js": [
+      "component---src-pages-chapters-black-hole-js-cb14a03d39e227d77169.js",
+      "component---src-pages-chapters-black-hole-js-cb14a03d39e227d77169.js.map"
     ],
     "commons": [
       "commons-20955a87c0f47c81f314.js",
       "commons-20955a87c0f47c81f314.js.map"
     ],
     "app": [
-      "app-fdc7471fe0fb783973cc.js",
-      "app-fdc7471fe0fb783973cc.js.map"
-    ],
-    "path---chapters-alpha-centauri": [
-      "path---chapters-alpha-centauri-91c498b3c9e9a5450391.js",
-      "path---chapters-alpha-centauri-91c498b3c9e9a5450391.js.map"
+      "app-61487b16a98d5312cf30.js",
+      "app-61487b16a98d5312cf30.js.map"
     ]
   }
 }
