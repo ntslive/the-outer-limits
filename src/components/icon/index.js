@@ -27,6 +27,9 @@ const Icon = props => {
         case "axis-logo":
             iconClassName = "icon-axis";
             break;
+        case "nts-logo":
+            iconClassName = "icon-axis";
+            break;
         default:
             console.error("Unknown icon id", props.icon.id);
             break;

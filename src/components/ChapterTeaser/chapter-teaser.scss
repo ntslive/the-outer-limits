@@ -93,14 +93,13 @@ $content-width: 910px;
 }
 #teaser-content__credits {
     font-size: 16px;
-    text-align: center;
     margin-top: 26px;
-    overflow: hidden;
 }
-.teaser-content__credits__col {
-    float: left;
-    width: 50%;
-    text-align: center
+#teaser-content__credits__title {
+    margin-bottom: 20px;
+}
+.teaser-content__credits__row {
+    margin-bottom: 15px;
 }
 
 #teaser-footer {

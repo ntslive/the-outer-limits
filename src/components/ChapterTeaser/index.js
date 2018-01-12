@@ -84,28 +84,20 @@ class ChapterTeaser extends React.Component {
 
     _renderCredits() {
         const credits = this.state.chapter.content.credits;
-        const creditsHalfLength = Math.ceil(credits.length / 2);
-        const creditsLeftColumn = credits.slice(0, creditsHalfLength);
-        const creditsRightColumn = credits.slice(creditsHalfLength, credits.length);
-
-        function renderCreditsColumn(credits) {
-            return credits.map((credit, i) => (
-                <div>
-                    <span className="text-uppercase">{credit.name}</span> - <span className="text-lowercase">{credit.title}</span>
-                </div>
-            ));
-        }
 
         return (
             <div id="teaser-content__credits">
-                <div id="teaser-content__credits__title" className="text-uppercase text-center">CREDITS</div>
+                <div id="teaser-content__credits__title" className="text-uppercase">CREDITS</div>
 
-                <div className="teaser-content__credits__col">
-                    {renderCreditsColumn(creditsLeftColumn)}
-                </div>
-                <div className="teaser-content__credits__col">
-                    {renderCreditsColumn(creditsRightColumn)}
-                </div>
+                {credits.map((credit, i) => (
+                    <div className="teaser-content__credits__row" key={i}>
+                        <div className="text-lowercase">{credit.title}</div>
+
+                        {credit.names.map((name, j) => (
+                            <div className="text-uppercase" key={j}>{name}</div>
+                        ))}
+                    </div>
+                ))}
             </div>
         );
     }

@@ -10,11 +10,24 @@
             "content": {
                 "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
                 "credits": [
-                    {"title": "music", "name": "jamie burke"},
-                    {"title": "actor", "name": "andi studer"},
-                    {"title": "music", "name": "palma fontana"},
-                    {"title": "actor", "name": "shane connolly"},
-                    {"title": "music", "name": "thierry phung"}
+                    {"title": "Concept/Script, Main Soundtrack, Producer and Presenter", "names": ["Jeff Mills"]},
+                    {"title": "Recorded/Edited at", "names": ["Spider Formation Miami/Paris"]},
+                    {"title": "Guest Musicians", "names": ["Kathleen Supové - Pianist", "Thomas Gould - Violinist"]},
+                    {"title": "Guest Interview and commentary", "names": ["Dr. Jameson Graef Rollins"]},
+                    {"title": "Narration", "names": ["Vicente Solis – The Green Agency"]},
+                    {"title": "Project Coordinator, Recording and Research Assistant", "names": ["Yoko Uozumi"]},
+                    {"title": "Program Press Relations", "names": ["Elsa Sachet"]},
+                    {
+                        "title": "Program And Segment Titles",
+                        "names": [
+                            "1. Parallel Time",
+                            "2. Worm Holes",
+                            "3. Reverse Time",
+                            "4. No Time",
+                            "5. Entering The Black Hole"
+                        ]
+                    },
+                    {"title": "", "names": ["All music written by Jeff Mills"]}
 
                 ],
                 "image_bg": "https://media2.ntslive.co.uk/resize/1600x1600/65c2b467-dbcd-41ff-8d54-0489210d8173_1513555200.jpeg",
@@ -45,8 +58,10 @@
             "content": {
                 "excerpt": "The moon is dying and starts to feed off planet earth. The Apollo 18 mission is to travel to the Moon and save the earth. Themes include light and dark, dark side of the moon etc.",
                 "credits": [
-                    {"title": "music", "name": "jenny maya"},
-                    {"title": "actor", "name": "Jamie Burke"}
+                    {
+                        "title": "Concept/Script, Main Soundtrack, Producer and Presenter",
+                        "names": ["Jenny Maya"]
+                    }
                 ],
                 "image_bg": "https://media2.ntslive.co.uk/resize/1600x1600/65c2b467-dbcd-41ff-8d54-0489210d8173_1513555200.jpeg",
                 "teaserSoundcloudSecretToken": null,

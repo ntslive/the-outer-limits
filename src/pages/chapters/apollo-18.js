@@ -23,7 +23,7 @@ export const pageQuery = graphql`
               image_bg
               credits {
                 title
-                name
+                names
               }
             }
             audio {
