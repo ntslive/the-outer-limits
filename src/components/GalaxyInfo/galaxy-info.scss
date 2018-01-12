@@ -5,7 +5,6 @@
     position: absolute;
     top: 50%;  bottom: 0;
     left: 0;
-    @include transform(translateY(-50%));
 
     max-height: 600px;
     height: 90%;
@@ -75,7 +74,7 @@
     }
     to {
         opacity: 1;
-        @include transform(translate(0, -50%));
+        @include transform(translate(1px, -50%));
     }
 }
 
