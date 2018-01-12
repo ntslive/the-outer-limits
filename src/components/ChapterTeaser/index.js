@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import $ from 'jquery';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import Button from '../Button/index';
 import GalaxyChapterStatusText from '../GalaxyChapterStatusText/GalaxyChapterStatusText';
@@ -107,8 +108,17 @@ class ChapterTeaser extends React.Component {
     render() {
         const chapter = this.state.chapter;
 
+        const pageTitle = `${chapter.name} - Jeff Mills The Outer Limits`;
+        const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}`;
+
         return (
             <div>
+                <Helmet title={`${pageTitle} | NTS`} >
+                    <meta property="og:title" content={pageTitle} />
+                    <meta property="og:title" content={pageTitle} />
+                    <meta property="og:url" content={pageUrl} />
+                </Helmet>
+
                 <div id="teaser-container">
                     <div id="teaser-nav">
                         <Button id="teaser-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy}></Button>

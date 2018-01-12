@@ -14,9 +14,15 @@ const TemplateWrapper = ({ children, location }) => {
     //     pathPrefix = '/the-outer-limits';
     // }
 
+    const websiteDescription = "Jeff Mills presents The Outer Limits, a 6 part radio series with original music production. Presented by NTS Radio and Axis Records in collaboration with NASA.";
+    const websiteTitle = "Jeff Mills The Outer Limits";
+
+    const defaultImageUrl = "https://media2.ntslive.co.uk/resize/1600x1600/79d3c8e9-b3e7-4eb7-ae3e-1354d2446368_1515715200.jpeg";
+    const defaultUrl = "https://www.nts.live/projects/jeff-mills-the-outer-limits/";
+
     return (
         <div>
-            <Helmet title="Jeff Mills The Outer Limits | NTS" >
+            <Helmet title={`${websiteTitle} | NTS`} >
                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js" />
                 <meta name="viewport" content="width=device-width,height=device-height initial-scale=1" />
                 <link rel="apple-touch-icon" sizes="180x180" href="https://www.nts.live/apple-touch-icon.png?v=47rE43RRzB" />
@@ -26,6 +32,17 @@ const TemplateWrapper = ({ children, location }) => {
                 <link rel="mask-icon" href="https://www.nts.live/safari-pinned-tab.svg?v=47rE43RRzB" color="#000000" />
                 <link rel="shortcut icon" href="https://www.nts.live/favicon.ico?v=47rE43RRzB" />
                 <meta name="theme-color" content="#000000" />
+
+                <meta name="description" content={websiteDescription} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@NTSlive" />
+                <meta name="twitter:image" content={defaultImageUrl} />
+                <meta property="og:description" content={websiteDescription} />
+                <meta property="og:site_name" content="NTS Radio" />
+                <meta property="og:title" content={websiteTitle} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={defaultUrl} />
+                <meta property="og:image" content={defaultImageUrl} />
             </Helmet>
             {children()}
         </div>
