@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-7cbab64cac3d1da49579.js",
-      "component---src-pages-index-js-7cbab64cac3d1da49579.js.map"
+      "component---src-pages-index-js-73daee1b2c5c7a79ebc8.js",
+      "component---src-pages-index-js-73daee1b2c5c7a79ebc8.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -13,24 +13,24 @@
       "path---chapters-black-hole-ea684182cbc202681da3.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-8f689000c6527bd928d8.js",
-      "component---src-layouts-index-js-8f689000c6527bd928d8.js.map"
+      "component---src-layouts-index-js-f095b87e36a433c84351.js",
+      "component---src-layouts-index-js-f095b87e36a433c84351.js.map"
     ],
     "path---index": [
       "path---index-d7ff870aeb08b8ce5895.js",
       "path---index-d7ff870aeb08b8ce5895.js.map"
     ],
     "component---src-pages-chapters-black-hole-js": [
-      "component---src-pages-chapters-black-hole-js-499441cfb18925e43e4f.js",
-      "component---src-pages-chapters-black-hole-js-499441cfb18925e43e4f.js.map"
+      "component---src-pages-chapters-black-hole-js-5501c624901e3e18f9ef.js",
+      "component---src-pages-chapters-black-hole-js-5501c624901e3e18f9ef.js.map"
     ],
     "commons": [
       "commons-ff9e4ccdb7f2a5d3bf84.js",
       "commons-ff9e4ccdb7f2a5d3bf84.js.map"
     ],
     "app": [
-      "app-a332225f2f8e5477d6de.js",
-      "app-a332225f2f8e5477d6de.js.map"
+      "app-9c8be2fc1ca818a542a5.js",
+      "app-9c8be2fc1ca818a542a5.js.map"
     ]
   }
 }
