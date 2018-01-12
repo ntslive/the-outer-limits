@@ -36,8 +36,8 @@ class ChapterTeaser extends React.Component {
 
         this.state = {
             chapter: props.chapter,
-            chapterStatus: chapterStatus,
-        }
+            chapterStatus,
+        };
     }
 
     componentDidMount() {

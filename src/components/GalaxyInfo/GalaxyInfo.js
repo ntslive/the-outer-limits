@@ -7,7 +7,7 @@ import Icon from '../icon';
 import NtsIcon from '../icon/nts-logo.icon';
 import AxisIcon from '../icon/axis-logo.icon';
 
-const GalaxyInfo = () => (
+const GalaxyInfo = props => (
     <div id="galaxy-info">
         <div className="galaxy-info__header">
             <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"><Icon icon={NtsIcon} /></a>
@@ -33,13 +33,17 @@ const GalaxyInfo = () => (
         </div>
 
         <div className="galaxy-info__footer text-justify text-uppercase">
-            <div className="galaxy-info__footer__title leading-font">17.01.18</div>
+            <div className="galaxy-info__footer__title leading-font">{props.nextChapterTimes.broadcastStartDate}</div>
             <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                 <div>Next broadcast</div>
-                <div>on NTS / 14:00</div>
+                <div>on NTS / {props.nextChapterTimes.broadcastStartTime}</div>
             </div>
         </div>
     </div>
 );
+
+GalaxyInfo.propTypes = {
+    nextChapterTimes: PropTypes.object.isRequired,
+};
 
 export default GalaxyInfo;
