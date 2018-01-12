@@ -29,14 +29,14 @@ const GalaxyInfo = () => (
                 Outer <br className="hidden-desktop" />
                 Limits
             </h1>
-            <h3 className="subtitle">5 part radio series with original music production</h3>
+            <h3 className="subtitle">6 part radio series with original music production</h3>
         </div>
 
         <div className="galaxy-info__footer text-justify text-uppercase">
-            <div className="galaxy-info__footer__title leading-font">01.01.18</div>
+            <div className="galaxy-info__footer__title leading-font">17.01.18</div>
             <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                 <div>Next broadcast</div>
-                <div>on NTS / 13:00</div>
+                <div>on NTS / 14:00</div>
             </div>
         </div>
     </div>
