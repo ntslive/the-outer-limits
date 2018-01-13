@@ -109,7 +109,7 @@ class ChapterTeaser extends React.Component {
         const chapter = this.state.chapter;
 
         const pageTitle = `${chapter.name} - Jeff Mills The Outer Limits`;
-        const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}`;
+        const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}/`;
 
         return (
             <div>
