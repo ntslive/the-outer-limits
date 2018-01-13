@@ -11,7 +11,6 @@ $content-width: 910px;
     margin: 0 auto;
     box-sizing: border-box;
 
-    overflow-y: auto;
     color: white;
 }
 
@@ -58,6 +57,7 @@ $content-width: 910px;
     position: relative; // required for z-index to work
     line-height: 1.2em;
     margin-top: 240px;
+    padding-bottom: 100px;
 }
 .teaser-content__title__logo {
     display: inline-block;
@@ -87,6 +87,22 @@ $content-width: 910px;
 #teaser-content__title__text h5 {
     font-size: 14px;
 }
+#teaser-content__status {
+    margin: 40px 0 20px;
+    font-size: 18px;
+}
+#teaser-content__player {
+    max-width: 500px;
+    box-sizing: border-box;
+
+    transform: scale(1.2);
+    overflow: hidden;
+    margin-left: -69px;
+
+    iframe {
+        margin-left: 100px;
+    }
+}
 #teaser-content__description, #teaser-content__tracks {
     font-size: 17px;
 }
@@ -109,32 +125,6 @@ $content-width: 910px;
 }
 .teaser-content__credits__row {
     margin-bottom: 15px;
-}
-
-#teaser-footer {
-    position: fixed;
-    bottom: 33px;
-    left: 0; right: 0;
-    text-align: center;
-
-    width: 100%;
-    max-width: $content-width;
-    margin: 0 auto;
-}
-#teaser-footer__status {
-    margin-bottom: 30px;
-    font-size: 18px;
-}
-#teaser-footer__player {
-    max-width: 500px;
-    margin: 0 auto;
-    box-sizing: border-box;
-
-    transform: translateX(-50px) scale(1.2);
-    overflow: hidden;
-    iframe {
-        margin-right: -200px;
-    }
 }
 
 @media (max-width: $mobile-width) {
@@ -194,16 +184,13 @@ $content-width: 910px;
         float: none;
         width: 100%;
     }
-    #teaser-footer {
-        bottom: 64px;
-    }
-    #teaser-footer__player {
-        width: 200px;
-        max-width: 250px;
+    #teaser-content__player {
+        //width: 200px;
+        //max-width: 250px;
 
-        transform: translateX(-15px) scale(1.2);
-        iframe {
-            margin-right: -50px;
-        }
+        //transform: translateX(-15px) scale(1.2);
+        //iframe {
+        //    margin-right: -50px;
+        //}
     }
 }
