@@ -142,7 +142,7 @@ $content-width: 910px;
         font-size: 15px;
         text-align: center;
         box-sizing: border-box;
-        padding: 0 10px;
+        padding: 0 10px 50px;
 
         .galaxy-chapter__content__action_subtext {
             margin-top: 34px;
@@ -184,13 +184,21 @@ $content-width: 910px;
         float: none;
         width: 100%;
     }
-    #teaser-content__player {
-        //width: 200px;
-        //max-width: 250px;
+    #teaser-content__status {
+        margin: 0;
 
-        //transform: translateX(-15px) scale(1.2);
-        //iframe {
-        //    margin-right: -50px;
-        //}
+        .galaxy-chapter__content__action_subtext {
+            margin-bottom: 0;
+        }
+    }
+    #teaser-content__player {
+        max-width: 200px;
+        width: 100%;
+        margin: 15px auto 30px;
+        transform: translateX(-10px);
+
+        iframe {
+            margin: 0 25px;
+        }
     }
 }

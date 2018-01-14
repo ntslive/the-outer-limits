@@ -136,8 +136,6 @@ class ChapterTeaser extends React.Component {
                             </div>
                         </div>
 
-                        {/*<GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>*/}
-
                         <div id="teaser-content__status">
                             <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
                         </div>
