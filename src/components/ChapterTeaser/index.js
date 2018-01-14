@@ -67,7 +67,7 @@ class ChapterTeaser extends React.Component {
 
         if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
             return (
-                <div id="teaser-footer__player">
+                <div id="teaser-content__player">
                     <h1>LIVE PLAYER</h1>
                 </div>
             );
@@ -77,7 +77,7 @@ class ChapterTeaser extends React.Component {
         let teaserAudio = getAudioInfo(chapter, audioType);
 
         return (
-            <div id="teaser-footer__player">
+            <div id="teaser-content__player">
                 <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID}/>
             </div>
         );
@@ -109,7 +109,7 @@ class ChapterTeaser extends React.Component {
         const chapter = this.state.chapter;
 
         const pageTitle = `${chapter.name} - Jeff Mills The Outer Limits`;
-        const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}`;
+        const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}/`;
 
         return (
             <div>
@@ -136,7 +136,11 @@ class ChapterTeaser extends React.Component {
                             </div>
                         </div>
 
-                        <GalaxyChapterStatusText className="hidden-desktop" chapter={chapter} chapterStatus={this.state.chapterStatus}/>
+                        <div id="teaser-content__status">
+                            <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
+                        </div>
+
+                        {this._renderPlayer()}
 
                         <div id="teaser-content__description">
                             {chapter.content.description && chapter.content.description.map((paragraph, i) => (
@@ -155,14 +159,6 @@ class ChapterTeaser extends React.Component {
                         </div>
 
                         {this._renderCredits()}
-                    </div>
-
-                    <div id="teaser-footer">
-                        <div id="teaser-footer__status" className="hidden-mobile">
-                            <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.state.chapterStatus}/>
-                        </div>
-
-                        {this._renderPlayer()}
                     </div>
                 </div>
 
