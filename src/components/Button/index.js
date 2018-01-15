@@ -18,7 +18,7 @@ const Button = props => (
             </div>
         )}
     </div>
-)
+);
 
 Button.defaultProps = {
     className: "",

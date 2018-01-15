@@ -20,9 +20,9 @@ class Path extends React.Component {
         this._clearElements();
 
         const pathAttributes = {
-            "stroke": "#7f7d7e",
+            stroke: "#7f7d7e",
             "stroke-width": 0.5,
-        }
+        };
 
         this.path = this.props.paper
             .path(this.props.d)

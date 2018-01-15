@@ -33,7 +33,7 @@ const TemplateWrapper = ({ children, location }) => {
                 <link rel="shortcut icon" href="https://www.nts.live/favicon.ico?v=47rE43RRzB" />
                 <meta name="theme-color" content="#000000" />
 
-                <link rel="canonical" href={defaultUrl}/>
+                <link rel="canonical" href={defaultUrl} />
 
                 <meta name="description" content={websiteDescription} />
                 <meta name="twitter:card" content="summary_large_image" />

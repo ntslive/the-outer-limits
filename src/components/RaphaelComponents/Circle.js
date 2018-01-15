@@ -15,13 +15,13 @@ class Circle extends React.Component {
     }
 
     _clearElements() {
-        if (!!this.circle) {
+        if (this.circle) {
             this.circle.remove();
 
             if (this.circleRings) {
-                for (let i=0; i < this.circleRings.length; i++) {
+                for (let i = 0; i < this.circleRings.length; i++) {
                     this.circleRings[i].remove();
-                };
+                }
 
                 !!this.outerGlow && this.outerGlow.remove();
                 !!this.innerGlow && this.innerGlow.remove();
@@ -39,8 +39,8 @@ class Circle extends React.Component {
 
         this._clearElements();
 
-        let circleColour = this.props.isLive ? colourLive : colourDefault;
-        let circleAttributes = {
+        const circleColour = this.props.isLive ? colourLive : colourDefault;
+        const circleAttributes = {
             fill: circleColour,
             "stroke-opacity": 0,
         };
@@ -51,7 +51,7 @@ class Circle extends React.Component {
             this.innerGlow = this.circle.glow({
                 width: 30,
                 color: circleColour,
-                opacity: 0.4
+                opacity: 0.4,
             });
 
             this.outerGlow = this.circle.glow({
@@ -65,14 +65,14 @@ class Circle extends React.Component {
             this.circle.node.setAttribute("style", ` ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}; `);
 
             this.circleRings = [];
-            let numberOfRings = this.props.isLive ? 7 : 3;
+            const numberOfRings = this.props.isLive ? 7 : 3;
             // Draw animated circles around dot.
-            for(let i=0; i<numberOfRings; i++) {
-                let circleRing = this.props.paper.circle(x, y, radius)
+            for (let i = 0; i < numberOfRings; i++) {
+                const circleRing = this.props.paper.circle(x, y, radius)
                     .attr(circleAttributes)
                     .attr({
-                        "fill": "none",
-                        "stroke": circleColour,
+                        fill: "none",
+                        stroke: circleColour,
                         "stroke-width": lineWidth,
                         'fill-opacity': 0.9,
                         'stroke-opacity': 0.9,
@@ -83,7 +83,7 @@ class Circle extends React.Component {
                 circleRing.node.setAttribute("style", `
                     ${styleCreator.createTransformOriginStyle(`${x}px ${y}px`)}
                     ${styleCreator.createAnimationStyle(`pulsate ${4}s infinite ease-out`)}
-                    ${styleCreator.createAnimationDelayStyle(animationDelay*i + 's')}
+                    ${styleCreator.createAnimationDelayStyle(`${animationDelay * i}s`)}
                 ;`);
 
                 this.circleRings.push(circleRing);

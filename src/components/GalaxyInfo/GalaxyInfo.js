@@ -10,14 +10,14 @@ import AxisIcon from '../icon/axis-logo.icon';
 const GalaxyInfo = props => (
     <div id="galaxy-info">
         <div className="galaxy-info__header">
-            <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"><Icon icon={NtsIcon} /></a>
-            <a className="galaxy-info__header__link galaxy-info__header__link--axis" href="https://axisrecords.com/" target="_blank"><Icon icon={AxisIcon} /></a>
+            <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank" rel="noopener noreferrer"><Icon icon={NtsIcon} /></a>
+            <a className="galaxy-info__header__link galaxy-info__header__link--axis" href="https://axisrecords.com/" target="_blank" rel="noopener noreferrer"><Icon icon={AxisIcon} /></a>
 
             <div className="galaxy-info__header__text subtitle-line-spacing">
                 <span>NTS Radio and Axis Records</span>
-                <br/>
+                <br />
                 <span>in collaboration <span className="hidden-mobile">with NASA</span></span>
-                <br/>
+                <br />
                 <span><span className="hidden-desktop">with NASA</span> presents</span>
             </div>
         </div>

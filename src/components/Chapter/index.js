@@ -77,7 +77,7 @@ class Chapter extends React.Component {
 
         return (
             <div id="teaser-content__player">
-                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID}/>
+                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
             </div>
         );
     }
@@ -103,7 +103,7 @@ class Chapter extends React.Component {
                     </div>
 
                     {this.state.displayTeaser && (
-                        <ChapterTeaser chapter={this.state.chapter} chapterStatus={this.state.chapterStatus}/>
+                        <ChapterTeaser chapter={this.state.chapter} chapterStatus={this.state.chapterStatus} />
                     )}
 
                     {/* Display gallery dependant on displayTeaser */}

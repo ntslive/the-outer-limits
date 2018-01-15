@@ -4,8 +4,8 @@ import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withPrefix } from "gatsby-link";
 
-import Galaxy from "../Galaxy/Galaxy"
-import Button from "../Button/index.js";
+import Galaxy from "../Galaxy/Galaxy";
+import Button from "../Button/";
 import PlayIcon from "../icon/play.icon";
 import chapterStatusManager from "../utils/chapterStatusManager";
 import ChapterTimes from '../utils/ChapterTimes';
@@ -75,7 +75,7 @@ class GalaxyChapterStatusText extends React.PureComponent {
             <div className={this.props.className}>
                 { this.props.showButton && this._renderButton(this.state.chapter, "Live Now") }
             </div>
-        )
+        );
     }
 
     renderTeaser() {
@@ -125,9 +125,9 @@ class GalaxyChapterStatusText extends React.PureComponent {
             return this.renderPodcastComing();
         } else if (chapterStatus === STATUSES[4]) {
             return this.renderPodcast();
-        } else {
-            return null;
         }
+
+        return null;
     }
 }
 
