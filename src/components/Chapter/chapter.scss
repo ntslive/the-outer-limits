@@ -19,14 +19,14 @@
     display: inline-block;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    @include transform(translateX(-50%))
 }
 #chapter-nav__right {
     float: right;
 }
 
 #chapter-container {
-    position: fixed;
+    position: absolute;
     top: 0; bottom: 0;
     left: 0; right: 0;
 }
@@ -42,7 +42,6 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    transform: scale(1.2) ta;
     @include transform(scale(1.2) translateX(-40px));
 
     overflow: hidden;

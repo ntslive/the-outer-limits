@@ -1,4 +1,5 @@
 @import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/_mixins.scss';
 
 $content-width: 910px;
 
@@ -56,7 +57,7 @@ $content-width: 910px;
     max-width: 500px;
     box-sizing: border-box;
 
-    transform: scale(1.2);
+    @include transform(scale(1.2));
     overflow: hidden;
     margin-left: -69px;
 
@@ -153,7 +154,7 @@ $content-width: 910px;
         max-width: 200px;
         width: 100%;
         margin: 15px auto 30px;
-        transform: translateX(-10px);
+        @include transform(translateX(-10px));
 
         iframe {
             margin: 0 25px;

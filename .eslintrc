@@ -39,6 +39,7 @@
         "react/jsx-indent-props": "warn",
         "jsx-a11y/iframe-has-title": "warn",
         "react/jsx-max-props-per-line": "off",
-        "no-restricted-syntax": "warn"
+        "no-restricted-syntax": "warn",
+        "jsx-a11y/media-has-caption": "off"
     }
 }

@@ -48,8 +48,14 @@ class Chapter extends React.Component {
     componentDidMount() {
         // create interval throwing a change in chapter status.
         this.statusInterval = chapterStatusManager.createChapterStatusChecker(this.state.chapter, (newStatus) => {
+            let displayTeaser = this.state.displayTeaser;
+            if (newStatus === chapterStatusManager.STATUSES[3]) {
+                displayTeaser = true;
+            }
+
             this.setState({
                 chapterStatus: newStatus,
+                displayTeaser,
             });
         });
     }
