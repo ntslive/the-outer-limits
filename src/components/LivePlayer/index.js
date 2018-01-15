@@ -27,9 +27,15 @@ class LivePlayer extends React.Component {
         }
     }
 
-    _stopStream() {
+    componentWillUnmount() {
+        this._stopStream(true);
+    }
+
+    _stopStream(unmounting) {
         this.audioElement.removeAttribute("src"); // src value should already be set to default via RadioPlayerReducer
         this.audioElement.load();
+
+        if (unmounting) return;
 
         this.setState({
             isPlaying: false,
