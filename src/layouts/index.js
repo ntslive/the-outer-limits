@@ -17,7 +17,7 @@ const TemplateWrapper = ({ children, location }) => {
     const websiteDescription = "Jeff Mills presents The Outer Limits, a 6 part radio series with original music production. Presented by NTS Radio and Axis Records in collaboration with NASA.";
     const websiteTitle = "Jeff Mills The Outer Limits";
 
-    const defaultImageUrl = "https://media2.ntslive.co.uk/resize/1600x1600/79d3c8e9-b3e7-4eb7-ae3e-1354d2446368_1515715200.jpeg";
+    const defaultImageUrl = "https://media2.ntslive.co.uk/resize/1600x1600/63206d51-770f-4415-8231-b62d6b4157f8_1515974400.jpeg";
     const defaultUrl = "https://www.nts.live/projects/jeff-mills-the-outer-limits/";
 
     return (
