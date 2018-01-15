@@ -33,7 +33,7 @@ const GalaxyInfo = props => (
         </div>
 
         <div className="galaxy-info__footer text-justify text-uppercase">
-            <div className="galaxy-info__footer__title leading-font">{props.nextChapterTimes.broadcastStartDate}</div>
+            <div className="galaxy-info__footer__title leading-font">{props.nextChapterTimes.broadcastStartDateShort}</div>
             <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                 <div>Next broadcast</div>
                 <div>on NTS / {props.nextChapterTimes.broadcastStartTime}</div>
