@@ -33,24 +33,12 @@ class ChapterTeaser extends React.Component {
 
     _renderPlayer() {
         const chapter = this.state.chapter;
-        const chapterStatus = this.state.chapterStatus;
+        const chapterStatus = this.props.chapterStatus;
 
-        if (chapterStatus === chapterStatusManager.STATUSES[0]
-            || chapterStatus === chapterStatusManager.STATUSES[3]) {
-            return;
-        }
+        // only render player if a teaser or podcastComing
+        if (chapterStatus !== chapterStatusManager.STATUSES[1] && chapterStatus !== chapterStatusManager.STATUSES[3]) return;
 
-        if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
-            return (
-                <div id="teaser-content__player">
-                    <h1>LIVE PLAYER</h1>
-                </div>
-            );
-        }
-
-        const audioType = chapterStatus === chapterStatusManager.STATUSES[4] ? "podcast" : "teaser";
-        const teaserAudio = getAudioInfo(chapter, audioType);
-
+        const teaserAudio = getAudioInfo(chapter, "teaser");
         return (
             <div id="teaser-content__player">
                 <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />

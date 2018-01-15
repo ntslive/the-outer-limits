@@ -9,7 +9,7 @@ const Player = (props) => {
     if (secretToken && secretToken.length > 0) {
         iframeSrcUrl += `%3Fsecret_token%3D${secretToken}`;
     }
-    iframeSrcUrl += "&amp;color=%23767c7c&amp;inverse=true&amp;auto_play=true&amp;show_user=true";
+    iframeSrcUrl += `&amp;color=%23767c7c&amp;inverse=true&amp;auto_play=true&amp;show_user=true`;
 
     return (
         <iframe width="100%" height="20" scrolling="no" frameBorder="no" src={iframeSrcUrl} />

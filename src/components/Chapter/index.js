@@ -68,6 +68,12 @@ class Chapter extends React.Component {
         this.props.history.push(withPrefix('/'));
     }
 
+    _toggleTeaser() {
+        this.setState({
+            displayTeaser: !this.state.displayTeaser,
+        });
+    }
+
     _renderPlayer() {
         const chapter = this.state.chapter;
         const chapterStatus = this.state.chapterStatus;
@@ -104,10 +110,14 @@ class Chapter extends React.Component {
     }
 
     _renderNavigation() {
+        const galleryIsViewable = this.state.chapterStatus === chapterStatusManager.STATUSES[2] || this.state.chapterStatus === chapterStatusManager.STATUSES[4];
+
+        const closeTeaserButton = galleryIsViewable && <Button id="chapter-nav__right" icon={CrossIcon} alternate onClick={() => this._toggleTeaser()} />;
+
         const leftLink = !this.state.displayTeaser && <HeaderMini chapter={this.state.chapter} />;
         const rightLink = this.state.displayTeaser
-            ? <Button id="chapter-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy} />
-            : <span id="chapter-nav__right">info</span>;
+            ? closeTeaserButton
+            : <span id="chapter-nav__right" className="text-uppercase cursor-pointer" onClick={() => this._toggleTeaser()}>info</span>;
 
         return (
             <div id="chapter-nav">
@@ -142,7 +152,6 @@ class Chapter extends React.Component {
 
                     {this._renderPlayer()}
 
-                    {/*<ChapterImages />*/}
                 </div>
 
                 <div id="chapter-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}} />
