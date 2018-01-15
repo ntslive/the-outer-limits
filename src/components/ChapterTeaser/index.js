@@ -5,6 +5,7 @@ import React from 'react';
 import GalaxyChapterStatusText from '../GalaxyChapterStatusText/GalaxyChapterStatusText';
 import Icon from '../icon';
 import Player from '../Player/index';
+import HeaderMini from '../HeaderMini';
 import chapterStatusManager from '../utils/chapterStatusManager';
 
 import AxisIcon from "../icon/axis-logo.icon";
@@ -85,15 +86,7 @@ class ChapterTeaser extends React.Component {
         return (
             <div id="teaser-container">
                 <div id="teaser-content">
-                    <div id="teaser-content__title">
-                        <a className="teaser-content__title__logo" href="https://www.nts.live" target="_blank" rel="noopener noreferrer"><Icon icon={NtsIcon} /></a>
-                        <a className="teaser-content__title__logo teaser-content__title__logo--axis" href="https://axisrecords.com/" target="_blank" rel="noopener noreferrer"><Icon icon={AxisIcon} /></a>
-
-                        <div id="teaser-content__title__text">
-                            <h1 className="text-uppercase leading-font">{chapter.name}</h1>
-                            <h5>Jeff Mills: The Outer Limits</h5>
-                        </div>
-                    </div>
+                    <HeaderMini chapter={chapter} />
 
                     <div id="teaser-content__status">
                         <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.props.chapterStatus} />

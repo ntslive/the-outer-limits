@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import Button from '../Button/index';
 import Player from '../Player/index';
 import ChapterTeaser from '../ChapterTeaser';
-import ChapterGallery from '../ChapterGallery';
+import HeaderMini from '../HeaderMini';
 import LivePlayer from '../LivePlayer';
 import chapterStatusManager from '../utils/chapterStatusManager';
 import ChapterTimes from '../utils/ChapterTimes';
@@ -104,7 +104,7 @@ class Chapter extends React.Component {
     }
 
     _renderNavigation() {
-        const leftLink = <span>nav link</span>;
+        const leftLink = !this.state.displayTeaser && <HeaderMini chapter={this.state.chapter} />;
         const rightLink = this.state.displayTeaser
             ? <Button id="chapter-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy} />
             : <span id="chapter-nav__right">info</span>;
