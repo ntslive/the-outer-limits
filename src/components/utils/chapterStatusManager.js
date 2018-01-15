@@ -25,6 +25,8 @@ const chapterStatusManager = {
      * @return {string|string}
      */
     getChapterStatus: (chapter, times) => {
+        return STATUSES[2];
+
         if (!chapter || !chapter.broadcastDate || !chapter.broadcastStartTime || !chapter.broadcastEndTime) return STATUSES[0];
 
         const chapterTime = times || new ChapterTimes(chapter);

@@ -24,6 +24,23 @@
     float: right;
 }
 
+#chapter-container {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+}
+
+#chapter__player {
+    position: absolute;
+    bottom: 30px;
+    left: 0; right: 0;
+
+    text-align: center;
+}
+.chapter__player--live {
+
+}
+
 #chapter-background-image {
     position: fixed;
     top: 0; bottom: 0;

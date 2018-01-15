@@ -7,6 +7,8 @@ import Helmet from 'react-helmet';
 import Button from '../Button/index';
 import Player from '../Player/index';
 import ChapterTeaser from '../ChapterTeaser';
+import ChapterGallery from '../ChapterGallery';
+import LivePlayer from '../LivePlayer';
 import chapterStatusManager from '../utils/chapterStatusManager';
 
 import CrossIcon from "../icon/cross.icon";
@@ -29,7 +31,11 @@ class Chapter extends React.Component {
 
         this._goToGalaxy = this._goToGalaxy.bind(this);
         const chapterStatus = chapterStatusManager.getChapterStatus(props.chapter);
-        const displayTeaser = this.props.displayTeaser || true;
+
+        let displayTeaser = this.props.displayTeaser || false;
+        if (chapterStatus === chapterStatusManager.STATUSES[1] || chapterStatus === chapterStatusManager.STATUSES[3]) {
+            displayTeaser = true;
+        }
 
         this.state = {
             chapter: props.chapter,
@@ -60,24 +66,40 @@ class Chapter extends React.Component {
         const chapterStatus = this.state.chapterStatus;
 
         if (chapterStatus === chapterStatusManager.STATUSES[0]
+         || chapterStatus === chapterStatusManager.STATUSES[1]
          || chapterStatus === chapterStatusManager.STATUSES[3]) {
             return;
         }
 
         if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
             return (
-                <div id="teaser-content__player">
-                    <h1>LIVE PLAYER</h1>
+                <div id="chapter__player">
+                    <LivePlayer />
                 </div>
             );
         }
 
-        const audioType = chapterStatus === chapterStatusManager.STATUSES[4] ? "podcast" : "teaser";
-        const teaserAudio = getAudioInfo(chapter, audioType);
+        const teaserAudio = getAudioInfo(chapter, "podcast");
+        return (
+            <div id="chapter__player">
+                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
+            </div>
+        );
+    }
+
+    _renderNavigation() {
+        const leftLink = <span>nav link</span>;
+        const rightLink = this.state.displayTeaser
+            ? <Button id="chapter-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy} />
+            : <span id="chapter-nav__right">info</span>;
 
         return (
-            <div id="teaser-content__player">
-                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
+            <div id="chapter-nav">
+                {leftLink}
+
+                <Button id="chapter-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy} />
+
+                {rightLink}
             </div>
         );
     }
@@ -92,21 +114,19 @@ class Chapter extends React.Component {
             <div>
                 <Helmet title={`${pageTitle} | NTS`} >
                     <meta property="og:title" content={pageTitle} />
-                    <meta property="og:title" content={pageTitle} />
                     <meta property="og:url" content={pageUrl} />
                 </Helmet>
 
                 <div id="chapter-container">
-                    <div id="chapter-nav">
-                        <Button id="chapter-nav__center" icon={HomeIcon} alternate onClick={this._goToGalaxy} />
-                        <Button id="chapter-nav__right" icon={CrossIcon} alternate onClick={this._goToGalaxy} />
-                    </div>
+                    {this._renderNavigation()}
 
                     {this.state.displayTeaser && (
                         <ChapterTeaser chapter={this.state.chapter} chapterStatus={this.state.chapterStatus} />
                     )}
 
-                    {/* Display gallery dependant on displayTeaser */}
+                    {this._renderPlayer()}
+
+                    {/*<ChapterImages />*/}
                 </div>
 
                 <div id="chapter-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}} />

@@ -48,6 +48,11 @@ const TemplateWrapper = ({ children, location }) => {
                 <meta property="og:image" content={defaultImageUrl} />
                 <meta property="og:image:alt" content={websiteTitle} />
             </Helmet>
+
+            <span style={{display: "none", visibility: "hidden"}}>
+                <audio id="nts-player-audio" controls preload="none" type="audio/mpeg" src="" />
+            </span>
+
             {children()}
         </div>
     );

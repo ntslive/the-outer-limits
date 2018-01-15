@@ -1,0 +1,43 @@
+@import '../../../sass/mixins/_mixins';
+@import '../../../sass/_settings';
+
+#live-player {
+    display: inline-block;
+}
+
+#live-player__button {
+    float: left;
+
+    .button__circle {
+        height: 42px;
+        width: 42px;
+        @include border-radius(42px / 2);
+    }
+}
+
+#live-player__text {
+    float: left;
+    margin-top: 6px;
+    margin-left: 14px;
+
+    line-height: 0.9em;
+    text-align: left;
+}
+#live-player__text__label {
+    font-size: 14px;
+}
+#live-player__text__time {
+    font-size: 13px;
+}
+
+.circle {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    @include border-radius(7px);
+    background-color: red;
+    margin-right: 6px;
+}
+
