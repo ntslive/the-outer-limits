@@ -72,7 +72,8 @@ class Chapter extends React.Component {
             return;
         }
 
-        if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
+        // live
+        if (chapterStatus === chapterStatusManager.STATUSES[2]) {
             const chapterTimes = new ChapterTimes(chapter);
 
             const urlParams = typeof window !== "undefined" && typeof URLSearchParams !== "undefined" && new URLSearchParams(window.location.search);
@@ -85,10 +86,13 @@ class Chapter extends React.Component {
             );
         }
 
+        // podcast
         const teaserAudio = getAudioInfo(chapter, "podcast");
         return (
             <div id="chapter__player">
-                <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
+                <div id="chapter__player-mask">
+                    <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
+                </div>
             </div>
         );
     }

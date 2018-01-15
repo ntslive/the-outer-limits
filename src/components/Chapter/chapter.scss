@@ -1,4 +1,5 @@
 @import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/_mixins.scss';
 
 #chapter-nav {
     position: fixed;
@@ -37,10 +38,18 @@
 
     text-align: center;
 }
-.chapter__player--live {
+#chapter__player-mask {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transform: scale(1.2) ta;
+    @include transform(scale(1.2) translateX(-40px));
 
+    overflow: hidden;
 }
-
+#chapter__player-mask iframe {
+    margin-left: 100px;
+}
 #chapter-background-image {
     position: fixed;
     top: 0; bottom: 0;

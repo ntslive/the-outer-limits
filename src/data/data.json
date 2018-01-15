@@ -32,7 +32,13 @@
                     "type": "teaser",
                     "soundcloudSecretToken": "s-rsVzS",
                     "soundcloudTrackID": "382574456"
+                },
+                {
+                    "type": "podcast",
+                    "soundcloudSecretToken": "s-rsVzS",
+                    "soundcloudTrackID": "382574456"
                 }
+
             ]
         },
         {
