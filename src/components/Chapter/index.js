@@ -10,6 +10,7 @@ import ChapterTeaser from '../ChapterTeaser';
 import ChapterGallery from '../ChapterGallery';
 import LivePlayer from '../LivePlayer';
 import chapterStatusManager from '../utils/chapterStatusManager';
+import ChapterTimes from '../utils/ChapterTimes';
 
 import CrossIcon from "../icon/cross.icon";
 import HomeIcon from "../icon/home.icon";
@@ -72,9 +73,14 @@ class Chapter extends React.Component {
         }
 
         if (chapterStatus === chapterStatusManager.STATUSES[2]) { // live
+            const chapterTimes = new ChapterTimes(chapter);
+
+            const urlParams = typeof window !== "undefined" && typeof URLSearchParams !== "undefined" && new URLSearchParams(window.location.search);
+            const autoplay = urlParams && urlParams.has('autoplay');
+
             return (
                 <div id="chapter__player">
-                    <LivePlayer />
+                    <LivePlayer chapterTimes={chapterTimes} autoplay={autoplay} />
                 </div>
             );
         }

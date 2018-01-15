@@ -17,6 +17,10 @@ class ChapterTimes {
     get broadcastStartTime() {
         return this.startMoment.tz(this.userTImezone).format("HH:mm");
     }
+
+    get broadcastEndTime() {
+        return this.endMoment.tz(this.userTImezone).format("HH:mm");
+    }
 }
 
 export default ChapterTimes;

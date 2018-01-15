@@ -21,7 +21,10 @@ class LivePlayer extends React.Component {
 
     componentDidMount() {
         this.audioElement = typeof document !== "undefined" && document.getElementById('nts-player-audio');
-        console.log( this.audioElement);
+
+        if (this.props.autoplay) {
+            this._playStream(true);
+        }
     }
 
     _stopStream() {
@@ -33,10 +36,12 @@ class LivePlayer extends React.Component {
         });
     }
 
-    _playStream() {
+    _playStream(autoplay) {
         let time = new Date();
         this.audioElement.src = `http://stream-relay-geo.ntslive.net/stream?t=${time.valueOf()}`;
         this.audioElement.play();
+
+        if (autoplay) return;
 
         this.setState({
             isPlaying: true,
@@ -53,6 +58,7 @@ class LivePlayer extends React.Component {
 
     render() {
         const buttonIcon = this.state.isPlaying ? StopIcon : PlayIcon;
+        const timeLabel = `${this.props.chapterTimes.broadcastStartTime} - ${this.props.chapterTimes.broadcastEndTime}`;
 
         return (
             <div id="live-player">
@@ -60,7 +66,7 @@ class LivePlayer extends React.Component {
 
                 <div id="live-player__text" className="text-uppercase">
                     <div id="live-player__text__label"><span className="circle" />Live Now</div>
-                    <div id="live-player__text__time">14:00 - 15:00</div>
+                    <div id="live-player__text__time">{timeLabel}</div>
                 </div>
             </div>
         );
@@ -69,7 +75,7 @@ class LivePlayer extends React.Component {
 
 LivePlayer.propTypes = {
     autoplay: PropTypes.bool,
-    // audioElement: PropTypes.object.isRequired,
+    chapterTimes: PropTypes.object,
 };
 
 export default LivePlayer;

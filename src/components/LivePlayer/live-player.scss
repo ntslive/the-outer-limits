@@ -32,12 +32,29 @@
 
 .circle {
     position: relative;
-    top: 2px;
+    top: 1px;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+
     @include border-radius(7px);
     background-color: red;
-    margin-right: 6px;
+
+    @include animation(livecircle 3.5s infinite);
 }
 
+@include keyframes(livecircle) {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
