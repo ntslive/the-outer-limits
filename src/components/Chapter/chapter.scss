@@ -1,0 +1,47 @@
+@import '../../../sass/_settings.scss';
+
+#chapter-nav {
+    position: fixed;
+    top: 24px;
+    left: 56px; right: 56px;
+}
+#chapter-nav__left {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    img {
+        width: 36px;
+        height: 36px;
+    }
+}
+#chapter-nav__center {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#chapter-nav__right {
+    float: right;
+}
+
+#chapter-background-image {
+    position: fixed;
+    top: 0; bottom: 0;
+    left:0; right: 0;
+
+    z-index: 0;
+    opacity: 0.4;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
+@media (max-width: $mobile-width) {
+    #chapter-nav {
+        left: 24px;
+        right: 24px;
+    }
+}

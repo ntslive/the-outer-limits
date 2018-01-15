@@ -25,6 +25,10 @@
         "no-plusplus": "off",
         "max-len": "off",
         "react/forbid-prop-types": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "consistent-return": "off",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "off",
+        "no-undef": "warn"
     }
 }

@@ -14,45 +14,6 @@ $content-width: 910px;
     color: white;
 }
 
-#teaser-background-image {
-    position: fixed;
-    top: 0; bottom: 0;
-    left:0; right: 0;
-
-    z-index: 0;
-    opacity: 0.4;
-
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: transparent;
-}
-
-#teaser-nav {
-    position: fixed;
-    top: 24px;
-    left: 56px; right: 56px;
-}
-#teaser-nav__left {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    img {
-        width: 36px;
-        height: 36px;
-    }
-}
-#teaser-nav__center {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-#teaser-nav__right {
-    float: right;
-}
-
 #teaser-content {
     position: relative; // required for z-index to work
     line-height: 1.2em;
@@ -131,10 +92,7 @@ $content-width: 910px;
     #teaser-container {
         max-height: calc(100vh - 115px);
     }
-    #teaser-nav {
-        left: 24px;
-        right: 24px;
-    }
+
     #teaser-content {
         margin-top: 120px;
         overflow: scroll;

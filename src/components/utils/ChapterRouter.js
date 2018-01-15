@@ -3,7 +3,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import ChapterTeaser from '../ChapterTeaser';
+import Chapter from '../Chapter';
 
 const ChapterRouter = (props) => {
     const pageChapterId = props.chapterId;
@@ -20,7 +20,7 @@ const ChapterRouter = (props) => {
     return (
         <main id="chapter-page">
             { chapter
-                ? (<ChapterTeaser chapter={chapter} />)
+                ? (<Chapter chapter={chapter} />)
                 : (<h1>Unknown Chapter Id {pageChapterId}</h1>)
             }
         </main>
