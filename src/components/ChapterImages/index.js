@@ -3,6 +3,7 @@ import React from 'react';
 import $ from "jquery";
 
 import Button from '../Button/index';
+import PreloadedChapterImg from '../utils/PreloadedChapterImg';
 
 import LeftArrow from "../icon/short-left-arrow.icon";
 import RightArrow from "../icon/short-right-arrow.icon";
@@ -45,10 +46,9 @@ class ChapterImages extends React.Component {
         console.log("next image");
 
         this.setState({
-            imageIndex: this.state.imageIndex+1,
+            imageIndex: this.state.imageIndex + 1,
         });
     }
-
 
     _prevImage() {
         console.log("prev image");
@@ -78,7 +78,8 @@ class ChapterImages extends React.Component {
                     <Button className="button--rotate90 button__circle--left" icon={LeftArrow} alternate onClick={() => this._prevImage()} />
                     <Button className="button--rotate90 button__circle--right" icon={RightArrow} alternate onClick={() => this._nextImage()} />
                 </div>
-                <div className="chapter-images__bg" style={{backgroundImage: `url(${currentImageUrl})`}} />
+
+                <PreloadedChapterImg key={currentImageUrl} className="chapter-images__bg" imageUrl={currentImageUrl} />
             </div>
         );
     }
