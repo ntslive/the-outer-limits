@@ -30,11 +30,10 @@ class ChapterImages extends React.Component {
     constructor(props) {
         super(props);
 
-        const images = props.chapter.gallery;
-
         this.state = {
-            images,
+            images: props.chapter.gallery,
             imageIndex: 0,
+            direction: '',
         };
     }
 
@@ -61,6 +60,7 @@ class ChapterImages extends React.Component {
 
         this.setState({
             imageIndex: nextImageIndex,
+            direction: "upwards",
         });
     }
 
@@ -69,28 +69,18 @@ class ChapterImages extends React.Component {
 
         this.setState({
             imageIndex: prevImageIndex,
+            direction: "downwards",
         });
     }
 
     render() {
         const imageIndex = this.state.imageIndex;
-        const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
-        const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
-
-        const currentImageUrl = this.state.images[imageIndex].imageUrl;
-        const nextImageUrl = this.state.images[nextImageIndex].imageUrl;
-        const prevImageUrl = this.state.images[prevImageIndex].imageUrl;
+        // const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
+        // const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
+        //
+        // const currentImageUrl = this.state.images[imageIndex].imageUrl;
 
         const hideControlsClass = this.props.hideControls ? "hidden" : '';
-
-        // Preloads surrounding images. Requires Image definition check for gatbsy build.
-        if (typeof Image !== "undefined") {
-            let nextImage = new Image();
-            nextImage.src = nextImageUrl;
-
-            let prevImage = new Image();
-            prevImage.src = prevImageUrl;
-        }
 
         return (
             <div id="chapter-images">
@@ -99,7 +89,14 @@ class ChapterImages extends React.Component {
                     <Button className="button--rotate90 button__circle--right" icon={RightArrow} alternate onClick={() => this._nextImage()} />
                 </div>
 
-                <PreloadedChapterImg key={currentImageUrl} className="chapter-images__bg" imageUrl={currentImageUrl} />
+                {this.state.images.map((image, i) => {
+                    return (
+                        <PreloadedChapterImg
+                            key={i} className={`chapter-images__bg`}
+                            imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction}
+                        />
+                    );
+                })}
             </div>
         );
     }
