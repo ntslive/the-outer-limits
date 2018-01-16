@@ -32,6 +32,10 @@
 #chapter-container {
     z-index: 2;
 }
-#chapter-background-image {
+
+#chapter-images__controls {
+    z-index: 20;
+}
+#chapter-images__bg {
     z-index: 1;
 }
