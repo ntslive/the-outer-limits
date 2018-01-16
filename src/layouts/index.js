@@ -33,8 +33,6 @@ const TemplateWrapper = ({ children, location }) => {
                 <link rel="shortcut icon" href="https://www.nts.live/favicon.ico?v=47rE43RRzB" />
                 <meta name="theme-color" content="#000000" />
 
-                <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://*.ntslive.net http://*.ntslive.net;" />
-
                 <link rel="canonical" href={defaultUrl} />
 
                 <meta name="description" content={websiteDescription} />
@@ -52,7 +50,7 @@ const TemplateWrapper = ({ children, location }) => {
             </Helmet>
 
             <span style={{display: "none", visibility: "hidden"}}>
-                <audio id="nts-player-audio" controls preload="none" type="audio/mpeg" src="" />
+                <audio id="nts-player-audio" preload="none" type="audio/mpeg" src="" />
             </span>
 
             {children()}

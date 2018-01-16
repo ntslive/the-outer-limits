@@ -20,11 +20,14 @@ class LivePlayer extends React.Component {
     }
 
     componentDidMount() {
-        this.audioElement = typeof document !== "undefined" && document.getElementById('nts-player-audio');
-
-        if (this.props.autoplay) {
-            this._playStream(true);
-        }
+        let that = this;
+        this.audioElement = document.getElementById('nts-player-audio');
+        this.audioElement.addEventListener('playing', function(){
+            that.setState({
+                isPlaying: true,
+            });
+        });
+        if (this.props.autoplay) this._playStream();
     }
 
     componentWillUnmount() {
@@ -32,7 +35,7 @@ class LivePlayer extends React.Component {
     }
 
     _stopStream(unmounting) {
-        this.audioElement.removeAttribute("src"); // src value should already be set to default via RadioPlayerReducer
+        this.audioElement.removeAttribute("src");
         this.audioElement.load();
 
         if (unmounting) return;
@@ -42,16 +45,11 @@ class LivePlayer extends React.Component {
         });
     }
 
-    _playStream(autoplay) {
+    _playStream() {
         const time = new Date();
         this.audioElement.src = `https://stream-relay-geo.ntslive.net/stream?t=${time.valueOf()}`;
+        this.audioElement.load();
         this.audioElement.play();
-
-        if (autoplay) return;
-
-        this.setState({
-            isPlaying: true,
-        });
     }
 
     _toggleStream() {
