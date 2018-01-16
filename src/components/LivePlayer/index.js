@@ -44,7 +44,7 @@ class LivePlayer extends React.Component {
 
     _playStream(autoplay) {
         const time = new Date();
-        this.audioElement.src = `http://stream-relay-geo.ntslive.net/stream?t=${time.valueOf()}`;
+        this.audioElement.src = `https://stream-relay-geo.ntslive.net/stream?t=${time.valueOf()}`;
         this.audioElement.play();
 
         if (autoplay) return;
