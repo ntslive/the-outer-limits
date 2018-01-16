@@ -8,7 +8,7 @@ import NtsIcon from "../icon/nts-logo.icon";
 import './header-mini.scss';
 
 const HeaderMini = props => (
-    <div id="header-mini">
+    <div id="header-mini" className={props.className}>
         <a className="header-mini__logo" href="https://www.nts.live" target="_blank" rel="noopener noreferrer"><Icon icon={NtsIcon} /></a>
         <a className="header-mini__logo header-mini__logo--axis" href="https://axisrecords.com/" target="_blank" rel="noopener noreferrer"><Icon icon={AxisIcon} /></a>
 

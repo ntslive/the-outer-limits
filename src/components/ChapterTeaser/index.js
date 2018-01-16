@@ -74,7 +74,7 @@ class ChapterTeaser extends React.Component {
         return (
             <div id="teaser-container">
                 <div id="teaser-content">
-                    <HeaderMini chapter={chapter} />
+                    <HeaderMini chapter={chapter} className="hidden-mobile" />
 
                     <div id="teaser-content__status">
                         <GalaxyChapterStatusText chapter={chapter} chapterStatus={this.props.chapterStatus} />

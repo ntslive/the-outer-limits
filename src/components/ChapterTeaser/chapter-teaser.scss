@@ -68,7 +68,7 @@ $content-width: 910px;
     }
 
     #teaser-content {
-        margin-top: 120px;
+        margin-top: 0px;
         overflow: scroll;
 
         font-size: 15px;
@@ -82,14 +82,18 @@ $content-width: 910px;
             font-size: 18px;
         }
     }
-
     #teaser-content__description, #teaser-content__credits {
         font-size: inherit;
         line-height: inherit;
     }
     #teaser-content__description, #teaser-content__tracks {
-        margin-top: 0;
         padding: 0 12px;
+    }
+    #teaser-content__description {
+        margin-top: 30px;
+    }
+    #teaser-content__tracks {
+        margin-top: 0;
     }
 
     #teaser-content__credits__title {

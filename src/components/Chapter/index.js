@@ -84,7 +84,7 @@ class Chapter extends React.Component {
             return;
         }
 
-        const hidePlayerClass = !!this.state.displayTeaser ? 'hidden' : '';
+        const hidePlayerClass = this.state.displayTeaser ? 'hidden' : '';
 
         // live
         if (chapterStatus === chapterStatusManager.STATUSES[2]) {
@@ -119,7 +119,7 @@ class Chapter extends React.Component {
         const leftLink = !this.state.displayTeaser && <HeaderMini chapter={this.state.chapter} />;
         const rightLink = this.state.displayTeaser
             ? closeTeaserButton
-            : <span id="chapter-nav__right" className="text-uppercase cursor-pointer" onClick={() => this._toggleTeaser()}>info</span>;
+            : <span id="chapter-nav__right" className="chapter-nav__right--info-label text-uppercase cursor-pointer" onClick={() => this._toggleTeaser()}>info</span>;
 
         return (
             <div id="chapter-nav">
@@ -148,12 +148,13 @@ class Chapter extends React.Component {
                 <div id="chapter-container">
                     {this._renderNavigation()}
 
+                    <HeaderMini chapter={chapter} className="header-mini--mobile hidden-desktop text-center" />
+
                     {this.state.displayTeaser && (
                         <ChapterTeaser chapter={this.state.chapter} chapterStatus={this.state.chapterStatus} />
                     )}
 
                     {this._renderPlayer()}
-
                 </div>
 
                 <div id="chapter-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}} />

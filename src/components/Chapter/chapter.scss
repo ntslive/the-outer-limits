@@ -74,4 +74,34 @@
         left: 24px;
         right: 24px;
     }
+    #chapter-nav #header-mini {
+        display: none;
+    }
+    .chapter-nav__right--info-label {
+        position: relative;
+        font-size: 14px !important;
+        top: 8px;
+        left: 9px;
+        @include transform(rotate(-90deg));
+    }
+
+    #chapter-container .header-mini--mobile {
+        margin-top: 85px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    #chapter__player {
+        text-align: left;
+        bottom: 10px;
+        left: 25px;
+    }
+    #chapter__player-mask {
+        @include transform(scale(1.2) translateX(-14px));
+        max-width: 250px;
+    }
+    #chapter__player-mask iframe {
+        margin-left: 25px;
+    }
 }
