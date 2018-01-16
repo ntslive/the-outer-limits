@@ -44,6 +44,13 @@
     @include animation(livecircle 3.5s infinite);
 }
 
+@media (max-width: $mobile-width) {
+    #live-player {
+        position: relative;
+        top: 10px;
+    }
+}
+
 @include keyframes(livecircle) {
     0% {
         opacity: 0;

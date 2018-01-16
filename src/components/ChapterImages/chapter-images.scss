@@ -6,7 +6,7 @@
 #chapter-images__controls {
     position: fixed;
     right: 50px;
-    bottom: 100px;
+    bottom: 40px;
 }
 
 .chapter-images__bg {
@@ -27,6 +27,6 @@
 @media (max-width: $mobile-width) {
     #chapter-images__controls {
         right: 25px;
-        bottom: 30vh;
+        bottom: 15px;
     }
 }

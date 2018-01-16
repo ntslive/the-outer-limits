@@ -104,7 +104,7 @@ class Chapter extends React.Component {
         // podcast
         const teaserAudio = getAudioInfo(chapter, "podcast");
         return (
-            <div id="chapter__player" className={hidePlayerClass}>
+            <div id="chapter__player" className={`chapter__player--podcast ${hidePlayerClass}`}>
                 <div id="chapter__player-mask">
                     <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
                 </div>
