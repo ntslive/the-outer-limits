@@ -75,10 +75,8 @@ class ChapterImages extends React.Component {
 
     render() {
         const imageIndex = this.state.imageIndex;
-        // const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
-        // const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
-        //
-        // const currentImageUrl = this.state.images[imageIndex].imageUrl;
+        const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
+        const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
         const hideControlsClass = this.props.hideControls ? "hidden" : '';
 
@@ -90,10 +88,15 @@ class ChapterImages extends React.Component {
                 </div>
 
                 {this.state.images.map((image, i) => {
+                    let preventLoad = true;
+                    if (i === imageIndex || i === nextImageIndex || i === prevImageIndex) {
+                        preventLoad = false;
+                    }
+
                     return (
                         <PreloadedChapterImg
                             key={i} className={`chapter-images__bg`}
-                            imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction}
+                            imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction} preventLoad={preventLoad}
                         />
                     );
                 })}

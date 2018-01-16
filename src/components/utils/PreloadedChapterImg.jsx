@@ -1,6 +1,12 @@
 const PropTypes = require('prop-types');
 const React = require('react');
 
+function preloadImage(imageUrlToPreload, cb) {
+    let newImage = new Image();
+    newImage.onload = cb;
+    newImage.src = imageUrlToPreload;
+}
+
 class PreloadedImg extends React.Component {
     constructor(props) {
         super(props);
@@ -15,25 +21,37 @@ class PreloadedImg extends React.Component {
     }
 
     componentDidMount() {
-        let newImage = new Image();
-        newImage.onload = () => {
+        if (this.props.preventLoad) return;
+
+        preloadImage(this.props.imageUrl, () => {
             this.setState({
                 imageSrc: this.props.imageUrl,
             });
-        };
-        newImage.src = this.props.imageUrl;
+        });
     }
 
     componentWillReceiveProps(newProps) {
         this.setState({
             isActive: newProps.active,
             animationDirection: newProps.animationDirection || '',
+            preventLoad: newProps.preventLoad,
         });
     }
 
     shouldComponentUpdate(nextProps, nextState) {
         return this.state.imageSrc !== nextState.imageSrc
-            || this.state.isActive !== nextState.isActive;
+            || this.state.isActive !== nextState.isActive
+            || this.props.preventLoad !== nextProps.preventLoad;
+    }
+
+    componentDidUpdate() {
+        if (this.props.preventLoad) return;
+
+        preloadImage(this.props.imageUrl, () => {
+            this.setState({
+                imageSrc: this.props.imageUrl,
+            });
+        });
     }
 
     render() {
@@ -45,6 +63,8 @@ class PreloadedImg extends React.Component {
         } else if (this.props.animationDirection === "downwards") {
             animationClass = `${isActiveClass}-down`;
         }
+
+        if (this.props.preventLoad) return null;
 
         return (
             <div id={this.props.id} className={`${this.props.className} ${isActiveClass} ${animationClass}`} style={{backgroundImage: `url(${this.state.imageSrc})`}} />
@@ -58,6 +78,7 @@ PreloadedImg.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     active: PropTypes.bool,
     animationDirection: PropTypes.string, // "upwards" or "downwards"
+    preventLoad: PropTypes.bool,
 };
 
 module.exports = PreloadedImg;
