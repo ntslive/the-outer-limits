@@ -40,7 +40,7 @@ class GalaxyChapterStatusText extends React.PureComponent {
     }
 
     _goToChapter(chapterSlug) {
-        this.props.history.push(withPrefix(`/chapters/${chapterSlug}/?autoplay`));
+        this.props.history.push(withPrefix(`/chapters/${chapterSlug}/`));
     }
 
     _renderButton(chapter, callForAction) {
