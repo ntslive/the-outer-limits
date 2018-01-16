@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import Button from '../Button/index';
 import Player from '../Player/index';
 import ChapterTeaser from '../ChapterTeaser';
+import ChapterImages from '../ChapterImages';
 import HeaderMini from '../HeaderMini';
 import LivePlayer from '../LivePlayer';
 import chapterStatusManager from '../utils/chapterStatusManager';
@@ -157,7 +158,7 @@ class Chapter extends React.Component {
                     {this._renderPlayer()}
                 </div>
 
-                <div id="chapter-background-image" style={{backgroundImage: `url(${chapter.content.image_bg})`}} />
+                <ChapterImages chapter={chapter} hideControls={this.state.displayTeaser} />
             </div>
         );
     }

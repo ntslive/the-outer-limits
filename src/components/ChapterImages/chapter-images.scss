@@ -1,0 +1,32 @@
+@import '../../../sass/_settings';
+
+#chapter-images {
+}
+
+#chapter-images__controls {
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+}
+
+.chapter-images__bg {
+    position: fixed;
+    top: 0; bottom: 0;
+    left:0; right: 0;
+
+    z-index: 0;
+    opacity: 0.4;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
+@media (max-width: $mobile-width) {
+    #chapter-images__controls {
+        right: 25px;
+        bottom: 30vh;
+    }
+}

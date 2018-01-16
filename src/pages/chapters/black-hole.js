@@ -23,6 +23,12 @@ export const pageQuery = graphql`
                 names
               }
             }
+            gallery {
+                title
+                description
+                credits
+                imageUrl
+            }
             audio {
               type
               soundcloudSecretToken
