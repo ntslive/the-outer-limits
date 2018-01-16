@@ -38,7 +38,7 @@ class Chapter extends React.Component {
         if (chapterStatus === chapterStatusManager.STATUSES[1] || chapterStatus === chapterStatusManager.STATUSES[3]) {
             displayTeaser = true;
         }
-
+        this.autoplay = (props.history.location && props.history.location.state && props.history.location.state.autoplay) || false;
         this.state = {
             chapter: props.chapter,
             chapterStatus,
@@ -92,12 +92,9 @@ class Chapter extends React.Component {
         if (chapterStatus === chapterStatusManager.STATUSES[2]) {
             const chapterTimes = new ChapterTimes(chapter);
 
-            const urlParams = typeof window !== "undefined" && typeof URLSearchParams !== "undefined" && new URLSearchParams(window.location.search);
-            const autoplay = urlParams && urlParams.has('autoplay');
-
             return (
                 <div id="chapter__player" className={hidePlayerClass}>
-                    <LivePlayer chapterTimes={chapterTimes} autoplay={autoplay} />
+                    <LivePlayer chapterTimes={chapterTimes} autoplay={this.autoplay} />
                 </div>
             );
         }

@@ -20,18 +20,27 @@ class LivePlayer extends React.Component {
     }
 
     componentDidMount() {
-        let that = this;
         this.audioElement = document.getElementById('nts-player-audio');
-        this.audioElement.addEventListener('playing', function(){
+        const that = this;
+        this.audioElement.addEventListener('play', () => {
             that.setState({
                 isPlaying: true,
             });
-        });
+        }, false);
+        this.audioElement.addEventListener('playing', () => {
+            that.setState({
+                isPlaying: true,
+            });
+        }, false);
         if (this.props.autoplay) this._playStream();
     }
 
     componentWillUnmount() {
         this._stopStream(true);
+
+        // unbind all event listeners on the audio element
+        const newAudioElement = this.audioElement.cloneNode(true);
+        this.audioElement.parentNode.replaceChild(newAudioElement, this.audioElement);
     }
 
     _stopStream(unmounting) {
