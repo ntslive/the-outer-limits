@@ -14,8 +14,16 @@ class ChapterTimes {
         return this.startMoment.tz(this.userTImezone).format("DD.MM.YYYY");
     }
 
+    get broadcastStartDateShort() {
+        return this.startMoment.tz(this.userTImezone).format("DD.MM.YY");
+    }
+
     get broadcastStartTime() {
         return this.startMoment.tz(this.userTImezone).format("HH:mm");
+    }
+
+    get broadcastEndTime() {
+        return this.endMoment.tz(this.userTImezone).format("HH:mm");
     }
 }
 

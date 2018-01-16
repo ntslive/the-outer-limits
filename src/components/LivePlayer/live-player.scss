@@ -1,0 +1,60 @@
+@import '../../../sass/mixins/_mixins';
+@import '../../../sass/_settings';
+
+#live-player {
+    display: inline-block;
+}
+
+#live-player__button {
+    float: left;
+
+    .button__circle {
+        height: 42px;
+        width: 42px;
+        @include border-radius(42px / 2);
+    }
+}
+
+#live-player__text {
+    float: left;
+    margin-top: 6px;
+    margin-left: 14px;
+
+    line-height: 0.9em;
+    text-align: left;
+}
+#live-player__text__label {
+    font-size: 14px;
+}
+#live-player__text__time {
+    font-size: 13px;
+}
+
+.circle {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+
+    @include border-radius(7px);
+    background-color: red;
+
+    @include animation(livecircle 3.5s infinite);
+}
+
+@include keyframes(livecircle) {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -11,7 +11,7 @@ import PlanetImg from './images/Planet.png';
 import EarthImg from './images/Earth.png';
 import GalaxyImg from './images/Galaxy.png';
 
-import Button from '../Button/index';
+import Button from '../Button';
 import GalaxyInfo from '../GalaxyInfo/GalaxyInfo';
 import GalaxyChapters from '../GalaxyChapters/GalaxyChapters';
 import GalaxySvg from '../GalaxySvg/GalaxySvg';
@@ -26,8 +26,8 @@ class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
 
-        let windowWidth = $(window).width();
-        let windowHeight = $(window).height();
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).height();
 
         this.isMobile = windowWidth < mobileThreshold;
 
@@ -118,7 +118,7 @@ class GalaxyMapping {
                     src: PlanetImg,
                     x: this.width * 0.23,
                     y: 150,
-                    style: {'opacity': '0.8', 'maxHeight': '85vh'}
+                    style: {opacity: '0.8', maxHeight: '85vh'},
                 },
                 {
                     src: EarthImg,
@@ -127,55 +127,54 @@ class GalaxyMapping {
                     style: {
                         transform: 'rotate(-90deg) scaleX(-1)',
                         width: '700px',
-                    }
+                    },
                 },
                 {
                     src: GalaxyImg,
                     x: 2,
                     y: this.circles[4].y,
                     style: {
-                        'opacity': '0.8',
-                        'transform': 'rotate(180deg)',
-                    }
-                },
-            ];
-        } else {
-            return [
-                {
-                    src: PlanetImg,
-                    x: 350,
-                    y: this.height - (this.height / 1.5),
-                },
-                {
-                    src: EarthImg,
-                    x: this.circles[2].x - (this.width / 20),
-                    y: this.height * 0.68,
-                },
-                {
-                    src: GalaxyImg,
-                    x: this.circles[4].x - ((this.circles[4].x - this.circles[3].x) * 0.3),
-                    y: -30,
-                    style: {'opacity': '0.8'}
+                        opacity: '0.8',
+                        transform: 'rotate(180deg)',
+                    },
                 },
             ];
         }
 
+        return [
+            {
+                src: PlanetImg,
+                x: 350,
+                y: this.height - (this.height / 1.5),
+            },
+            {
+                src: EarthImg,
+                x: this.circles[2].x - (this.width / 20),
+                y: this.height * 0.68,
+            },
+            {
+                src: GalaxyImg,
+                x: this.circles[4].x - ((this.circles[4].x - this.circles[3].x) * 0.3),
+                y: -30,
+                style: {opacity: '0.8'},
+            },
+        ];
     }
 }
 
-const GalaxyObjects = props => {
+const GalaxyObjects = (props) => {
     return (
         <div id="galaxy-objects">
             {props.objects.map((object, i) => {
                 return (
                     <div key={i} className="galaxy-objects__objects" style={{left: object.x, top: object.y}}>
-                        <img src={object.src} style={object.style}/>
+                        <img src={object.src} style={object.style} alt="Object In Galaxy" />
                     </div>
-                )
+                );
             })}
         </div>
-    )
-}
+    );
+};
 
 class Galaxy extends React.Component {
     constructor(props) {
@@ -202,9 +201,9 @@ class Galaxy extends React.Component {
     }
 
     componentDidMount() {
-        let that = this;
+        const that = this;
         this.handlers = {};
-        this.handlers.createGalaxyMapping = function() {
+        this.handlers.createGalaxyMapping = function () {
             console.log("Galaxy :: Checking if Raphael is accessible");
 
             if (typeof Raphael !== 'undefined') {
@@ -214,8 +213,8 @@ class Galaxy extends React.Component {
             } else {
                 setTimeout(this.handlers.createGalaxyMapping, 1000);
             }
-        }
-        this.handlers.keydownHandler = function(e) {
+        };
+        this.handlers.keydownHandler = function (e) {
             if (!that.state.galaxyMapping) return;
 
             if (e.keyCode == 37) { // left key
@@ -225,7 +224,7 @@ class Galaxy extends React.Component {
                 that._nextChapter();
                 e.preventDefault();
             }
-        }
+        };
 
         $("html").keydown(this.handlers.keydownHandler);
 
@@ -245,25 +244,25 @@ class Galaxy extends React.Component {
 
         let animateProps;
         if (chapterIndex > 0) {
-            let $nextChapter = $($(`.galaxy-chapter:eq(${chapterIndex})`));
+            const $nextChapter = $($(`.galaxy-chapter:eq(${chapterIndex})`));
 
             animateProps = {scrollLeft: $nextChapter.offset().left - $nextChapter.width()};
         } else {
-            animateProps = {scrollLeft: 0}
+            animateProps = {scrollLeft: 0};
         }
 
         $("html, body").animate(animateProps, 1000);
     }
 
     _nextChapter() {
-        let newselectedChapterIndex = this.state.selectedChapterIndex+1;
+        const newselectedChapterIndex = this.state.selectedChapterIndex + 1;
         if (newselectedChapterIndex >= this.props.chapters.length) return;
 
         this.scrollToChapter(newselectedChapterIndex);
     }
 
     _prevChapter() {
-        let newselectedChapterIndex = this.state.selectedChapterIndex-1;
+        const newselectedChapterIndex = this.state.selectedChapterIndex - 1;
         if (newselectedChapterIndex < 0) return;
 
         this.scrollToChapter(newselectedChapterIndex);
@@ -271,7 +270,7 @@ class Galaxy extends React.Component {
 
     renderGalaxyMap() {
         let liveChapterIndex = -1;
-        for (let i=0; i<this.props.chapters.length; i++) {
+        for (let i = 0; i < this.props.chapters.length; i++) {
             if (chapterStatusManager.getChapterStatus(this.props.chapters[i]) === "live") {
                 liveChapterIndex = i;
                 break;
@@ -280,8 +279,8 @@ class Galaxy extends React.Component {
 
         return (
             <div id="galaxy">
-                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} scrollHandler={this.scrollToChapter}/>
-                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} liveChapterIndex={liveChapterIndex}/>
+                <GalaxyChapters chapters={this.props.chapters} drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} scrollHandler={this.scrollToChapter} />
+                <GalaxySvg drawing={this.state.galaxyMapping} selectedChapterIndex={this.state.selectedChapterIndex} liveChapterIndex={liveChapterIndex} />
                 <GalaxyObjects objects={this.state.galaxyMapping.objectMapping} />
             </div>
         );
@@ -303,8 +302,8 @@ class Galaxy extends React.Component {
                 </div>
 
                 <div id="galaxy-footer-chapter-controls" className="hidden-mobile">
-                    <Button className="chapter-control-button button__circle--left" icon={ShortLeftArrow} onClick={this._prevChapter} alternate/>
-                    <Button className="chapter-control-button button__circle--right" icon={ShortRightArrow} onClick={this._nextChapter} alternate/>
+                    <Button className="chapter-control-button button__circle--left" icon={ShortLeftArrow} onClick={this._prevChapter} alternate />
+                    <Button className="chapter-control-button button__circle--right" icon={ShortRightArrow} onClick={this._nextChapter} alternate />
                 </div>
 
                 <GalaxyInfo nextChapterTimes={this.state.nextChapterTimes} />

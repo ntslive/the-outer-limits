@@ -51,6 +51,10 @@ a {
 .chapter-page {
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 @media (max-width: $mobile-width) {
     body {
         overflow-y: auto;

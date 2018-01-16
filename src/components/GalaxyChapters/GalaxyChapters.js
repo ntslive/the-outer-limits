@@ -6,12 +6,11 @@ import GalaxyChapterStatusText from '../GalaxyChapterStatusText/GalaxyChapterSta
 import chapterStatusManager from "../utils/chapterStatusManager";
 
 if (!String.prototype.repeat) { // polyfill for repeat function in IE
-    String.prototype.repeat = function(count) {
-        'use strict';
+    String.prototype.repeat = function (count) {
         if (this == null) {
-            throw new TypeError('can\'t convert ' + this + ' to object');
+            throw new TypeError(`can't convert ${this} to object`);
         }
-        var str = '' + this;
+        const str = `${this}`;
         count = +count;
         if (count != count) {
             count = 0;
@@ -32,20 +31,20 @@ if (!String.prototype.repeat) { // polyfill for repeat function in IE
         if (str.length * count >= 1 << 28) {
             throw new RangeError('repeat count must not overflow maximum string size');
         }
-        var rpt = '';
-        for (var i = 0; i < count; i++) {
+        let rpt = '';
+        for (let i = 0; i < count; i++) {
             rpt += str;
         }
         return rpt;
-    }
+    };
 }
 
 function convertNumberToRomanNumeral(number) {
-    let roman =  {"M" :1000, "CM":900, "D":500, "CD":400, "C":100, "XC":90, "L":50, "XL":40, "X":10, "IX":9, "V":5, "IV":4, "I":1};
+    const roman = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1};
     let str = "";
 
-    for (let i of Object.keys(roman) ) {
-        let q = Math.floor(number / roman[i]);
+    for (const i of Object.keys(roman)) {
+        const q = Math.floor(number / roman[i]);
         number -= q * roman[i];
         str += i.repeat(q);
     }
@@ -54,10 +53,6 @@ function convertNumberToRomanNumeral(number) {
 }
 
 class GalaxyChapters extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     shouldComponentUpdate(nextProps) {
         return nextProps.selectedChapterIndex !== this.props.selectedChapterIndex
             || nextProps.chapters !== this.props.chapters;
@@ -70,18 +65,18 @@ class GalaxyChapters extends React.Component {
         return (
             <div className={'galaxy-chapters'}>
                 {this.props.drawing.circles.map((mapping, i) => {
-                    if (!mapping) return;
+                    if (!mapping) return null;
 
-                    let chapter = this.props.chapters[i];
-                    let chapterStatus = chapterStatusManager.getChapterStatus(chapter);
+                    const chapter = this.props.chapters[i];
+                    const chapterStatus = chapterStatusManager.getChapterStatus(chapter);
 
                     const x = isMobile ? 24 : mapping.x;
                     const classIfSelected = (this.props.selectedChapterIndex === i) || isMobile ? 'selected' : '';
-                    const chapterIndexText = convertNumberToRomanNumeral(i+1);
+                    const chapterIndexText = convertNumberToRomanNumeral(i + 1);
 
                     return (
                         <div key={i} className={`galaxy-chapter-container ${classIfSelected}`} style={{left: x, top: mapping.y}}>
-                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(i)}></div>
+                            <div className="galaxy-chapter-click-handler" onClick={() => this.props.scrollHandler(i)} />
                             <div className="galaxy-chapter">
                                 <div className="galaxy-chapter__index text-uppercase leading-font">
                                     <span className="galaxy-chapter__index__label ">Chapter </span>
@@ -92,12 +87,12 @@ class GalaxyChapters extends React.Component {
                                     <div className="galaxy-chapter__content__name text-uppercase leading-font">{chapter.name}</div>
 
                                     <div className="galaxy-chapter__content__action">
-                                        <GalaxyChapterStatusText chapter={chapter} className={"galaxy-chapter__content__action__button"} chapterStatus={chapterStatus} showButton/>
+                                        <GalaxyChapterStatusText chapter={chapter} className={"galaxy-chapter__content__action__button"} chapterStatus={chapterStatus} showButton />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
         );

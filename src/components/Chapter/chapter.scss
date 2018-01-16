@@ -1,0 +1,107 @@
+@import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/_mixins.scss';
+
+#chapter-nav {
+    position: fixed;
+    top: 24px;
+    left: 56px; right: 56px;
+}
+#chapter-nav__left {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    img {
+        width: 36px;
+        height: 36px;
+    }
+}
+#chapter-nav__center {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%))
+}
+#chapter-nav__right {
+    float: right;
+    font-size: 16px;
+}
+
+#chapter-nav #header-mini {
+    float: left;
+}
+
+#chapter-container {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+}
+
+#chapter__player {
+    position: absolute;
+    bottom: 30px;
+    left: 0; right: 0;
+
+    text-align: center;
+}
+#chapter__player-mask {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    @include transform(scale(1.2) translateX(-40px));
+
+    overflow: hidden;
+}
+#chapter__player-mask iframe {
+    margin-left: 100px;
+}
+#chapter-background-image {
+    position: fixed;
+    top: 0; bottom: 0;
+    left:0; right: 0;
+
+    z-index: 0;
+    opacity: 0.4;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
+@media (max-width: $mobile-width) {
+    #chapter-nav {
+        left: 24px;
+        right: 24px;
+    }
+    #chapter-nav #header-mini {
+        display: none;
+    }
+    .chapter-nav__right--info-label {
+        position: relative;
+        font-size: 14px !important;
+        top: 8px;
+        left: 9px;
+        @include transform(rotate(-90deg));
+    }
+
+    #chapter-container .header-mini--mobile {
+        margin-top: 85px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    #chapter__player {
+        text-align: left;
+        bottom: 10px;
+        left: 25px;
+    }
+    #chapter__player-mask {
+        @include transform(scale(1.2) translateX(-14px));
+        max-width: 250px;
+    }
+    #chapter__player-mask iframe {
+        margin-left: 25px;
+    }
+}

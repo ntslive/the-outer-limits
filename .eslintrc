@@ -25,6 +25,21 @@
         "no-plusplus": "off",
         "max-len": "off",
         "react/forbid-prop-types": "off",
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "consistent-return": "off",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "off",
+        "no-undef": "warn",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "eqeqeq": "warn",
+        "no-extend-native": "off",
+        "no-param-reassign": "warn",
+        "no-self-compare": "off",
+        "no-bitwise": "off",
+        "react/jsx-indent-props": "warn",
+        "jsx-a11y/iframe-has-title": "warn",
+        "react/jsx-max-props-per-line": "off",
+        "no-restricted-syntax": "warn",
+        "jsx-a11y/media-has-caption": "off"
     }
 }

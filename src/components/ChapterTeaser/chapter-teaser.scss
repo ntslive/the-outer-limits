@@ -1,4 +1,5 @@
 @import '../../../sass/_settings.scss';
+@import '../../../sass/mixins/_mixins.scss';
 
 $content-width: 910px;
 
@@ -14,79 +15,13 @@ $content-width: 910px;
     color: white;
 }
 
-#teaser-background-image {
-    position: fixed;
-    top: 0; bottom: 0;
-    left:0; right: 0;
-
-    z-index: 0;
-    opacity: 0.4;
-
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: transparent;
-}
-
-#teaser-nav {
-    position: fixed;
-    top: 24px;
-    left: 56px; right: 56px;
-}
-#teaser-nav__left {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    img {
-        width: 36px;
-        height: 36px;
-    }
-}
-#teaser-nav__center {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-#teaser-nav__right {
-    float: right;
-}
-
 #teaser-content {
     position: relative; // required for z-index to work
     line-height: 1.2em;
     margin-top: 240px;
     padding-bottom: 100px;
 }
-.teaser-content__title__logo {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
 
-    svg {
-        max-width: 100%;
-        max-height: 100%;
-    }
-}
-.teaser-content__title__logo--axis {
-    margin-left: 10px;
-}
-.teaser-content__title__logo, .teaser-content__title__logo img {
-    width: 36px;
-    height: 36px;
-}
-#teaser-content__title__text {
-    display: inline-block;
-    margin-left: 15px;
-}
-#teaser-content__title__text h1 {
-    font-size: 24px;
-    line-height: 0.7em;
-}
-#teaser-content__title__text h5 {
-    font-size: 14px;
-}
 #teaser-content__status {
     margin: 40px 0 20px;
     font-size: 18px;
@@ -95,7 +30,7 @@ $content-width: 910px;
     max-width: 500px;
     box-sizing: border-box;
 
-    transform: scale(1.2);
+    @include transform(scale(1.2));
     overflow: hidden;
     margin-left: -69px;
 
@@ -131,12 +66,9 @@ $content-width: 910px;
     #teaser-container {
         max-height: calc(100vh - 115px);
     }
-    #teaser-nav {
-        left: 24px;
-        right: 24px;
-    }
+
     #teaser-content {
-        margin-top: 120px;
+        margin-top: 0px;
         overflow: scroll;
 
         font-size: 15px;
@@ -150,31 +82,18 @@ $content-width: 910px;
             font-size: 18px;
         }
     }
-    #teaser-content__title {
-        padding: 0 8px;
-    }
-    .teaser-content__title__logo {
-        display: none;
-    }
-    #teaser-content__title__text {
-        margin-left: 0;
-    }
-    #teaser-content__title__text h1 {
-        font-size: 25px;
-        line-height: 1.2em;
-    }
-    #teaser-content__title__text h5 {
-        font-size: 13px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
-
     #teaser-content__description, #teaser-content__credits {
         font-size: inherit;
         line-height: inherit;
     }
     #teaser-content__description, #teaser-content__tracks {
-        margin-top: 0;
         padding: 0 12px;
+    }
+    #teaser-content__description {
+        margin-top: 30px;
+    }
+    #teaser-content__tracks {
+        margin-top: 0;
     }
 
     #teaser-content__credits__title {
@@ -195,7 +114,7 @@ $content-width: 910px;
         max-width: 200px;
         width: 100%;
         margin: 15px auto 30px;
-        transform: translateX(-10px);
+        @include transform(translateX(-10px));
 
         iframe {
             margin: 0 25px;

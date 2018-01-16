@@ -1,0 +1,51 @@
+@import '../../../sass/_settings.scss';
+//@import '../../../sass/mixins/_mixins.scss';
+
+.header-mini__logo {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+.header-mini__logo--axis {
+    margin-left: 10px;
+}
+.header-mini__logo, .header-mini__logo img {
+    width: 36px;
+    height: 36px;
+}
+#header-mini__text {
+    display: inline-block;
+    margin-left: 15px;
+}
+#header-mini__text h1 {
+    font-size: 24px;
+    line-height: 0.7em;
+}
+#header-mini__text h5 {
+    font-size: 14px;
+}
+
+@media (max-width: $mobile-width) {
+    #header-mini {
+        padding: 0 8px;
+    }
+    .header-mini__logo {
+        display: none;
+    }
+    #header-mini__text {
+        margin-left: 0;
+    }
+    #header-mini__text h1 {
+        font-size: 25px;
+        line-height: 1.2em;
+    }
+    #header-mini__text h5 {
+        font-size: 13px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+}
