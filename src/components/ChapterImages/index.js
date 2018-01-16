@@ -10,17 +10,31 @@ import RightArrow from "../icon/short-right-arrow.icon";
 
 import './chapter-images.scss';
 
+function getNextImageIndex(index, maxIndex) {
+    let nextIndex = index + 1;
+    if (nextIndex > maxIndex) {
+        nextIndex = 0;
+    }
+    return nextIndex;
+}
+
+function getPrevImageIndex(index, maxIndex) {
+    let prevImageIndex = index - 1;
+    if (prevImageIndex < 0) {
+        prevImageIndex = maxIndex;
+    }
+    return prevImageIndex;
+}
+
 class ChapterImages extends React.Component {
     constructor(props) {
         super(props);
 
         const images = props.chapter.gallery;
-        console.log(images);
 
         this.state = {
             images,
             imageIndex: 0,
-            previousImageUrl: "",
         };
     }
 
@@ -43,33 +57,39 @@ class ChapterImages extends React.Component {
     }
 
     _nextImage() {
-        console.log("next image");
+        const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
         this.setState({
-            imageIndex: this.state.imageIndex + 1,
+            imageIndex: nextImageIndex,
         });
     }
 
     _prevImage() {
-        console.log("prev image");
+        const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
         this.setState({
-            imageIndex: this.state.imageIndex - 1,
+            imageIndex: prevImageIndex,
         });
     }
 
     render() {
         const imageIndex = this.state.imageIndex;
+        const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
+        const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
+
         const currentImageUrl = this.state.images[imageIndex].imageUrl;
-        const nextImageUrl = this.state.images[imageIndex + 1].imageUrl;
-        // const prevImageUrl = this.state.images[imageIndex - 1].imageUrl;
+        const nextImageUrl = this.state.images[nextImageIndex].imageUrl;
+        const prevImageUrl = this.state.images[prevImageIndex].imageUrl;
 
         const hideControlsClass = this.props.hideControls ? "hidden" : '';
 
-        // Preloads next image. Requires Image defintion check for gatbsy build.
+        // Preloads surrounding images. Requires Image definition check for gatbsy build.
         if (typeof Image !== "undefined") {
-            let newImage = new Image();
-            newImage.src = nextImageUrl;
+            let nextImage = new Image();
+            nextImage.src = nextImageUrl;
+
+            let prevImage = new Image();
+            prevImage.src = prevImageUrl;
         }
 
         return (

@@ -27,6 +27,26 @@
                 ],
                 "image_bg": "https://media2.ntslive.co.uk/resize/1600x1600/c30bed96-a59d-4493-b5f1-eaca648dfe48_1515715200.jpeg"
             },
+            "gallery": [
+                {
+                    "title": "Extreme Power of Black Hole Revealed",
+                    "description": "",
+                    "credits": "",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c3af0d6d-13dd-4e7b-8da1-45e46b5638b4_1516060800.jpeg"
+                },
+                {
+                    "title": "Looking Back In Time",
+                    "description": "",
+                    "credits": "",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/a255c426-3e00-42af-a8d2-8a9a49fed225_1516060800.jpeg"
+                },
+                {
+                    "title": "Exploring the Quantum World",
+                    "description": "",
+                    "credits": "",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/fa9b9020-c4e2-40aa-b347-0c863dfbe4a0_1516060800.jpeg"
+                }
+            ],
             "audio": [
                 {
                     "type": "teaser",
