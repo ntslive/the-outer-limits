@@ -22,7 +22,7 @@ class LivePlayer extends React.Component {
     componentDidMount() {
         let that = this;
         this.audioElement = document.getElementById('nts-player-audio');
-        this.audioElement.addEventListener('playing', function(){
+        this.audioElement.addEventListener('play', function(){
             that.setState({
                 isPlaying: true,
             });
