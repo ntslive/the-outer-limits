@@ -84,6 +84,8 @@ class Chapter extends React.Component {
             return;
         }
 
+        const hidePlayerClass = !!this.state.displayTeaser ? 'hidden' : '';
+
         // live
         if (chapterStatus === chapterStatusManager.STATUSES[2]) {
             const chapterTimes = new ChapterTimes(chapter);
@@ -92,7 +94,7 @@ class Chapter extends React.Component {
             const autoplay = urlParams && urlParams.has('autoplay');
 
             return (
-                <div id="chapter__player">
+                <div id="chapter__player" className={hidePlayerClass}>
                     <LivePlayer chapterTimes={chapterTimes} autoplay={autoplay} />
                 </div>
             );
@@ -101,7 +103,7 @@ class Chapter extends React.Component {
         // podcast
         const teaserAudio = getAudioInfo(chapter, "podcast");
         return (
-            <div id="chapter__player">
+            <div id="chapter__player" className={hidePlayerClass}>
                 <div id="chapter__player-mask">
                     <Player secretToken={teaserAudio.soundcloudSecretToken} trackID={teaserAudio.soundcloudTrackID} />
                 </div>
