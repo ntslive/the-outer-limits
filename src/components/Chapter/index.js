@@ -137,6 +137,8 @@ class Chapter extends React.Component {
         const pageTitle = `${chapter.name} - Jeff Mills The Outer Limits`;
         const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}/`;
 
+        const overlayClass = this.state.displayTeaser ? "chapter-container--overlay" : "";
+
         return (
             <div>
                 <Helmet title={`${pageTitle} | NTS`} >
@@ -144,7 +146,7 @@ class Chapter extends React.Component {
                     <meta property="og:url" content={pageUrl} />
                 </Helmet>
 
-                <div id="chapter-container">
+                <div id="chapter-container" className={overlayClass}>
                     {this._renderNavigation()}
 
                     <HeaderMini chapter={chapter} className="header-mini--mobile hidden-desktop text-center" />
