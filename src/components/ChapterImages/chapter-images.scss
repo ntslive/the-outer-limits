@@ -12,6 +12,40 @@ $bg-transition-speed: 1s;
     bottom: 40px;
 }
 
+.chapter-images__caption {
+    position: fixed;
+    top: 25%;
+    right: 15%;
+
+    width: 100%;
+    max-width: 467px;
+    height: 339px;
+    max-height: 339px;
+
+    overflow: auto;
+
+    padding: 39px 36px;
+
+    border-right: 1px solid white;
+    background-color: rgba(0,0,0,0.4);
+
+    box-sizing: border-box;
+}
+.chapter-images__caption__title {
+    font-size: 24px;
+    padding-bottom: 17px;
+}
+.chapter-images__caption__description, .chapter-images__caption__credits {
+    line-height: 1.4em;
+}
+.chapter-images__caption__description {
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+.chapter-images__caption__credits {
+    font-size: 12px;
+}
+
 .chapter-images__bg {
     position: fixed;
     top: 0; bottom: 0;
@@ -49,6 +83,9 @@ $bg-transition-speed: 1s;
     #chapter-images__controls {
         right: 25px;
         bottom: 15px;
+    }
+    .chapter-images__caption {
+        display: none;
     }
 }
 
