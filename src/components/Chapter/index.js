@@ -158,7 +158,7 @@ class Chapter extends React.Component {
                     {this._renderPlayer()}
                 </div>
 
-                <ChapterImages chapter={chapter} hideControls={this.state.displayTeaser} />
+                <ChapterImages chapter={chapter} hideControls={this.state.displayTeaser} disableNav={this.state.displayTeaser} />
             </div>
         );
     }

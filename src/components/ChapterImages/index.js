@@ -56,6 +56,7 @@ class ChapterImages extends React.Component {
     }
 
     _nextImage() {
+        if (this.props.disableNav) return;
         const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
         this.setState({
@@ -65,6 +66,7 @@ class ChapterImages extends React.Component {
     }
 
     _prevImage() {
+        if (this.props.disableNav) return;
         const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
         this.setState({
@@ -108,6 +110,7 @@ class ChapterImages extends React.Component {
 ChapterImages.propTypes = {
     chapter: PropTypes.object.isRequired,
     hideControls: PropTypes.bool,
+    disableNav: PropTypes.bool,
 };
 
 export default ChapterImages;
