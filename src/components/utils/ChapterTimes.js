@@ -7,6 +7,7 @@ class ChapterTimes {
     constructor(chapter) {
         this.startMoment = moment.tz(`${chapter.broadcastDate} ${chapter.broadcastStartTime}`, INPUT_FORMAT, INPUT_TIMEZONE);
         this.endMoment = moment.tz(`${chapter.broadcastDate} ${chapter.broadcastEndTime}`, INPUT_FORMAT, INPUT_TIMEZONE);
+        this.endMoment.seconds(59);
         this.userTImezone = moment.tz.guess();
     }
 
