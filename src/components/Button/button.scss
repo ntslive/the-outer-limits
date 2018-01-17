@@ -25,7 +25,7 @@ $button-size: 38px;
     }
 
     &.button--alt:hover {
-        &.button__circle--left .button__circle__icon{
+        &.button__circle--left .button__circle__icon {
             @include animation(moveArrowLeft 1s infinite);
         }
         &.button__circle--right .button__circle__icon{
@@ -76,6 +76,10 @@ $button-size: 38px;
 }
 .button__label__text {
     text-align: center;
+}
+
+.button--rotate90 {
+    @include transform(rotate(90deg));
 }
 
 @include keyframes (moveArrowLeft) {

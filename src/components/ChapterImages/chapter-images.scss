@@ -1,0 +1,91 @@
+@import '../../../sass/_settings';
+@import '../../../sass/mixins/_mixins';
+
+$bg-opacity: 0.55;
+$bg-transition-speed: 1s;
+
+#chapter-images {}
+
+#chapter-images__controls {
+    position: fixed;
+    right: 50px;
+    bottom: 40px;
+}
+
+.chapter-images__bg {
+    position: fixed;
+    top: 0; bottom: 0;
+    left:0; right: 0;
+
+    z-index: 0;
+    opacity: 0;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent;
+
+    @include transition(opacity $bg-transition-speed linear);
+
+    &.active {
+        opacity: $bg-opacity !important;
+    }
+    &.active-up {
+        @include animation(fadeInImageUp $bg-transition-speed forwards);
+    }
+    &.active-down {
+        @include animation(fadeInImageDown $bg-transition-speed forwards);
+    }
+    &.inactive-up {
+        @include animation(fadeOutImageUp $bg-transition-speed forwards);
+    }
+    &.inactive-down {
+        @include animation(fadeOutImageDown $bg-transition-speed forwards);
+    }
+}
+
+@media (max-width: $mobile-width) {
+    #chapter-images__controls {
+        right: 25px;
+        bottom: 15px;
+    }
+}
+
+@include keyframes(fadeOutImageUp) {
+    from {
+        @include transform(translateY(0));
+    }
+    to {
+        @include transform(translateY(-100%));
+    }
+}
+@include keyframes(fadeOutImageDown) {
+    from {
+        @include transform(translateY(0));
+    }
+    to {
+        @include transform(translateY(100%));
+    }
+}
+
+
+@include keyframes(fadeInImageUp) {
+    from {
+        @include transform(translateY(100%));
+    }
+    to {
+        @include transform(translateY(0));
+    }
+}
+@include keyframes(fadeInImageDown) {
+    from {
+        @include transform(translateY(-100%));
+    }
+    to {
+        @include transform(translateY(0));
+    }
+}
+
+
+
