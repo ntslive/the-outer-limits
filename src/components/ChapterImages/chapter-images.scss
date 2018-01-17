@@ -1,7 +1,7 @@
 @import '../../../sass/_settings';
 @import '../../../sass/mixins/_mixins';
 
-$bg-opacity: 0.55;
+$bg-opacity: 0.75;
 $bg-transition-speed: 1s;
 
 #chapter-images {}
@@ -24,7 +24,7 @@ $bg-transition-speed: 1s;
 
     overflow: auto;
 
-    padding: 39px 36px;
+    padding: 39px 36px 5px;
 
     border-right: 1px solid white;
     background-color: rgba(0,0,0,0.4);
