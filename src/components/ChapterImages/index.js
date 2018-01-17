@@ -75,6 +75,26 @@ class ChapterImages extends React.Component {
         });
     }
 
+    _renderImageCaption(hideAllCaptions, i) {
+        const selectedImageIndex = this.state.imageIndex;
+
+        if (hideAllCaptions || selectedImageIndex !== i) return;
+
+        const selectedImage = this.state.images[selectedImageIndex];
+
+        return (
+            <div className={`chapter-images__caption`}>
+                <h2 className="chapter-images__caption__title text-uppercase leading-font">{selectedImage.title}</h2>
+                <div className="chapter-images__caption__description">
+                    {selectedImage.description}
+                </div>
+                <div className="chapter-images__caption__credits">
+                    Credits: <span className="text-uppercase">{selectedImage.credits}</span>
+                </div>
+            </div>
+        );
+    }
+
     render() {
         const imageIndex = this.state.imageIndex;
         const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
@@ -96,10 +116,14 @@ class ChapterImages extends React.Component {
                     }
 
                     return (
-                        <PreloadedChapterImg
-                            key={i} className={`chapter-images__bg`}
-                            imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction} preventLoad={preventLoad}
-                        />
+                        <div>
+                            {this._renderImageCaption(hideControlsClass, i)}
+
+                            <PreloadedChapterImg
+                                key={i} className={`chapter-images__bg`}
+                                imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction} preventLoad={preventLoad}
+                            />
+                        </div>
                     );
                 })}
             </div>
