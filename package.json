@@ -6,7 +6,7 @@
   "scripts": {
     "build": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby build",
     "deploy": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && DEPLOY_ENV=staging gatsby build --prefix-paths && gh-pages --dist public --branch gh-pages --remote staging",
-    "deployprod": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby build --prefix-paths && gh-pages --dist public --branch gh-pages --remote origin",
+    "deployprod": "git diff --exit-code && git diff --staged --exit-code && (shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby build --prefix-paths && gh-pages --dist public --branch gh-pages --remote origin",
     "develop": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && gatsby develop",
     "lint": "node_modules/.bin/eslint src --fix",
     "serve": "gatsby serve"
