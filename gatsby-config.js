@@ -1,7 +1,17 @@
 const pixrem = require('pixrem');
 const autoprefixer = require('autoprefixer');
 
-const prefixPath = (process.env['DEPLOY_ENV'] == 'staging') ? '/the-outer-limits-staging' : '/projects/jeff-mills-the-outer-limits';
+let prefixPath;
+switch (process.env.DEPLOY_ENV) {
+case 'staging':
+    prefixPath = '/the-outer-limits-staging';
+    break;
+case 'local':
+    prefixPath = '/';
+    break;
+default:
+    prefixPath = '/projects/jeff-mills-the-outer-limits';
+}
 
 module.exports = {
     pathPrefix: prefixPath,
