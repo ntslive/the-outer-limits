@@ -16,9 +16,9 @@ const GalaxyInfo = props => (
             <div className="galaxy-info__header__text subtitle-line-spacing">
                 <span>NTS Radio and Axis Records</span>
                 <br />
-                <span>in collaboration <span className="hidden-mobile">with NASA</span></span>
+                <span>with direction from NASA Jet Propulsion Laboratory</span>
                 <br />
-                <span><span className="hidden-desktop">with NASA</span> presents</span>
+                <span>presents</span>
             </div>
         </div>
 
