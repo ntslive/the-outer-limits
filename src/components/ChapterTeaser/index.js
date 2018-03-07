@@ -53,7 +53,7 @@ class ChapterTeaser extends React.Component {
 
         return (
             <div id="teaser-content__credits">
-                <div id="teaser-content__credits__title" className="text-uppercase">CREDITS</div>
+                <div id="teaser-content__credits__title" className="text-uppercase leading-font">CREDITS</div>
 
                 {credits.map((credit, i) => (
                     <div className="teaser-content__credits__row" key={i}>
@@ -62,6 +62,24 @@ class ChapterTeaser extends React.Component {
                         {credit.names.map((name, j) => (
                             <div className="text-uppercase" key={j}>{name}</div>
                         ))}
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
+    _renderQA() {
+        if (!this.state.chapter.content.qa) return;
+
+        const qa = this.state.chapter.content.qa;
+
+        return (
+            <div id="teaser-content__qa">
+                <div id="teaser-content__qa__title" className="text-uppercase leading-font">{qa.title}</div>
+
+                {qa.paragraphs.map((paragraph, i) => (
+                    <div className="teaser-content__qa__row" key={i}>
+                        <div>{paragraph}</div>
                     </div>
                 ))}
             </div>
@@ -99,6 +117,8 @@ class ChapterTeaser extends React.Component {
                     </div>
 
                     {this._renderCredits()}
+
+                    {this._renderQA()}
                 </div>
             </div>
         );

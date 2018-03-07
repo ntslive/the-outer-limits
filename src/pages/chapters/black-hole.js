@@ -22,6 +22,10 @@ export const pageQuery = graphql`
                 title
                 names
               }
+              qa {
+                title
+                paragraphs
+              }
             }
             gallery {
                 title
