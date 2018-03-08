@@ -150,8 +150,39 @@
             "broadcastDate": "14.03.2018",
             "broadcastStartTime": "14:00",
             "broadcastEndTime": "15:00",
-            "content": {},
-            "audio": []
+            "content": {
+                "description": [
+                    "Chapter 2 of The Outer Limits explores the fictional story of NASA’s ‘Apollo 18’. A mission that was officially cancelled by the US government due to budgetary constraints which also lead to the end of NASA’s Apollo missions. Mills’ 60 minute musical odyssey resumes the program with an abstract and musically interwoven episode of all original compositions that features parisian cellist, Éric-Maria Couturier."
+                ],
+                "credits": [
+                    {"title": "Concept/Script, Main Soundtrack, Producer and Presenter", "names": ["Jeff Mills"]},
+                    {"title": "Recorded/Edited at", "names": ["Spider Formation Miami/Paris"]},
+                    {"title": "Guest Musicians",
+                        "names": [
+                            "Eric-Maria Couturier - Cellist Records At studio Ferber Paris"
+                        ]
+                    },
+                    {"title": "Narration", "names": ["Vicente Solis – The Green Agency"]},
+                    {"title": "Project Coordinator, Recording and Research Assistant", "names": ["Yoko Uozumi"]},
+                    {"title": "Program Press Relations", "names": ["Elsa Sachet"]}
+                ],
+                "image_bg": "https://media2.ntslive.co.uk/resize/1600x1600/b8ad631d-e91c-4532-b768-6b9f0c60fbd4_1520467200.jpeg"
+            },
+            "gallery": [
+                {
+                    "title": "",
+                    "description": "",
+                    "credits": "",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/b8ad631d-e91c-4532-b768-6b9f0c60fbd4_1520467200.jpeg"
+                }
+            ],
+            "audio": [
+                {
+                    "type": "teaser",
+                    "soundcloudSecretToken": "s-BEiFA",
+                    "soundcloudTrackID": "410477289"
+                }
+            ]
         },
         {
             "id": "star-people",

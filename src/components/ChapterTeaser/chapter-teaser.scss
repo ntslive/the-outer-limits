@@ -85,9 +85,12 @@ $content-width: 910px;
     #teaser-content__description, #teaser-content__credits, #teaser-content__qa {
         font-size: inherit;
         line-height: inherit;
+    }
+    #teaser-content__description, #teaser-content__credits, #teaser-content__qa, #teaser-content__status {
         padding-left: 10px;
         padding-right: 10px;
     }
+
     #teaser-content__description, #teaser-content__tracks {
         padding: 0 12px;
     }
@@ -104,13 +107,14 @@ $content-width: 910px;
     }
     #teaser-content__status {
         margin: 0;
+        text-align: center;
 
         .galaxy-chapter__content__action_subtext {
             margin-bottom: 0;
         }
     }
     #teaser-content__player {
-        max-width: 200px;
+        max-width: 250px;
         width: 100%;
         margin: 15px auto 30px;
         @include transform(translateX(-10px));
