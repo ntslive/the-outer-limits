@@ -25,16 +25,6 @@ class GalaxyChapterStatusText extends React.PureComponent {
         };
     }
 
-    componentDidMount() {
-        // set up interval to monitor state
-        // update state when changed
-        // this.chapterInterval = chapterStatusManager.createChapterStateChecker(this.state.chapter, (updatedChapter) => {
-        //     this.setState({
-        //         chapter: updatedChapter,
-        //     });
-        // });
-    }
-
     componentWillUnmount() {
         delete this.chapterInterval; // unbind listener for chapter
     }
