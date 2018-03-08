@@ -17,7 +17,6 @@ export const pageQuery = graphql`
             broadcastEndTime
             content {
               description
-              image_bg
               credits {
                 title
                 names
