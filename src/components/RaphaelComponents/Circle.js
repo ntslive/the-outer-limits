@@ -28,7 +28,7 @@ class Circle extends React.Component {
         }
     }
 
-    _renderCircle() {
+    render() {
         const lineWidth = 0.2;
         const colourLive = "#ff0000";
         const colourDefault = "#FFFFFF";
@@ -90,11 +90,6 @@ class Circle extends React.Component {
         }
 
         return null;
-    }
-
-    render() {
-        console.log("Circle :: rendering");
-        return this._renderCircle();
     }
 }
 
