@@ -8,15 +8,16 @@ $chapter-transition-speed: 0.8s;
     position: absolute;
     top: 0; bottom: 0;
     left: 0; right: 0;
-    opacity: 0;
-
-    @include animation(fadeInGalaxy 1.2s forwards);
-    @include animation-delay(0s);
 }
-
 .galaxy-chapter-container {
     position: absolute;
     width: calc(#{$galaxy-chapter-left-padding} + 350px);
+
+    &:first-child {
+        opacity: 0;
+        @include animation(fadeInGalaxy 1.2s forwards);
+        @include animation-delay(0s);
+    }
 }
 .galaxy-chapter-container.selected {
     color: white;

@@ -23,13 +23,15 @@ $final-stage-animation-speed: 3s;
 
 #galaxy-objects {
     position: absolute;
-    opacity: 0;
-
-    @include animation(fadeInScroll $final-stage-animation-speed forwards);
-    @include animation-delay(0.3s);
 }
 .galaxy-objects__objects {
     position: absolute;
+
+    &:first-child {
+        opacity: 0;
+        @include animation(fadeInScroll $final-stage-animation-speed forwards);
+        @include animation-delay(0.3s);
+    }
 }
 
 #galaxy-footer-scroll {
