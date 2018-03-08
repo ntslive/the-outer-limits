@@ -116,11 +116,11 @@ class ChapterImages extends React.Component {
                     }
 
                     return (
-                        <div>
+                        <div key={`chapterImage${i}`}>
                             {this._renderImageCaption(hideControlsClass, i)}
 
                             <PreloadedChapterImg
-                                key={i} className={`chapter-images__bg`}
+                                className={`chapter-images__bg`}
                                 imageUrl={image.imageUrl} active={i === this.state.imageIndex} animationDirection={this.state.direction} preventLoad={preventLoad}
                             />
                         </div>
