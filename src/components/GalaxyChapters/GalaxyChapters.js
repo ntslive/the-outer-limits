@@ -59,7 +59,6 @@ class GalaxyChapters extends React.Component {
     }
 
     render() {
-        console.log("GalaxyChapters :: rendering");
         const isMobile = this.props.drawing.isMobile;
 
         return (

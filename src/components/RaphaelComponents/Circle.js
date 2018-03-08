@@ -11,7 +11,6 @@ class Circle extends React.Component {
 
     componentWillUnmount() {
         this._clearElements();
-        console.log("Circle :: Unmounting");
     }
 
     _clearElements() {

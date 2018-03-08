@@ -204,8 +204,6 @@ class Galaxy extends React.Component {
         const that = this;
         this.handlers = {};
         this.handlers.createGalaxyMapping = function () {
-            console.log("Galaxy :: Checking if Raphael is accessible");
-
             if (typeof Raphael !== 'undefined') {
                 that.setState({
                     galaxyMapping: new GalaxyMapping(that.props.chapters),
@@ -233,8 +231,6 @@ class Galaxy extends React.Component {
 
     componentWillUnmount() {
         $("html").unbind("keydown", this.handlers.keydownHandler);
-
-        console.log("Galaxy :: Unmounting");
     }
 
     scrollToChapter(chapterIndex) {
@@ -287,7 +283,6 @@ class Galaxy extends React.Component {
     }
 
     render() {
-        console.log("Galaxy :: Rendering");
         return (
             <section id="galaxy-container">
                 <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={this._nextChapter}>

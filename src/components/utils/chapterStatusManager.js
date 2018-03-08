@@ -55,12 +55,10 @@ const chapterStatusManager = {
      * @param cb function - callback called whenever a change in status is detected
      */
     createChapterStatusChecker: (chapter, cb) => {
-        console.log("initialising chapter status interval");
         const chapterTimes = new ChapterTimes(chapter);
         let currentStatus = chapterStatusManager.getChapterStatus(chapter, chapterTimes);
 
         return setInterval(() => {
-            console.log("checking chapter status");
             const newStatus = chapterStatusManager.getChapterStatus(chapter, chapterTimes);
 
             if (currentStatus !== newStatus) {

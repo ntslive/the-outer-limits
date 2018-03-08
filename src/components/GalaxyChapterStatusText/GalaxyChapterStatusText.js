@@ -113,8 +113,6 @@ class GalaxyChapterStatusText extends React.PureComponent {
     render() {
         const chapterStatus = this.props.chapterStatus;
 
-        console.log("GalaxyChapter :: rendering");
-
         if (chapterStatus === STATUSES[0]) {
             return this.renderComing();
         } else if (chapterStatus === STATUSES[1]) {

@@ -9,7 +9,6 @@ class Path extends React.Component {
 
     componentWillUnmount() {
         this._clearElements();
-        console.log("Path :: Unmounting");
     }
 
     _clearElements() {
@@ -41,7 +40,6 @@ class Path extends React.Component {
     }
 
     render() {
-        console.log("Path :: rendering");
         return this._renderPath();
     }
 }

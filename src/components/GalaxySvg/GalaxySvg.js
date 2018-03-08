@@ -19,7 +19,6 @@ class GalaxySvg extends React.Component {
 
     componentWillUnmount() {
         this.props.drawing.paper.remove();
-        console.log("GalaxySvg :: Unmounting");
     }
 
     renderCircle(circle, index) {
@@ -37,8 +36,6 @@ class GalaxySvg extends React.Component {
     }
 
     render() {
-        console.log("GalaxySvg :: rendering");
-
         return (
             <div>
                 {this.props.drawing.paths.map((path, index) => (
