@@ -104,7 +104,7 @@ class GalaxyChapterStatusText extends React.PureComponent {
                 <div className="galaxy-chapter__content__action_subtext subtitle-line-spacing">
                     <span>Coming Soon</span>
                     <br />
-                    <span>{chapterTime.broadcastStartDate}</span>
+                    <span>{chapterTime.broadcastStartDateNoDay}</span>
                 </div>
             </div>
         );

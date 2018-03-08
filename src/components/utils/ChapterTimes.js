@@ -19,6 +19,10 @@ class ChapterTimes {
         return this.startMoment.tz(this.userTImezone).format("DD.MM.YY");
     }
 
+    get broadcastStartDateNoDay() {
+        return this.startMoment.tz(this.userTImezone).format("MMMM YYYY");
+    }
+
     get broadcastStartTime() {
         return this.startMoment.tz(this.userTImezone).format("HH:mm");
     }
