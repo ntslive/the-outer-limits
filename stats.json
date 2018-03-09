@@ -1,36 +1,44 @@
 {
   "assetsByChunkName": {
+    "path---chapters-apollo-18": [
+      "path---chapters-apollo-18-19426cf3bc6ea75f1b34.js",
+      "path---chapters-apollo-18-19426cf3bc6ea75f1b34.js.map"
+    ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-113fb87a9252d84bb4e1.js",
-      "component---src-pages-index-js-113fb87a9252d84bb4e1.js.map"
+      "component---src-pages-index-js-9037ab58e0a498ba1650.js",
+      "component---src-pages-index-js-9037ab58e0a498ba1650.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-2102c50aa33e7fd68f44.js",
-      "path---chapters-black-hole-2102c50aa33e7fd68f44.js.map"
+      "path---chapters-black-hole-8795a08876b0ac7ca990.js",
+      "path---chapters-black-hole-8795a08876b0ac7ca990.js.map"
     ],
     "component---src-layouts-index-js": [
       "component---src-layouts-index-js-67772c141e05ae6a9929.js",
       "component---src-layouts-index-js-67772c141e05ae6a9929.js.map"
     ],
     "path---index": [
-      "path---index-cd1ad1d140a333bc77df.js",
-      "path---index-cd1ad1d140a333bc77df.js.map"
+      "path---index-a992175f7d5716e2e6bc.js",
+      "path---index-a992175f7d5716e2e6bc.js.map"
+    ],
+    "component---src-pages-chapters-apollo-18-js": [
+      "component---src-pages-chapters-apollo-18-js-b38de89acac6eb29b501.js",
+      "component---src-pages-chapters-apollo-18-js-b38de89acac6eb29b501.js.map"
     ],
     "component---src-pages-chapters-black-hole-js": [
-      "component---src-pages-chapters-black-hole-js-7cd57049bb688a74f827.js",
-      "component---src-pages-chapters-black-hole-js-7cd57049bb688a74f827.js.map"
+      "component---src-pages-chapters-black-hole-js-b38de89acac6eb29b501.js",
+      "component---src-pages-chapters-black-hole-js-b38de89acac6eb29b501.js.map"
     ],
     "commons": [
-      "commons-ff9e4ccdb7f2a5d3bf84.js",
-      "commons-ff9e4ccdb7f2a5d3bf84.js.map"
+      "commons-20955a87c0f47c81f314.js",
+      "commons-20955a87c0f47c81f314.js.map"
     ],
     "app": [
-      "app-2d07a16086358eca7407.js",
-      "app-2d07a16086358eca7407.js.map"
+      "app-1a99149d7f8a580d0328.js",
+      "app-1a99149d7f8a580d0328.js.map"
     ]
   }
 }
