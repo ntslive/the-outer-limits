@@ -209,7 +209,7 @@ class Galaxy extends React.Component {
                     galaxyMapping: new GalaxyMapping(that.props.chapters),
                 });
             } else {
-                setTimeout(this.handlers.createGalaxyMapping, 1000);
+                setTimeout(that.handlers.createGalaxyMapping, 1000);
             }
         };
         this.handlers.keydownHandler = function (e) {
