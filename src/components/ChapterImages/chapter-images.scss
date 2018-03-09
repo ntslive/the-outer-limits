@@ -11,6 +11,15 @@ $bg-transition-speed: 1s;
     right: 50px;
     bottom: 40px;
 }
+#chapter-images__controls__label {
+    position: absolute;
+    top: -62px;
+    left: -15px;
+    width: 74px;
+    font-size: 14px;
+
+    @include transform(rotate(90deg));
+}
 
 .chapter-images__caption {
     position: fixed;

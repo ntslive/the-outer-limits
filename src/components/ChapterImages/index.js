@@ -105,6 +105,8 @@ class ChapterImages extends React.Component {
         return (
             <div id="chapter-images">
                 <div id="chapter-images__controls" className={hideControlsClass} >
+                    <div id="chapter-images__controls__label" className="text-uppercase">Discover</div>
+
                     <Button className="button--rotate90 button__circle--left" icon={LeftArrow} alternate onClick={() => this._prevImage()} />
                     <Button className="button--rotate90 button__circle--right" icon={RightArrow} alternate onClick={() => this._nextImage()} />
                 </div>
