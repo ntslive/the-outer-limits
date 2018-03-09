@@ -65,7 +65,7 @@ const chapterStatusManager = {
                 currentStatus = newStatus;
                 cb(newStatus);
             }
-        }, 5000);
+        }, 1000 * 5);
     },
 };
 

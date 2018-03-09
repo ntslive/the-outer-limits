@@ -185,20 +185,9 @@ class Galaxy extends React.Component {
         this._nextChapter = this._nextChapter.bind(this);
         this.scrollToChapter = this.scrollToChapter.bind(this);
 
-        const chapters = this.props.chapters;
-        const nowTime = new Date();
-        let nextChapter, nextChapterId;
-        for (let i = 0; i < chapters.length; i++) {
-            nextChapterId = i;
-            nextChapter = chapters[nextChapterId];
-            if (new ChapterTimes(nextChapter).endMoment > nowTime) break;
-        }
-
         this.state = {
             selectedChapterIndex: 0,
-            galaxyMapping: false,
-            nextChapter,
-            nextChapterId
+            galaxyMapping: false
         };
     }
 
@@ -303,7 +292,7 @@ class Galaxy extends React.Component {
                     <Button className="chapter-control-button button__circle--right" icon={ShortRightArrow} onClick={this._nextChapter} alternate />
                 </div>
 
-                <GalaxyInfo nextChapter={this.state.nextChapter} scrollToChapter={this.scrollToChapter} nextChapterId={this.state.nextChapterId}/>
+                <GalaxyInfo chapters={this.props.chapters} scrollToChapter={this.scrollToChapter} />
 
                 {this.state.galaxyMapping ? this.renderGalaxyMap() : ''}
             </section>
