@@ -94,7 +94,7 @@ $final-stage-animation-speed: 3s;
         left: 0 !important; // override paper
         top: 100vh !important; // override paper
     }
-    #galaxy-objects, #galaxy-footer-scroll, #galaxy-footer-chapter-controls {
+    #galaxy-objects, #galaxy-footer-scroll, #galaxy-footer-chapter-controls, .galaxy-objects__objects:first-child {
         opacity: 1;
         @include animation(none !important);
     }

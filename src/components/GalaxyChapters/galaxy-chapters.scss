@@ -95,6 +95,11 @@ $chapter-transition-speed: 0.8s;
         padding-bottom: 22px; // gives space for lines with odd line-height
         left: 24px;
         right: 24px;
+
+        &:first-child {
+            opacity: 1;
+            @include animation(none);
+        }
     }
     .galaxy-chapter {
         position: relative;
