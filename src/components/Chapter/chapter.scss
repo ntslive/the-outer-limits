@@ -31,22 +31,20 @@
 }
 
 #chapter-container {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-
     overflow: auto;
     background-color: rgba(0,0,0,0);
     @include transition(background-color 0.3s ease-in-out)
 }
 .chapter-container--overlay {
+    position: relative;
     background-color: rgba(0,0,0,0.5) !important;
 }
 
 #chapter__player {
     position: absolute;
     bottom: 30px;
-    left: 0; right: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
 
     text-align: center;
 }
@@ -79,6 +77,7 @@
     }
 
     #chapter-container .header-mini--mobile {
+        position: relative;
         margin-top: 85px;
         width: 100%;
         text-align: center;
@@ -89,6 +88,7 @@
         text-align: left;
         bottom: 10px;
         left: 25px;
+        @include transform(none);
     }
     .chapter__player--podcast {
         padding: 0 75px;
