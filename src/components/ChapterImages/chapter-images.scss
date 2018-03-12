@@ -62,11 +62,11 @@ $bg-transition-speed: 1s;
 }
 #chapter-click-handler-top {
     top: 0;
-    cursor: n-resize;
+    cursor: url('../../../static/cursor-up.png'), n-resize;
 }
 #chapter-click-handler-bottom {
     bottom: 0;
-    cursor: s-resize;
+    cursor: url('../../../static/cursor-down.png'), s-resize;
 }
 
 .chapter-images__bg {
@@ -113,6 +113,7 @@ $bg-transition-speed: 1s;
     #chapter-click-handler-top, #chapter-click-handler-bottom {
         display: none;
         visibility: hidden;
+        cursor: default;
     }
 }
 
