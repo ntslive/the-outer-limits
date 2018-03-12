@@ -29,14 +29,18 @@ class GalaxyChapterStatusText extends React.PureComponent {
         delete this.chapterInterval; // unbind listener for chapter
     }
 
-    _goToChapter(chapterSlug) {
+    _goToChapter(chapterSlug, callToAction) {
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Galaxy', `Open Chapter - '${callToAction}'`);
+        }
+
         this.props.history.push({pathname: withPrefix(`/chapters/${chapterSlug}/`), state: {autoplay: true}});
     }
 
     _renderButton(chapter, callForAction) {
         const slug = getSlug(this.state.chapter.name);
         return (
-            <Button text={callForAction} icon={PlayIcon} onClick={() => this._goToChapter(slug)} />
+            <Button text={callForAction} icon={PlayIcon} onClick={() => this._goToChapter(slug, callForAction)} />
         );
     }
 

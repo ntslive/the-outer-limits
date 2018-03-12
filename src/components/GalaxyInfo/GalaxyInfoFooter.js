@@ -9,6 +9,8 @@ class GalaxyInfoFooter extends React.Component {
     constructor(props) {
         super(props);
 
+        this._scrollToChapterClick = this._scrollToChapterClick.bind(this);
+
         const chapters = props.chapters;
         const nowTime = new Date();
         let nextChapter, nextChapterIndex, nextChapterTimes;
@@ -52,12 +54,20 @@ class GalaxyInfoFooter extends React.Component {
         typeof window !== 'undefined' && window.clearInterval(this.nextShowInterval);
     }
 
+    _scrollToChapterClick() {
+        this.props.scrollToChapter(this.state.nextChapterIndex);
+
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Galaxy', 'Scroll To Next / Live Broadcast Click');
+        }
+    }
+
     render() {
         if (this.state.nextChapterStatus === 'live') {
             const chapterRomanNumerals = romanNumerals.convertNumberToRomanNumeral(this.state.nextChapterIndex + 1);
 
             return (
-                <div className="galaxy-info__footer galaxy-info__footer--live text-justify text-uppercase cursor-pointer" onClick={() => this.props.scrollToChapter(this.state.nextChapterIndex)}>
+                <div className="galaxy-info__footer galaxy-info__footer--live text-justify text-uppercase cursor-pointer" onClick={this._scrollToChapterClick}>
                     <div className="galaxy-info__footer__subtitle">
                         <div className="text-uppercase leading-font" style={{fontSize: '14px'}}><span className="circle" />LIVE NOW</div>
                         <div className="text-uppercase leading-font" style={{fontSize: '28px', maxWidth: '340px'}}>{this.state.nextChapter.name}</div>
@@ -69,7 +79,7 @@ class GalaxyInfoFooter extends React.Component {
 
         const nextChapterTimes = new ChapterTimes(this.state.nextChapter);
         return (
-            <div className="galaxy-info__footer text-justify text-uppercase cursor-pointer" onClick={() => this.props.scrollToChapter(this.state.nextChapterIndex)}>
+            <div className="galaxy-info__footer text-justify text-uppercase cursor-pointer" onClick={this._scrollToChapterClick}>
                 <div className="galaxy-info__footer__title leading-font">{nextChapterTimes.broadcastStartDateShort}</div>
                 <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                     <div>Next broadcast</div>

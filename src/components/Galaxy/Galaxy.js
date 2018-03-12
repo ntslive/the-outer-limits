@@ -22,6 +22,18 @@ import './galaxy.scss';
 
 const mobileThreshold = 770;
 
+function reportKeyPress() {
+    if (typeof ga !== "undefined") {
+        ga('send', 'event', 'TheOuterLimits', 'Galaxy', 'Scroll Keypress');
+    }
+}
+
+function reportScrollLabelClick() {
+    if (typeof ga !== "undefined") {
+        ga('send', 'event', 'TheOuterLimits', 'Galaxy', 'Scroll Label Click');
+    }
+}
+
 class GalaxyMapping {
     constructor(chapters) {
         if (typeof Raphael === "undefined") return;
@@ -208,9 +220,11 @@ class Galaxy extends React.Component {
 
             if (e.keyCode == 37) { // left key
                 that._prevChapter();
+                reportKeyPress();
                 e.preventDefault();
             } else if (e.keyCode == 39) { // right key
                 that._nextChapter();
+                reportKeyPress();
                 e.preventDefault();
             }
         };
@@ -236,6 +250,10 @@ class Galaxy extends React.Component {
             animateProps = {scrollLeft: $nextChapter.offset().left - $nextChapter.width()};
         } else {
             animateProps = {scrollLeft: 0};
+        }
+
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Galaxy', 'Auto-scroll To Chapter');
         }
 
         $("html, body").animate(animateProps, 1000);
@@ -276,7 +294,7 @@ class Galaxy extends React.Component {
     render() {
         return (
             <section id="galaxy-container">
-                <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={this._nextChapter}>
+                <div id="galaxy-footer-scroll" style={{fontSize: '16px'}} onClick={() => { this._nextChapter(); reportScrollLabelClick();}} >
                     <div className="hidden-mobile">
                         <span style={{marginRight: '31px'}}>SCROLL</span>
                         <Icon icon={LongArrow} className="icon-long-arrow " fill={'white'} />

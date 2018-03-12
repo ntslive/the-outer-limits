@@ -26,6 +26,12 @@ function getPrevImageIndex(index, maxIndex) {
     return prevImageIndex;
 }
 
+function reportKeyPress() {
+    if (typeof ga !== "undefined") {
+        ga('send', 'event', 'TheOuterLimits', 'Chapter', 'Image Scroll Keypress');
+    }
+}
+
 class ChapterImages extends React.Component {
     constructor(props) {
         super(props);
@@ -41,9 +47,11 @@ class ChapterImages extends React.Component {
         this.imageKeydownHandler = (e) => {
             if (e.keyCode === 38) { // up key
                 this._prevImage();
+                reportKeyPress();
                 e.preventDefault();
             } else if (e.keyCode === 40) { // down key
                 this._nextImage();
+                reportKeyPress();
                 e.preventDefault();
             }
         };
@@ -59,6 +67,10 @@ class ChapterImages extends React.Component {
         if (this.props.disableNav) return;
         const nextImageIndex = getNextImageIndex(this.state.imageIndex, this.state.images.length - 1);
 
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Chapter', 'NextImage');
+        }
+
         this.setState({
             imageIndex: nextImageIndex,
             direction: "upwards",
@@ -68,6 +80,10 @@ class ChapterImages extends React.Component {
     _prevImage() {
         if (this.props.disableNav) return;
         const prevImageIndex = getPrevImageIndex(this.state.imageIndex, this.state.images.length - 1);
+
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Chapter', 'PreviousImage');
+        }
 
         this.setState({
             imageIndex: prevImageIndex,

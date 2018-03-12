@@ -67,10 +67,18 @@ class Chapter extends React.Component {
     }
 
     _goToGalaxy() {
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Chapter', 'Back To Galaxy');
+        }
+
         this.props.history.push(withPrefix('/'));
     }
 
     _toggleTeaser() {
+        if (typeof ga !== "undefined") {
+            ga('send', 'event', 'TheOuterLimits', 'Galaxy', 'Toggle Chapter Info');
+        }
+
         this.setState({
             displayTeaser: !this.state.displayTeaser,
         });

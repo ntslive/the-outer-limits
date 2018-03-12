@@ -12,13 +12,24 @@ import romanNumerals from "../utils/romanNumerals";
 import ChapterTimes from '../utils/ChapterTimes';
 import GalaxyInfoFooter from './GalaxyInfoFooter';
 
+function reportNtsClick() {
+    if (typeof ga !== "undefined") {
+        ga('send', 'event', 'TheOuterLimits', 'Galaxy', `NTS Logo Click`);
+    }
+}
+function reportAxisClick() {
+    if (typeof ga !== "undefined") {
+        ga('send', 'event', 'TheOuterLimits', 'Galaxy', `Axis Logo Click`);
+    }
+}
+
 const GalaxyInfo = (props) => (
     <div id="galaxy-info">
         <div className="galaxy-info__header">
             <a className="galaxy-info__header__link" href="https://www.nts.live" target="_blank"
-               rel="noopener noreferrer"><Icon icon={NtsIcon}/></a>
+               rel="noopener noreferrer" onClick={reportNtsClick}><Icon icon={NtsIcon}/></a>
             <a className="galaxy-info__header__link galaxy-info__header__link--axis" href="https://axisrecords.com/"
-               target="_blank" rel="noopener noreferrer"><Icon icon={AxisIcon}/></a>
+               target="_blank" rel="noopener noreferrer" onClick={reportAxisClick}><Icon icon={AxisIcon}/></a>
 
             <div className="galaxy-info__header__text subtitle-line-spacing">
                 <span>NTS Radio and Axis Records</span>
