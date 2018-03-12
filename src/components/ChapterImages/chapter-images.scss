@@ -55,6 +55,20 @@ $bg-transition-speed: 1s;
     font-size: 12px;
 }
 
+#chapter-click-handler-top, #chapter-click-handler-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 50vh;
+}
+#chapter-click-handler-top {
+    top: 0;
+    cursor: n-resize;
+}
+#chapter-click-handler-bottom {
+    bottom: 0;
+    cursor: s-resize;
+}
+
 .chapter-images__bg {
     position: fixed;
     top: 0; bottom: 0;
@@ -95,6 +109,10 @@ $bg-transition-speed: 1s;
     }
     .chapter-images__caption {
         display: none;
+    }
+    #chapter-click-handler-top, #chapter-click-handler-bottom {
+        display: none;
+        visibility: hidden;
     }
 }
 

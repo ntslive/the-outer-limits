@@ -30,6 +30,15 @@
     z-index: 2;
 }
 #chapter-container {
+    >div {
+        z-index: 4;
+    }
+}
+.chapter-container--overlay {
+    z-index: 10;
+}
+
+#chapter-click-handler-top, #chapter-click-handler-bottom {
     z-index: 2;
 }
 

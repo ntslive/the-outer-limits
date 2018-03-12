@@ -36,6 +36,9 @@ class ChapterImages extends React.Component {
     constructor(props) {
         super(props);
 
+        this._prevImage = this._prevImage.bind(this);
+        this._nextImage = this._nextImage.bind(this);
+
         this.state = {
             images: props.chapter.gallery,
             imageIndex: 0,
@@ -126,6 +129,9 @@ class ChapterImages extends React.Component {
                     <Button className="button--rotate90 button__circle--left" icon={LeftArrow} alternate onClick={() => this._prevImage()} />
                     <Button className="button--rotate90 button__circle--right" icon={RightArrow} alternate onClick={() => this._nextImage()} />
                 </div>
+
+                <div id="chapter-click-handler-top" className="" onClick={this._prevImage} />
+                <div id="chapter-click-handler-bottom" className="" onClick={this._nextImage} />
 
                 {this.state.images.map((image, i) => {
                     let preventLoad = true;
