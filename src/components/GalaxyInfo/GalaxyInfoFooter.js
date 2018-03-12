@@ -11,17 +11,17 @@ class GalaxyInfoFooter extends React.Component {
 
         const chapters = props.chapters;
         const nowTime = new Date();
-        let nextChapter, nextChapterId, nextChapterTimes;
+        let nextChapter, nextChapterIndex, nextChapterTimes;
         for (let i = 0; i < chapters.length; i++) {
-            nextChapterId = i;
-            nextChapter = chapters[nextChapterId];
+            nextChapterIndex = i;
+            nextChapter = chapters[nextChapterIndex];
             nextChapterTimes = new ChapterTimes(nextChapter);
             if (nextChapterTimes.endMoment > nowTime) break;
         }
 
         this.state = {
             nextChapter,
-            nextChapterId,
+            nextChapterIndex,
             nextChapterTimes,
             nextChapterStatus: chapterStatusManager.getChapterStatus(nextChapter),
         };
@@ -30,13 +30,13 @@ class GalaxyInfoFooter extends React.Component {
     componentDidMount() {
         this.nextShowInterval = chapterStatusManager.createChapterStatusChecker(this.state.nextChapter, (newStatus) => {
             if (newStatus === 'podcastComing' || newStatus === 'podcast') {
-                const nextChapterId = this.state.nextChapterId + 1;
-                const nextChapter = this.props.chapters[nextChapterId];
+                const nextChapterIndex = Math.min(this.props.chapters.length - 1, this.state.nextChapterIndex + 1);
+                const nextChapter = this.props.chapters[nextChapterIndex];
                 const nextChapterTimes = new ChapterTimes(nextChapter);
 
                 this.setState({
                     nextChapter,
-                    nextChapterId,
+                    nextChapterIndex,
                     nextChapterTimes,
                     nextChapterStatus: chapterStatusManager.getChapterStatus(nextChapter),
                 });
@@ -54,10 +54,10 @@ class GalaxyInfoFooter extends React.Component {
 
     render() {
         if (this.state.nextChapterStatus === 'live') {
-            const chapterRomanNumerals = romanNumerals.convertNumberToRomanNumeral(this.state.nextChapterId + 1);
+            const chapterRomanNumerals = romanNumerals.convertNumberToRomanNumeral(this.state.nextChapterIndex + 1);
 
             return (
-                <div className="galaxy-info__footer galaxy-info__footer--live text-justify text-uppercase cursor-pointer" onClick={() => this.props.scrollToChapter(this.state.nextChapterId)}>
+                <div className="galaxy-info__footer galaxy-info__footer--live text-justify text-uppercase cursor-pointer" onClick={() => this.props.scrollToChapter(this.state.nextChapterIndex)}>
                     <div className="galaxy-info__footer__subtitle">
                         <div className="text-uppercase leading-font" style={{fontSize: '14px'}}><span className="circle" />LIVE NOW</div>
                         <div className="text-uppercase leading-font" style={{fontSize: '28px', maxWidth: '340px'}}>{this.state.nextChapter.name}</div>
@@ -69,7 +69,7 @@ class GalaxyInfoFooter extends React.Component {
 
         const nextChapterTimes = new ChapterTimes(this.state.nextChapter);
         return (
-            <div className="galaxy-info__footer text-justify text-uppercase">
+            <div className="galaxy-info__footer text-justify text-uppercase cursor-pointer" onClick={() => this.props.scrollToChapter(this.state.nextChapterIndex)}>
                 <div className="galaxy-info__footer__title leading-font">{nextChapterTimes.broadcastStartDateShort}</div>
                 <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
                     <div>Next broadcast</div>
