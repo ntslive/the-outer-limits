@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-0ffd6a38f1e9a21be094.js",
-      "path---chapters-apollo-18-0ffd6a38f1e9a21be094.js.map"
+      "path---chapters-apollo-18-1d0a086520ac417f5b6a.js",
+      "path---chapters-apollo-18-1d0a086520ac417f5b6a.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-30996407385885b401bd.js",
@@ -13,24 +13,24 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-7239c1d1df5afedd4dec.js",
-      "path---chapters-black-hole-7239c1d1df5afedd4dec.js.map"
+      "path---chapters-black-hole-172d9320661471cb749c.js",
+      "path---chapters-black-hole-172d9320661471cb749c.js.map"
     ],
     "component---src-layouts-index-js": [
       "component---src-layouts-index-js-67772c141e05ae6a9929.js",
       "component---src-layouts-index-js-67772c141e05ae6a9929.js.map"
     ],
     "path---index": [
-      "path---index-a992175f7d5716e2e6bc.js",
-      "path---index-a992175f7d5716e2e6bc.js.map"
+      "path---index-0a063e103191d0faeae4.js",
+      "path---index-0a063e103191d0faeae4.js.map"
     ],
     "component---src-pages-chapters-apollo-18-js": [
-      "component---src-pages-chapters-apollo-18-js-d6671a69cd23f5cb2156.js",
-      "component---src-pages-chapters-apollo-18-js-d6671a69cd23f5cb2156.js.map"
+      "component---src-pages-chapters-apollo-18-js-808ca565c483638404ba.js",
+      "component---src-pages-chapters-apollo-18-js-808ca565c483638404ba.js.map"
     ],
     "component---src-pages-chapters-black-hole-js": [
-      "component---src-pages-chapters-black-hole-js-d6671a69cd23f5cb2156.js",
-      "component---src-pages-chapters-black-hole-js-d6671a69cd23f5cb2156.js.map"
+      "component---src-pages-chapters-black-hole-js-808ca565c483638404ba.js",
+      "component---src-pages-chapters-black-hole-js-808ca565c483638404ba.js.map"
     ],
     "commons": [
       "commons-20955a87c0f47c81f314.js",
