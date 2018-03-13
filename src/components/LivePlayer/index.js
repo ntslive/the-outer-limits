@@ -56,7 +56,7 @@ class LivePlayer extends React.Component {
 
     _playStream() {
         const time = new Date();
-        this.audioElement.src = `https://stream-relay-geo.ntslive.net/stream?t=${time.valueOf()}`;
+        this.audioElement.src = `https://stream-relay-geo.ntslive.net/stream2?t=${time.valueOf()}`;
         this.audioElement.load();
         this.audioElement.play();
     }
