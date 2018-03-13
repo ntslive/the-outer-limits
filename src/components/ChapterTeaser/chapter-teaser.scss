@@ -51,7 +51,7 @@ $content-width: 910px;
 #teaser-content__tracks {
     margin-top: 20px;
 }
-#teaser-content__credits, #teaser-content__qa {
+#teaser-content__credits, #teaser-content__qa, #teaser-content__script_quotes {
     font-size: 16px;
     margin-top: 60px;
 }
@@ -61,6 +61,9 @@ $content-width: 910px;
 }
 .teaser-content__credits__row, .teaser-content__qa__row {
     margin-bottom: 15px;
+}
+.teaser-content__script_quotes__row {
+    margin-bottom: 28px;
 }
 
 @media (max-width: $mobile-width) {
