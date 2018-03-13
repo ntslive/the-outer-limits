@@ -36,8 +36,12 @@
     @include transition(background-color 0.3s ease-in-out)
 }
 .chapter-container--overlay {
-    position: relative;
+    position: absolute;
     background-color: rgba(0,0,0,0.5) !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 #chapter__player {
