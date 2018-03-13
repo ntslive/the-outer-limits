@@ -86,6 +86,23 @@ class ChapterTeaser extends React.Component {
         );
     }
 
+    _renderScriptQuotes() {
+        if (!this.state.chapter.content.script_quotes) return;
+
+        const sq = this.state.chapter.content.script_quotes;
+
+        return (
+            <div id="teaser-content__script_quotes">
+                {sq.map((quoteItem, i) => (
+                    <div className="teaser-content__script_quotes__row" key={i}>
+                        <div>{quoteItem.quote}</div>
+                        <div>― {quoteItem.author}</div>
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
     render() {
         const chapter = this.state.chapter;
 
@@ -107,6 +124,8 @@ class ChapterTeaser extends React.Component {
                             </div>
                         ))}
                     </div>
+
+                    {this._renderScriptQuotes()}
 
                     <div id="teaser-content__tracks">
                         {chapter.content.tracks && chapter.content.tracks.map((track, i) => (

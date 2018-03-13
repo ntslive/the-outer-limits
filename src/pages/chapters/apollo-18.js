@@ -17,6 +17,10 @@ export const pageQuery = graphql`
             broadcastEndTime
             content {
               description
+              script_quotes {
+                quote
+                author
+              }
               credits {
                 title
                 names
