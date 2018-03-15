@@ -32,34 +32,34 @@ class Chapter extends React.Component {
         super(props);
 
         this._goToGalaxy = this._goToGalaxy.bind(this);
-        const chapterStatus = chapterStatusManager.getChapterStatus(props.chapter);
 
-        let displayTeaser = this.props.displayTeaser || false;
-        if (chapterStatus === chapterStatusManager.STATUSES[1] || chapterStatus === chapterStatusManager.STATUSES[3]) {
-            displayTeaser = true;
-        }
         this.autoplay = (props.history.location && props.history.location.state && props.history.location.state.autoplay) || false;
         this.state = {
             chapter: props.chapter,
-            chapterStatus,
-            displayTeaser,
+            chapterStatus: "blank", // this forces the page to display just the image. componentDidMount will update the state based on window time.
+            displayTeaser: false,
         };
     }
 
     componentDidMount() {
-        // create interval throwing a change in chapter status.
-        this.statusInterval = chapterStatusManager.createChapterStatusChecker(this.state.chapter, (newStatus) => {
+        const that = this;
+        function updateStatus(newStatus) {
             let displayTeaser = false;
             if (newStatus === chapterStatusManager.STATUSES[1]
                 || newStatus === chapterStatusManager.STATUSES[3]) {
                 displayTeaser = true;
             }
 
-            this.setState({
+            that.setState({
                 chapterStatus: newStatus,
                 displayTeaser,
             });
-        });
+        }
+
+        updateStatus(chapterStatusManager.getChapterStatus(this.state.chapter));
+
+        // create interval throwing a change in chapter status.
+        this.statusInterval = chapterStatusManager.createChapterStatusChecker(this.state.chapter, updateStatus);
     }
 
     componentWillUnmount() {
@@ -144,6 +144,19 @@ class Chapter extends React.Component {
 
         const pageTitle = `${chapter.name} - Jeff Mills The Outer Limits`;
         const pageUrl = `https://www.nts.live/projects/jeff-mills-the-outer-limits/chapters/${this.state.chapter.id}/`;
+
+        if (this.state.chapterStatus === 'blank') {
+            return (
+                <div>
+                    <Helmet title={`${pageTitle} | NTS`} >
+                        <meta property="og:title" content={pageTitle} />
+                        <meta property="og:url" content={pageUrl} />
+                    </Helmet>
+
+                    <ChapterImages chapter={chapter} hideControls disableNav />
+                </div>
+            );
+        }
 
         const overlayClass = this.state.displayTeaser ? "chapter-container--overlay" : "";
 
