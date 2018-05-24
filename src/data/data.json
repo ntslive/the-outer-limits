@@ -312,8 +312,40 @@
             "broadcastDate": "30.05.2018",
             "broadcastStartTime": "14:00",
             "broadcastEndTime": "15:00",
-            "content": {},
-            "audio": []
+            "content": {
+                "description": [
+                    "The third episode of Jeff Mills’ NTS Radio residency looks to ‘Star People’ – seen through the teachings of ancient Egyptian high priests of Ra through to the oil paintings of French impressionists. Featuring all original music by Jeff Mills, this show covers brand new cosmic techno productions mixed seamlessly with contemporary classical performances from acclaimed Norwegian violinist Mari Samuelsen.",
+                    "The atmospheric soundscapes are interspersed with intimate spoken passages from a conversation between Jeff Mills and Danish sculptor and installation artist Olafur Eliasson. The two artists discuss the sculptural and architectural consequences of a world with two suns, and the emotional and physical energy of the sun’s rays.",
+                    "Interview passages taken from a conversation between Jeff Mills and Olafur Eliasson moderated by Sven von Thülen for Telekom Electronic Beats. Courtesy of Studio Olafur Eliasson, Berlin. Special thanks to Olafur Eliasson."
+                ],
+                "credits": [
+                    {"title": "Concept/Script, Main Soundtrack, Producer and Presenter", "names": ["Jeff Mills"]},
+                    {"title": "Recorded/Edited at", "names": ["Spider Formation Miami/Paris"]},
+                    {"title": "Guest Artists",
+                        "names": [
+                            "MARI SAMUELSEN, OLAFUR ELIASSON"
+                        ]
+                    },
+                    {"title": "Narration", "names": ["Vicente Solis – The Green Agency"]},
+                    {"title": "Project Coordinator, Recording and Research Assistant", "names": ["Yoko Uozumi"]},
+                    {"title": "Program Press Relations", "names": ["Elsa Sachet"]}
+                ]
+            },
+            "gallery": [
+                {
+                    "title": "ISS Transit During 2017 Solar Eclipse",
+                    "description": "This composite image, made from seven frames, shows the International Space Station, with a crew of six onboard, as it transits the Sun at roughly five miles per second during a partial solar eclipse, Monday, Aug. 21, 2017 near Banner, Wyoming. Onboard as part of Expedition 52 are: NASA astronauts Peggy Whitson, Jack Fischer, and Randy Bresnik; Russian cosmonauts Fyodor Yurchikhin and Sergey Ryazanskiy; and ESA (European Space Agency) astronaut Paolo Nespoli. A total solar eclipse swept across a narrow portion of the contiguous United States from Lincoln Beach, Oregon to Charleston, South Carolina. A partial solar eclipse was visible across the entire North American continent along with parts of South America, Africa, and Europe.",
+                    "credits": "PHOTOGRAPH BY NASA/JOEL KOWSKY",
+                    "imageUrl": "https://media.ntslive.co.uk/images/ea1bb202-2a2e-41d6-aaf3-96f89876e4b0_1527120000.jpeg"
+                }
+            ],
+            "audio": [
+                {
+                    "type": "teaser",
+                    "soundcloudSecretToken": "s-BEiFA",
+                    "soundcloudTrackID": "410477289"
+                }
+            ]
         },
         {
             "id": "tba",
