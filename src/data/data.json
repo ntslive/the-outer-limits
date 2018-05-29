@@ -333,10 +333,118 @@
             },
             "gallery": [
                 {
-                    "title": "ISS Transit During 2017 Solar Eclipse",
-                    "description": "This composite image, made from seven frames, shows the International Space Station, with a crew of six onboard, as it transits the Sun at roughly five miles per second during a partial solar eclipse, Monday, Aug. 21, 2017 near Banner, Wyoming. Onboard as part of Expedition 52 are: NASA astronauts Peggy Whitson, Jack Fischer, and Randy Bresnik; Russian cosmonauts Fyodor Yurchikhin and Sergey Ryazanskiy; and ESA (European Space Agency) astronaut Paolo Nespoli. A total solar eclipse swept across a narrow portion of the contiguous United States from Lincoln Beach, Oregon to Charleston, South Carolina. A partial solar eclipse was visible across the entire North American continent along with parts of South America, Africa, and Europe.",
+                    "title": "ISS in Transit",
+                    "description": "A composite image constructed from seven separate frames, depicting the International Space Station as it transits the sun at a speed of approximately five miles per second during a partial solar eclipse in August 2017.",
                     "credits": "PHOTOGRAPH BY NASA/JOEL KOWSKY",
-                    "imageUrl": "https://media.ntslive.co.uk/images/ea1bb202-2a2e-41d6-aaf3-96f89876e4b0_1527120000.jpeg"
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/ea1bb202-2a2e-41d6-aaf3-96f89876e4b0_1527120000.jpeg"
+                },
+                {
+                    "title": "Golden Arches",
+                    "description": "Magnetically charged particles form symmetrical arches as they follow the sun’s magnetic field lines. These images were captured at a wavelength of extreme ultraviolet light and depict ionised iron at a temperature of roughly one million degrees.",
+                    "credits": "PHOTOGRAPH BY SOLAR DYNAMICS OBSERVATORY, NASA.",
+                    "imageUrl": "https://media.ntslive.co.uk/images/7a7ebb30-d4a0-4b77-aa67-733cba4ea366_1527206400.gif"
+                },
+                {
+                    "title": "NGC 4784",
+                    "description": "The Hubble Telescope captures a giant galaxy ten times the size of the Milky Way, surrounded by a swarm of star clusters and dwarf galaxies. Located in the direction of constellation Coma Berenices, the galaxy holds onto more star clusters than any other known galaxy.",
+                    "credits": "PHOTOGRAPH BY ESA/HUBBLE & NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/0856d283-1df8-469c-84c8-4f8d876468a6_1527120000.jpeg"
+                },
+                {
+                    "title": "Partial Solar Eclipse",
+                    "description": "Time lapse footage of the 2017 partial solar eclipse, as seen from the Johnson Space Center in Houston, Texas.",
+                    "credits": "PHOTOGRAPH BY JSC, NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/f76f1b63-9300-4dc6-a640-b44b2c3681e1_1527206400.gif"
+                },
+                {
+                    "title": "The Great Temple at Abū Simbel",
+                    "description": "The opening facade of The Great Temple at Abū Simbel, dedicated to the Sun god Ra as well as Amun and Ptah. Twice a year on the 22nd of October and February, all the sculptures on the back wall of the temple are illuminated by the sun’s rays except for the depiction of Ptah, god of the underworld, who remains in darkness.",
+                    "credits": "PHOTOGRAPH BY FRANCIS FRITH",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/d5c5126f-c602-4996-9930-5d9d449deee5_1527120000.jpeg"
+                },
+                {
+                    "title": "Last Glimmer of the Sun",
+                    "description": "The last glimmer of the sun is seen as the moon makes its final transit during the total solar eclipse on Monday 21st August, 2017 above Madras in Oregon.",
+                    "credits": "PHOTOGRAPH BY NASA/AUBREY GEMIGNANI",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/08902f71-9172-4f4b-8f5c-869370ce16e7_1527120000.jpeg"
+                },
+                {
+                    "title": "NGC 3923",
+                    "description": "The glowing object in this Hubble Space Telescope image is an elliptical galaxy called NGC 3923, located over 90 million light-years away in the constellation of Hydra. This galaxy has an onion-like structure, with over twenty concentric shells of stars.",
+                    "credits": "PHOTOGRAPH BY ESA/HUBBLE & NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/9146a7c0-2793-440a-90d8-7ab2e03b2f45_1527120000.jpeg"
+                },
+                {
+                    "title": "Martian Sunset",
+                    "description": "NASA's Curiosity Mars rover recorded this sunset at the close of the mission's 956th Martian day, from the rover's location in Gale Crater. Dust in the Martian atmosphere has fine particles that permit blue light to penetrate the atmosphere more efficiently than longer-wavelength colors. This effect is most pronounced near sunset.",
+                    "credits": "PHOTOGRAPH BY NASA/JPL-CALTECH/MSSS/TEXAS A&M UNIV",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/15f6b6fa-2524-434b-bc64-65b6ddef5968_1527120000.jpeg"
+                },
+                {
+                    "title": "The Weather Project",
+                    "description": "The Weather Project installation in the Tate Modern’s Turbine Hall in 2003, by guest artist and interviewee Olafur Eliasson. The installation featured a giant, sun-like orb made up of hundreds of mono-frequency lights, bathing the gallery in an eerie monochromatic yellow glow.",
+                    "credits": "PHOTOGRAPH BY STUDIO OLAFUR ELIASSON",
+                    "imageUrl": "https://media.ntslive.co.uk/images/0b7fb73f-cae8-40f1-91fa-a27588ab78b4_1527206400.gif"
+                },
+                {
+                    "title": "Red Sun",
+                    "description": "An unusual red-tinted sun photographed in Worcestershire, England. Meteorologists attributed the solar colour change to interfering particles swept up from the Sahara desert by Hurricane Ophelia. Red skies fell across many other parts of the U.K. in October of 2017.",
+                    "credits": "PHOTOGRAPH BY JON FREEMAN/ALAMY LIVE NEWS",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/c27fd64c-de83-4f83-a7f1-f9aed3a6d0dd_1527120000.jpeg"
+                },
+                {
+                    "title": "Solar Eclipse",
+                    "description": "An alternate view of the total solar eclipse from 2017, with the moon pictured mid-transit. This photograph was also captured in Oregon, although from a NASA Gulfstream III aircraft flying at an altitude of approximately 25,000 feet.",
+                    "credits": "PHOTOGRAPH BY NASA/CARLA THOMAS",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/0a0b407e-78c0-41aa-a73d-1ba98909891a_1527120000.jpeg"
+                },
+                {
+                    "title": "Solar Eclipse as seen by Hinode Satellite",
+                    "description": "The Hinode satellite, launched by the Japanese Aerospace Exploration Agency with American and English collaboration, looks to investigate the interaction between the Sun's magnetic field and its corona. Here it captures images of the moon traversing the sun during a total eclipse in July 2009, visible from parts of Asia and the Pacific ocean.",
+                    "credits": "Photograph by NASA/JAXA",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/00b6784b-463e-4d13-9f11-308ee16f6e69_1527120000.jpeg"
+                },
+                {
+                    "title": "Aztec calendar stone",
+                    "description": "The Aztec calendar stone, sculpted during the early sixteenth century, depicts the face of the Aztec solar deity, Tonatiuh. The four squares surrounding the centre represent four previous suns or eras preceding the current era, 4 Movement.",
+                    "credits": "PHOTOGRAPH BY JACKSON, WILLIAM HENRY, 1843-1942, PHOTOGRAPHER",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/6dff932c-c6f3-4643-ac2d-51609d6a9fcf_1527120000.jpeg"
+                },
+                {
+                    "title": "The Weather Project",
+                    "description": "Additional footage of Olafur Eliasson’s Tate Modern installation. The ceiling of the Turbine Hall was replaced by a giant mirror reflecting the floor below. This was the fourth in an annual Unilever Series of commissions for the Turbine Hall.",
+                    "credits": "PHOTOGRAPH BY BROADBANDTV",
+                    "imageUrl": "https://media.ntslive.co.uk/images/3d59409d-d09e-4772-9819-7fc306d315e5_1527206400.gif"
+                },
+                {
+                    "title": "A Stellar Nursery",
+                    "description": "Illuminated by the light of nearby stars, the nebula M-78 exhibits a ghostly appearance in this 10-minute exposure taken at the Siding Spring Observatory in Australia. Located in the constellation of Orion, some 1600 light years from Earth, this reflection nebula is known to contain more than 40 very young stars still in the process of formation",
+                    "credits": "PHOTOGRAPH BY NASA/MSFC/MEO/BILL COOKE",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/0e52f7aa-8048-42e1-b9a9-e6fceef59860_1527120000.jpeg"
+                },
+                {
+                    "title": "Binary Sunset",
+                    "description": "A culturally enduring representation of a binary star system can be found in the 1977 Star Wars film. Luke Skywalker’s fictional home planet Tatooine orbits a binary star system. The planet’s name was inspired by the southern Tunisian city of Tataouine - many scenes from the film were filmed nearby.",
+                    "credits": "PHOTOGRAPH BY 20TH CENTURY FOX",
+                    "imageUrl": "https://media.ntslive.co.uk/images/71cd5808-3d6d-4833-85f9-806913fd58d3_1527206400.gif"
+                },
+                {
+                    "title": "Imentet and Ra",
+                    "description": "The Ancient Egyptian sun God Ra depicted next to Imentet, a Goddess representing the necropolises West of the river Nile. As seen on the tomb of Egyptian queen Nefertari, dating back to the 13th century B.C.",
+                    "credits": "Photograph by Wikipedia",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/0df918ab-67de-406f-b715-28e67047c604_1527120000.jpeg"
+                },
+                {
+                    "title": "Dwarf star",
+                    "description": "Animation depicting the motion of a white dwarf star passing in front of a distant background star. The background star’s position appears to change as light is distorted by the white dwarf’s gravity.",
+                    "credits": "Animation by NASA, ESA, and G. Bacon (STScI)",
+                    "imageUrl": "https://media.ntslive.co.uk/images/a728aaea-5820-4a4c-821a-33690fcf5088_1527120000.gif"
+                },
+                {
+                    "title": "The Weather Project",
+                    "description": "An onlooker basks in the mono-frequency light emitting from Olafur Elassion’s 2003 installation in the Tate Modern. ",
+                    "credits": "Photograph by BroadbandTV",
+                    "imageUrl": "https://media.ntslive.co.uk/images/8f4f4ccf-4144-464b-85e6-9073e3419620_1527206400.gif"
                 }
             ],
             "audio": [
