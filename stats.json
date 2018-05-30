@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-89644e8ca24e49c0201e.js",
-      "path---chapters-apollo-18-89644e8ca24e49c0201e.js.map"
+      "path---chapters-apollo-18-0e12259322a9281b4e76.js",
+      "path---chapters-apollo-18-0e12259322a9281b4e76.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ebbf5a500e6390e2d884.js",
@@ -13,16 +13,16 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-5034c63639712abd728e.js",
-      "path---chapters-black-hole-5034c63639712abd728e.js.map"
+      "path---chapters-black-hole-dde966ac7bd82a1da41a.js",
+      "path---chapters-black-hole-dde966ac7bd82a1da41a.js.map"
     ],
     "component---src-layouts-index-js": [
       "component---src-layouts-index-js-67772c141e05ae6a9929.js",
       "component---src-layouts-index-js-67772c141e05ae6a9929.js.map"
     ],
     "path---index": [
-      "path---index-f7468886920e3ff3dea1.js",
-      "path---index-f7468886920e3ff3dea1.js.map"
+      "path---index-e87d32a8e9f4a1079326.js",
+      "path---index-e87d32a8e9f4a1079326.js.map"
     ],
     "component---src-pages-chapters-apollo-18-js": [
       "component---src-pages-chapters-apollo-18-js-90d6ae654841fc48e5ee.js",
@@ -41,12 +41,12 @@
       "component---src-pages-chapters-star-people-js-90d6ae654841fc48e5ee.js.map"
     ],
     "app": [
-      "app-cc1ef80cceaec96ebf5b.js",
-      "app-cc1ef80cceaec96ebf5b.js.map"
+      "app-f662ca101734be37c6ca.js",
+      "app-f662ca101734be37c6ca.js.map"
     ],
     "path---chapters-star-people": [
-      "path---chapters-star-people-5034c63639712abd728e.js",
-      "path---chapters-star-people-5034c63639712abd728e.js.map"
+      "path---chapters-star-people-dde966ac7bd82a1da41a.js",
+      "path---chapters-star-people-dde966ac7bd82a1da41a.js.map"
     ]
   }
 }
