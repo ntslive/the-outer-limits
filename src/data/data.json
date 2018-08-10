@@ -600,7 +600,18 @@
                     "imageUrl": "https://media.ntslive.co.uk/images/ba7a7cac-2736-4f71-90b6-4550144e1a43_1533859200.gif"
                 }
             ],
-            "audio": []
+            "audio": [
+                {
+                    "type": "teaser",
+                    "soundcloudSecretToken": "s-ZaObT",
+                    "soundcloudTrackID": "483769497"
+                },
+                {
+                    "type": "podcast",
+                    "soundcloudSecretToken": "s-3FhX3",
+                    "soundcloudTrackID": "483761082"
+                }
+            ]
         },
         {
             "id": "tba",
