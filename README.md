@@ -29,7 +29,13 @@
 
 ### Deployment
 
+#### Staging
+
 Run: `npm run deploy` - this builds the project and then pushes a commit to `gh-pages` branch of the same directory.
+
+#### Production
+
+Run: `npm run deployprod`
 
 ### Considerations
 
