@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-0e12259322a9281b4e76.js",
-      "path---chapters-apollo-18-0e12259322a9281b4e76.js.map"
+      "path---chapters-apollo-18-c92e3d75bb8989b7afd8.js",
+      "path---chapters-apollo-18-c92e3d75bb8989b7afd8.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ebbf5a500e6390e2d884.js",
@@ -13,40 +13,48 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-dde966ac7bd82a1da41a.js",
-      "path---chapters-black-hole-dde966ac7bd82a1da41a.js.map"
+      "path---chapters-black-hole-d0b4cc135c07436cb093.js",
+      "path---chapters-black-hole-d0b4cc135c07436cb093.js.map"
+    ],
+    "component---src-pages-chapters-the-exquisite-corpse-js": [
+      "component---src-pages-chapters-the-exquisite-corpse-js-c1261ef88ad30a456fd7.js",
+      "component---src-pages-chapters-the-exquisite-corpse-js-c1261ef88ad30a456fd7.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-67772c141e05ae6a9929.js",
-      "component---src-layouts-index-js-67772c141e05ae6a9929.js.map"
+      "component---src-layouts-index-js-e7cd8077f712e54f511a.js",
+      "component---src-layouts-index-js-e7cd8077f712e54f511a.js.map"
     ],
     "path---index": [
-      "path---index-e87d32a8e9f4a1079326.js",
-      "path---index-e87d32a8e9f4a1079326.js.map"
+      "path---index-ca78bb4bc97a255f8417.js",
+      "path---index-ca78bb4bc97a255f8417.js.map"
     ],
     "component---src-pages-chapters-apollo-18-js": [
-      "component---src-pages-chapters-apollo-18-js-90d6ae654841fc48e5ee.js",
-      "component---src-pages-chapters-apollo-18-js-90d6ae654841fc48e5ee.js.map"
+      "component---src-pages-chapters-apollo-18-js-c1261ef88ad30a456fd7.js",
+      "component---src-pages-chapters-apollo-18-js-c1261ef88ad30a456fd7.js.map"
     ],
     "component---src-pages-chapters-black-hole-js": [
-      "component---src-pages-chapters-black-hole-js-90d6ae654841fc48e5ee.js",
-      "component---src-pages-chapters-black-hole-js-90d6ae654841fc48e5ee.js.map"
+      "component---src-pages-chapters-black-hole-js-c1261ef88ad30a456fd7.js",
+      "component---src-pages-chapters-black-hole-js-c1261ef88ad30a456fd7.js.map"
     ],
     "commons": [
-      "commons-f5e1e67cf20459e73c4b.js",
-      "commons-f5e1e67cf20459e73c4b.js.map"
+      "commons-eb9d097a5cc732f0df7a.js",
+      "commons-eb9d097a5cc732f0df7a.js.map"
     ],
     "component---src-pages-chapters-star-people-js": [
-      "component---src-pages-chapters-star-people-js-90d6ae654841fc48e5ee.js",
-      "component---src-pages-chapters-star-people-js-90d6ae654841fc48e5ee.js.map"
+      "component---src-pages-chapters-star-people-js-c1261ef88ad30a456fd7.js",
+      "component---src-pages-chapters-star-people-js-c1261ef88ad30a456fd7.js.map"
+    ],
+    "path---chapters-the-exquisite-corpse": [
+      "path---chapters-the-exquisite-corpse-d0b4cc135c07436cb093.js",
+      "path---chapters-the-exquisite-corpse-d0b4cc135c07436cb093.js.map"
     ],
     "app": [
-      "app-f662ca101734be37c6ca.js",
-      "app-f662ca101734be37c6ca.js.map"
+      "app-e9ce6d87de01e0b698b1.js",
+      "app-e9ce6d87de01e0b698b1.js.map"
     ],
     "path---chapters-star-people": [
-      "path---chapters-star-people-dde966ac7bd82a1da41a.js",
-      "path---chapters-star-people-dde966ac7bd82a1da41a.js.map"
+      "path---chapters-star-people-d0b4cc135c07436cb093.js",
+      "path---chapters-star-people-d0b4cc135c07436cb093.js.map"
     ]
   }
 }
