@@ -461,12 +461,145 @@
             ]
         },
         {
-            "id": "tba",
-            "name": "TBA",
+            "id": "the-exquisite-corpse",
+            "name": "The Exquisite Corpse",
             "broadcastDate": "15.08.2018",
-            "broadcastStartTime": "14:00",
-            "broadcastEndTime": "15:00",
-            "content": {},
+            "broadcastStartTime": "15:00",
+            "broadcastEndTime": "16:01",
+            "content": {
+                "description": [
+                    "In the fourth edition of The Outer Limits, Jeff Mills explores abstract thought via the chemistry of music and poetry, with an hour long mix of original music featuring renowned American poet, Jessica Care Moore.",
+                    "Titled ‘The Exquisite Corpse’, this episode refers to an old parlour game, popularised by André Breton during the Surrealist art movement in the mid twenties, although Pierre Reverdy claimed this began as early as 1918 - which would mark this year as its 100th centenary. In the parlour game participants contribute to a collaborative image or text, each contributing their own creativity whilst only viewing the last words or lines by the previous artist. The resulting artwork is thus a composite image, joining together disparate ideas into a disquietingly cohesive whole."
+                ],
+                "credits": [
+                    {"title": "Concept/Script, Main Soundtrack, Producer and Presenter", "names": ["Jeff Mills"]},
+                    {"title": "Recorded/Edited at", "names": ["SPIDER FORMATION MIAMI/PARIS & STUDIO A DETROIT"]},
+                    {"title": "Guest Artists",
+                        "names": [
+                            "JESSICA CARE MOORE"
+                        ]
+                    },
+                    {"title": "Narration", "names": ["VICENTE SOLIS – THE GREEN AGENCY"]},
+                    {"title": "Project Coordinator, Recording and Research Assistant", "names": ["Yoko Uozumi"]},
+                    {"title": "Program Press Relations", "names": ["Elsa Sachet"]}
+                ]
+            },
+            "gallery": [
+                {
+                    "title": "Lee Fuan",
+                    "description": "Julien Pacaud is a French artist and illustrator who lives and works in Paris, France. Before becoming an illustrator, he was an astrophysicist, international snooker player, hypnotist and esperanto teacher.",
+                    "credits": "Illustration by Julien Pacaud",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/5564f735-f355-4bec-acb7-c6e078305a9f_1533859200.jpeg"
+                },
+                {
+                    "title": "The Hunter (Catalan Landscape)",
+                    "description": "Joan Miró was a Spanish painter, sculptor, and ceramicist born in Barcelona. His painting ‘The Hunter’ depicts a landscape in North Eastern Spain and was completed in the years 1923-24.",
+                    "credits": "Oil on canvas by Joan Miró",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/fe2e1ac4-c4a9-40b2-9739-12683b86c5a3_1533859200.jpeg"
+                },
+                {
+                    "title": "Guido’s dream",
+                    "description": "Guido, played by Italian actor Marcello Mastroianni, stars in a dream sequence in Fellini’s surrealist comedy-drama, 8½.",
+                    "credits": "Film by Federico Fellini",
+                    "imageUrl": "https://media.ntslive.co.uk/images/060226d1-a9ad-40e7-8bb2-89346d3c28d9_1533859200.gif"
+                },
+                {
+                    "title": "Cadavre Exquis",
+                    "description": "André Breton is best known for his part in leading the surrealist movement - this illustration is an example of the ‘Exquisite Corpse’ pastime, whereby several artists independently construct a surprise composition on one piece of paper. This example dates from 1928.",
+                    "credits": "Cadavre Exquis by Man Ray, Max Morise, André Breton & Yves Tanguy",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/34668b0d-b54e-4843-bc15-237ae765b930_1533859200.jpeg"
+                },
+                {
+                    "title": "You Are Here",
+                    "description": "A collage illustration by French artist Julien Pacaud, dating from 2013.",
+                    "credits": "Illustration by Julien Pacaud",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/bbb1bdcc-4d4b-4f04-ad30-7beaa8ad3ff1_1533859200.jpeg"
+                },
+                {
+                    "title": "Pegasus",
+                    "description": "A composite watercolour by artist Alfred Steiner on hot press paper. Steiner is a New York based artist who has also trained as a copyright and trademark lawyer. This image includes brand names of pocket knife company Victorinox as well as a comb by Faces.",
+                    "credits": "Watercolour by Alfred Stainer, 2014",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/a4fd4ec6-0139-4295-80ba-0e958032a664_1533859200.jpeg"
+                },
+                {
+                    "title": "Le Charme discret de la bourgeoisie",
+                    "description": "A scene from the French surrealist film, The Discreet Charm of the Bourgeoisie, whereby a group of upper middle class people attempt to dine together despite consistent interruptions.",
+                    "credits": "Film by Luis Buñuel",
+                    "imageUrl": "https://media.ntslive.co.uk/images/a57fa319-fd13-42d2-aee5-8b82f950e9c8_1533859200.gif"
+                },
+                {
+                    "title": "Dali Atomicus",
+                    "description": "During the 1940s Salvador Dalí collaborated with American photographer Philippe Halsman - this work from 1948 explores ideas of suspension, depicting three cats flying, water thrown from a bucket, an easel, a footstool and Salvador Dalí all seemingly suspended in mid-air.",
+                    "credits": "Photograph by Philippe Halsman, 1948",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/a4cc7cbf-f771-4709-b6f0-f808fc8f7a63_1533859200.jpeg"
+                },
+                {
+                    "title": "The Guard",
+                    "description": "1970s oil on canvas by Egyptian surrealist painter Mohamed Riyad Saeed. Born in 1937, Saeed was part of a wider trend of surrealism in Egyptian modernist art from the late thirties through to the early seventies.",
+                    "credits": "Photograph by Mohamed Riyad Saeed",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/6acd282b-1462-40a4-b79b-71df1184e3b4_1533859200.jpeg"
+                },
+                {
+                    "title": "La Planète sauvage",
+                    "description": "A snippet from René Laloux’s 1973 animated science fiction film, La Planète sauvage: a psychedelic, surreal and allegorical film based on the 1957 novel, Oms en série.",
+                    "credits": "Film by René Laloux",
+                    "imageUrl": "https://media.ntslive.co.uk/images/724d88de-dab2-4810-9769-84382332fd24_1533859200.gif"
+                },
+                {
+                    "title": "Innervision",
+                    "description": "Working on the theme of The Exquisite Corpse, this giant canvas painting from ‘56 is a collaborative work between abstract expressionist and surrealist artists Roberto Matta & Victor Brauner.",
+                    "credits": "Oil on canvas by Roberto Matta & Victor Brauner",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/79e6d6a8-4011-4486-b614-54ef0f2a63ce_1533859200.jpeg"
+                },
+                {
+                    "title": "Celestial Bodies I",
+                    "description": "Mixed media collage by French artist Julien Pacaud, featuring displaced bodily limbs and a female torso.",
+                    "credits": "Illustration by Julien Pacaud",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/881d7767-181d-4893-9050-1873b5b8ef83_1533859200.jpeg"
+                },
+                {
+                    "title": "Ariadne",
+                    "description": "‘Ariadne’ is part of a series of five 1913 paintings by the Italian-born Greek artist Giorgio de Chirico, in which the statue of Ariadne plays a major iconographic role.",
+                    "credits": "Oil and graphite on canvas by Giorgio de Chirico",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/7c4259d6-570c-4d01-b215-f159eb952be9_1533859200.jpeg"
+                },
+                {
+                    "title": "Le sang d'un poète",
+                    "description": "A clip from Jean Cocteau’s avant-garde film, Le sang d'un poète (The Blood Of A Poet). The film included recurring oneiric imagery, from spinning models of human heads to rotating double-sided masks.",
+                    "credits": "Film by Jean Cocteau",
+                    "imageUrl": "https://media.ntslive.co.uk/images/83861276-5515-4cdc-831c-0576b8dd2f58_1533859200.gif"
+                },
+                {
+                    "title": "She Who Loots The Persian Empire",
+                    "description": "Amir H. Fallah is an Iranian-born American artist living and working in Los Angeles, CA. This painting depicts a woman whilst omitting the typical signifiers of portraiture, concealing her face, age and race.",
+                    "credits": "Illustration by Amirh Fallah",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/74df3699-0932-43db-a747-8b373e08dcf7_1533859200.jpeg"
+                },
+                {
+                    "title": "Still Life",
+                    "description": "A still life painting by Aaron Morgan Brown, an artist working and living in Kansas. In his own words, Aaron’s paintings are a “prismatic lens through which I can re-view the world, and a collective transcription of what I encounter there.”",
+                    "credits": "Oil on canvas by Aaron Morgan Brown",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/3f66b340-3997-4ddb-9c54-1f597e852c82_1533859200.jpeg"
+                },
+                {
+                    "title": "Fine Foiled Friends",
+                    "description": "Le Fawnhawk is an L.A based creative director and transmedia artist. Many of her photographs are taken in the deserts of California and Arizona.",
+                    "credits": "Photograph by Le Fawnhawk",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c93fcae6-a548-4aa1-8650-d46de0ee8cdd_1533859200.jpeg"
+                },
+                {
+                    "title": "The False Mirror",
+                    "description": "An enormous painting of an eye by Belgian surrealist Magritte. Unblinking and without lashes, The False Mirror was described by former owner and photographer Man Ray as a painting which “sees as much as it itself is seen.”",
+                    "credits": "Oil on canvas by René Magritte",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/787221b4-e307-44ba-94ee-3e1f5de56cb5_1533859200.jpeg"
+                },
+                {
+                    "title": "Eye’s slicing",
+                    "description": "A scene from the collaborative film Un Chien Andalou (1929) by Luis Buñuel and Salvador Dalí, depicting an eye severed with a razor and humours spilling forthwith.",
+                    "credits": "Film by Luis Buñuel and Salvador Dalí",
+                    "imageUrl": "https://media.ntslive.co.uk/images/ba7a7cac-2736-4f71-90b6-4550144e1a43_1533859200.gif"
+                }
+            ],
             "audio": []
         },
         {
