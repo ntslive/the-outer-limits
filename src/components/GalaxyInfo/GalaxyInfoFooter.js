@@ -67,7 +67,7 @@ class GalaxyInfoFooter extends React.Component {
             const chapterRomanNumerals = romanNumerals.convertNumberToRomanNumeral(this.state.nextChapterIndex + 1);
 
             return (
-                <div className="galaxy-info__footer galaxy-info__footer--live text-justify text-uppercase cursor-pointer" onClick={this._scrollToChapterClick}>
+                <div className="galaxy-info__footer galaxy-info__footer--live text-uppercase cursor-pointer" onClick={this._scrollToChapterClick}>
                     <div className="galaxy-info__footer__subtitle">
                         <div className="text-uppercase leading-font" style={{fontSize: '14px'}}><span className="circle" />LIVE NOW</div>
                         <div className="text-uppercase leading-font" style={{fontSize: '28px', maxWidth: '340px'}}>{this.state.nextChapter.name}</div>
