@@ -1,2 +1,2 @@
-webpackJsonp([97177260222251],{173:function(e,t,u){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0,t.pageQuery=void 0;var r=u(41),d=a(r);t.default=d.default;t.pageQuery="** extracted graphql fragment **"}});
+webpackJsonp([97177260222251],{174:function(e,t,u){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0,t.pageQuery=void 0;var r=u(36),d=a(r);t.default=d.default;t.pageQuery="** extracted graphql fragment **"}});
 //# sourceMappingURL=component---src-pages-chapters-the-exquisite-corpse-js-c1261ef88ad30a456fd7.js.map
