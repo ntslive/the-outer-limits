@@ -722,20 +722,18 @@
                 "credits": "Biblioteca Reale Turin",
                 "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c8fdae09-8ea4-4ab9-abcf-9b3c34b93d86_1540512000.jpeg"
             }],
-            "audio": [{
-                "type": "teaser",
-                "soundcloudSecretToken": "s-2JqCb",
-                "soundcloudTrackID": "520147527"
-            }]
-        },
-        {
-            "id": "tba",
-            "name": "TBA",
-            "broadcastDate": "29.10.2018",
-            "broadcastStartTime": "17:00",
-            "broadcastEndTime": "18:00",
-            "content": {},
-            "audio": []
+            "audio": [
+                {
+                    "type": "teaser",
+                    "soundcloudSecretToken": "s-2JqCb",
+                    "soundcloudTrackID": "520147527"
+                },
+                {
+                    "type": "podcast",
+                    "soundcloudSecretToken": "s-Inzfa",
+                    "soundcloudTrackID": "521531508"
+                }
+            ]
         },
         {
             "id": "tba",
