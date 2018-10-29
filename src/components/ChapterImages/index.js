@@ -107,9 +107,11 @@ class ChapterImages extends React.Component {
                 <div className="chapter-images__caption__description">
                     {selectedImage.description}
                 </div>
-                <div className="chapter-images__caption__credits">
-                    Credits: <span className="text-uppercase">{selectedImage.credits}</span>
-                </div>
+                {!!selectedImage.credits && (
+                    <div className="chapter-images__caption__credits">
+                        Credits: <span className="text-uppercase">{selectedImage.credits}</span>
+                    </div>
+                )}
             </div>
         );
     }
