@@ -716,12 +716,134 @@
                     }
                 ]
             },
-            "gallery": [{
-                "title": "Self portrait Leonardo da Vinci",
-                "description": "TBA",
-                "credits": "Biblioteca Reale Turin",
-                "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c8fdae09-8ea4-4ab9-abcf-9b3c34b93d86_1540512000.jpeg"
-            }],
+            "gallery": [
+                {
+                    "title": "Self Portrait Leonardo Da Vinci",
+                    "description": "A sketched self-portrait from Leonardo Da Vinci, drawn at some point between 1512 and 1515 in his early sixties.",
+                    "credits": "Royal Library, Turin (Biblioteca Reale, Torino)",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c8fdae09-8ea4-4ab9-abcf-9b3c34b93d86_1540512000.jpeg"
+                },
+                {
+                    "title": "Mona Lisa",
+                    "description": "The iconic portrait of Mona Lisa. Likely the most famous work of art in existence, painted between the years of 1503 and 1506.",
+                    "credits": "Musée du Louvre, Paris",
+                    "imageUrl": "https://media.ntslive.co.uk/images/9fe700bb-15ae-4d03-b51a-a119b4713639_1540771200.gif"
+                },
+                {
+                    "title": "Crossbow",
+                    "description": "Da Vinci’s proposed sketch for a giant crossbow, capable of firing rocks and bombs, measuring 27 yards across.",
+                    "credits": "Codex Atlanticus",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/2381d625-b3f1-4e50-9533-1ae6048b595b_1540771200.jpeg"
+                },
+                {
+                    "title": "Waves",
+                    "description": "Da Vinci described water as \"vetturale di natura\", or the vehicle of nature. In his notebooks he depicted many studies of water in motion, flowing across obstacles or eroding the landscape.",
+                    "credits": "",
+                    "imageUrl": "https://media.ntslive.co.uk/images/0aad234a-1245-435b-9f50-c8c7a228b1d8_1540771200.gif"
+                },
+                {
+                    "title": "Proportions of the Head",
+                    "description": "An example of one of Da Vinci’s many anatomical studies, this examining the proportions of the human head in a standing nude.",
+                    "credits": "Da Vinci, c. 1490",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/d75da85e-53bf-42ce-9df3-f15a57585355_1540771200.jpeg"
+                },
+                {
+                    "title": "The Last Supper",
+                    "description": "A late 15th-century mural painting by Leonardo da Vinci. Another of Da Vinci’s most recognisable works, it was originally painted as part of a church renovation for Leonardo’s patron, Ludovico Sforza, Duke of Milan.",
+                    "credits": "Convent of Santa Maria delle Grazie, Milan",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/1496cf4a-3a38-46b7-b17f-a8fc2dccdbc3_1540771200.jpeg"
+                },
+                {
+                    "title": "Anatomical Study",
+                    "description": "This study depicts the cardiovascular system and principal organs of a woman in surprising detail. Dating from the early 16th century.",
+                    "credits": "Da Vinci, c. 1509",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/8c25324a-d8c7-4667-8a37-d2061e875ebf_1540771200.jpeg"
+                },
+                {
+                    "title": "St John The Baptist",
+                    "description": "Oil painting on walnut wood, believed to be Da Vinci’s last painting. It was first seen by Antonio de Beatis in Leonardo's workshop at Clos Lucé.",
+                    "credits": "Louvre, Paris",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/a0dc65ee-4b6d-4355-9a7e-2bacd52d1cc3_1540771200.jpeg"
+                },
+                {
+                    "title": "Expressions of Fury in Horses, Lions and a Man",
+                    "description": "A sketched comparison of three different species’ expressions of fury. As Leonardo grew old, the subject matter of his sketches became more and more pessimistic.",
+                    "credits": "Royal Collection Trust",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/53e61e81-5167-427e-9668-f2955b39eda9_1540771200.jpeg"
+                },
+                {
+                    "title": "Bat in Flight",
+                    "description": "Da Vinci’s proposed flight machines took cues from the natural world, with moving wings modelled after those found in bats.",
+                    "credits": "Brown University",
+                    "imageUrl": "https://media.ntslive.co.uk/images/1a74a5bf-76af-4f14-8605-46dec6504cdd_1540771200.gif"
+                },
+                {
+                    "title": "Clavi-viola and Related Mechanisms",
+                    "description": "A proposed musical instrument from the depths of Da Vinci’s lengthy Codex Atlanticus.",
+                    "credits": " Bibliotheca Ambrosiana, Milano",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/5264e89e-db5a-45c8-b67a-9c8a0b8a29bc_1540771200.jpeg"
+                },
+                {
+                    "title": "Taking Flight",
+                    "description": "Although Leonardo never constructed any of his flying machines, his templates paved the way for future inventors, sparking inspiration centuries down the line.",
+                    "credits": "Superquark Special, Leonardo. Ritratto di un genio. Documentary, Italy 2000",
+                    "imageUrl": "https://media.ntslive.co.uk/images/1f4b195a-b7d1-4b7d-aed7-c3ede498110f_1540771200.gif"
+                },
+                {
+                    "title": "Otto Lilienthal",
+                    "description": "Before the turn of the 20th century, German aviator Otto Lilienthal became one of the first men to fly with his primitive hang-glider, driven by swinging around his bodyweight.",
+                    "credits": "Otto Lilienthal Museum, Anklam",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/cb111394-fd9f-41e5-916f-dc75a0d1c80b_1540771200.jpeg"
+                },
+                {
+                    "title": "Human-Powered Aircraft",
+                    "description": "Early attempts at human-powered flight were unanimously unsuccessful thanks to the difficulty of achieving a high power-to-weight ratio.",
+                    "credits": "Superquark Special, Leonardo. Ritratto di un genio. Documentary, Italy 2000",
+                    "imageUrl": "https://media.ntslive.co.uk/images/45c67ced-d7f8-4a6e-a4bb-46065706c97b_1540771200.gif"
+                },
+                {
+                    "title": "Beneath the Mona Lisa",
+                    "description": "Some have claimed that beneath Da Vinci’s most famous painting lies an alternate portrait. Whilst this is plausible, the data that led to such claims has yet to be corroborated by the wider academic community.",
+                    "credits": "",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/34fdc97c-6897-4565-a8a8-087baaaa9aeb_1540771200.jpeg"
+                },
+                {
+                    "title": "The Ocean in Transit",
+                    "description": "Da Vinci described water as \"vetturale di natura\", or the vehicle of nature. In his notebooks he depicted many studies of water in motion, flowing across obstacles or eroding the landscape.",
+                    "credits": "Rob Casey",
+                    "imageUrl": "https://media.ntslive.co.uk/images/1b18a483-320e-40ec-af88-ccfd74ef1aea_1540771200.gif"
+                },
+                {
+                    "title": "Town Plan of Imola",
+                    "description": "This map, drawn by Da Vinci, is one of the earliest examples of an ichnographic map. Most other maps of this scale and period presented their subject in an oblique, or elevated viewpoint.",
+                    "credits": "Da Vinci, c.1502",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/4daae6f7-9ef1-462a-b526-88be1e7b05bf_1540771200.jpeg"
+                },
+                {
+                    "title": "Man-Powered Aircraft in Takeoff",
+                    "description": "The first official take-off and landing in an aircraft powered by its pilot was made in the 1961 by Derek Piggott of Southampton University’s Man Powered Aircraft. Its maiden voyage covered 650 metres.",
+                    "credits": "Superquark Special, Leonardo. Ritratto di un genio. Documentary, Italy 2000",
+                    "imageUrl": "https://media.ntslive.co.uk/images/50dd94f5-0e4d-46e3-98fe-f6d1ffeed961_1540771200.gif"
+                },
+                {
+                    "title": "Da Vinci’s Theory of Parachutes",
+                    "description": "\"If a man is provided with a length of gummed linen cloth, with a length of 12 yards on each side and 12 yards high, he can jump from any great height whatsoever without any injury.\"",
+                    "credits": "Adrian Nicholas",
+                    "imageUrl": "https://media.ntslive.co.uk/images/44f2da71-460c-49ce-8dc6-551b070c812e_1540771200.gif"
+                },
+                {
+                    "title": "Study on the proportions of head and eyes",
+                    "description": "A characteristically methodical breakdown of the proportions of the human face. Even Da Vinci’s anatomical studies were capable of capturing human emotion.",
+                    "credits": "Royal Library of Turin",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/4b6f4741-0dcb-4047-b7ac-f57e1340a052_1540771200.jpeg"
+                },
+                {
+                    "title": "Murmuration",
+                    "description": "Natural flight in all its complexity, as seen in the formations formed by a vast flock of British starlings.",
+                    "credits": "Dylan Winter",
+                    "imageUrl": "https://media.ntslive.co.uk/images/56f9530e-4711-4486-a4b3-c31324fc6098_1540771200.gif"
+                }
+            ],
             "audio": [
                 {
                     "type": "teaser",
