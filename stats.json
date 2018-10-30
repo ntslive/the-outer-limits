@@ -1,12 +1,12 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-71baf9483bd00655ec4b.js",
-      "path---chapters-apollo-18-71baf9483bd00655ec4b.js.map"
+      "path---chapters-apollo-18-30ae83404c06bafb0a5c.js",
+      "path---chapters-apollo-18-30ae83404c06bafb0a5c.js.map"
     ],
     "path---chapters-deep-thinkers": [
-      "path---chapters-deep-thinkers-d537755155952fb9ea80.js",
-      "path---chapters-deep-thinkers-d537755155952fb9ea80.js.map"
+      "path---chapters-deep-thinkers-7ded9f98765c1cfd59b1.js",
+      "path---chapters-deep-thinkers-7ded9f98765c1cfd59b1.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ebbf5a500e6390e2d884.js",
@@ -17,8 +17,8 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-5465c99a12a7142be870.js",
-      "path---chapters-black-hole-5465c99a12a7142be870.js.map"
+      "path---chapters-black-hole-b740a000094bce2a0bdc.js",
+      "path---chapters-black-hole-b740a000094bce2a0bdc.js.map"
     ],
     "component---src-pages-chapters-the-exquisite-corpse-js": [
       "component---src-pages-chapters-the-exquisite-corpse-js-c1261ef88ad30a456fd7.js",
@@ -53,16 +53,16 @@
       "component---src-pages-chapters-deep-thinkers-js-c1261ef88ad30a456fd7.js.map"
     ],
     "path---chapters-the-exquisite-corpse": [
-      "path---chapters-the-exquisite-corpse-5465c99a12a7142be870.js",
-      "path---chapters-the-exquisite-corpse-5465c99a12a7142be870.js.map"
+      "path---chapters-the-exquisite-corpse-b740a000094bce2a0bdc.js",
+      "path---chapters-the-exquisite-corpse-b740a000094bce2a0bdc.js.map"
     ],
     "app": [
-      "app-705550abe790e5067f61.js",
-      "app-705550abe790e5067f61.js.map"
+      "app-63610e5dbd8de9106966.js",
+      "app-63610e5dbd8de9106966.js.map"
     ],
     "path---chapters-star-people": [
-      "path---chapters-star-people-5465c99a12a7142be870.js",
-      "path---chapters-star-people-5465c99a12a7142be870.js.map"
+      "path---chapters-star-people-b740a000094bce2a0bdc.js",
+      "path---chapters-star-people-b740a000094bce2a0bdc.js.map"
     ]
   }
 }
