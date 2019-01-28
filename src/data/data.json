@@ -870,13 +870,55 @@
             ]
         },
         {
-            "id": "tba",
-            "name": "TBA",
+            "id": "time-travel",
+            "name": "Time Travel",
             "broadcastDate": "29.01.2019",
             "broadcastStartTime": "15:00",
             "broadcastEndTime": "16:00",
-            "content": {},
-            "audio": []
+            "content": {
+                "description": [
+                    "On Tuesday 29th January, Jeff Mills will be releasing the final radio show in his ongoing The Outer Limits series on NTS Radio. The final episode is titled ‘Time Travel’, and will be broadcast from 3-4pm GMT, exactly one year after airing the first episode of The Outer Limits.",
+                    "Over the past twelve months, Jeff’s free-form radio programme has traversed topics as diverse as surrealist art, black holes, speculative future manned missions to the moon and the anthropological significance of the sun.",
+                    "Travel from the inception of the universe with the Big Bang 13.8 billion years ago, to the formation of our own solar system and the infancy of Earth, all the way through to the end of time itself."
+                ],
+                "credits": [
+                    {
+                        "title": "Concept/Script, Main Soundtrack, Producer and Presenter",
+                        "names": ["Jeff Mills"]
+                    },
+                    {
+                        "title": "Recorded/Edited at",
+                        "names": ["SPIDER FORMATION (MIAMI/PARIS)"]
+                    },
+                    {
+                        "title": "Narration",
+                        "names": ["VICENTE SOLIS – THE GREEN AGENCY"]
+                    },
+                    {
+                        "title": "Project Coordinator, Recording and Research Assistant",
+                        "names": ["Yoko Uozumi"]
+                    },
+                    {
+                        "title": "Program Press Relations",
+                        "names": ["ELSA SACHET"]
+                    }
+                ]
+            },
+            "gallery": [
+                {
+                    "title": "Congo River, Africa",
+                    "description": "A satellite view of the Congo river basin and its surrounding rainforests, the second largest of its kind on Earth outside of the Amazon. Captured by the European Space Agency’s Envisat satellite.",
+                    "credits": "Envisat, 2009",
+                    "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/740f75ec-b9cb-4c58-90fa-8cc0e4db6747_1548374400.jpeg"
+                }
+            ],
+            "audio": [
+                {
+                    "type": "teaser",
+                    "soundcloudSecretToken": "s-rZ91E",
+                    "soundcloudTrackID": "565834971"
+                }
+            ]
         }
     ]
 }
