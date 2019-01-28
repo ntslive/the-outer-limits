@@ -2,6 +2,9 @@
   "name": "gatsby-react-boilerplate",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=8.15.0 <9.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "build": "(shx --silent rm -rf public || shx true) && (shx --silent rm -rf .cache || shx true) && DEPLOY_ENV=local gatsby build",
