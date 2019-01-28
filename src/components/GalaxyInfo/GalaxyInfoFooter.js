@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ChapterTimes from '../utils/ChapterTimes';
 import chapterStatusManager from "../utils/chapterStatusManager";
 import romanNumerals from "../utils/romanNumerals";
+import moment from "moment-timezone";
 
 class GalaxyInfoFooter extends React.Component {
     constructor(props) {
@@ -78,6 +79,18 @@ class GalaxyInfoFooter extends React.Component {
         }
 
         const nextChapterTimes = new ChapterTimes(this.state.nextChapter);
+        const endTime = nextChapterTimes.endMoment;
+        const now = moment();
+
+        if (now > endTime) return (
+            <div className="galaxy-info__footer text-justify text-uppercase">
+                <div className="galaxy-info__footer__subtitle subtitle-line-spacing">
+                    <div>Broadcast Live</div>
+                </div>
+                <div className="galaxy-info__footer__title galaxy-info__footer__title--no-margin leading-font">2018-19</div>
+            </div>
+        );
+
         return (
             <div className="galaxy-info__footer text-justify text-uppercase cursor-pointer" onClick={this._scrollToChapterClick}>
                 <div className="galaxy-info__footer__title leading-font">{nextChapterTimes.broadcastStartDateShort}</div>

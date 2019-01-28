@@ -65,6 +65,9 @@
     margin-top: 13px;
     letter-spacing: 4px;
 }
+.galaxy-info__footer__title--no-margin {
+    margin-top: 0;
+}
 
 
 @include keyframes(fadeInBio) {
