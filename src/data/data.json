@@ -906,10 +906,130 @@
             },
             "gallery": [
                 {
-                    "title": "Congo River, Africa",
+                    "title": "The Congo River Basin",
                     "description": "A satellite view of the Congo river basin and its surrounding rainforests, the second largest of its kind on Earth outside of the Amazon. Captured by the European Space Agency’s Envisat satellite.",
                     "credits": "Envisat, 2009",
                     "imageUrl": "https://media.ntslive.co.uk/resize/1600x1600/740f75ec-b9cb-4c58-90fa-8cc0e4db6747_1548374400.jpeg"
+                },
+                {
+                    "title": "The Amazon Rainforest",
+                    "description": "The Amazon is surrounded by moist broadleaf forest covering over 4.5 million square kilometers. Over twenty percent of the Earth’s oxygen is produced here.",
+                    "credits": "The Nature Documentary Channel",
+                    "imageUrl": "https://media.ntslive.co.uk/images/b37ef512-a260-4ef4-b461-13b3edc85403_1548633600.gif"
+                },
+                {
+                    "title": "Eusthenopteron",
+                    "description": "An early example of a lobe-finned fish, one of the missing links between fish and land-based tetrapods. Up until the 1980s, Eusthenopteron were believed to be amphibian, emerging onto land. Paleontologists now agree it was a strictly aquatic animal.",
+                    "credits": "Wikimedia",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/3f08eefd-21c0-41b2-958d-48a02034bd48_1548633600.jpeg"
+                },
+                {
+                    "title": "The World Before the Deluge",
+                    "description": "An artist’s depiction of early Devonian land-flora. The Devonian period began 419 million years ago and lasted until the Carboniferous, 359 million years ago.",
+                    "credits": "Édouard Riou, 1872",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/1c930e9c-6a7e-4807-83c5-d6b848355963_1548633600.jpeg"
+                },
+                {
+                    "title": "The Amazon Rainforest",
+                    "description": "Entomophily, or insect pollination, began over 100 million years ago. Bees, or other pollinating organisms distribute pollen for plant reproduction, often guided by brightly coloured by brightly coloured flowers.",
+                    "credits": "The Nature Documentary Channel",
+                    "imageUrl": "https://media.ntslive.co.uk/images/40b9ee70-bbd7-4317-9929-34eb83642a74_1548633600.gif"
+                },
+                {
+                    "title": "Ctenophora",
+                    "description": "Comb Jellies, or ctenophora, have been proposed as the second earliest branch of multi-celled organisms, with only the sponges pulling archeological seniority.",
+                    "credits": "Wikimedia",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/81a0ec51-f49c-4623-a8b0-e1597bd615f4_1548633600.jpeg"
+                },
+                {
+                    "title": "Ctenophora preying on Zooplankton",
+                    "description": "The stripes visible on these comb jellies are ciliary combs, which are used to swim. The zooplankton being eaten are tiny crustaceans which remain this size their whole life. ",
+                    "credits": "Wikimedia",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/952af659-6186-49f7-bbda-a5945165b1f5_1548633600.jpeg"
+                },
+                {
+                    "title": "Feeding Ctenophore",
+                    "description": "A single bioluminescent comb jelly glows as it searches for food in the deep waters of the ocean.",
+                    "credits": "National Undersearch Research Program Collection",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/f19b715d-5669-4ff4-985a-29d8a51f2874_1548633600.jpeg"
+                },
+                {
+                    "title": "Defecating Comb Jellies",
+                    "description": "Although ctenophora seem alien when compared to mammals, they were pivotal in the evolution of the common gut seen in modern vertebrates. Here they can be seen defecating from their primitive anal pores.",
+                    "credits": "National Geographic",
+                    "imageUrl": "https://media.ntslive.co.uk/images/be1cef6a-363a-40c2-bdbf-1a802a8929b1_1548633600.gif"
+                },
+                {
+                    "title": "Aurelia Aurita",
+                    "description": "A common moon jellyfish, one of the most abundant species in the Earth’s vast oceans.",
+                    "credits": "Wikimedia",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/c4856ce9-435f-4d8c-8389-c6659294472b_1548633600.jpeg"
+                },
+                {
+                    "title": "Close up with Comb Jellies",
+                    "description": "An intimate glimpse at one of Earth’s oldest inhabitants, shot in and around Bull Harbor on Hope Island, British Columbia.",
+                    "credits": "Charles Lindsay",
+                    "imageUrl": "https://media.ntslive.co.uk/images/4fe3b123-dd51-4608-b608-fe97f0921298_1548633600.gif"
+                },
+                {
+                    "title": "Total Solar Eclipse",
+                    "description": "An animation of the moon passing between the Earth and the Sun in a total solar eclipse.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/cec291e3-8e3b-4769-8393-8c052db64cb6_1548633600.gif"
+                },
+                {
+                    "title": "The Big Bang",
+                    "description": "The current prevailing model for the origin of the universe is known as ‘The Big Bang’, whereby the universe expanded from an incredibly high density and high temperature state.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/a8a144c3-354b-489e-824c-0a24b5b27e20_1548633600.gif"
+                },
+                {
+                    "title": "Formation of the Universe",
+                    "description": "The universe expands to settle into a structure of galaxy clusters and superclusters, with each individual galaxy containing up to hundreds of trillions of stars.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/1a5b71a6-36e0-4d96-ba2c-816614ecca8b_1548633600.jpeg"
+                },
+                {
+                    "title": "Bang",
+                    "description": "An artist's interpretation of the Big Bang, representing the early universe and its subsequent expansion.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/fc7148b0-f845-48fa-8310-bfff053e1e9f_1548633600.gif"
+                },
+                {
+                    "title": "Lamda-CDM",
+                    "description": "The cosmological model that includes the Big Bang posits that the universe began at a singularity of infinite density, at a finite time in the past.",
+                    "credits": "BBC",
+                    "imageUrl": "https://media.ntslive.co.uk/images/5913e7d1-adab-4b83-ae04-ee72adfcb2b7_1548633600.gif"
+                },
+                {
+                    "title": "Birth of the Universe",
+                    "description": "NASA's Cosmic Background Explorer and WMAP missions have explored and supported the plausibility of the Big Bang theory by observing the most distant stars and galaxies.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/0a4b31f3-3f88-4cce-86f6-4e4abe2111a2_1548633600.gif"
+                },
+                {
+                    "title": "The Infant Universe",
+                    "description": "In the universe’s earliest stages after the big bang, stars and galaxies had yet to be formed and space was completely filled with hot, dense, hydrogen plasma.",
+                    "credits": "NASA",
+                    "imageUrl": "https://media.ntslive.co.uk/images/a14bfdb3-8277-4619-8c61-d104b0aab9d4_1548633600.gif"
+                },
+                {
+                    "title": "Murmuration",
+                    "description": "Starling murmurations are known to deceive predators... Peregrine falcons struggle to target a single bird out of the starlings’ hypnotic formations.",
+                    "credits": "Wikimedia",
+                    "imageUrl": "https://media2.ntslive.co.uk/resize/1600x1600/7aaeb364-1828-4a86-aee2-af4ddafa04ea_1548633600.jpeg"
+                },
+                {
+                    "title": "European Starlings in Flight",
+                    "description": "Biologists are still unsure how unremarkably intelligent birds manage to fly in such tight formations without colliding.",
+                    "credits": "National Geographic",
+                    "imageUrl": "https://media.ntslive.co.uk/images/ca1fedbe-d60c-4c79-860e-be229986b351_1548633600.gif"
+                },
+                {
+                    "title": "Energy",
+                    "description": "Almost all energy on earth originates from the sun’s electromagnetic radiation, which takes just over eight minutes to travel to Earth.",
+                    "credits": "N/A",
+                    "imageUrl": "https://media.ntslive.co.uk/images/c104b955-963d-4d80-ba5a-a7a963a59463_1548633600.gif"
                 }
             ],
             "audio": [
