@@ -1,12 +1,12 @@
 {
   "assetsByChunkName": {
     "path---chapters-apollo-18": [
-      "path---chapters-apollo-18-0ada70775099a9f3d9df.js",
-      "path---chapters-apollo-18-0ada70775099a9f3d9df.js.map"
+      "path---chapters-apollo-18-758692eef661278f79df.js",
+      "path---chapters-apollo-18-758692eef661278f79df.js.map"
     ],
     "path---chapters-deep-thinkers": [
-      "path---chapters-deep-thinkers-ad541bbc15027635a523.js",
-      "path---chapters-deep-thinkers-ad541bbc15027635a523.js.map"
+      "path---chapters-deep-thinkers-ad33d062b85dca92d5d6.js",
+      "path---chapters-deep-thinkers-ad33d062b85dca92d5d6.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-ebbf5a500e6390e2d884.js",
@@ -17,8 +17,8 @@
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---chapters-black-hole": [
-      "path---chapters-black-hole-de5e28549111472fc807.js",
-      "path---chapters-black-hole-de5e28549111472fc807.js.map"
+      "path---chapters-black-hole-1aae526ad01e96e75053.js",
+      "path---chapters-black-hole-1aae526ad01e96e75053.js.map"
     ],
     "component---src-pages-chapters-the-exquisite-corpse-js": [
       "component---src-pages-chapters-the-exquisite-corpse-js-c1261ef88ad30a456fd7.js",
@@ -29,8 +29,8 @@
       "component---src-layouts-index-js-ac481fe017720c9a949a.js.map"
     ],
     "path---index": [
-      "path---index-eacf1e6c003c87658f6e.js",
-      "path---index-eacf1e6c003c87658f6e.js.map"
+      "path---index-0b6dc7f11114a2993186.js",
+      "path---index-0b6dc7f11114a2993186.js.map"
     ],
     "component---src-pages-chapters-apollo-18-js": [
       "component---src-pages-chapters-apollo-18-js-c1261ef88ad30a456fd7.js",
@@ -53,24 +53,24 @@
       "component---src-pages-chapters-star-people-js-c1261ef88ad30a456fd7.js.map"
     ],
     "path---chapters-time-travel": [
-      "path---chapters-time-travel-de5e28549111472fc807.js",
-      "path---chapters-time-travel-de5e28549111472fc807.js.map"
+      "path---chapters-time-travel-1aae526ad01e96e75053.js",
+      "path---chapters-time-travel-1aae526ad01e96e75053.js.map"
     ],
     "component---src-pages-chapters-deep-thinkers-js": [
       "component---src-pages-chapters-deep-thinkers-js-c1261ef88ad30a456fd7.js",
       "component---src-pages-chapters-deep-thinkers-js-c1261ef88ad30a456fd7.js.map"
     ],
     "path---chapters-the-exquisite-corpse": [
-      "path---chapters-the-exquisite-corpse-de5e28549111472fc807.js",
-      "path---chapters-the-exquisite-corpse-de5e28549111472fc807.js.map"
+      "path---chapters-the-exquisite-corpse-1aae526ad01e96e75053.js",
+      "path---chapters-the-exquisite-corpse-1aae526ad01e96e75053.js.map"
     ],
     "app": [
-      "app-ca9ab9351ecaca985404.js",
-      "app-ca9ab9351ecaca985404.js.map"
+      "app-ce47e5c3ad4ea05b9aef.js",
+      "app-ce47e5c3ad4ea05b9aef.js.map"
     ],
     "path---chapters-star-people": [
-      "path---chapters-star-people-de5e28549111472fc807.js",
-      "path---chapters-star-people-de5e28549111472fc807.js.map"
+      "path---chapters-star-people-1aae526ad01e96e75053.js",
+      "path---chapters-star-people-1aae526ad01e96e75053.js.map"
     ]
   }
 }
