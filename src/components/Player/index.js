@@ -7,7 +7,7 @@ const Player = (props) => {
 
     let iframeSrcUrl = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackID}`;
     if (secretToken && secretToken.length > 0) {
-        iframeSrcUrl += `%3Fsecret_token%3D${secretToken}`;
+        iframeSrcUrl += `%3Fsecret_token%${secretToken}`;
     }
     iframeSrcUrl += `&amp;color=%23767c7c&amp;inverse=true&amp;auto_play=true&amp;show_user=true`;
 
