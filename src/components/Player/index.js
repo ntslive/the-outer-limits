@@ -12,7 +12,7 @@ const Player = (props) => {
     iframeSrcUrl += `&amp;color=%23767c7c&amp;inverse=true&amp;auto_play=true&amp;show_user=true`;
 
     return (
-        <iframe width="100%" height="20" scrolling="no" frameBorder="no" src={iframeSrcUrl} />
+        <iframe width="100%" height="20" scrolling="no" frameBorder="no" allow="autoplay" src={iframeSrcUrl} />
     );
 };
 
